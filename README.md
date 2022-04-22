@@ -8,4 +8,6 @@ I’m as clueless as I’ve ever been.
 Every day is a new lesson.
 But that will never be the reason I give up.
 Therefore, in this journal, I want to be crystal clear and note down how I learn to become a SELF-TAUGHT SOFTWARE DEVELOPER from SCRATCH, from A to Z, from 0 to infinite.
-I found this way fascinating and productive as I can keep track of my growth, reduce my severe procrastination, and hopefully can help whoever has the same feeling/situation as me.
+I found this way fascinating and productive because I can keep track of my growth and reduce my severe procrastination.
+
+#Icandoit
