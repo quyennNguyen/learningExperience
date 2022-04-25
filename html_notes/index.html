@@ -1,7 +1,7 @@
 <!--WHAT IS HTML?
     HTML, stands for Hyper Text Markup Language, is the standard markup language/the most basic building block for creating the Web.
     HTML defines the meaning and structure of the Web content. In the mean time (SIDE NOTE), CSS describes the Web appearance/presentation, and JavaScript defines the Web functionality/behavior.
-    HYPERTEXT refers to links, the fundamental aspect of the Web, that connect Web pages to one another, either winthin a single website or between websites.
+    HYPERTEXT refers to links, the fundamental aspect of the Web, that connect Web pages to one another, either winthin a single website (link resources of the same Web pages) or between websites.
     MARKUP LANGUAGE is a computer language that annotates the Web content for display in the Web browser by using special elements. -->
 
 <!--WHAT IS HTML ELEMENTS?
@@ -15,7 +15,7 @@
     Block-level elements are included with extra spaces/lines/breaks around them.
     In-line-level elements are not included with spaces around them. -->
 
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <!--This tag declares the document type of the Web page.
     !DOCTYPE represents HTML5 -->
 
@@ -25,77 +25,143 @@
     The "lang" attribute specifies the language code (or country code/dialect) of the Web page.
         lang="en-US" - the first two characters specify the language code and the last two characters specify the country code -->
 
-    <head>
+<head>
     <!--This tag contains the data which is not on the Web page but is considered metadata of an HTML page. -->
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!--This tag defines the metadata of the HTML page and specifies the character set, page description, keywords, document's author, viewpoint settings,...
-            The "charset" attribute specifies the character encoding of the Web page.
-            The "name" attribute specifies a name for the metadata.
-            The "content" attribute specifies the value associated with the http-equiv or name attribute. -->
-        <title>My First Web Page</title>
-        <!--This tag specifies the title of the Web page, which is visible in the Web browser's title bar or the Web page's tab. -->
-        <link rel="icon" href="html5.png" type="image/x-icon">
-        <!--This tag specifies the relationship between the Web page and an external resource, which usually links to external style sheets or adds a favicon to the Web page.
-            The "rel" attribute specifies the relationship between the current content and the linked content.
-            The "href" attribute specifies the location of the linked content.
-            The "type" attribute specifies the media type of the linked content. -->
-        <link rel="stylesheet" href="main.css" type="text/css">
-    </head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--This tag defines the metadata of the HTML page and specifies the character set, page description, keywords, document's author, viewpoint settings,...
+        The "charset" attribute specifies the character encoding of the Web page.
+        The "name" attribute specifies a name for the metadata.
+        The "content" attribute specifies the value associated with the http-equiv or name attribute. -->
+    <title>My First Web Page</title>
+    <!--This tag specifies the title of the Web page, which is visible in the Web browser's title bar or the Web page's tab. -->
+    <link rel="icon" href="img/html5.png" type="image/x-icon">
+    <!--This tag specifies the relationship between the Web page and an external resource, which usually links to external style sheets or adds a favicon to the Web page.
+        The "rel" attribute specifies the relationship between the current content and the linked content.
+        The "href" attribute, in this case, is a relative reference.
+        The "type" attribute specifies the media type of the linked content. -->
+    <link rel="stylesheet" href="main.css" type="text/css">
+</head>
 
-    <body>
-    <!--This tag contains all the visible contents of the Web page. -->
-        <h1>SUMMER VACATION</h1>
-        <!--This tag specifies the headings of the Web page, whose hierarchy decreases from h1 to h6. -->
-        <hr>
-        <!--This tag specifies the thematic break in the Web page, which is usually displayed as a horizontal rule to seperate contents. -->
+<body>
+    <!--This tag contains all the visible Web contents. -->
 
-        <h2>Vacation Plan</h2>
-        <p>Some of the main points I want to go through are:</p>
-        <!--This tag sepcifies the paragraph of the Web page.
-            SIDE NOTE: space collapsing happens when no matter how many lines or whitespaces you space between <p> tags, they won't be represented on the Web page.
-            The "&nbsp;" HTML entity can be used to add white spaces. -->
+    <h1>Hello World!</h1>
+    <!--This tag specifies the headings of the Web page, whose hierarchy decreases from h1 to h6. -->
+    <p>Summer is coming up. I can't wait to throw a vacation.</p>
+    <!--This tag sepcifies the paragraph of the Web page.
+        SIDE NOTE: space collapsing happens when no matter how many lines or whitespaces you space between <p> tag, they won't be represented on the Web page.
+        The "&nbsp;" HTML entity can be used to add white spaces. -->
+
+    <hr>
+    <!--This tag specifies the thematic break in the Web page, which is usually displayed as a horizontal rule to seperate contents. -->
+
+    <h3>SUMMER VACATION PLAN</h3>
+    <nav>
         <ul>
             <li>
-                <em>Places</em>
-                <!--This tag emphasizes the content, typically in italics. -->
-                I like to vist are:
+                <a href="#vacation">Summer Vacation Plan</a>
+                <!--The "href" attribute, in this case, is an internal reference. -->
+            </li>
+        </ul>
+    </nav>
+    <!--This tag specifies a block of navigation links. -->
+
+    <hr>
+
+    <p>
+        <em>
+            In this plan, some of the <strong>main points</strong> I want to go through are:
+            <!--This tag specifies content with strong imporance, typically in bold. -->
+        </em>
+        <!--This tag emphasizes the content, typically in italics. -->
+    </p>
+    <section id="vacation">
+        <ul>
+            <li>
+                Places I like to vist are:
                 <ol>
                     <li>
-                        <abbr title="New York">NY</abbr> 
-                        <!--This tag specifies abbreviation of the content. -->
+                        <abbr title="New York">NY</abbr>
+                        <!--This tag specifies abbreviation of the content
+                            The "title" attribute specifies extra information about the content and can only be seen when hovering over the content (as a tooltip). -->
                         <address>Manhattan, NY 10036</address>
-                        <!--This tag specifies the contact information of the content of the Web page, which can be email, URL, physical address, phone number, social media,..., typically in italics. -->
+                        <!--This tag specifies the contact information of the content, which can be email, URL, physical address, phone number, social media,..., typically in italics. -->
                     </li>
                 </ol>
             </li>
-            <li>Date and Time:</li>
             <li>
-                My 
-                <strong>budget</strong>
-                <!--This tag specifies content with strong imporance, typically in bold. -->
-                is:
+                Places I want to avoid are:
+                <dl>
+                    <dt>North Pole</dt>
+                    <dd>This is too cold!</dd>
+                </dl>
             </li>
-            <li>I am going with:</li>
-            <!--The "ol" tag specifies an ordered list.
-                The "ul" tag specifies an unordered list.
-                The "menu" tag specifies a menu list.
-                The "li" tag specifies a list item, which is usually used inside the <ol>, <ul>, or <menu>. -->
+            <li>Date and Time:</li>
+            <li>Budget:</li>
+            <li>Activities:</li>
         </ul>
-        <p>
-            <a href="https://www.w3schools.com/html/html_basic.asp"> Click here </a>
-            <!--a specifies the hyperlink
-                href specifies the link's destination (the URL of the page the link leads to)-->
-            <br>
-            <img src="aesthetic.jfif" title="aesthetic af" alt="aestheticism" height="1128" width="564">
-            <!--img embeds an image in the web page
-                src specifies the image's source or the path to the image to be displayed
-                there are 2 ways to specify the src:
-                    src="aesthetic.jfif" specifies the relative path which links to an image hosted within the web server
-                    src="https://wallpaperaccess.com/full/1933166.jpg" specifies the absolute path which links to an external image hosted on another web server
-                title specifies extra information about the element, whose value will be displayed as a tooltip when you mouse over the element
-                alt specifies the image's alternate text when the image isn't loaded-->
-        </p>
-    </body>
+        <!--The "ol" tag specifies an ordered list.
+            The "ul" tag specifies an unordered list.
+            The "dl" specifies a description list, which is in conjunction with <dt> tag, description term, and <dd> tag, description detail. 
+            The "menu" tag specifies a menu list.
+            The "li" tag specifies a list, which is usually used inside the <ol>, <ul>, or <menu>. -->
+    </section>
+    <!--This tag specifies a section of the Web page.
+        The "id" attribute specifies a unique identity for the content. -->
+
+    <p>
+        For more ideas, Sunny on
+        <a href="https://www.youtube.com/c/BestEverFoodReviewShow/featured" target="_blank">Best Ever Food Review
+            Show</a>
+        <!--This tag specifies the hyperlink, which links one Web page to another.
+            The "href" attribute specifies the link's destination.
+            The "target" atribute specifies where the link should be opened.
+            SIDE NOTE:
+                There are three types of reference, which is used in "href" or "src" attribute:
+                    1. The absolute reference is the full address of an external source hosted on a different Web server that the link leads to.
+                    2. The relative reference is the address of the local source within the same Web server of the Web page that you are hosting.
+                    3. The internal reference is the address to a source within the same Web page. -->
+        is my favorite food review youtuber.
+    </p>
+
+    <hr>
+
+    <p>Bored while coding? I got you</p>
+    <figure>
+        <img src="img/catmeme.png" alt="Cat Meme" title="This should be funny" width="500" height="250" loading="lazy">
+        <!--This tag embeds an image in the Web page.
+        The "src" attribute specifies the path to the image.
+        The "alt" attribute specifies the alternate text for the image, which can be read by the screen reader if the image cannot be displayed.
+        The "width" and "height" attributes of an image is highly recommended to be specified or else the image might flicker whenever loading.
+        The "loading" attribute specifies whether the Web browser should load the image immediately, which is "eager" (default value), or defer the loading until some conditions are met, which is "lazy".
+        SIDE NOTE: the Web page will load faster with "lazy" than with "eager" because it doesn't have to wait until all the images are loaded to completely load the whole page. -->
+        <figcaption>This should be cheering you up, but I am so corny *embarrassed*</figcaption>
+        <!--This tag adds a caption to the content. -->
+    </figure>
+    <!--This tag specifies the self-contained content, whose position is independent from the main flow of the Web page, which means the system can identify whatever elements between the <figure> tag are directly related. -->
+    <hr>
+
+    <ul>
+        <li>
+            Download an <a href="html5.png" download>HTML5 favicon</a>
+            <!--The "download" attribute is to download the content that the link represents. -->
+        </li>
+        <li>
+            Contact me at <a href="mailto:youremail@email.com">my email</a> or <a href="tel:+0000000000">my number</a>
+        </li>
+    </ul>
+
+    <hr>
+
+    &lt;&lt;&lt;&copy; <a href="about.html">Quyen Nguyen</a> &gt;&gt;&gt;
+    <p>
+        <a href="#">Back to Top</a>
+    </p>
+    <p>
+        <a href="/">Back to Home</a>
+    </p>
+
+</body>
 
 </html>
