@@ -1,26 +1,21 @@
 html {
-    font-size: 20px;
+    font-size: 22px;
 }
+
 body {
-    background-color: #333;
-    color: whitesmoke; 
+    min-height: 100vh;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+    border-left: 1px solid #333;
+    border-right: 1px solid #333;
 }
-a {
-    color: lightyellow;
-}
-a:visited {
-    color: gray;
-}
-a:hover, a:active {
-    color: lightcoral;
-}
-mark {
-    background-color: lightyellow;
-    color: black;
-}
-table, tr, th, td, caption {
-    border: 1px solid #eee;
+
+th,
+td,
+caption {
+    border: 1px solid #333;
     font-family: 'Courier New', Courier, monospace;
-    border-collapse: collapse;
+    border-collapse: separate;
     padding: 0.5rem;
 }
