@@ -54,5 +54,7 @@
 * https://youtu.be/kUMe1FH4CHE
 * https://developer.mozilla.org/en-US/docs/Web/HTML
 * Google Chrome Extension: HTML5 Outliner
+#### CSS:
+* https://youtu.be/1Rs2ND1ryYc
 
 ***
