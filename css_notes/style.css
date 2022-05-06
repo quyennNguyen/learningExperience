@@ -1,0 +1,139 @@
+/* WHAT IS CSS?
+    CSS, stands for Cascading Style Sheet, is a standard language used to give styling and design to websites.
+    While HTML forms the structural foundation of a Web page, CSS describes its presentation (colors, backgrounds, font sizes, layouts,...).
+    HTML and CSS usually go hand-in-hand.
+*/
+/* What is CSS Selector?
+    CSS Selectors are ways of grabbing and manipulating HTML elements.
+    Different seletors have different applications/purposes.
+        1. Universal Selector:
+        This selector selects and applies the style declaration to all elements on the Web page.
+        Syntax: * {
+                    properties;
+                }
+        2. Simple Selectors:
+            1. Element Selector:
+            By selecting the tag name of an element, the style declaration is applied to all elements with that tag name on the Web page.
+            Syntax: tag-name {
+                        properties;
+                    }
+            2. Class Selector:
+            By selecting a certain class name (with a "class" attribute), the style declaration is applied to only elements with that particular class name on the Web page.
+            This selector can be used multiple times.
+            Prefix: "."
+            Syntax: .class-name {
+                        properties;
+                    }
+            3. ID Selector:
+            By selecting a certain ID name (with an "id" attribute), the style declaration is applied to only elements with that particular id name on the Web page.
+            It is possible to use this selector more than once, but the convention says the id shoulld be unique for selected element.
+            Prefix: "#"
+            Syntax: #id-name {
+                        properties;
+                    }
+        3. Pseudo-Class Selector:
+        These selectors are used commonly in interactivity with the Web page.
+        A pseudo-class is a keyword added to a selector to specify a special state of the selected element.
+        The styling declaration is applied only when certain conditions are met.
+        Syntax: selector:pseudo-class {
+                    properties;
+                }
+        4. Advanced Selectors:
+        One selector can contain more than one simple selector.
+        A combinator is included to define the relationship between the selectors.
+            1. Adjacent Sibling Selector:
+            This selector selects and applies the styling declaration to an element that immediately follows another specified element.
+            Conditions: (1) the second element immediately follows the first element and (2) both elements are children of the same parent element.
+            Combinator: "+"
+            Syntax: selector1 + selector2 {
+                        properties;
+                    }
+            2. General Sibling Selector:
+            This selector selects and applies the styling declaration to all elements that follows a specified element.
+            Conditions: (1) the second element (not necessarily immediately) follows the first element and (2) both elements are children of the same parent element.
+            Combinator: "~"
+            Syntax: selector1 ~ selector2 {
+                        properties;
+                    }
+            3. Child Selector:
+            This selector selects and applies the styling declaration to all elements that are immediate/direct children of a specified element.
+            Combinator: ">"
+            Syntax: selector1 > selector2 {
+                        properties;
+                    }
+            4. Descendant Selector:
+            This selector selects and applies the styling declaration to all elements that are descendants (not immediate/direct children) of a specified element.
+            Syntax: selector1 selector2 {
+                        properties;
+                    }
+        5. Attribute Selector:
+        
+*/
+/* What is CSS Specificity?
+    If there are two or more CSS rules that point at the same element, the CSS selector with the highest specificity value will override the others, and its style declaration will be applied to that element.
+    Specificity Hierarchy: Element Selector (1) < Class Selector (10) < ID Selector (100) < Inline Style (1000)
+*/
+
+h1 {
+    color: red;
+} /* element selector */
+
+h2 {
+    color: yellow;
+} /* element selector */
+
+.subtitle {
+    color: blue;
+} /* class selector */
+
+#services {
+    color: green;
+} /* id selector */
+
+#contact-us {
+    color: pink;
+} /* id selector */
+
+h1:hover {
+    color: purple;
+} /* element selector with pseudo-class ":hover" */
+
+li:first-child {
+    color: blue;
+} /* element selector with pseudo-class ":first-child" */
+
+li:last-child {
+    color: orange;
+} /* element selector with pseudo-class ":last-child" */
+
+li:nth-child(2) {
+    color: brown;
+} /* element selector with pseudo-class ":nth-child(n)" */
+
+li:only-child {
+    color: gray;
+} /* element selector with pseudo-class ":only-child" */
+
+#google-link:link {
+    color: blueviolet;
+} /* id selector with pseudo-class ":link" */
+
+#google-link:visited {
+    color: yellowgreen;
+} /* id selector with pseudo-class ":visited" */
+
+h2 + a {
+    color: beige;
+} /* adjacent sibling selector */
+
+textarea ~ button {
+    color: purple;
+} /* general sibling selector */
+
+ul > li {
+    color: aqua;
+} /* child selector */
+
+ul li {
+    color: blanchedalmond;
+} /* descendant selector */
