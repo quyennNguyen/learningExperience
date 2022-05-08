@@ -53,10 +53,10 @@
 * https://www.udemy.com/
 #### HTML:
 * https://youtu.be/kUMe1FH4CHE
-* https://developer.mozilla.org/en-US/docs/Learn/HTML
+* https://developer.mozilla.org/en-US/docs/Web/HTML
 * Google Chrome Extension: HTML5 Outliner
 #### CSS:
 * https://youtu.be/1Rs2ND1ryYc
-* https://developer.mozilla.org/en-US/docs/Learn/CSS
+* https://developer.mozilla.org/en-US/docs/Web/CSS
 
 ***
