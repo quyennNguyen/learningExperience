@@ -60,3 +60,5 @@
 * https://developer.mozilla.org/en-US/docs/Web/CSS
 
 ***
+
+#### P/s: This journal changes along with my learning progress.
