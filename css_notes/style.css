@@ -3,137 +3,265 @@
     While HTML forms the structural foundation of a Web page, CSS describes its presentation (colors, backgrounds, font sizes, layouts,...).
     HTML and CSS usually go hand-in-hand.
 */
-/* What is CSS Selector?
-    CSS Selectors are ways of grabbing and manipulating HTML elements.
+/* WHATS ARE CSS SELECTORS AND PROPERTIES?
+    CSS rule consists of a selector and a style declaration block and is defined by:
+        SELECTOR {
+            PROPERTY: VALUE;
+        }
+    Selectors select the HTML elements that you want to style.
+    Style declaration block contains one or more style declarations, each of which consists of a property and a value, where you style the selected element.
     Different seletors have different applications/purposes.
-        1. Universal Selector:
+        I. Universal Selector:
         This selector selects and applies the style declaration to all elements on the Web page.
         Syntax: * {
-                    properties;
+                    property: value;
                 }
-        2. Simple Selectors:
+        II. Simple Selectors:
             1. Element Selector:
             By selecting the tag name of an element, the style declaration is applied to all elements with that tag name on the Web page.
             Syntax: tag-name {
-                        properties;
+                        property: value;
                     }
             2. Class Selector:
             By selecting a certain class name (with a "class" attribute), the style declaration is applied to only elements with that particular class name on the Web page.
             This selector can be used multiple times.
-            Prefix: "."
+            Prefix: "." period
             Syntax: .class-name {
-                        properties;
+                        property: value;
                     }
             3. ID Selector:
             By selecting a certain ID name (with an "id" attribute), the style declaration is applied to only elements with that particular id name on the Web page.
             It is possible to use this selector more than once, but the convention says the id shoulld be unique for selected element.
-            Prefix: "#"
+            Prefix: "#" hash
             Syntax: #id-name {
-                        properties;
+                        property: value;
                     }
-        3. Pseudo-Class Selector:
+        III. Pseudo Selectors:
         These selectors are used commonly in interactivity with the Web page.
-        A pseudo-class is a keyword added to a selector to specify a special state of the selected element.
-        The styling declaration is applied only when certain conditions are met.
-        Syntax: selector:pseudo-class {
-                    properties;
-                }
-        4. Advanced Selectors:
+            1. Pseudo-Element Selector:
+            A pseudo-element is a keyword added to a selector to style specified part(s) of the selected element.
+            Full list: https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements
+            Operator: "::" double colon
+            Syntax: selector::pseudo-element {
+                        property: value;
+                    }
+            2. Pseudo-Class Selector:
+            A pseudo-class is a keyword added to a selector to style a specified special state of the selected element.
+            Full list: https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes
+            Operator: ":" single colon
+            Syntax: selector:pseudo-class {
+                        property: value;
+                    }
+        IV. Attribute Selector:
+        This selector selects and applies the style declaration to all elements...
+            1. with a specified attribute:
+            Syntax: selector[attribute] {
+                        property: value;
+                    }
+            2. with a specified attribute whose value is exactly the specified "value":
+            Syntax: selector[attribute="value"] {
+                        property: value;
+                    }
+            3. with a specified attribute whose value is exactly the specified "value" or the specified "value" followed by "-":
+            Operator: "|" pipe
+            Syntax: selector[attribute|="value"] {
+                        property: value;
+                    }
+            4. with a specified attribute whose value contains a specified space-separated whole-word "value":
+            Operator: "~" tilde
+            Syntax: selector[attribute~="value"] {
+                        property: value;
+                    }
+            5. with a specified attribute whose value contains a specified "value", which is unnecessarily space-separated whole-word:
+            Operator: "*" asterisk
+            Syntax: selector[attribute*="value"] {
+                        property: value;
+                    }
+            6. with a specified attribute whose value starts with a specified "value", which is unnecessarily space-separated whole-word:
+            Operator: "^" caret
+            Syntax: selector[attribute^="value"] {
+                        property: value;
+                    }
+            7. with a specified attribute whose value ends with a specified "value", which is unnecessarily space-separated whole-word:
+            Operator: "$" dollar 
+            Syntax: selector[attribute$="value"] {
+                        property: value;
+                    }           
+        SIDE NOTE:
+                    add "i" or "I" before "]" for case-insensitivity
+                    add "s" or "S" before "]" for case-sensitivity
+        V. Advanced Selectors:
         One selector can contain more than one simple selector.
         A combinator is included to define the relationship between the selectors.
             1. Adjacent Sibling Selector:
-            This selector selects and applies the styling declaration to an element that immediately follows another specified element.
+            This selector selects and applies the style declaration to an element that immediately follows another specified element.
             Conditions: (1) the second element immediately follows the first element and (2) both elements are children of the same parent element.
-            Combinator: "+"
+            Combinator: "+" plus
             Syntax: selector1 + selector2 {
-                        properties;
+                        property: value;
                     }
             2. General Sibling Selector:
-            This selector selects and applies the styling declaration to all elements that follows a specified element.
-            Conditions: (1) the second element (not necessarily immediately) follows the first element and (2) both elements are children of the same parent element.
-            Combinator: "~"
+            This selector selects and applies the style declaration to all elements that follow a specified element.
+            Conditions: (1) the second element(s) (not necessarily immediately) follows the first element and (2) both elements are children of the same parent element.
+            Combinator: "~" tilde
             Syntax: selector1 ~ selector2 {
-                        properties;
+                        property: value;
                     }
             3. Child Selector:
-            This selector selects and applies the styling declaration to all elements that are immediate/direct children of a specified element.
-            Combinator: ">"
+            This selector selects and applies the style declaration to all elements that are immediate/direct children of a specified element.
+            Combinator: ">" greater than
             Syntax: selector1 > selector2 {
-                        properties;
+                        property: value;
                     }
             4. Descendant Selector:
-            This selector selects and applies the styling declaration to all elements that are descendants (not immediate/direct children) of a specified element.
+            This selector selects and applies the style declaration to all elements that are descendants (not immediate/direct children) of a specified element.
             Syntax: selector1 selector2 {
-                        properties;
+                        property: value;
                     }
-        5. Attribute Selector:
-        
+    SIDE NOTE: selectors with the same style definitions (properties) can be grouped together to minimize the code by using a comma "," to separate each of them. 
 */
-/* What is CSS Specificity?
+/* WHAT IS CSS SPECIFICITY?
     If there are two or more CSS rules that point at the same element, the CSS selector with the highest specificity value will override the others, and its style declaration will be applied to that element.
-    Specificity Hierarchy: Element Selector (1) < Class Selector (10) < ID Selector (100) < Inline Style (1000)
+    CSS Specificity Hierarchy: Universal Selector (+0) < Element Selector/Pseudo-Element Selector (+1) < Class Selector/Pseudo-Class Selector/Attribute Selectors (+10) < ID Selector (+100) < Inline Style/Contextual Style (+1000)
+*/
+/* CSS COLOR:
+    Three primary colors of light sources (at least determined by computer system) are Red - Green - Blue.
+    CSS colors can be specified in various ways:
+        1. predefined names
+        2. hex
+        Syntax: #rrggbb
+        Each parameter (rr, gg, bb) specifies the intensity of red, green, and blue, respectively, by hexadecimal values from 00 to ff.
+        3. rgb
+        Syntax: rgb(rrr, ggg, bbb)
+        Each parameter (rrr, ggg, and bbb) specifies the intensity of red, green, and blue, respectively, which ranges from 0 to 255.
+        4. hsl
+        Syntax: hsl(hue, saturation, lightness)
+        "hue" specifies the degree on the color wheel, which ranges from 0 to 360, where red is 0, green is 120, blue is 240.
+        "saturation" specifies a percentage of the color intensity, where 0% is a shade of gray, 100% is the pure color.
+        "lightness" specifies a percentage of the color lightness, where 0% is black, 50% is the pure color, 100% is white.
+        5. rgba & hsla:
+        Syntax:
+                rgba(rrr, ggg, bbb, aa)
+                hsla(hue, saturation, lightness, alpha)
+        "rgba" and "hsla" are extensions of "rgb" and "hsl" color values with an alpha channel.
+        "alpha" specifies the opacity/transparency of the color, which ranges from 0.0 to 1.0, where 0.0 is fully transparent, 1.0 is fully opaque.
+*/
+/* CSS GRADIENTS:
+    There are three types of gradients:
+        1. Linear Gradients:
+        Syntax: linear-gradient(direction/angle, color1, color2,...)
+        There should be at least 2 color stops.
+        "direction" can be to top, to bottom (default value), to left, to right, to top left, to top right, to bottom left, to bottom right.
+        "angle" ranges from 0deg to 360deg, where to top is 0deg, to right is 90deg, to bottom is 180deg (default value), to left is 270deg.
+        SIDE NOTE:
+                    add "repeating-" before the property to repeat the gradients
+                    add a percentage after the color stop to adjust the proportion of the color
+        2. Radial Gradients:
+        Syntax: radial-gradient(shape size at position, color1, color2,...)
+        There should be at least 2 color stops.
+        "shape" can be ellipse (default value), or circle.
+        "size" can be closest-side, farthest-side, closest-corner, farthest-corner (default value).
+        "position" as in CSS background-position
+        SIDE NOTE:
+                    add "repeating-" before the property to repeat the gradients
+                    add a percentage after the color stop to adjust the proportion of the color
+        3. Conic Gradients:
+        Syntax: conic-gradient(from angle at position, color1, color2,...)
+        There should be at least 2 color stops.
+        By default, "angle" is 0deg, "position" is center (50% 50%).
+        SIDE NOTE:
+                    add "repeating-" before the property to repeat the gradients
+                    add an angle after the color stop to adjust the proportion of the color
+                    add property "border-radius: 50%" to make the conic gradients as a pie
+*/
+/* CSS BACKGROUND:
+    Each CSS background serves a different application/purpose:
+        1. background: 
+        This type can be specified with any values.
+        This is also a shorthand property, where values of different background properties can be put in one declaration separated by whitespaces, or multiple background shorthand properties can be can be put in one declaration separated by commas, to shorten the code.
+        The property order of the shorthand property:
+            background-color
+            background-image
+            background-repeat
+            background-attachment
+            background-position
+        2. background-color:
+        Value as in CSS colors
+        3. background-image: 
+        Value: 
+                url("source/link/reference of the image")
+        4. background-repeat: 
+        Value:
+                repeat (default value)
+                no-repeat
+                repeat-x
+                repeat-y
+        5. background-attachment:
+        Value:
+                scroll (default value)
+                fixed
+        6. background-position:
+        Value can be specified in:
+            a. predefined names:
+            left top (default value), left bottom, right top, right bottom, center top, center bottom, center
+            SIDE NOTE: if only one keyword is specified, the other is center
+            b. percentage:
+            x% y%
+            "x" is the horizontal position, "y" is the vertical position, each of which ranges from 0% to 100%, where left top is 0% 0% (default value), right bottom is 100% 100%, center is 50% 50%.
+            SIDE NOTE: if only one coordinate is specified, the other is 50%
+            c. pixels:
+            xpx ypx
+            "x" is the horizontal position, "y" is the vertical position, where left top is 0px 0px (default value).
+        7. background-size:
+        Value can be specified in:
+            a. pixels:
+            xpx ypx
+            "x" is the width, "y" is the height
+            b. keywords:
+            cover, or contain
+        8. background-origin:
+        Value: 
+                border-box
+                padding-box (default value)
+                content-box
+        9. background-clip:
+        Value: 
+                border-box (default value)
+                padding-box 
+                content-box
+*/
+/* WHAT IS CSS UNITS?
+    CSS has different units for expressing a length.
+    Length is a number followed by a length unit, EX: 100px.
+    There are two types of length units:
+        1. Absolute Units:
+        These units are fixed, and the length expressed in these units appears exactly as that size.
+        EX: cm, mm, in, px, pc, pt, Q,...
+        2. Relative Units:
+        These units specify a length which scales relative to another length property.
+        EX: %, em, ex, ch, rem, lh, vw, vh, vmin, vmax,...
+    SIDE NOTE:
+                In computing, DPI, which stands for Dots Per Inch, is a measure of the number of dots that can be placed within a span of an inch, or the dot density, of digital printing/scanning devices, such as printer,... 
+                Similarly, PPI, which stands for Pixels Per Inch, is a measure of the pixel density of electronic image devices, such as television display, computer monitor, video, image,...
+                Either DPI or PPI can be used to describe the resolution of an output device. The higher the DPI or PPI, the higher the resolution, the sharper the output.
+                EX: The qualtity setting of a Youtube video can range from 144p, 240p, 360p, 480p, to 720p (HD), 1080p (FHD), 1440p (2K), 2160p (4K). These numbers specify the vertical resolution pixels of the video display (this is not the PPI but the number of pixels the display height has). As you set the higher quality, the video display appears smoother and clearer.
+                So, pixel is an absolute unit but relatively scale based on what output device you're on.
+                EX: The qualtity of a Youtube video is set at 2160p (4K), which means the video display has a resolution of 3840p (width) x 2160p (height), which is a fixed unit. However, the sharpness of the display might differ between when you set the display at full screen and when you set the display at theater mode. The resolution relatively scales based on the size of the display.
+    For more details: https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units
 */
 
-h1 {
-    color: red;
-} /* element selector */
+body {
+    background: rgb(204, 229, 255);
+}
 
-h2 {
-    color: yellow;
-} /* element selector */
+.title {
+    color: rgb(186, 133, 9);
+}
 
 .subtitle {
-    color: blue;
-} /* class selector */
+    color: rgb(200, 148, 30);
+}
 
-#services {
-    color: green;
-} /* id selector */
-
-#contact-us {
-    color: pink;
-} /* id selector */
-
-h1:hover {
-    color: purple;
-} /* element selector with pseudo-class ":hover" */
-
-li:first-child {
-    color: blue;
-} /* element selector with pseudo-class ":first-child" */
-
-li:last-child {
-    color: orange;
-} /* element selector with pseudo-class ":last-child" */
-
-li:nth-child(2) {
-    color: brown;
-} /* element selector with pseudo-class ":nth-child(n)" */
-
-li:only-child {
-    color: gray;
-} /* element selector with pseudo-class ":only-child" */
-
-#google-link:link {
-    color: blueviolet;
-} /* id selector with pseudo-class ":link" */
-
-#google-link:visited {
-    color: yellowgreen;
-} /* id selector with pseudo-class ":visited" */
-
-h2 + a {
-    color: beige;
-} /* adjacent sibling selector */
-
-textarea ~ button {
-    color: purple;
-} /* general sibling selector */
-
-ul > li {
-    color: aqua;
-} /* child selector */
-
-ul li {
-    color: blanchedalmond;
-} /* descendant selector */
+#service-image {
+    background: steelblue;
+}
