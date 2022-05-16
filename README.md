@@ -4,7 +4,7 @@
 
 #### ngl
 
-#### I’m as clueless as anyone else. Every day is a new lesson. Therefore, in this journal, I want to be crystal clear and note down how I learn to become a SELF-TAUGHT SOFTWARE DEVELOPER from SCRATCH, from A to Z, from 0 to infinite. I found this way fascinating and productive because I can keep track of my growth and reduce my severe procrastination.
+#### I’m as clueless as anyone else. Every day is a new lesson. Therefore, in this journal, I want to be crystal clear and note down how I learn to become a SELF-TAUGHT SOFTWARE DEVELOPER from SCRATCH. I found this way fascinating and productive because I can keep track of my growth and reduce my severe procrastination.
 
 ***
 
