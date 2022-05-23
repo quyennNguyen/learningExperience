@@ -1,13 +1,14 @@
 <!--WHAT IS HTML?
     HTML, stands for Hyper Text Markup Language, is the standard markup language/the most basic building block for creating the Web.
-    HTML defines the meaning and structure of the Web content. In the mean time (SIDE NOTE), CSS describes the Web appearance/presentation, and JavaScript defines the Web functionality/behavior.
+    HTML defines the meaning and structure of the Web content. In the mean time, CSS describes the Web appearance/presentation, and JavaScript defines the Web functionality/behavior.
     HYPERTEXT refers to links, the fundamental aspect of the Web, that connect Web pages to one another, either winthin a single website (link resources of the same Web pages) or between websites.
     MARKUP LANGUAGE is a computer language that annotates the Web content for display in the Web browser by using special elements. -->
 
 <!--WHAT ARE HTML ELEMENTS?
     HTML elements are defined by:
         <STARTING TAG> CONTENT </CLOSING TAG>.
-    SIDE NOTE: the word "element" and "tag" are usually used/called interchangably.
+    SIDE NOTE: 
+                The word "element" and "tag" are usually used/called interchangably.
     They tell the Web browser how to display the Web content.
     They can have attributes, which provide additional information about the elements.
     They are case insensitive.
@@ -47,10 +48,10 @@
         The "type" attribute specifies the media type of the linked content. -->
     <link rel="stylesheet" href="style.css" type="text/css">
     <!--SIDE NOTE:
-            There are three types of reference, which is used in "href" or "src" attribute:
-                1. The absolute reference is the full address of an external source hosted on a different Web server that the link leads to.
-                2. The relative reference is the address of the local source within the same Web server of the Web page that you are hosting.
-                3. The internal reference is the address to a source within the same Web page. -->
+                    There are three types of reference, which is used in "href" or "src" attribute:
+                        1. The absolute reference is the full address of an external source hosted on a different Web server that the link leads to.
+                        2. The relative reference is the address of the local source within the same Web server of the Web page that you are hosting.
+                        3. The internal reference is the address to a source within the same Web page. -->
 </head>
 
 <body>
@@ -62,8 +63,8 @@
         <p>Well, summer is coming up, and I haven't figured out what kind of shits I should be doing.</p>
         <!--This tag sepcifies the paragraph of the Web page.
             SIDE NOTE:
-                Space collapsing happens when no matter how many lines or whitespaces you space between <p> tag, they won't be represented on the Web page.
-                The "&nbsp;" HTML entity can be used to add white spaces. -->
+                        Space collapsing happens when no matter how many lines or whitespaces you space between <p> tag, they won't be represented on the Web page.
+                        The "&nbsp;" HTML entity can be used to add white spaces. -->
         <nav aria-label="primary-navigation">
             <ul>
                 <li>
@@ -92,7 +93,7 @@
     <main>
         <article id="study">
             <h3>STUDY</h3>
-            <section id="frontend">
+            <section id="front-end">
                 <p>
                     Front-End
                 <ol>
@@ -102,7 +103,7 @@
                 </ol>
                 </p>
             </section>
-            <section id="backend">
+            <section id="back-end">
                 <p>
                     Back-End
                 <ol>
@@ -184,7 +185,8 @@
                 The "scope" attribute specifies whether a header cell is a header for a column, row, or group of columns or rows.
                 The "colspan" attribute specifies the number of columns the table cell should span.
                 The "rowspan" attribute specifies the number of rows the table cell should span.
-                SIDE NOTE: although some tags or attributes might have no visual effect on the Web browser, they help the screen reader manage the content. -->
+                SIDE NOTE:
+                            Although some tags or attributes might have no visual effect on the Web browser, they help the screen reader manage the content. -->
         </article>
         <!--The "article" tag specifies an independent self-contained content, which distributes a clear topic/meaning, and can have mulitple sections within.
             The "section" tag specifies a section of the Web page, which is similar to <article> tag but has a more generic meaning.
@@ -248,7 +250,8 @@
                     The "alt" attribute specifies the alternate text for the image, which can be read by the screen reader if the image cannot be displayed.
                     The "width" and "height" attributes of an image is highly recommended to be specified or else the image might flicker whenever loading.
                     The "loading" attribute specifies whether the Web browser should load the image immediately, which is "eager" (default value), or defer the loading until some conditions are met, which is "lazy".
-                    SIDE NOTE: the Web page will load faster with "lazy" than with "eager" because it doesn't have to wait until all the images are loaded to completely load the whole page. -->
+                    SIDE NOTE: 
+                                The Web page will load faster with "lazy" than with "eager" because it doesn't have to wait until all the images are loaded to completely load the whole page. -->
                 <figcaption>
                     <em>Did I get you?</em>
                     <!--The "em" tag specifies content with strong imporance, typically in italics. -->
@@ -271,12 +274,12 @@
                 <fieldset>
                     <legend>Personal Information</legend>
                     <p>
-                        <label for="firstName">First Name:</label>
-                        <input type="text" name="firstName" id="firstName" placeholder="Jane" autocomplete="on" required>
+                        <label for="first-name">First Name:</label>
+                        <input type="text" name="first-name" id="first-name" placeholder="Jane" autocomplete="on" required>
                     </p>
                     <p>
-                        <label for="lastName">Last Name:</label>
-                        <input type="text" name="lastName" id="lastName" placeholder="Doe" autocomplete="on" required>
+                        <label for="last-name">Last Name:</label>
+                        <input type="text" name="last-name" id="last-name" placeholder="Doe" autocomplete="on" required>
                     </p>
                     <p>
                         <label for="password">Passowrd:</label>
@@ -299,12 +302,12 @@
                         <label for="pho">Pho</label>
                     </p>
                     <p>
-                        <input type="radio" name="food" id="banhMi" value="banhMi">
-                        <label for="banhMi">Banh Mi</label>
+                        <input type="radio" name="food" id="banh-mi" value="banh-mi">
+                        <label for="banh-mi">Banh Mi</label>
                     </p>
                     <p>
-                        <input type="radio" name="food" id="otherFood" value="otherFood">
-                        <label for="otherFood">Other</label>
+                        <input type="radio" name="food" id="other-food" value="other-food">
+                        <label for="other-food">Other</label>
                     </p>
                 </fieldset>
                 <br>
@@ -356,8 +359,8 @@
                         <label for="cat">Cat</label>
                     </p>
                     <p>
-                        <input type="checkbox" name="pet" id="otherPet" value="otherPet">
-                        <label for="otherPet">Other</label>
+                        <input type="checkbox" name="pet" id="other-pet" value="other-pet">
+                        <label for="other-pet">Other</label>
                     </p>
                 </fieldset>
                 <br>
@@ -372,7 +375,6 @@
                 <button type="submit" formaction="https://httpbin.org/post" formmethod="post">Post</button>
                 <button type="reset">Reset</button>
             </form>
-            <!--autofocus-->
         </article>
         <hr>
     </main>
@@ -380,7 +382,7 @@
     <footer>
         <p>
             &lt;&lt;&lt;&copy;
-            <a href="about_me.html">Quyen Nguyen</a>
+            <a href="about-me.html">Quyen Nguyen</a>
             &gt;&gt;&gt;
         </p>
         <p>
