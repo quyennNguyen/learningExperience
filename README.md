@@ -1,10 +1,7 @@
 # *ABOUT ME*
 
-#### Like many other kids, I started by attending community college with major in Computer Science, where I learned the basics, a bit of Java, and a bit of Data Structure. Later on, I transferred to university to continue my major, but not long after that, I decided to do the boldest thing I’ve ever done in my life, DROPPING OUT. Of course, there were a lot of conflicts. But I genuinely think that school is not for me. Two main reasons: it is tedious and it ends up with an overwhelming debt.
-
-#### ngl
-
-#### I’m as clueless as anyone else. Every day is a new lesson. Therefore, in this journal, I want to be crystal clear and note down how I learn to become a SELF-TAUGHT SOFTWARE DEVELOPER from SCRATCH. I found this way fascinating and productive because I can keep track of my growth and cure my severe procrastination.
+#### Like many other kids, I started by attending community college with major in Computer Science, where I learned the basics, a bit of Java, and a bit of Data Structure. Later on, I transferred to university to continue my major. But not long after that, I decided to do the boldest thing I’ve ever done in my life, DROPPING OUT. Of course, there were a lot of conflicts. But I genuinely think that school is not for me. Two main reasons: it is tedious and it ends up with an overwhelming debt.
+#### Frankly, I’m as clueless as anyone else. Every day is a new lesson. Therefore, in this journal, I want to be crystal clear and note down how I learn to become a SELF-TAUGHT SOFTWARE DEVELOPER from SCRATCH. I found this way fascinating and productive because I can keep track of my growth and cure my severe procrastination.
 
 ***
 
@@ -20,17 +17,16 @@
 
 # *WHAT TO LEARN?*
 
-#### Having a clear study plan can be very crucial. Depending on your specialty, preference,..., the study plan might vary. For me, I'm planning to pursue the Web Development route as it interests me the most as a beginner.
+#### Having a clear study plan is very crucial. Depending on your specialty, preference,..., the study plan might vary. As for me, I'm pursuing the Web Development route as it interests me the most as a beginner.
 #### Generally, there are two main categories:
 
 ### _How the Computer System Works_
-#### I've been using this book, [Computer Science Illuminated.pdf]
+#### You can find some fascinating basics of Computer Science from this following book, [Computer Science Illuminated.pdf]
 * https://github.com/quyennNguyen/learningExperience/files/8527263/Computer.Science.Illuminated.pdf
-#### This book provides me with the basics/foundation of Computer Science, which I think is very fundamental for every tech-related field. This is not the exact version of the book I learned in school, but I found this free pdf file of its older version, which is quite outdated but still greatly informative.
 
 ### _The Applications of Computer:_
-#### This is where I learn how to use the computer as a tool to solve real-world problems.
-#### Generally, the Wed Development route can be divided into two main aspects:
+#### The ultimate goal of learning Computer Science is to solve real-world problems. Then again, depending on your preference, your study approach might vary.
+#### As for me, in order to become a Web Developer, I need to know a few basics of:
 1. FRONT END:
    * HTML
    * CSS
@@ -47,18 +43,21 @@
 
 # *RESOURCES*
 
-#### Common Sources:
+#### Generic Sources:
 * https://www.w3schools.com/
 * https://www.freecodecamp.org/learn/
+* https://www.codecademy.com/
 * https://www.udemy.com/
 #### HTML:
 * https://youtu.be/kUMe1FH4CHE
 * https://developer.mozilla.org/en-US/docs/Web/HTML
 * Google Chrome Extension: HTML5 Outliner
+* Check out my html_notes
 #### CSS:
 * https://youtu.be/1Rs2ND1ryYc
 * https://developer.mozilla.org/en-US/docs/Web/CSS
+* Check out my css_notes
 
 ***
 
-#### P/s: This journal changes along with my learning progress.
+#### P/s: This journal might change side by side with my learning progress.
