@@ -1,9 +1,9 @@
+<!--THIS NOTE HAS REFERENCE FROM https://youtu.be/kUMe1FH4CHE -->
 <!--WHAT IS HTML?
     HTML, stands for Hyper Text Markup Language, is the standard markup language/the most basic building block for creating the Web.
     HTML defines the meaning and structure of the Web content. In the mean time, CSS describes the Web appearance/presentation, and JavaScript defines the Web functionality/behavior.
     HYPERTEXT refers to links, the fundamental aspect of the Web, that connect Web pages to one another, either winthin a single website (link resources of the same Web pages) or between websites.
     MARKUP LANGUAGE is a computer language that annotates the Web content for display in the Web browser by using special elements. -->
-
 <!--WHAT ARE HTML ELEMENTS?
     HTML elements are defined by:
         <STARTING TAG> CONTENT </CLOSING TAG>.
@@ -18,9 +18,30 @@
         2. Block-level elements are included with extra spaces/lines/breaks around them.
         3. In-line-level elements are not included with spaces around them.
         4. Semantic elements clearly define its meaning/content to both the Web browser and the developer, unlike generic dividers. Although there are no visible difference on the UI between semantic elements and generic elements, semantic elements play a big impact on the Web browser interpretation and the system technologies.
+    Although some tags or attributes might have no visual effect on the Web browser, they help the screen reader manage the content.
     Full list of HTML Elements/Tags: https://developer.mozilla.org/en-US/docs/Web/HTML/Element
     Full list of HTMl Attributes: https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes & https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes -->
-    
+<!--WHAT IS THE BASIC OUTLINE OF AN HTML DOCUMENT?
+    <!DOCTYPE html>
+    <html>
+        <head>
+            metadata of the document
+        </head>
+        <body>
+            visible contents of the document, which can be structured as:
+                <header>
+                    content
+                </header>
+                <main>
+                    content
+                </main>
+                <footer>
+                    content
+                </footer>                
+        </body>
+    </html>
+-->
+
 <!DOCTYPE html>
 <!--This tag declares the document type of the Web page.
     !DOCTYPE represents HTML5 -->
@@ -184,13 +205,8 @@
                 The "td" tag specifies table cell.
                 The "scope" attribute specifies whether a header cell is a header for a column, row, or group of columns or rows.
                 The "colspan" attribute specifies the number of columns the table cell should span.
-                The "rowspan" attribute specifies the number of rows the table cell should span.
-                SIDE NOTE:
-                            Although some tags or attributes might have no visual effect on the Web browser, they help the screen reader manage the content. -->
+                The "rowspan" attribute specifies the number of rows the table cell should span. -->
         </article>
-        <!--The "article" tag specifies an independent self-contained content, which distributes a clear topic/meaning, and can have mulitple sections within.
-            The "section" tag specifies a section of the Web page, which is similar to <article> tag but has a more generic meaning.
-            The "id" attribute specifies a unique identity for the element. -->
         <hr>
         <article id="vacation">
             <h3>VACATION</h3>
@@ -377,6 +393,8 @@
             </form>
         </article>
         <hr>
+        <!--The "article" tag specifies an independent self-contained content, which distributes a clear topic/meaning, and can have mulitple sections within.
+            The "section" tag specifies a section of the Web page, which is similar to <article> tag but has a more generic meaning. -->
     </main>
 
     <footer>
