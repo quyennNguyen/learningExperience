@@ -1,16 +1,17 @@
-/* WHAT IS CSS?
+/*THIS NOTE HAS REFERENCE FROM https://youtu.be/1Rs2ND1ryYc */
+/*WHAT IS CSS?
     CSS, stands for Cascading Style Sheet, is a standard language used to give styling and design to websites.
     While HTML forms the structural foundation of a Web page, CSS describes its presentation (colors, backgrounds, font sizes, layouts,...).
     HTML and CSS usually go hand-in-hand.
 */
-/* WHATS ARE CSS SELECTORS AND PROPERTIES?
+/*WHATS ARE CSS SELECTORS AND PROPERTIES?
     CSS rule consists of a selector and a style declaration block and is defined by:
         SELECTOR {
             PROPERTY: VALUE;
         }
     Selectors select the HTML elements that you want to style.
     Style declaration block contains one or more style declarations, each of which consists of a property and a value, where you style the selected element.
-    Different seletors have different applications/purposes.
+    CSS SELECTORS:
         I. Universal Selector:
         This selector selects and applies the style declaration to all elements on the Web page.
         Syntax: * {
@@ -91,7 +92,7 @@
                     add "i" or "I" before "]" for case-insensitivity
                     add "s" or "S" before "]" for case-sensitivity
         V. Advanced Selectors:
-        One selector can contain more than one simple selector.
+        More than one selector can be grouped together.
         A combinator is included to define the relationship between the selectors.
             1. Adjacent Sibling Selector:
             This selector selects and applies the style declaration to an element that immediately follows another specified element.
@@ -118,121 +119,34 @@
             Syntax: selector1 selector2 {
                         property: value;
                     }
-    SIDE NOTE: selectors with the same style definitions (properties) can be grouped together to minimize the code by using a comma "," to separate each of them. 
-*/
-/* WHAT IS CSS SPECIFICITY?
-    If there are two or more CSS rules that point at the same element, the CSS selector with the highest specificity value will override the others, and its style declaration will be applied to that element.
-    CSS Specificity Hierarchy: Universal Selector (+0) < Element Selector/Pseudo-Element Selector (+1) < Class Selector/Pseudo-Class Selector/Attribute Selectors (+10) < ID Selector (+100) < Inline Style/Contextual Style (+1000)
-*/
-/* CSS COLOR:
-    Three primary colors of light sources (at least determined by computer system) are Red - Green - Blue.
-    CSS colors can be specified in various ways:
-        1. predefined names
-        2. hex
-        Syntax: #rrggbb
-        Each parameter (rr, gg, bb) specifies the intensity of red, green, and blue, respectively, by hexadecimal values from 00 to ff.
-        3. rgb
-        Syntax: rgb(rrr, ggg, bbb)
-        Each parameter (rrr, ggg, and bbb) specifies the intensity of red, green, and blue, respectively, which ranges from 0 to 255.
-        4. hsl
-        Syntax: hsl(hue, saturation, lightness)
-        "hue" specifies the degree on the color wheel, which ranges from 0 to 360, where red is 0, green is 120, blue is 240.
-        "saturation" specifies a percentage of the color intensity, where 0% is a shade of gray, 100% is the pure color.
-        "lightness" specifies a percentage of the color lightness, where 0% is black, 50% is the pure color, 100% is white.
-        5. rgba & hsla:
-        Syntax:
-                rgba(rrr, ggg, bbb, aa)
-                hsla(hue, saturation, lightness, alpha)
-        "rgba" and "hsla" are extensions of "rgb" and "hsl" color values with an alpha channel.
-        "alpha" specifies the opacity/transparency of the color, which ranges from 0.0 to 1.0, where 0.0 is fully transparent, 1.0 is fully opaque.
-*/
-/* CSS GRADIENTS:
-    There are three types of gradients:
-        1. Linear Gradients:
-        Syntax: linear-gradient(direction/angle, color1, color2,...)
-        There should be at least 2 color stops.
-        "direction" can be to top, to bottom (default value), to left, to right, to top left, to top right, to bottom left, to bottom right.
-        "angle" ranges from 0deg to 360deg, where to top is 0deg, to right is 90deg, to bottom is 180deg (default value), to left is 270deg.
+    CSS SPECIFICITY:
+        If there are two or more CSS rules that point at the same element, the CSS selector with the highest specificity value will override the others, and its style declaration will be applied to that element.
+        CSS Specificity Hierarchy: 
+            Universal Selector (+0)
+            Element Selector/Pseudo-Element Selector (+1)
+            Class Selector/Pseudo-Class Selector/Attribute Selectors (+10)
+            ID Selector (+100)
+            Inline Style/Contextual Style (+1000)
         SIDE NOTE:
-                    add "repeating-" before the property to repeat the gradients
-                    add a percentage after the color stop to adjust the proportion of the color
-        2. Radial Gradients:
-        Syntax: radial-gradient(shape size at position, color1, color2,...)
-        There should be at least 2 color stops.
-        "shape" can be ellipse (default value), or circle.
-        "size" can be closest-side, farthest-side, closest-corner, farthest-corner (default value).
-        "position" as in CSS background-position
-        SIDE NOTE:
-                    add "repeating-" before the property to repeat the gradients
-                    add a percentage after the color stop to adjust the proportion of the color
-        3. Conic Gradients:
-        Syntax: conic-gradient(from angle at position, color1, color2,...)
-        There should be at least 2 color stops.
-        By default, "angle" is 0deg, "position" is center (50% 50%).
-        SIDE NOTE:
-                    add "repeating-" before the property to repeat the gradients
-                    add an angle after the color stop to adjust the proportion of the color
-                    add property "border-radius: 50%" to make the conic gradients as a pie
+                    Inline Style/Contextual Style means instead of having CSS rules written
+                        1. in a seperate CSS file
+                        2. in the <style> tag in the <head> tag of the HTML document
+                        Syntax: <head>
+                                    <style>
+                                        CSS rules
+                                    </style>
+                                </head>
+                    for the styling of the HTML document, you can apply the CSS rules directly into the HTML tag by using the "style" attribute.
+                    Syntax: <start-tag style="CSS rule"> content </end-tag>
+    CSS PROPERTIES:
+        Shorthand Properties are properties that can set values of multiples other properties simultaneously in one whitespace-seperated style declaration, which usually have a specific order for the values, to obtain more concise code.
+        There are some special values built in every properties:
+            1. initial: to set the property to its default value
+            2. inherit: to inherit the property from its parent element
 */
-/* CSS BACKGROUND:
-    Each CSS background serves a different application/purpose:
-        1. background: 
-        This type can be specified with any values.
-        This is also a shorthand property, where values of different background properties can be put in one declaration separated by whitespaces, or multiple background shorthand properties can be can be put in one declaration separated by commas, to shorten the code.
-        The property order of the shorthand property:
-            background-color
-            background-image
-            background-repeat
-            background-attachment
-            background-position
-        2. background-color:
-        Value as in CSS colors
-        3. background-image: 
-        Value: 
-                url("source/link/reference of the image")
-        4. background-repeat: 
-        Value:
-                repeat (default value)
-                no-repeat
-                repeat-x
-                repeat-y
-        5. background-attachment:
-        Value:
-                scroll (default value)
-                fixed
-        6. background-position:
-        Value can be specified in:
-            a. predefined names:
-            left top (default value), left bottom, right top, right bottom, center top, center bottom, center
-            SIDE NOTE: if only one keyword is specified, the other is center
-            b. percentage:
-            x% y%
-            "x" is the horizontal position, "y" is the vertical position, each of which ranges from 0% to 100%, where left top is 0% 0% (default value), right bottom is 100% 100%, center is 50% 50%.
-            SIDE NOTE: if only one coordinate is specified, the other is 50%
-            c. pixels:
-            xpx ypx
-            "x" is the horizontal position, "y" is the vertical position, where left top is 0px 0px (default value).
-        7. background-size:
-        Value can be specified in:
-            a. pixels:
-            xpx ypx
-            "x" is the width, "y" is the height
-            b. keywords:
-            cover, or contain
-        8. background-origin:
-        Value: 
-                border-box
-                padding-box (default value)
-                content-box
-        9. background-clip:
-        Value: 
-                border-box (default value)
-                padding-box 
-                content-box
-*/
-/* WHAT IS CSS UNITS?
-    CSS has different units for expressing a length.
+/*WHAT ARE CSS UNITS?
     Length is a number followed by a length unit, EX: 100px.
+    One length can be specified in various units.
     There are two types of length units:
         1. Absolute Units:
         These units are fixed, and the length expressed in these units appears exactly as that size.
@@ -249,19 +163,227 @@
                 EX: The qualtity of a Youtube video is set at 2160p (4K), which means the video display has a resolution of 3840p (width) x 2160p (height), which is a fixed unit. However, the sharpness of the display might differ between when you set the display at full screen and when you set the display at theater mode. The resolution relatively scales based on the size of the display.
     For more details: https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units
 */
+/*WHAT IS CSS COLOR?
+    Three primary colors of light sources (at least determined by computer system) are Red - Green - Blue.
+    One CSS colors can be specified in various ways:
+        1. predefined names
+        2. hex:
+        Syntax: #rrggbb
+        Each parameter (rr, gg, bb) specifies the intensity of red, green, and blue, respectively, by hexadecimal values from 00 to ff.
+        3. rgb:
+        Syntax: rgb(rrr, ggg, bbb)
+        Each parameter (rrr, ggg, and bbb) specifies the intensity of red, green, and blue, respectively, which ranges from 0 to 255.
+        4. hsl:
+        Syntax: hsl(hue, saturation, lightness)
+        "hue" specifies the degree on the color wheel, which ranges from 0 to 360, where red is 0, green is 120, blue is 240.
+        "saturation" specifies a percentage of the color intensity, where 0% is a shade of gray, 100% is the pure color.
+        "lightness" specifies a percentage of the color lightness, where 0% is black, 50% is the pure color, 100% is white.
+        5. rgba & hsla:
+        Syntax:
+                rgba(rrr, ggg, bbb, aa)
+                hsla(hue, saturation, lightness, alpha)
+        "rgba" and "hsla" are extensions of "rgb" and "hsl" color values with an alpha channel.
+        "alpha" specifies the opacity/transparency of the color, which ranges from 0.0 to 1.0, where 0.0 is fully transparent, 1.0 is fully opaque.
+*/
+/*WHAT ARE CSS GRADIENTS?
+    1. linear-gradient(direction/angle, color1, color2,...)
+    There should be at least 2 color stops.
+    "direction" can be to top, to bottom (default value), to left, to right, to top left, to top right, to bottom left, to bottom right.
+    "angle" ranges from 0deg to 360deg, where to top is 0deg, to right is 90deg, to bottom is 180deg (default value), to left is 270deg.
+    SIDE NOTE:
+                add "repeating-" before the property to repeat the gradients
+                add a percentage after the color stop to adjust the proportion of the color
+    2. radial-gradient(shape size at position, color1, color2,...)
+    There should be at least 2 color stops.
+    "shape" can be ellipse (default value), or circle.
+    "size" can be closest-side, farthest-side, closest-corner, farthest-corner (default value).
+    "position" as in CSS background-position
+    SIDE NOTE:
+                add "repeating-" before the property to repeat the gradients
+                add a percentage after the color stop to adjust the proportion of the color
+    3. conic-gradient(from angle at position, color1, color2,...)
+    There should be at least 2 color stops.
+    By default, "angle" is 0deg, "position" is center (50% 50%).
+    SIDE NOTE:
+                add "repeating-" before the property to repeat the gradients
+                add an angle after the color stop to adjust the proportion of the color
+                add property "border-radius: 50%" to make the conic gradients as a pie
+*/
+/*WHAT IS CSS BACKGROUND?
+    1. background:
+    This is a shorthand property.
+    Order:
+            background-color
+            background-image
+            background-repeat
+            background-attachment
+            background-position
+    2. background-color:
+    Value as in CSS colors
+    3. background-image: 
+    Value: 
+            url("source/link/reference of the image")
+    4. background-repeat: 
+    Value:
+            repeat (default value)
+            no-repeat
+            repeat-x
+            repeat-y
+    5. background-attachment:
+    Value:
+            scroll (default value)
+            fixed
+    6. background-position:
+    Value can be specified in various ways:
+        a. predefined names:
+        left top (default value), left bottom, right top, right bottom, center top, center bottom, center
+        SIDE NOTE: 
+                    If only one keyword is specified, the other is center.
+        b. percentage:
+        x% y%
+        "x" is the horizontal position, "y" is the vertical position, each of which ranges from 0% to 100%, where left top is 0% 0% (default value), right bottom is 100% 100%, center is 50% 50%.
+        SIDE NOTE: 
+                    If only one coordinate is specified, the other is 50%.
+        c. pixels:
+        xpx ypx
+        "x" is the horizontal position, "y" is the vertical position, where left top is 0px 0px (default value).
+    7. background-size:
+    Value can be specified in various ways:
+        a. pixels:
+        xpx ypx
+        "x" is the width, "y" is the height
+        b. keywords:
+        cover, or contain
+    8. background-origin:
+    Value: 
+            border-box
+            padding-box (default value)
+            content-box
+    9. background-clip:
+    Value: 
+            border-box (default value)
+            padding-box 
+            content-box
+*/
+/*WHAT IS CSS TEXT MANIPULATION?
+    1. text-align:
+    Value:
+            center
+            justify
+            left (default value)
+            right
+            start
+            end
+    "text-align-last" can specify the alignment of the last line of a text.
+    2. text-decoration:
+    This is a shorthand property.
+    Order:
+        a. text-decoration-line (required):
+        Value:
+                none
+                underline (default value)
+                line-through
+                overline
+        b. text-decoration-color (optional):
+        Value as in CSS colors
+        c. text-decoration-style (optional):
+        Value:
+                none
+                solid
+                double
+                dotted
+                dashed
+                wavy
+        d. text-decoration-thickness (optional)
+    3. text-transform:
+    Value:
+            capitalize
+            uppercase
+            lowercase
+    4. direction:
+    Value:
+            ltr (default value)
+            rtl
+    "unicode-bidi" is used hand-in-hand with "direction" to set or return whether the text should be overridden to support mulitple languages in the same Web page
+    Value:
+            normal (default value)
+            embed
+            bidi-override
+            isolate
+            isolate-override
+            plaintext
+*/
+/*WHAT IS CSS FONT MANIPULATION?
+    "font" is a shorthand property.
+    Order:
+        1. font-style (optional):
+        Value:
+                normal
+                italic
+                oblique
+        2. font-variant (optional):
+        Value:
+                normal
+                small-caps
+        3. font-weight (optional):
+        Value:
+                normal
+                lighter
+                bold
+                bolder
+                a number range from 100 to 900
+        4. font-size (required):
+        Value can be specified in:
+            a. predefined names:
+            xx-small, x-small, small, smaller, medium, large, larger, x-large, xx-large
+            b. absolute size:
+            This sets the text to a specified fixed size.
+            This does not allow user to change the text size in the Web browser, which is not good for accessibility reasons.
+            This is only useful when the physical size of the output is known.
+            c. relative size:
+            This sets the text to a relative size based on the surrounding elements.
+            This allows user to change the text size in the Web browser.
+        By default, the font size is 1em = 16px.
+        SIDE NOTE:
+                    "em" indicates the font size of the element and is a relative unit, where x em means x times the size of the current font.
+                    Setting font size with "em" or "px" allows user to adjust the text size or resize the Web page by zoom tool.
+        SIDE NOTE: 
+                    In some older Web browsers, there is a problem where the text becomes larger or smaller than it should when adjusted.
+                    To solve that problem, set a default font-size in percentage in the "body"
+                        body {
+                            font-size: 100%;
+                        }
+                    This allows the text to be shown the same in all Web browsers as well as allows all Web browsers to zoom or resize the text.
+        5. font-family (required):
+        There are five generic font families: serif, sans-serif, monospace, cursive, fantasy.
+        Each font family is a collection of different font names with similar features.
+        Value:
+                font-name-1, font-name-2,..., font-family
+        Web Safe Fonts are fonts that are universally installed across all browsers.
+        Some commonly used are:
+            Arial (sans-serif)
+            Verdana (sans-serif)
+            Helvetica (sans-serif)
+            Tahoma (sans-serif)
+            Trebuchet MS (sans-serif)
+            Times New Roman (serif)
+            Georgia (serif)
+            Garamond (serif)
+            Courier New (monospace)
+            Brush Script MT (cursive)
+        Fallback Fonts are fonts that are similar to the first declared font in the same font family and added as backup fonts. If the first declared one is not found or not installed properly, the Web browser will try the following one, and the one after, and so on. It is highly suggested to declare more than one font and end the list with the generic font family name.
+        Standard Fonts: https://www.w3schools.com/css/css_font.asp
+        External Fonts: https://fonts.google.com/
+*/
+/*WHAT IS THE BOX MODEL IN CSS DESIGN AND LAYOUT?
+    CSS Box Model is a series of positioning properties designed to layout HTML elements. Think of it like an invisible box that wraps around every HTML element and is layered like an onion. Different layers are sized by using different properties.
+    From outer to inner, there are:
+        Margin - sized by "margin"
+            Border - sized by "border"
+                Padding - sized by "padding"
+                    Content - sized by "width" and "height"
+*/
 
 body {
-    background: rgb(204, 229, 255);
-}
-
-.title {
-    color: rgb(186, 133, 9);
-}
-
-.subtitle {
-    color: rgb(200, 148, 30);
-}
-
-#service-image {
-    background: steelblue;
+    
 }
