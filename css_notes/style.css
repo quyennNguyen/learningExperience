@@ -165,8 +165,8 @@
 */
 /*WHAT IS CSS COLOR?
     Three primary colors of light sources (at least determined by computer system) are Red - Green - Blue.
-    One CSS colors can be specified in various ways:
-        1. predefined names
+    One CSS color can be specified in various ways:
+        1. predefined name
         2. hex:
         Syntax: #rrggbb
         Each parameter (rr, gg, bb) specifies the intensity of red, green, and blue, respectively, by hexadecimal values from 00 to ff.
@@ -185,7 +185,7 @@
         "rgba" and "hsla" are extensions of "rgb" and "hsl" color values with an alpha channel.
         "alpha" specifies the opacity/transparency of the color, which ranges from 0.0 to 1.0, where 0.0 is fully transparent, 1.0 is fully opaque.
 */
-/*WHAT ARE CSS GRADIENTS?
+/*WHAT ARE CSS GRADIENT?
     1. linear-gradient(direction/angle, color1, color2,...)
     There should be at least 2 color stops.
     "direction" can be to top, to bottom (default value), to left, to right, to top left, to top right, to bottom left, to bottom right.
@@ -210,62 +210,52 @@
                 add property "border-radius: 50%" to make the conic gradients as a pie
 */
 /*WHAT IS CSS BACKGROUND?
-    1. background:
-    This is a shorthand property.
+    "background" is a shorthand property.
     Order:
-            background-color
-            background-image
-            background-repeat
-            background-attachment
-            background-position
-    2. background-color:
-    Value as in CSS colors
-    3. background-image: 
-    Value: 
-            url("source/link/reference of the image")
-    4. background-repeat: 
-    Value:
-            repeat (default value)
-            no-repeat
-            repeat-x
-            repeat-y
-    5. background-attachment:
-    Value:
-            scroll (default value)
-            fixed
-    6. background-position:
-    Value can be specified in various ways:
-        a. predefined names:
-        left top (default value), left bottom, right top, right bottom, center top, center bottom, center
-        SIDE NOTE: 
-                    If only one keyword is specified, the other is center.
-        b. percentage:
-        x% y%
-        "x" is the horizontal position, "y" is the vertical position, each of which ranges from 0% to 100%, where left top is 0% 0% (default value), right bottom is 100% 100%, center is 50% 50%.
-        SIDE NOTE: 
-                    If only one coordinate is specified, the other is 50%.
-        c. pixels:
-        xpx ypx
-        "x" is the horizontal position, "y" is the vertical position, where left top is 0px 0px (default value).
-    7. background-size:
-    Value can be specified in various ways:
-        a. pixels:
-        xpx ypx
-        "x" is the width, "y" is the height
-        b. keywords:
-        cover, or contain
-    8. background-origin:
-    Value: 
-            border-box
-            padding-box (default value)
-            content-box
-    9. background-clip:
-    Value: 
-            border-box (default value)
-            padding-box 
-            content-box
+        1. background-color:
+        Value as in CSS colors
+        2. background-image: 
+        Value: 
+                url("source/link/reference of the image")
+        3. background-repeat: 
+        Value:
+                repeat (default value)
+                no-repeat
+                repeat-x
+                repeat-y
+        4. background-attachment:
+        Value:
+                scroll (default value)
+                fixed
+        5. background-position:
+        Value can be specified in:
+            a. predefined values:
+            left top (default value), left bottom, right top, right bottom, center top, center bottom, center
+            b. length (in percentage):
+            x% y%
+            "x" is the horizontal position, "y" is the vertical position, each of which ranges from 0% to 100%, where left top is 0% 0% (default value), right bottom is 100% 100%, center is 50% 50%.
+            c. length (in pixels):
+            xpx ypx
+            "x" is the horizontal position, "y" is the vertical position, where left top is 0px 0px (default value).
+        6. background-size (not in shorthand property order):
+        Value can be specified in:
+            a. predefined values:
+            cover, contain
+            b. length:
+            x+unit of choice (EX: px, %, vw,...) y+unit of choice (EX: px, %, vw,...)
+            "x" is the width, "y" is the height
+        7. background-origin (not in shorthand property order):
+        Value: 
+                border-box
+                padding-box (default value)
+                content-box
+        8. background-clip (not in shorthand property order):
+        Value: 
+                border-box (default value)
+                padding-box 
+                content-box
 */
-/*WHAT IS CSS TEXT MANIPULATION?
+/*WHAT IS CSS TEXT?
     1. text-align:
     Value:
             center
@@ -313,7 +303,7 @@
             isolate-override
             plaintext
 */
-/*WHAT IS CSS FONT MANIPULATION?
+/*WHAT IS CSS FONT?
     "font" is a shorthand property.
     Order:
         1. font-style (optional):
@@ -326,15 +316,15 @@
                 normal
                 small-caps
         3. font-weight (optional):
-        Value:
-                normal
-                lighter
-                bold
-                bolder
-                a number range from 100 to 900
+        Value can be specified in:
+            a. predefined values:
+            normal, lighter, bold, bolder
+            b. length:
+            x (without unit)
+            "x" ranges from 100 to 900
         4. font-size (required):
         Value can be specified in:
-            a. predefined names:
+            a. predefined values:
             xx-small, x-small, small, smaller, medium, large, larger, x-large, xx-large
             b. absolute size:
             This sets the text to a specified fixed size.
@@ -375,15 +365,125 @@
         Standard Fonts: https://www.w3schools.com/css/css_font.asp
         External Fonts: https://fonts.google.com/
 */
-/*WHAT IS THE BOX MODEL IN CSS DESIGN AND LAYOUT?
+/*WHAT IS CSS FLOAT AND CLEAR?
+    1. float:
+    Value:
+            left
+            right
+            none (default value)
+    2. clear:
+    Value:
+            left
+            right
+            both
+            none (default value)
+    SIDE NOTE:
+                If the floated element is taller than the containing element and overflows out of its container, add either
+                    1. the clearfix hack:
+                    Syntax:
+                            selector {
+                                "overflow: auto";
+                            }
+                    2. the new modern clearfix hack:
+                    Syntax:
+                            selector::after {
+                                content: "";
+                                clear: both;
+                                display: table;
+                            }
+                When creating floating boxes side by side, if something is added to enlarge the width of each boxes, the big box might break, then add this property to include the padding and border to the total width of the boxes and make sure the big box doesn't break
+                    Syntax:
+                            * {
+                                box-sizing: border-box;
+                            }
+*/
+/*WHAT IS CSS DISPLAY?
+    Value:
+            block
+            inline
+            none (default value)
+    SIDE NOTE:
+                There is a similarity between "display: none" and "visibility: hidden". Both of which hide the element. But with "display: none", the hidden element doesn't take up the space and behaves as if it's not there. And with "visibility: hidden", the hidden element still takes up the space and affects the layout.
+*/
+/*WHAT IS THE BOX MODEL IN CSS DESIGN, POSITIONING, AND LAYOUT?
     CSS Box Model is a series of positioning properties designed to layout HTML elements. Think of it like an invisible box that wraps around every HTML element and is layered like an onion. Different layers are sized by using different properties.
     From outer to inner, there are:
-        Margin - sized by "margin"
-            Border - sized by "border"
-                Padding - sized by "padding"
-                    Content - sized by "width" and "height"
+        I. MARGIN (outer transparent space)
+        The margin layer can be sized by using the "margin" property.
+        Value can be specified in:
+            a. predefined values:
+            auto
+            b. length:
+            x+unit of choice (EX: px, %, vw,...)
+        SIDE NOTE:
+                    Sometimes there can be a collapse of two margins between one's top and one's bottom, whose larger portion will take over.
+        II. BORDER
+        The border layer can be sized by using the "border" property.
+        This is a shorthand property.
+        Order:
+            1. border-width (optional):
+            Value can be specified in:
+                a. predefined values:
+                thin, medium, thick
+                b. length:
+                x+unit of choice (EX: px, %, vw,...)
+            2. border-style (required):
+            Value:
+                    dotted
+                    dashed
+                    solid
+                    double
+                    groove
+                    ridge
+                    inset
+                    outset
+                    hidden
+                    none
+            3. border-color (optional):
+            Value as in CSS colors
+            4. border-radius (not in shorthand property order):
+            Value can be specified by length:
+                                                x+unit of choice (EX: px, %, vw,...)
+        III. PADDING (innner transparent space)
+        The padding layer can be sized by using the "padding" property.
+        Value can be specified by length:
+                                            x+unit of choice (EX: px, %, vw,...)
+        IV. CONTENT
+        The content layer can be sized by using the "width" and "height" properties.
+        Value can be specified in:
+            a. predefined values:
+            auto (default value)
+            b. length:
+            x+unit of choice (EX: px, %, vw,...)
+        SIDE NOTE:
+                    Some suggested content properties for a better responsive Web page are "max-width", "min-width", "max-height", "min-height".
+    SIDE NOTE:
+                It is possible to layout individual sides of each layer:
+                    1. by using the property of the specified side:
+                    EX:
+                        margin-top, margin-right, margin-bottom, or margin-left
+                        border-top, border-right, border-bottom, or border-left
+                        padding-top, padding-right, padding-bottom, or padding-left
+                    2. by using the shorthand property:
+                    If the property has four values, the layout will be sized as:
+                        selector {
+                            property: top right bottom left
+                        }
+                    If the property has three values, the layout will be sized as:
+                        selector {
+                            property: top right&left bottom
+                        }
+                    If the property has two values, the layout will be sized as:
+                        selector {
+                            property: top&bottom right&left
+                        }
+                    If the property has one value, the layout will be sized as:
+                        selector {
+                            property: all sizes equal
+                        }
+                To keep the size of the Web page consistent among different devices, it is suggested to use px, %, or vw.
 */
 
-body {
-    
+img {
+    border: ;
 }
