@@ -27,17 +27,23 @@
 ### _The Applications of Computer:_
 #### The ultimate goal of learning Computer Science is to solve real-world problems. Then again, depending on your preference, your study approach might vary.
 #### As for me, in order to become a Web Developer, I need to know a few basics of:
-1. FRONT END:
+1. FRONT END / CLIENT SIDE:
    * HTML
    * CSS
    * Javascript
-   * React
-2. BACK END:
+   * CSS Framework: Bootstrap
+   * CSS Preprocessor: SASS
+   * Javascript Library: React or Javascript Framework: Vue/ Angular
+2. BACK END / SERVER SIDE:
    * Java
    * Python
-   * NodeJs
-   * MongoDB
-3. DATA STRUCTURES & ALGORITHMS
+   * PHP
+   * Framework: NodeJs / Django
+   * Database: MongoDB (No SQL) / MySQL (SQL)
+3. VERSION CONTROL SYSTEM:
+   * Git
+   * Github
+5. DATA STRUCTURES & ALGORITHMS
 
 ***
 
