@@ -6,75 +6,111 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Lato&family=Roboto+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" type="text/css">
     <title>My Website</title>
 </head>
 
 <body>
+    <article>
 
-    <h1 class="title">My Website</h1>
+        <h1 class="title">My Website</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 
-    <p class="para-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <section>
+            <h2 class="subtitle" id="about-me">About Me</h2>
+            <img src="img/img-1.jpg">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <ul>
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+                <ol>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+                </ol>
+            </ul>
+        </section>
 
-    <h2 class="subtitle" id="about-me">About Me</h2>
+        <section>
+            <h2 class="subtitle" id="services">Services</h2>
+            <table border="1px">
+                <thead>
+                    <tr>
+                        <td>Lorem</td>
+                        <td>Ipsum</td>
+                        <td>Dolor</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Sit</td>
+                        <td>Amet</td>
+                        <td>Consectetur</td>
+                    </tr>
+                    <tr>
+                        <td>Adipisicing</td>
+                        <td>Elit</td>
+                        <td>Sed</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3" style="text-align:center;">Thank you</td>
+                    </tr>
+                </tfoot>
+            </table>
+            <a href="https://www.google.com/" target="blank">Google</a>
+        </section>
 
-    <img src="img/img-1.jpg">
+        <section>
+            <h2 class="subtitle" id="contact-us">Contact Us</h2>
+            <form>
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    <p>
+                        <label for="full-name">Full Name: </label>
+                        <input id="full-name" type="text" placeholder="John Doe">
+                    </p>
+                    <p>
+                        <label for="email">Email: </label>
+                        <input id="email" type="email" placeholder="abc@xyz.com">
+                    </p>
+                    <p>
+                        <label for="messange">Message: </label>
+                        <textarea id="message" placeholder="I would like to..."></textarea>
+                    </p>
+                </fieldset>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
 
-    <p class="para-text">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    <ul>
-        <li class="list-item">Excepteur sint occaecat</li>
-        <li class="list-item">Excepteur sint occaecat</li>
-        <li class="list-item">Excepteur sint occaecat</li>
-        <ol>
-            <li class="list-item">Excepteur sint occaecat</li>
-            <li class="list-item">Excepteur sint occaecat</li>
-            <li class="list-item">Excepteur sint occaecat</li>
-        </ol>
-    </ul>
-    </p>
+        <section>
+            <h2 class="subtitle" id="flexbox">FLEXBOX</h2>
+            <div class="flex-container">
+                <div class="flex-item">A</div>
+                <div class="flex-item">B</div>
+                <div class="flex-item">C</div>
+                <div class="flex-item">D</div>
+                <div class="flex-item">E</div>
+            </div>
+        </section>
+        
+        <section>
+            <h2 class="subtitle" id="grid">GRID</h2>
+            <div class="grid-container">
+                <div class="grid-item">A</div>
+                <div class="grid-item">B</div>
+                <div class="grid-item">C</div>
+                <div class="grid-item">D</div>
+                <div class="grid-item">E</div>
+            </div>
+        </section>
 
-    <h2 class="subtitle" id="services">Services</h2>
-    
-    <img src="img/img-2.jpg">
-
-    <br>
-
-    <a class="link" id="google-link" href="https://www.google.com/" target="blank">Google</a>
-
-    <table border="1">
-        <thead>
-            <tr>
-                <td>Lorem</td>
-                <td>Ipsum</td>
-                <td>Dolor</td>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Sit</td>
-                <td>Amet</td>
-                <td>Consectetur</td>
-            </tr>
-            <tr>
-                <td>Adipisicing</td>
-                <td>Elit</td>
-                <td>Sed</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <div id="service-image"></div>
-
-    <h2 class="subtitle" id="contact-us">Contact Us</h2>
-
-    <form>
-        <input class="form-input" type="text" placeholder="Full Name">
-        <input class="form-input" type="email" placeholder="Email">
-        <textarea></textarea>
-        <button>Submit</button>
-    </form>
-
+    </article>
 </body>
 
 </html>
