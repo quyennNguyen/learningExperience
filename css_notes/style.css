@@ -504,21 +504,21 @@
                         nonwrap (default value)
                         wrap
                         wrap-reverse
-            4. justify-content (horizontal alignment):
+            2. justify-content (horizontal alignment):
             Value:
                     center
                     flex-start (default value)
                     flex-end
                     space-around
                     space-between
-            5. align-items (vertical alignment):
+            3. align-items (vertical alignment):
             Value:
                     stretch (default value)
                     center
                     flex-start
                     flex-end
                     baseline
-            6. align-content:
+            4. align-content:
             Value:
                     stretch (default value)
                     center
@@ -875,7 +875,7 @@
         "to" which represents 100%
     When the animation is finished, it goes back to its original style which is declared in the base element.
     SIDE NOTE:
-                In the base element, add this property to help the animation to work.
+                In the base element, add this property to help the animation to work
                     selector {
                         position: relative;
                     }
