@@ -30,20 +30,18 @@
 1. FRONT END / CLIENT SIDE:
    * HTML
    * CSS
-   * Javascript
-   * CSS Framework: Bootstrap
    * CSS Preprocessor: SASS
-   * Javascript Library: React or Javascript Framework: Vue/ Angular
+   * CSS Framework: Bootstrap
+   * Javascript
+   * Javascript Framework: React (actually Library not Framework) or Vue or Angular
 2. BACK END / SERVER SIDE:
-   * Java
-   * Python
-   * PHP
    * Framework: NodeJs / Django
    * Database: MongoDB (No SQL) / MySQL (SQL)
 3. VERSION CONTROL SYSTEM:
    * Git
    * Github
 5. DATA STRUCTURES & ALGORITHMS
+   * can be in Javascript, Java, Python,...
 
 ***
 
@@ -56,14 +54,20 @@
 * https://www.udemy.com/
 #### HTML:
 * https://youtu.be/kUMe1FH4CHE
+* https://www.w3schools.com/html/default.asp
 * https://developer.mozilla.org/en-US/docs/Web/HTML
 * Google Chrome Extension: HTML5 Outliner
 * Check out my html_notes
 #### CSS:
 * https://youtu.be/1Rs2ND1ryYc
+* https://www.w3schools.com/css/default.asp
 * https://developer.mozilla.org/en-US/docs/Web/CSS
 * Check out my css_notes
+#### SASS:
+* https://youtu.be/_a5j7KoflTs
+* https://www.w3schools.com/sass/default.php
+* Check out my sass_notes
 
 ***
 
-#### P/s: This journal might change side by side with my learning progress.
+#### P/s: This journal might change along with my learning progress.
