@@ -66,6 +66,7 @@
 #### SASS:
 * https://youtu.be/_a5j7KoflTs
 * https://www.w3schools.com/sass/default.php
+* https://sass-lang.com/documentation/
 * Check out my sass_notes
 
 ***
