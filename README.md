@@ -67,6 +67,7 @@
 * https://youtu.be/_a5j7KoflTs
 * https://www.w3schools.com/sass/default.php
 * https://sass-lang.com/documentation/
+* Icon Library and Toolkit: https://fontawesome.com/
 * Check out my sass_notes
 
 ***
