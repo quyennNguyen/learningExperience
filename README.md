@@ -1,7 +1,7 @@
 # *ABOUT ME*
 
 #### Like many other kids, I started by attending community college with major in Computer Science, where I learned the basics, a bit of Java, and a bit of Data Structure. Later on, I transferred to university to continue my major. But not long after that, I decided to do the boldest thing I’ve ever done in my life, DROPPING OUT. Of course, there were a lot of conflicts. But I genuinely think that school is not for me. Two main reasons: it is tedious and it ends up with an overwhelming debt.
-#### Frankly, I’m as clueless as anyone else. Every day is a new lesson. Therefore, in this journal, I want to be crystal clear and note down how I learn to become a SELF-TAUGHT SOFTWARE DEVELOPER from SCRATCH. I found this way fascinating and productive because I can keep track of my growth and cure my severe procrastination.
+#### Frankly, I’m as clueless as anyone else. Every day is a new lesson. Therefore, in this journal, I want to be crystal clear and note down how I learn to become a SELF-TAUGHT SOFTWARE DEVELOPER from SCRATCH. I found this way fascinating and productive because I can keep track of my growth and get over my procrastination.
 
 ***
 
