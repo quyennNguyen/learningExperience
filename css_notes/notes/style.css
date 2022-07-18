@@ -361,6 +361,30 @@
         Standard Fonts: https://www.w3schools.com/css/css_font.asp
         External Fonts: https://fonts.google.com/
 */
+/*WHAT IS CSS POSITION?
+    Value:
+        1. static (default value):
+        The element is positioned according to the normal flow of the page.
+        The element is not affected by the "top", "bottom", "left", or "right" properties.
+        2. relative:
+        The element is positioned relative to its normal position.
+        The "top", "bottom", "left", or "right" properties is used to position the element away from its normal position.
+        The element still takes up all of the space even when positioned away from its normal position.
+        Other elements won't be adjusted to fit in any gap left by the element.
+        3. fixed:
+        The element is positioned relative to the viewport, which means it stays in the same place even if the page is scrolled.
+        The "top", "bottom", "left", or "right" properties is used to position the element away from its normal position.
+        After positioned away from its normal position, the element won't take up the space of its normal position.
+        Other elements will be adjusted to fit in any gap left by the element.
+        4. absolute:
+        The element is positioned relative to the position of its nearest parent element.
+        If the absolute element has no nearest parent element, it will be positioned relative to the "body" element.
+        5. sticky:
+        The element is positioned based on the scrolling position.
+        The sticky element toggles between relative and fixed. It is positioned relative, until a given offset position is met in the viewport, it will be positioned fixed.
+    SIDE NOTE:
+                The "position" property must be specified before the element is positioned using the "top", "bottom", "left", or "right" properties.
+*/
 /*WHAT IS CSS FLOAT AND CLEAR?
     1. float:
     Value:
