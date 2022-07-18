@@ -1,13 +1,13 @@
 # *ABOUT ME*
 
-#### Like many other kids, I started by attending community college with major in Computer Science, where I learned the basics, a bit of Java, and a bit of Data Structure. Later on, I transferred to university to continue my major. But not long after that, I decided to do the boldest thing I’ve ever done in my life, DROPPING OUT. Of course, there were a lot of conflicts. But I genuinely think that school is not for me. Two main reasons: it is tedious and it ends up with an overwhelming debt.
-#### Frankly, I’m as clueless as anyone else. Every day is a new lesson. Therefore, in this journal, I want to be crystal clear and note down how I learn to become a SELF-TAUGHT SOFTWARE DEVELOPER from SCRATCH. I found this way fascinating and productive because I can keep track of my growth and get over my procrastination.
+#### I started by attending community college with major in Computer Science, where I learned the basics, a bit of Java, and a bit of Data Structure. Later on, I transferred to university to continue my major. But not long after that, I decided to do the boldest thing I’ve ever done in my life, DROPPING OUT. Of course, there were a lot of conflicts. But I genuinely think that school is not for me. Two main reasons: it is tedious and it ends up with an overwhelming debt.
+#### In this journal, I want to be crystal clear and note down how I learn to become a SELF-TAUGHT WEB DEVELOPER from SCRATCH. I found this way fascinating and productive as I can keep track of my growth and get over my procrastination.
 
 ***
 
 # *WHERE TO START?*
 
-#### When you don't know where to start, Google or Youtube is a way to go. I started with a simple search, "How to Become a Software Developer".
+#### When you don't know where to start, go with a simple search like "How to Become a Software Developer?".
 #### The youtube videos that I found pretty inspiring:
 * https://youtu.be/V1PdbnuPMi8
 * https://youtu.be/hOqOj85jvn0
@@ -17,31 +17,33 @@
 
 # *WHAT TO LEARN?*
 
-#### Having a clear study plan is very crucial. Depending on your specialty, preference,..., the study plan might vary. As for me, I'm pursuing the Web Development route as it interests me the most as a beginner.
+#### Having a clear study plan is very crucial. Depending on your career choice, the study plan might vary. As for me, I want to become a Full Stack Web Developer.
 #### Generally, there are two main categories:
 
-### _How the Computer System Works_
-#### You can find some fascinating basics of Computer Science from this following book, [Computer Science Illuminated.pdf]
+### _Basics of Computer Science:_
+#### You can find some fascinating information from this following book, [Computer Science Illuminated.pdf]
 * https://github.com/quyennNguyen/learningExperience/files/8527263/Computer.Science.Illuminated.pdf
 
-### _The Applications of Computer:_
-#### The ultimate goal of learning Computer Science is to solve real-world problems. Then again, depending on your preference, your study approach might vary.
+### _Applications of Computer:_
+#### The ultimate goal of learning Computer Science is to solve real-world problems.
 #### As for me, in order to become a Web Developer, I need to know a few basics of:
 1. FRONT END / CLIENT SIDE:
-   * HTML
-   * CSS
+   * Programming Language: HTML
+   * Programming Language: CSS
    * CSS Preprocessor: SASS
    * CSS Framework: Bootstrap
-   * Javascript
-   * Javascript Framework: React (actually Library not Framework) or Vue or Angular
+   * Programming Language: Javascript
+   * Javascript Framework/Library: React
 2. BACK END / SERVER SIDE:
-   * Framework: NodeJs / Django
-   * Database: MongoDB (No SQL) / MySQL (SQL)
-3. VERSION CONTROL SYSTEM:
+   * Programming Language: Javascript or Java or Python or PHP
+   * Framework: NodeJs (Javascript) or Django (Python)
+   * Database: MongoDB (No SQL) or MySQL (SQL)
+3. DATA STRUCTURES & ALGORITHMS
+4. VERSION CONTROL SYSTEM:
    * Git
    * Github
-5. DATA STRUCTURES & ALGORITHMS
-   * can be in Javascript, Java, Python,...
+5. TERMINAL:
+   * SSH or Bash
 
 ***
 
@@ -52,6 +54,7 @@
 * https://www.freecodecamp.org/learn/
 * https://www.codecademy.com/
 * https://www.udemy.com/
+* https://www.edx.org/cs50
 #### HTML:
 * https://youtu.be/kUMe1FH4CHE
 * https://www.w3schools.com/html/default.asp
