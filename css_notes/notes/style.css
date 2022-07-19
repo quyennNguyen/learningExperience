@@ -164,93 +164,6 @@
                 EX: The qualtity of a Youtube video is set at 2160p (4K), which means the video display has a resolution of 3840p (width) x 2160p (height), which is a fixed unit. However, the sharpness of the display might differ between when you set the display at full screen and when you set the display at theater mode. The resolution relatively scales based on the size of the display.
     Full list: https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units
 */
-/*WHAT IS CSS COLOR?
-    Three primary colors of light sources (at least determined by computer system) are Red - Green - Blue.
-    One CSS color can be specified in various ways:
-        1. predefined name
-        2. #rrggbb
-        "rr", "gg", and "bb" specify the intensity of red, green, and blue, respectively, by hexadecimal values from 00 to ff.
-        3. rgb(rrr, ggg, bbb)
-        "rrr", "ggg", and "bbb" specify the intensity of red, green, and blue, respectively, which ranges from 0 to 255.
-        4. hsl(hue, saturation, lightness)
-        "hue" specifies the degree on the color wheel, which ranges from 0 to 360, where red is 0, green is 120, blue is 240.
-        "saturation" specifies a percentage of the color intensity, where 0% is a shade of gray, 100% is the pure color.
-        "lightness" specifies a percentage of the color lightness, where 0% is black, 50% is the pure color, 100% is white.
-        5. rgba(rrr, ggg, bbb, aa) & hsla(hue, saturation, lightness, alpha)
-        "rgba" and "hsla" are extensions of "rgb" and "hsl" color values with an alpha channel.
-        "alpha" specifies the opacity/transparency of the color, which ranges from 0.0 to 1.0, where 0.0 is fully transparent, 1.0 is fully opaque.
-    Color Picker: https://www.w3schools.com/colors/colors_picker.asp
-*/
-/*WHAT ARE CSS GRADIENT?
-    1. linear-gradient(direction/angle, color1, color2,...)
-    There should be at least 2 color stops.
-    "direction" can be to top, to bottom (default value), to left, to right, to top left, to top right, to bottom left, to bottom right.
-    "angle" ranges from 0deg to 360deg, where to top is 0deg, to right is 90deg, to bottom is 180deg (default value), to left is 270deg.
-    SIDE NOTE:
-                add "repeating-" before the property to repeat the gradients
-                add a percentage after the color stop to adjust the proportion of the color
-    2. radial-gradient(shape size at position, color1, color2,...)
-    There should be at least 2 color stops.
-    "shape" can be ellipse (default value), or circle.
-    "size" can be closest-side, farthest-side, closest-corner, farthest-corner (default value).
-    "position" as in CSS background-position
-    SIDE NOTE:
-                add "repeating-" before the property to repeat the gradients
-                add a percentage after the color stop to adjust the proportion of the color
-    3. conic-gradient(from angle at position, color1, color2,...)
-    There should be at least 2 color stops.
-    By default, "angle" is 0deg, "position" is center (50% 50%).
-    SIDE NOTE:
-                add "repeating-" before the property to repeat the gradients
-                add an angle after the color stop to adjust the proportion of the color
-                add property "border-radius: 50%" to make the conic gradients as a pie
-*/
-/*WHAT IS CSS BACKGROUND?
-    "background" is a shorthand property.
-    Order:
-        1. background-color:
-        Value as in CSS colors
-        2. background-image: 
-        Value: 
-                url("source/link/reference of the image")
-        3. background-repeat: 
-        Value:
-                repeat (default value)
-                no-repeat
-                repeat-x
-                repeat-y
-        4. background-attachment:
-        Value:
-                scroll (default value)
-                fixed
-        5. background-position:
-        Value can be specified in:
-            a. predefined values:
-            left top (default value), left bottom, right top, right bottom, center top, center bottom, center
-            b. length (in percentage):
-            x% y%
-            "x" is the horizontal position, "y" is the vertical position, each of which ranges from 0% to 100%, where left top is 0% 0% (default value), right bottom is 100% 100%, center is 50% 50%.
-            c. length (in pixels):
-            xpx ypx
-            "x" is the horizontal position, "y" is the vertical position, where left top is 0px 0px (default value).
-        6. background-size (not in shorthand property order):
-        Value can be specified in:
-            a. predefined values:
-            cover, contain
-            b. length:
-            x+unit of choice (EX: px, %, vw,...) y+unit of choice (EX: px, %, vw,...)
-            "x" is the width, "y" is the height
-        7. background-origin (not in shorthand property order):
-        Value: 
-                border-box
-                padding-box (default value)
-                content-box
-        8. background-clip (not in shorthand property order):
-        Value: 
-                border-box (default value)
-                padding-box 
-                content-box
-*/
 /*WHAT IS CSS TEXT?
     1. text-align:
     Value:
@@ -360,6 +273,102 @@
         Fallback Fonts are fonts that are similar to the first declared font in the same font family and added as backup fonts. If the first declared one is not found or not installed properly, the Web browser will try the following one, and the one after, and so on. It is highly suggested to declare more than one font and end the list with the generic font family name.
         Standard Fonts: https://www.w3schools.com/css/css_font.asp
         External Fonts: https://fonts.google.com/
+*/
+/*WHAT IS CSS COLOR?
+    Three primary colors of light sources (at least determined by computer system) are Red - Green - Blue.
+    One CSS color can be specified in various ways:
+        1. predefined name
+        2. #rrggbb
+        "rr", "gg", and "bb" specify the intensity of red, green, and blue, respectively, by hexadecimal values from 00 to ff.
+        3. rgb(rrr, ggg, bbb)
+        "rrr", "ggg", and "bbb" specify the intensity of red, green, and blue, respectively, which ranges from 0 to 255.
+        4. hsl(hue, saturation, lightness)
+        "hue" specifies the degree on the color wheel, which ranges from 0 to 360, where red is 0, green is 120, blue is 240.
+        "saturation" specifies a percentage of the color intensity, where 0% is a shade of gray, 100% is the pure color.
+        "lightness" specifies a percentage of the color lightness, where 0% is black, 50% is the pure color, 100% is white.
+        5. rgba(rrr, ggg, bbb, aa) & hsla(hue, saturation, lightness, alpha)
+        "rgba" and "hsla" are extensions of "rgb" and "hsl" color values with an alpha channel.
+        "alpha" specifies the opacity/transparency of the color, which ranges from 0.0 to 1.0, where 0.0 is fully transparent, 1.0 is fully opaque.
+    Color Picker: https://www.w3schools.com/colors/colors_picker.asp
+*/
+/*WHAT ARE CSS GRADIENT?
+    1. linear-gradient(direction/angle, color1, color2,...)
+    There should be at least 2 color stops.
+    "direction" can be to top, to bottom (default value), to left, to right, to top left, to top right, to bottom left, to bottom right.
+    "angle" ranges from 0deg to 360deg, where to top is 0deg, to right is 90deg, to bottom is 180deg (default value), to left is 270deg.
+    SIDE NOTE:
+                add "repeating-" before the property to repeat the gradients
+                add a percentage after the color stop to adjust the proportion of the color
+    2. radial-gradient(shape size at position, color1, color2,...)
+    There should be at least 2 color stops.
+    "shape" can be ellipse (default value), or circle.
+    "size" can be closest-side, farthest-side, closest-corner, farthest-corner (default value).
+    "position" as in CSS background-position
+    SIDE NOTE:
+                add "repeating-" before the property to repeat the gradients
+                add a percentage after the color stop to adjust the proportion of the color
+    3. conic-gradient(from angle at position, color1, color2,...)
+    There should be at least 2 color stops.
+    By default, "angle" is 0deg, "position" is center (50% 50%).
+    SIDE NOTE:
+                add "repeating-" before the property to repeat the gradients
+                add an angle after the color stop to adjust the proportion of the color
+                add property "border-radius: 50%" to make the conic gradients as a pie
+*/
+/*WHAT IS CSS BACKGROUND?
+    "background" is a shorthand property.
+    Order:
+        1. background-color:
+        Value as in CSS colors
+        2. background-image: 
+        Value: 
+                url("source/link/reference of the image")
+        3. background-repeat: 
+        Value:
+                repeat (default value)
+                no-repeat
+                repeat-x
+                repeat-y
+        4. background-attachment:
+        Value:
+                scroll (default value)
+                fixed
+        5. background-position:
+        Value can be specified in:
+            a. predefined values:
+            left top (default value), left bottom, right top, right bottom, center top, center bottom, center
+            b. length (in percentage):
+            x% y%
+            "x" is the horizontal position, "y" is the vertical position, each of which ranges from 0% to 100%, where left top is 0% 0% (default value), right bottom is 100% 100%, center is 50% 50%.
+            c. length (in pixels):
+            xpx ypx
+            "x" is the horizontal position, "y" is the vertical position, where left top is 0px 0px (default value).
+        6. background-size (not in shorthand property order):
+        Value can be specified in:
+            a. predefined values:
+            cover, contain
+            b. length:
+            x+unit of choice (EX: px, %, vw,...) y+unit of choice (EX: px, %, vw,...)
+            "x" is the width, "y" is the height
+        7. background-origin (not in shorthand property order):
+        Value: 
+                border-box
+                padding-box (default value)
+                content-box
+        8. background-clip (not in shorthand property order):
+        Value: 
+                border-box (default value)
+                padding-box 
+                content-box
+*/
+/*WHAT IS CSS VISIBILITY?
+    Value:
+            visible (default value)
+            hidden
+            collapse
+    SIDE NOTE:
+                The space is still take up if the element is "hidden", but is not if the element is "collapse".
+                "collapse" is only used for table-type element. If "collapse" is used for other elements, they will be specified as "hidden".
 */
 /*WHAT IS CSS POSITION?
     Value:
