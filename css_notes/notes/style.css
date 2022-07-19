@@ -430,11 +430,12 @@
 /*WHAT IS CSS DISPLAY?
     Value:
             none (default value)
-            block
             inline
             inline-block
+            block
     SIDE NOTE:
                 There is a similarity between "display: none" and "visibility: hidden". Both of which hide the element. But with "display: none", the hidden element doesn't take up the space and behaves as if it's not there. And with "visibility: hidden", the hidden element still takes up the space and affects the layout.
+                "margin", "border", and "padding" can be used on "inline", "inline-block" and "block". However, "width" and "height" can only affect "inline-block" and "block".
 */
 /*WHAT IS CSS BOX MODEL?
     CSS Box Model is a display type with a series of positioning properties to layout HTML elements. Think of it like an invisible box that wraps around every HTML element and is layered like an onion.
