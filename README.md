@@ -35,9 +35,9 @@
    * Programming Language: Javascript
    * Javascript Framework/Library: React
 2. BACK END / SERVER SIDE:
-   * Programming Language: Javascript or Java or Python or PHP
-   * Framework: NodeJs (Javascript) or Django (Python)
-   * Database: MongoDB (No SQL) or MySQL (SQL)
+   * Programming Language: Javascript / Java / Python / PHP
+   * Framework: NodeJs (Javascript) / Django (Python)
+   * Database: MongoDB (No SQL) / MySQL (SQL)
 3. DATA STRUCTURES & ALGORITHMS
 4. VERSION CONTROL SYSTEM:
    * Git
