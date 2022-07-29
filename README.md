@@ -28,22 +28,21 @@
 #### The ultimate goal of learning Computer Science is to solve real-world problems.
 #### As for me, in order to become a Web Developer, I need to know a few basics of:
 1. FRONT END / CLIENT SIDE:
-   * Programming Language: HTML
-   * Programming Language: CSS
+   * HTML
+   * CSS
    * CSS Preprocessor: SASS
    * CSS Framework: Bootstrap
-   * Programming Language: Javascript
+   * JavaScript
    * Javascript Framework/Library: React
 2. BACK END / SERVER SIDE:
-   * Programming Language: Javascript / Java / Python / PHP
-   * Framework: NodeJs (Javascript) / Django (Python)
+   * JavaScript / Java / Python / PHP
+   * Framework: NodeJs (JavaScript) / Django (Python)
    * Database: MongoDB (No SQL) / MySQL (SQL)
 3. DATA STRUCTURES & ALGORITHMS
 4. VERSION CONTROL SYSTEM:
-   * Git
-   * Github
+   * Git / Github
 5. TERMINAL:
-   * SSH or Bash
+   * SSH / Bash
 
 ***
 
