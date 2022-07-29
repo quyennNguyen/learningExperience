@@ -41,8 +41,6 @@
 3. DATA STRUCTURES & ALGORITHMS
 4. VERSION CONTROL SYSTEM:
    * Git / Github
-5. TERMINAL:
-   * SSH / Bash
 
 ***
 
