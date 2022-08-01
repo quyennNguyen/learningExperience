@@ -8,7 +8,7 @@
 # *WHERE TO START?*
 
 #### When you don't know where to start, go with a simple search like "How to Become a Software Developer?".
-#### The youtube videos that I found pretty inspiring:
+#### Here are some videos that I found pretty inspiring:
 * https://youtu.be/V1PdbnuPMi8
 * https://youtu.be/hOqOj85jvn0
 * https://youtu.be/s9iPo9YMU70
@@ -21,25 +21,24 @@
 #### Generally, there are two main categories:
 
 ### _Basics of Computer Science:_
-#### You can find some fascinating information from this following book, [Computer Science Illuminated.pdf]
-* https://github.com/quyennNguyen/learningExperience/files/8527263/Computer.Science.Illuminated.pdf
+#### You can find some useful information from either of these sources:
+* [Computer Science Illuminated.pdf]: https://github.com/quyennNguyen/learningExperience/files/8527263/Computer.Science.Illuminated.pdf
+* Harvard's Free CS Course: https://www.edx.org/cs50
 
-### _Applications of Computer:_
-#### The ultimate goal of learning Computer Science is to solve real-world problems.
-#### As for me, in order to become a Web Developer, I need to know a few basics of:
-1. FRONT END / CLIENT SIDE:
+### _Use Computer to Solve Real-World Problems:_
+#### 1. FRONT END / CLIENT SIDE:
    * HTML
    * CSS
    * CSS Preprocessor: SASS
    * CSS Framework: Bootstrap
    * JavaScript
    * Javascript Framework/Library: React
-2. BACK END / SERVER SIDE:
+#### 2. BACK END / SERVER SIDE:
    * JavaScript / Java / Python / PHP
    * Framework: NodeJs (JavaScript) / Django (Python)
    * Database: MongoDB (No SQL) / MySQL (SQL)
-3. DATA STRUCTURES & ALGORITHMS
-4. VERSION CONTROL SYSTEM:
+#### 3. DATA STRUCTURES & ALGORITHMS
+#### 4. VERSION CONTROL SYSTEM:
    * Git / Github
 
 ***
@@ -51,7 +50,6 @@
 * https://www.freecodecamp.org/learn/
 * https://www.codecademy.com/
 * https://www.udemy.com/
-* https://www.edx.org/cs50
 #### HTML:
 * https://youtu.be/kUMe1FH4CHE
 * https://www.w3schools.com/html/default.asp
