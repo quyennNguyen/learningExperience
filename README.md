@@ -22,7 +22,7 @@
 
 ### _Basics of Computer Science:_
 #### You can find some useful information from either of these sources:
-* [Computer Science Illuminated.pdf]: https://github.com/quyennNguyen/learningExperience/files/8527263/Computer.Science.Illuminated.pdf
+* https://github.com/quyennNguyen/learningExperience/files/8527263/Computer.Science.Illuminated.pdf
 * Harvard's Free CS Course: https://www.edx.org/cs50
 
 ### _Use Computer to Solve Real-World Problems:_
