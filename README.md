@@ -8,7 +8,7 @@
 # *WHERE TO START?*
 
 #### When you don't know where to start, go with a simple search like "How to Become a Software Developer?".
-#### Here are some videos that I found pretty inspiring:
+#### Here are some pretty inspiring videos:
 * https://youtu.be/V1PdbnuPMi8
 * https://youtu.be/hOqOj85jvn0
 * https://youtu.be/s9iPo9YMU70
