@@ -2,5 +2,18 @@ WHAT IS VERSION CONTROL SYSTEM?
 Version Control, or Revision Control / Source Control / Source Code Management, is the management of changes to computer programs, documents, large web sites, and other collections of information. It basically records all the changes of your codes so that you and/or your team members can recall the specific versions of the codes over the time. This helps you track your codes (what you do and when you do it) as well as track down bugs.
 Git is the most widely used free and open source Version Control System in software development.
 
-COMMON TERMS:
+TERMS:
+GitHub: is the website that hosts your git repositories online.
+CLI: is Command Line Interface.
+Terminal, or Command Line,: is the interface for text commands.
+Code Editor: is the word processor, or text editor, for writing code.
+repository: is your project, or the folder where your project is kept.
+directory: means folder.
+cd: means change directory
 
+GIT COMMANDS:
+clone: to bring a repository that is hosted somewhere else (remotely) into a folder on your local machine (locally)
+add: to track changes/updates/deletes of your codes in Git
+commit: to save changes/updates/deletes of your codes in Git
+push: to upload Git commits to a remote repository from your local machine
+pull: to download changes/updates/deletes from the remote repository to your local machine
