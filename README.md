@@ -69,6 +69,7 @@
 * Check out my sass_notes
 #### VERSION CONTROL SYSTEM:
 * https://youtu.be/RGOj5yH7evk
+* Install Git: https://www.atlassian.com/git/tutorials/install-git#windows
 * Check out my git_notes
 
 ***
