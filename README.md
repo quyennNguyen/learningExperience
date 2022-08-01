@@ -69,6 +69,9 @@
 * https://sass-lang.com/documentation/
 * Icon Library and Toolkit: https://fontawesome.com/
 * Check out my sass_notes
+#### VERSION CONTROL SYSTEM:
+* https://youtu.be/RGOj5yH7evk
+* Check out my git_notes
 
 ***
 
