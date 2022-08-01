@@ -1,1 +1,2 @@
-
+Version Control, or Revision Control / Source Control / Source Code Management, is the management of changes to computer programs, documents, large web sites, and other collections of information. It basically records all the changes of your codes so that you and/or your team members can recall the specific versions of the codes over the time. This helps you track what and when you do as well as track down bugs.
+Git is the most popular free and open source Version Control System.
