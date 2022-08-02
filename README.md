@@ -70,6 +70,7 @@
 #### VERSION CONTROL SYSTEM:
 * https://youtu.be/RGOj5yH7evk
 * Install Git: https://www.atlassian.com/git/tutorials/install-git#windows
+* How SSH Works: https://docs.github.com/en/authentication/connecting-to-github-with-ssh/about-ssh
 * Check out my git_notes
 
 ***
