@@ -7,13 +7,19 @@ GitHub: is the website that hosts your git repositories online.
 CLI: is Command Line Interface.
 Terminal, or Command Line,: is the interface for text commands.
 Code Editor: is the word processor, or text editor, for writing code.
-repository: is your project, or the folder where your project is kept.
-directory: means folder.
-cd: means change directory
+repository: is your project, or the folder where your project is kept. repo: is short for repository
+directory: is folder, in general.
 
 GIT COMMANDS:
-clone: to bring a repository that is hosted somewhere else (remotely) into a folder on your local machine (locally)
-add: to track changes/updates/deletes of your codes in Git
-commit: to save changes/updates/deletes of your codes in Git
-push: to upload Git commits to a remote repository from your local machine
-pull: to download changes/updates/deletes from the remote repository to your local machine
+git clone <repo's SSH>: to bring a repo where your project is hosted (remotely) into a folder on your local machine (locally)
+git add <file's name>: to track changes/updates/deletes of your codes in Git
+  you can use <.> for <file's name> to track all the files, modified/updated/untracked
+git commit -m "Message 1 for what you do and when you do it", -m "Message 2 for further description": to save changes/updates/deletes of your codes in Git
+git push: to upload Git commits from your local machine to the remote repo where your project is hosted
+git pull: to download changes/updates/deletes from the remote repo where your project is hosted to your local machine
+
+git --version: to check Git's version
+cd <directory's name>: to change directory
+  .git: is the hidden folder that stores all the changes/updates/deletes to your files that are saved in the Git commits
+ls -la: to list all files and folders, including hidden ones, that are saved in the Git commits
+git status: to show all the changed/updated/deleted files that are not yet saved in the Git commits
