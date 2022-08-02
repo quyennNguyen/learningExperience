@@ -23,3 +23,6 @@ cd <directory's name>: to change directory
   .git: is the hidden folder that stores all the changes/updates/deletes to your files that are saved in the Git commits
 ls -la: to list all files and folders, including hidden ones, that are saved in the Git commits
 git status: to show all the changed/updated/deleted files that are not yet saved in the Git commits
+
+WHAT IS SSH KEY?
+
