@@ -45,22 +45,24 @@ SOURCE: https://www.youtube.com/watch?v=RGOj5yH7evk&t=234s
 * cd ..: to get to one level above the current directory
 * ls -la: to list all files and folders, including hidden ones, that are saved in Git commits
 * .git: is the hidden folder that stores all the changes/updates/deletes of your files that are saved in Git commits
-* clear: to clear the CLI window
 * git --version: to check Git's version
-* git clone <repo's SSH>: to bring a repo where your project is hosted (remotely) into a folder on your local machine (locally)
-* git init: to initialize a new empty Git repo or to convert an existing directory into a Git repo
-* git add <file's name>: to track changes/updates/deletes of your files in Git; you can use <.> for <file's name> to track all the files (modified/updated/untracked)
-* git commit -m "Message 1 (usually for what you do and when you do it)", -m "Message 2 (usually for further description)": to save changes/updates/deletes of your files in Git
-* git remote add origin <repo's SSH>: to add a reference to the remote repo
-* git remote -v: to check if there's any remote repo that is connected to the local repo you are working on
-* git push origin master: to upload Git commits from your local machine to the remote repo where your project is hosted
-* git push -u origin master: to set an upstream for the origin master to set it as a default so that everytime you want to use git push origin master, you can use git push without typing out origin master
-* git pull: to download changes/updates/deletes from the remote repo where your project is hosted to your local machine
 * git status: to show all the changed/updated/deleted files that are not yet saved in Git commits
-* git branch: to list all branches in the repo
-* git checkout <branch'name>: to switch from the current branch to the specified branch
-* git checkout -b <branch'name>: to create a new branch from the current branch
-* git diff <branch'name>: to show the difference between the current branch and the specified branch
+* clear: to clear the CLI window
+* press Q key: to exit the list
 
+* git clone <repo's SSH>: to bring a remote repo where your project is hosted (remotely) into a local repo on your local machine (locally)
+* git init: to initialize a new empty Git repo or to convert the curent directory into a Git repo
+* git add <file's name>: to inform Git to track changes/updates/deletes of the specified files in the current directory; you can use <.> for <file's name> to track all (modified/updated/untracked) files in the current directory
+* git commit -m "Message 1 (usually for what you do and when you do it)", -m "Message 2 (usually for further description)": to save changes/updates/deletes of all files in the current directory in Git
+* git remote add origin <repo's SSH>: to add a reference to the remote repo to set up the connection between the current local repo and the remote repo
+* git remote -v: to check if there's any remote repo that is connected to the local repo you are working on
+* git push origin <branch'name>: to upload Git commits from the specified branch of the current directory from the local repo to the remote repo
+* git push -u origin <branch'name>: to set an upstream for the specified branch of the current directory to set it as a default so that everytime you want to push Git commits from that branch, you can use git push without typing out origin <branch'name>
+* git pull: to download changes/updates/deletes from the remote repo to the local repo
+
+
+* git branch: to list all branches in the current directory
+* git checkout <branch'name>: to switch from the current branch to the specified branch in the current directory
+* git checkout -b <branch'name>: to create a new branch from the current branch in the current directory
+* git diff <branch'name>: to show the difference between the current branch and the specified branch in the current directory
 * git merge:
-* press Q key: to exit the branch list
