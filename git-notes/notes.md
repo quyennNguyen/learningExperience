@@ -4,6 +4,8 @@ SOURCE: https://www.youtube.com/watch?v=RGOj5yH7evk&t=234s
 ##### Version Control, or Revision Control / Source Control / Source Code Management, is the management of changes to computer programs, documents, large web sites, and other collections of information. It basically records all the changes of your codes so that you and/or your team members can recall the specific versions of the codes over the time. This helps you track your codes (what you do and when you do it) as well as track down bugs.
 ##### Git is the most widely used free and open source Version Control System in software development.
 
+***
+
 ### TERMS:
 * GitHub: is the website that hosts your Git repositories online.
 * CLI: is Command Line Interface.
@@ -12,30 +14,34 @@ SOURCE: https://www.youtube.com/watch?v=RGOj5yH7evk&t=234s
 * repository: is your project, or the folder where your project is kept. repo: is short for repository
 * directory: is folder, in general.
 
+***
+
 ### WHAT IS SSH?
 ##### SSH, stands for Secure Shell Protocol, provides a secure channel over an unsecured network; in other words, it helps you connect and aunthenticate to remote servers and services.
 ##### When setting up SSH, you need to (1) generate a SSH private key to use on your local machine and (2) add a SSH public key to the remote server that hosts your Git repo to enable SSH access for your account. The keys are used to authenticate Git operations over SSH.
-#####     1. Private Key:
-#####     A private key needs a passphrase to further secure the authentication.
-#####     Whenever you use the key, you need to enter the passphrase. If you don't want to enter the passphrase everytime you use the key, you can add the key to the SSH agent.
-#####     The SSH agent manages your SSH private key and remembers your passphrase.
-#####     To generate a SSH private key:
-#####         a. Check for existing key:
-#####         ls -la ~/.ssh
-#####         b. If there is no existing key, generate a private key with your GitHub account's email address:
-#####         ssh-keygen -t ed25519 -C "email address"
-#####         c. Add your passphrase (the passphrase will be hidden on the Command Line):
-#####         d. Start the SSH agent manually:
-#####         eval "$(ssh-agent -s)"
-#####         d. Add your key to the SSH agent:
-#####         ssh-add ~/.ssh/id_ed25519
-#####     2. Public Key:
-#####     To add a SSH public key to your account:
-#####         a. Copy the public key to your clipboard: 
-#####         clip < ~/.ssh/id_ed25519.pub
-#####         b. In GitHub/Settings/Access/SSH and GPG keys/New SSH key, add a title for your key pair and paste the public key, then add SSH key
-#####     3. Test SSH Connection:
-#####     ssh -T git@github.com
+##### 1. Private Key:
+##### A private key needs a passphrase to further secure the authentication.
+##### Whenever you use the key, you need to enter the passphrase. If you don't want to enter the passphrase everytime you use the key, you can add the key to the SSH agent.
+##### The SSH agent manages your SSH private key and remembers your passphrase.
+##### To generate a SSH private key:
+##### a. Check for existing key:
+##### ls -la ~/.ssh
+##### b. If there is no existing key, generate a private key with your GitHub account's email address:
+##### ssh-keygen -t ed25519 -C "email address"
+##### c. Add your passphrase (the passphrase will be hidden on the Command Line):
+##### d. Start the SSH agent manually:
+##### eval "$(ssh-agent -s)"
+##### d. Add your key to the SSH agent:
+##### ssh-add ~/.ssh/id_ed25519
+##### 2. Public Key:
+##### To add a SSH public key to your account:
+##### a. Copy the public key to your clipboard: 
+##### clip < ~/.ssh/id_ed25519.pub
+##### b. In GitHub/Settings/Access/SSH and GPG keys/New SSH key, add a title for your key pair and paste the public key, then add SSH key
+##### 3. Test SSH Connection:
+##### ssh -T git@github.com
+
+***
     
 ### GIT COMMANDS:
 * cd <directory's name>: to change from the current directory to the specified directory
