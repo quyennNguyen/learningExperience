@@ -15,6 +15,7 @@ SOURCE: https://www.youtube.com/watch?v=RGOj5yH7evk&t=234s
 * Code Editor: is the word processor, or text editor, for writing code.
 * repository: is your project, or the folder where your project is kept. repo: is short for repository
 * directory: is folder, in general.
+* pr: stands for pull request
 
 ***
 
@@ -47,6 +48,7 @@ SOURCE: https://www.youtube.com/watch?v=RGOj5yH7evk&t=234s
 * .git: is the hidden folder that stores all the changes/updates/deletes of your files that are saved in Git commits
 * git --version: to check Git's version
 * git status: to show all the changed/updated/deleted files that are not yet saved in Git commits
+* git log: to show a log of all Git commits in reverrse chronological order
 * clear: to clear the CLI window
 * press Q key: to exit the list
 
@@ -54,15 +56,21 @@ SOURCE: https://www.youtube.com/watch?v=RGOj5yH7evk&t=234s
 * git init: to initialize a new empty Git repo or to convert the curent directory into a Git repo
 * git add <file's name>: to inform Git to track changes/updates/deletes of the specified files in the current directory; you can use <.> for <file's name> to track all (modified/updated/untracked) files in the current directory
 * git commit -m "Message 1 (usually for what you do and when you do it)", -m "Message 2 (usually for further description)": to save changes/updates/deletes of all files in the current directory in Git
+* git commit -am "message": to simultaneously add and save changes/updates/deletes of modified files only in the current directory in Git; this is a short cut for git add and git commit
 * git remote add origin <repo's SSH>: to add a reference to the remote repo to set up the connection between the current local repo and the remote repo
 * git remote -v: to check if there's any remote repo that is connected to the local repo you are working on
 * git push origin <branch'name>: to upload Git commits from the specified branch of the current directory from the local repo to the remote repo
-* git push -u origin <branch'name>: to set an upstream for the specified branch of the current directory to set it as a default so that everytime you want to push Git commits from that branch, you can use git push without typing out origin <branch'name>
-* git pull: to download changes/updates/deletes from the remote repo to the local repo
-
+* git pull origin <branch'name>: to download Git commits from the specified branch of the current directory from the remote repo to the local repo
+* -u, or --set-upstream,: can be added to git push or git pull before origin <branch'name> to set the specified branch of the current directory as a default branch so that everytime you want to push or pull Git commits from current directory, you can use git push or git pull without typing out origin <branch'name>
 
 * git branch: to list all branches in the current directory
+* git branch -d <branch'name>: to delete the specified branch in the current directory
 * git checkout <branch'name>: to switch from the current branch to the specified branch in the current directory
-* git checkout -b <branch'name>: to create a new branch from the current branch in the current directory
+* git checkout -b <branch'name>: to create a new branch and switch to that branch from the current branch in the current directory
 * git diff <branch'name>: to show the difference between the current branch and the specified branch in the current directory
-* git merge:
+* git merge <branch'name>: to merge Git commits from the current branch to the specified branch in the current directory; if there're any merge conflicts, you have to fix them then commit the results.
+
+* git reset <file's name>: to unstage any uncommited changes/updates/deletes of the specified file in the current directory
+* git reset HEAD, or git reset HEAD~<pointer's index>: to unstage any uncommited and commited changes/updates/deletes of all files in the current directory; the index starts with 0, HEAD = HEAD~0, so after HEAD is HEAD~1,..., HEAD means the pointer to the latest commit, HEAD~1 means the pointer to one commit before the latest commit
+* git reset <commit's hash number>: to unstage any commited changes/updates/deletes of all files in the current directory after the specified commit; the codes will still be there but not saved in Git commits
+* git reset --hard <commit's hash number>: is the same as git reset <commit's hash number> except that the codes will be completely removed
