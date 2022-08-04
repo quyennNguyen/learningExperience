@@ -22,7 +22,7 @@ When setting up SSH, you need to (1) generate a SSH private key to use on your l
     To generate a SSH private key:
         a. Check for existing key:
         ls -la ~/.ssh
-        b. If there is no existing key, generate a private key with your GitHub account email address:
+        b. If there is no existing key, generate a private key with your GitHub account's email address:
         ssh-keygen -t ed25519 -C "email address"
         c. Add your passphrase (the passphrase will be hidden on the Command Line):
         d. Start the SSH agent manually:
@@ -42,10 +42,13 @@ git clone <repo's SSH>: to bring a repo where your project is hosted (remotely) 
 git add <file's name>: to track changes/updates/deletes of your codes in Git
     you can use <.> for <file's name> to track all the files, modified/updated/untracked
 git commit -m "Message 1 (usually for what you do and when you do it)", -m "Message 2 (usually for further description)": to save changes/updates/deletes of your codes in Git
-git push: to upload Git commits from your local machine to the remote repo where your project is hosted
+git push origin master: to upload Git commits from your local machine to the remote repo where your project is hosted
 git pull: to download changes/updates/deletes from the remote repo where your project is hosted to your local machine
 git --version: to check Git's version
-cd <directory's name>: to change directory
-    .git: is the hidden folder that stores all the changes/updates/deletes to your files that are saved in the Git commits
+cd <directory's name>: to change directory to the specified directory
+    cd = cd ~: to get to home directory
+    cd ..: to get to one level above the current directory
 ls -la: to list all files and folders, including hidden ones, that are saved in the Git commits
+    .git: is the hidden folder that stores all the changes/updates/deletes to your files that are saved in the Git commits
 git status: to show all the changed/updated/deleted files that are not yet saved in the Git commits
+git init
