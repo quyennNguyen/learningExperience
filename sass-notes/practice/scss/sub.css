@@ -1,0 +1,80 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  background: #171430;
+}
+
+.login {
+  margin: 10px;
+  border-radius: 10px;
+  width: 30vw;
+  height: 30vw;
+  display: grid;
+  grid-template-columns: 60%;
+  grid-template-rows: 10% 30% 10% 10%;
+  justify-content: center;
+  align-content: center;
+  background: linear-gradient(to bottom right, #8099E9, #C292DE, #E99DCB);
+}
+.login p {
+  padding: 10px;
+  font-size: 2rem;
+  font-weight: 800;
+  text-align: center;
+}
+.login fieldset {
+  margin: 20px 10px;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: center;
+  background: rgba(255, 255, 255, 0.1);
+}
+.login fieldset input {
+  border: none;
+  font-size: 1rem;
+  color: white;
+  background: transparent;
+}
+.login button {
+  margin: 10px;
+  border: none;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  background: rgba(23, 20, 48, 0.2);
+  cursor: pointer;
+}
+
+.option {
+  margin: 10px;
+}
+.option a {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+  font-weight: 800;
+  transition: all 0.5s ease-in-out;
+}
+.option a:hover {
+  color: #8099E9;
+}/*# sourceMappingURL=sub.css.map */
