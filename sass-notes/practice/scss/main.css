@@ -49,7 +49,7 @@ header .login-btn .signup-link.light:hover {
 }
 header .login-btn .login-link {
   border-radius: 20px;
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.5);
 }
 header .menu {
   position: fixed;
@@ -57,7 +57,7 @@ header .menu {
   right: 0;
   display: flex;
   flex-flow: row-reverse;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
 }
 header .menu .menu-btn {
@@ -65,9 +65,11 @@ header .menu .menu-btn {
   cursor: pointer;
 }
 header .menu .menu-nav {
+  border-radius: 20px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
+  background: rgba(255, 255, 255, 0.3);
   visibility: hidden;
 }
 header .menu .menu-nav.open {
@@ -105,7 +107,7 @@ header .menu .menu-nav .menu-item .menu-link .menu-title {
   border-radius: 20px;
   padding: 10px 20px;
   text-transform: uppercase;
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.5);
   display: none;
 }
 
@@ -125,7 +127,7 @@ main #about {
 }
 main #about .general-info {
   grid-area: 1/1/span 2/span 1;
-  border-radius: 10px;
+  border-radius: 20px;
   color: #171430;
   background: linear-gradient(to bottom right, #8099E9, #C292DE, #E99DCB);
 }
@@ -206,7 +208,7 @@ main #features .project-list li {
 }
 main #contacts .contact-menu {
   margin: auto;
-  border-radius: 10px;
+  border-radius: 20px;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -247,7 +249,7 @@ main #contacts .contact-menu span {
   border-radius: 20px;
   padding: 10px 20px;
   font-weight: 800;
-  background: #8099E9;
+  background: rgba(255, 255, 255, 0.5);
   display: none;
 }
 
@@ -309,9 +311,13 @@ footer .setting-box .theme-btn .theme-toggle > #light {
 @media only screen and (max-width: 900px) {
   header .menu {
     flex-flow: column;
+    justify-content: center;
+    align-items: flex-end;
   }
   header .menu .menu-nav {
     flex-flow: column;
+    justify-content: center;
+    align-items: flex-end;
   }
   main #about {
     grid-template-columns: 90vw;

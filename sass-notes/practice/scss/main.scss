@@ -36,7 +36,7 @@ header {
 
         .login-link {
             border-radius: 20px;
-            background: rgba(set-color($primary-color), 0.3);
+            background: rgba(set-color($primary-color), 0.5);
         }
     }
 
@@ -46,7 +46,7 @@ header {
         right: 0;
         display: flex;
         flex-flow: row-reverse;
-        justify-content: center;
+        justify-content: flex-end;
         align-items: center;
 
         .menu-btn {
@@ -55,9 +55,11 @@ header {
         }
 
         .menu-nav {
+            border-radius: 20px;
             display: flex;
-            justify-content: center;
+            justify-content: flex-end;
             align-items: center;
+            background: rgba(set-color($primary-color), 0.3);
             visibility: hidden;
 
             &.open {
@@ -87,7 +89,7 @@ header {
                         border-radius: 20px;
                         padding: 10px 20px;
                         text-transform: uppercase;
-                        background: rgba(set-color($primary-color), 0.3);
+                        background: rgba(set-color($primary-color), 0.5);
                         display: none;
                     }
                 }
@@ -214,7 +216,7 @@ main {
 
         .general-info {
             grid-area: 1 / 1 / span 2 / span 1;
-            border-radius: 10px;
+            border-radius: 20px;
             color: $primary-color;
             background: $background-color;
 
@@ -318,7 +320,7 @@ main {
 
         .contact-menu {
             margin: auto;
-            border-radius: 10px;
+            border-radius: 20px;
             width: fit-content;
             display: flex;
             align-items: center;
@@ -350,7 +352,7 @@ main {
                 border-radius: 20px;
                 padding: 10px 20px;
                 font-weight: map-get($font-weight, large);
-                background: $secondary-color;
+                background: rgba(set-color($primary-color), 0.5);
                 display: none;
             }
         }
@@ -412,15 +414,15 @@ footer {
         #about {
             grid-template-columns: 30vw 60vw;
             grid-template-rows: auto auto;
-    
+
             .general-info {
                 grid-area: 1 / 1 / span 1 / span 1;
             }
-    
+
             .skills {
                 grid-area: 1 / 2 / span 1 / span 1;
             }
-    
+
             .work-experience {
                 grid-area: 2 / 1 / span 1 / span 2;
             }
@@ -433,27 +435,31 @@ footer {
 
         .menu {
             flex-flow: column;
+            justify-content: center;
+            align-items: flex-end;
 
             .menu-nav {
                 flex-flow: column;
+                justify-content: center;
+                align-items: flex-end;
             }
         }
     }
-    
+
     main {
 
         #about {
             grid-template-columns: 90vw;
             grid-template-rows: auto auto auto;
-    
+
             .general-info {
                 grid-area: 1 / 1 / span 1 / span 1;
             }
-    
+
             .skills {
                 grid-area: 2 / 1 / span 1 / span 1;
             }
-    
+
             .work-experience {
                 grid-area: 3 / 1 / span 1 / span 1;
             }
