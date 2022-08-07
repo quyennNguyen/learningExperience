@@ -27,11 +27,11 @@ SOURCE: https://www.youtube.com/watch?v=RGOj5yH7evk&t=234s
 ##### Whenever you use the key, you need to enter the passphrase. If you don't want to enter the passphrase everytime you use the key, you can add the key to the SSH agent.
 ##### The SSH agent manages your SSH private key and remembers your passphrase.
 ##### To generate a SSH private key:
-##### a. Check for existing key: ls -la ~/.ssh
-##### b. If there is no existing key, generate a private key with your GitHub account's email address: ssh-keygen -t ed25519 -C "email address"
+##### a. Check for existing key: ls -la file's-path
+##### b. If there is no existing key, generate a private key with your GitHub account's email address: ssh-keygen -t ed25519 -C "email-address"
 ##### c. Add your passphrase (the passphrase will be hidden on the Command Line)
 ##### d. Start the SSH agent manually: eval "$(ssh-agent -s)"
-##### d. Add your key to the SSH agent: ssh-add ~/.ssh/id_ed25519
+##### d. Add your key to the SSH agent: ssh-add file's-name
 ##### 2. Public Key:
 ##### To add a SSH public key to your account:
 ##### a. Copy the public key to your clipboard: clip < ~/.ssh/id_ed25519.pub
