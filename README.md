@@ -68,7 +68,7 @@
 * Icon Library and Toolkit: https://fontawesome.com/
 * Check out my sass_notes
 #### JavaScript:
-* https://www.youtube.com/watch?v=lI1ae4REbFM
+* https://youtu.be/lI1ae4REbFM
 * JavaScript with VSCode: https://code.visualstudio.com/docs/languages/javascript
 * Install npm: https://code.visualstudio.com/docs/nodejs/working-with-javascript
 * Check out my javascript_notes
