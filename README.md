@@ -67,6 +67,11 @@
 * https://sass-lang.com/documentation/
 * Icon Library and Toolkit: https://fontawesome.com/
 * Check out my sass_notes
+#### JavaScript:
+* https://www.youtube.com/watch?v=lI1ae4REbFM
+* JavaScript with VSCode: https://code.visualstudio.com/docs/languages/javascript
+* Install npm: https://code.visualstudio.com/docs/nodejs/working-with-javascript
+* Check out my javascript_notes
 #### VERSION CONTROL SYSTEM:
 * https://youtu.be/RGOj5yH7evk
 * Install Git: https://www.atlassian.com/git/tutorials/install-git#windows
