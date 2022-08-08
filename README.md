@@ -70,7 +70,7 @@
 #### JavaScript:
 * https://youtu.be/lI1ae4REbFM
 * JavaScript with VSCode: https://code.visualstudio.com/docs/languages/javascript
-* Install npm: https://code.visualstudio.com/docs/nodejs/working-with-javascript
+* Install npm to run JavaScript in VSCode: https://code.visualstudio.com/docs/nodejs/working-with-javascript
 * Check out my javascript_notes
 #### VERSION CONTROL SYSTEM:
 * https://youtu.be/RGOj5yH7evk
