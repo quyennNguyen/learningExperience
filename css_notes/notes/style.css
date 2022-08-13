@@ -1,11 +1,13 @@
-/*SOURCE: https://youtu.be/1Rs2ND1ryYc */
-/*WHAT IS CSS?
+/*
+SOURCE: https://youtu.be/1Rs2ND1ryYc 
+
+WHAT IS CSS?
     CSS, stands for Cascading Style Sheet, is a standard language used to give styling and design to websites.
     While HTML forms the structural foundation of a Web page, CSS describes its presentation (colors, backgrounds, font sizes, layouts,...).
     HTML and CSS usually go hand-in-hand.
     CSS files have the file extension .css
-*/
-/*WHATS ARE CSS SELECTORS AND PROPERTIES?
+
+WHATS ARE CSS SELECTORS AND PROPERTIES?
     CSS rule consists of a selector and a style declaration block and is defined by:
         SELECTOR {
             PROPERTY: VALUE;
@@ -114,8 +116,8 @@
         There are some special values built in every properties:
             1. initial: to set the property to its default value
             2. inherit: to inherit the property from its parent element
-*/
-/*WHAT IS CSS SPECIFICITY?
+
+WHAT IS CSS SPECIFICITY?
     If there are two or more CSS rules that point at the same element, the CSS selector with the highest specificity value will override the others, and its style declaration will be applied to that element.
     CSS Specificity Hierarchy: 
         Universal Selector (+0)
@@ -134,8 +136,8 @@
                             </head>
                 for the styling of the HTML document, you can apply the CSS rules directly into the HTML tag by using the "style" attribute.
                 Syntax: <start-tag style="CSS rule"> content </end-tag>
-*/
-/*WHAT ARE CSS BROWSER PREFIXES? 
+
+WHAT ARE CSS BROWSER PREFIXES? 
     CSS browser prefixes, or vendor prefixes, are a way for browser makers to add support for new features before those features are fully supported in all browsers.
     There are some common browser prefixes:
         Android: -webkit-
@@ -145,8 +147,8 @@
         iOS: -webkit-
         Opera: -o-
         Safari: -webkit-
-*/
-/*WHAT ARE CSS UNITS?
+
+WHAT ARE CSS UNITS?
     Length is a number followed by a length unit, EX: 100px.
     One length can be specified in various units.
     There are two types of length units:
@@ -164,8 +166,8 @@
                 So, pixel is an absolute unit but relatively scale based on what output device you're on.
                 EX: The qualtity of a Youtube video is set at 2160p (4K), which means the video display has a resolution of 3840p (width) x 2160p (height), which is a fixed unit. However, the sharpness of the display might differ between when you set the display at full screen and when you set the display at theater mode. The resolution relatively scales based on the size of the display.
     Full list: https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units
-*/
-/*WHAT IS CSS TEXT?
+
+WHAT IS CSS TEXT?
     1. text-align:
     Value:
             center
@@ -212,8 +214,8 @@
             isolate
             isolate-override
             plaintext
-*/
-/*WHAT IS CSS FONT?
+
+WHAT IS CSS FONT?
     "font" is a shorthand property.
     Order:
         1. font-style (optional):
@@ -274,8 +276,8 @@
         Fallback Fonts are fonts that are similar to the first declared font in the same font family and added as backup fonts. If the first declared one is not found or not installed properly, the Web browser will try the following one, and the one after, and so on. It is highly suggested to declare more than one font and end the list with the generic font family name.
         Standard Fonts: https://www.w3schools.com/css/css_font.asp
         External Fonts: https://fonts.google.com/
-*/
-/*WHAT IS CSS COLOR?
+
+WHAT IS CSS COLOR?
     Three primary colors of light sources (at least determined by computer system) are Red - Green - Blue.
     One CSS color can be specified in various ways:
         1. predefined name
@@ -291,8 +293,8 @@
         "rgba" and "hsla" are extensions of "rgb" and "hsl" color values with an alpha channel.
         "alpha" specifies the opacity/transparency of the color, which ranges from 0.0 to 1.0, where 0.0 is fully transparent, 1.0 is fully opaque.
     Color Picker: https://www.w3schools.com/colors/colors_picker.asp
-*/
-/*WHAT ARE CSS GRADIENT?
+
+WHAT ARE CSS GRADIENT?
     1. linear-gradient(direction/angle, color1, color2,...)
     There should be at least 2 color stops.
     "direction" can be to top, to bottom (default value), to left, to right, to top left, to top right, to bottom left, to bottom right.
@@ -315,8 +317,8 @@
                 add "repeating-" before the property to repeat the gradients
                 add an angle after the color stop to adjust the proportion of the color
                 add property "border-radius: 50%" to make the conic gradients as a pie
-*/
-/*WHAT IS CSS BACKGROUND?
+
+WHAT IS CSS BACKGROUND?
     "background" is a shorthand property.
     Order:
         1. background-color:
@@ -361,17 +363,8 @@
                 border-box (default value)
                 padding-box 
                 content-box
-*/
-/*WHAT IS CSS VISIBILITY?
-    Value:
-            visible (default value)
-            hidden
-            collapse
-    SIDE NOTE:
-                The space is still take up if the element is "hidden", but is not if the element is "collapse".
-                "collapse" is only used for table-type element. If "collapse" is used for other elements, they will be specified as "hidden".
-*/
-/*WHAT IS CSS POSITION?
+
+WHAT IS CSS POSITION?
     Value:
         1. static (default value):
         The element is positioned according to the normal flow of the page.
@@ -394,8 +387,8 @@
         The sticky element toggles between relative and fixed. It is positioned relative, until a given offset position is met in the viewport, it will be positioned fixed.
     SIDE NOTE:
                 The "position" property must be specified before the element is positioned using the "top", "bottom", "left", or "right" properties.
-*/
-/*WHAT IS CSS FLOAT AND CLEAR?
+
+WHAT IS CSS FLOAT AND CLEAR?
     1. float:
     Value:
             none (default value)
@@ -427,18 +420,27 @@
                     * {
                         box-sizing: border-box;
                     }
-*/
-/*WHAT IS CSS DISPLAY?
+
+WHAT IS CSS VISIBILITY?
+    Value:
+            visible (default value)
+            hidden
+            collapse
+    SIDE NOTE:
+                The space is still take up if the element is "hidden", but is not if the element is "collapse".
+                "collapse" is only used for table-type element. If "collapse" is used for other elements, they will be specified as "hidden".
+
+WHAT IS CSS DISPLAY?
     Value:
             none (default value)
+            block
             inline
             inline-block
-            block
     SIDE NOTE:
                 There is a similarity between "display: none" and "visibility: hidden". Both of which hide the element. But with "display: none", the hidden element doesn't take up the space and behaves as if it's not there. And with "visibility: hidden", the hidden element still takes up the space and affects the layout.
                 "margin", "border", and "padding" can be used on "inline", "inline-block" and "block". However, "width" and "height" can only affect "inline-block" and "block".
-*/
-/*WHAT IS CSS BOX MODEL?
+
+WHAT IS CSS BOX MODEL?
     CSS Box Model is a display type with a series of positioning properties to layout HTML elements. Think of it like an invisible box that wraps around every HTML element and is layered like an onion.
     From outer to inner, there are:
         I. MARGIN (outer transparent space)
@@ -515,8 +517,8 @@
                             property: all sizes equal
                         }
                 To keep the size of the Web page consistent among different devices, it is suggested to use px, %, or vw.
-*/
-/*WHAT IS CSS FLEXBOX MODEL?
+
+WHAT IS CSS FLEXBOX MODEL?
     CSS Flexbox Module is a display type with a range of properties to design flexible responsive layout easily. It is similar to the Box Model and is an alternative to using displays, floats, and other positioning properties.
     From outer to inner, there are two main components:
         I. FLEX CONTAINER
@@ -596,8 +598,8 @@
             SIDE NOTE:
                         "align-self" of selected flex item can override "align-items" of the flex container.
     Flexbox Responsive: https://www.w3schools.com/css/css3_flexbox_responsive.asp
-*/
-/*WHAT IS CSS GRID?
+
+WHAT IS CSS GRID?
     CSS Grid Module is a display type with a grid-based layout system (with rows and columns) that can activate certain layout features easily. It is similar to the Flexbox and is an alternative to using displays, floats, and other positioning properties. While Flexbox focuses on width mainly, Grid focuses on both width and height.
     From outer to inner, there are two main components:
         I. GRID CONTAINER
@@ -753,8 +755,8 @@
                 EX: selector (grid container) {
                         grid-template-areas: 'a a a . . .';
                     } 
-*/
-/*WHAT IS CSS TRANSITION?
+
+WHAT IS CSS TRANSITION?
     "transition" is a shorthand property.
     Order:
         1. transition-property (required):
@@ -785,8 +787,8 @@
                 Therefore, the "transition" property needs to be declared in the base selector's block with the original properties and values.
                 The base selector needs to perform some action using pseudo selector and declares new values for the specified properties in another declaration block.
                 The transition effect only occurs when the action is taken as specified.
-*/
-/*WHAT IS CSS TRANSFORM?
+
+WHAT IS CSS TRANSFORM?
     There are two types of CSS transformations using the "transform" property, each of which has its own methods:
         I. 2D TRANSFORM
             1. translate(x+unit of choice (EX: px, %, vw,...), y+unit of choice (EX: px, %, vw,...))
@@ -837,8 +839,8 @@
                 c. scaleZ(z)
             4. matrix3d()
             5. perspective()
-*/
-/*WHAT IS CSS ANIMATION?
+
+WHAT IS CSS ANIMATION?
     CSS animation lets an element gradually change from one style to another.
     For the animation to work, you must bind the animation to a base element where the "animation" property is declared.
     This is a shorthand property.
