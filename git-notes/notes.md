@@ -62,7 +62,7 @@ SOURCE: https://www.youtube.com/watch?v=RGOj5yH7evk&t=234s
 * git remote -v: to check if there's any remote repo that is connected to the local repo you are working on
 ##### General Git Workflow:
 * git add <file's name>: to inform Git to track changes/updates/deletes of the specified files in the current directory; you can use <.> for <file's name> to track all (modified/updated/untracked) files in the current directory
-* git commit -m "Message 1 (usually for what you do and when you do it)", -m "Message 2 (usually for further description)": to save changes/updates/deletes of all files in the current directory in Git
+* git commit -m "Message 1 (usually for what you do and when you do it)", -m "Message 2 (usually for further description)": to save changes/updates/deletes of all files in the current directory in Git; if you want to omit the "-m" flag and skip the messages, after generating git commit, press ESC -> type :wq -> press ENTER
 * git commit -am "message": to simultaneously add and save changes/updates/deletes of modified files only in the current directory in Git; this is a short cut for git add and git commit
 * git push origin <branch'name>: to upload Git commits from the specified branch of the current directory from the local repo to the remote repo
 * git pull origin <branch'name>: to download Git commits from the specified branch of the current directory from the remote repo to the local repo
