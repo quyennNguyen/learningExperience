@@ -5,6 +5,7 @@ SOURCE: https://www.youtube.com/watch?v=RGOj5yH7evk&t=234s
 ### WHAT IS VERSION CONTROL SYSTEM?
 ##### Version Control, or Revision Control / Source Control / Source Code Management, is the management of changes to computer programs, documents, large web sites, and other collections of information. It basically records all the changes of your codes so that you and/or your team members can recall the specific versions of the codes over the time. This helps you track your codes (what you do and when you do it) as well as track down bugs.
 ##### Git is the most widely used free and open source Version Control System in software development.
+##### I will mainly use Windows Powershell for this.
 
 ***
 
