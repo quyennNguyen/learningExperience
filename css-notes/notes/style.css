@@ -1,0 +1,950 @@
+/*
+SOURCE: https://youtu.be/1Rs2ND1ryYc 
+
+WHAT IS CSS?
+    CSS, stands for Cascading Style Sheet, is a standard language used to give styling and design to websites.
+    While HTML forms the structural foundation of a Web page, CSS describes its presentation (colors, backgrounds, font sizes, layouts,...).
+    HTML and CSS usually go hand-in-hand.
+    CSS files have the file extension .css
+
+WHATS ARE CSS SELECTORS AND PROPERTIES?
+    CSS rule consists of a selector and a style declaration block and is defined by:
+        SELECTOR {
+            PROPERTY: VALUE;
+        }
+    Selectors select the HTML elements that you want to style.
+    Style declaration block contains one or more style declarations, each of which consists of a property and a value, where you style the selected element.
+    CSS SELECTORS:
+        I. Universal Selector:
+        This selector selects and applies the style declaration to all elements on the Web page.
+            * {
+                property: value;
+            }
+        II. Simple Selectors:
+            1. Element Selector:
+            By selecting the tag name of an element, the style declaration is applied to all elements with that tag name on the Web page.
+                tag-name {
+                    property: value;
+                }
+            2. Class Selector:
+            By selecting a certain class name (with a "class" attribute), the style declaration is applied to only elements with that particular class name on the Web page.
+            This selector can be used multiple times.
+                .class-name {
+                    property: value;
+                }
+            3. ID Selector:
+            By selecting a certain ID name (with an "id" attribute), the style declaration is applied to only elements with that particular id name on the Web page.
+            It is possible to use this selector more than once, but the convention says the id shoulld be unique for selected element.
+                #id-name {
+                    property: value;
+                }
+        III. Pseudo Selectors:
+        These selectors are used commonly in interactivity with the Web page.
+            1. Pseudo-Element Selector:
+            A pseudo-element is a keyword added to a selector to style specified part(s) of the selected element.
+            Full list: https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements
+                selector::pseudo-element {
+                    property: value;
+                }
+            2. Pseudo-Class Selector:
+            A pseudo-class is a keyword added to a selector to style a specified special state of the selected element.
+            Full list: https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes 
+                selector:pseudo-class {
+                    property: value;
+                }
+        IV. Attribute Selector:
+        This selector selects and applies the style declaration to all elements...
+            1. with a specified attribute:
+                selector[attribute] {
+                    property: value;
+                }
+            2. with a specified attribute whose value is exactly the specified "value":
+                selector[attribute="value"] {
+                    property: value;
+                }
+            3. with a specified attribute whose value is exactly the specified "value" or the specified "value" followed by "-":
+                selector[attribute|="value"] {
+                    property: value;
+                }
+            4. with a specified attribute whose value contains a specified space-separated whole-word "value":
+                selector[attribute~="value"] {
+                    property: value;
+                }
+            5. with a specified attribute whose value contains a specified "value", which is unnecessarily space-separated whole-word:
+                selector[attribute*="value"] {
+                    property: value;
+                }
+            6. with a specified attribute whose value starts with a specified "value", which is unnecessarily space-separated whole-word:
+                selector[attribute^="value"] {
+                    property: value;
+                }
+            7. with a specified attribute whose value ends with a specified "value", which is unnecessarily space-separated whole-word:
+                selector[attribute$="value"] {
+                    property: value;
+                }           
+        SIDE NOTE:
+                    add "i" or "I" before "]" for case-insensitivity
+                    add "s" or "S" before "]" for case-sensitivity
+        V. Advanced Selectors:
+        More than one selector can be grouped together.
+        A combinator is included to define the relationship between the selectors.
+            1. Adjacent Sibling Selector:
+            This selector selects and applies the style declaration to an element that immediately follows another specified element.
+            Conditions: (1) the second element immediately follows the first element and (2) both elements are children of the same parent element.
+                selector1 + selector2 {
+                    property: value;
+                }
+            2. General Sibling Selector:
+            This selector selects and applies the style declaration to all elements that follow a specified element.
+            Conditions: (1) the element(s) (not necessarily immediately) follows the first element and (2) all elements are children of the same parent element.
+                selector1 ~ selector2 {
+                    property: value;
+                }
+            3. Child Selector:
+            This selector selects and applies the style declaration to all elements that are immediate/direct children of a specified element.
+                selector1 > selector2 {
+                    property: value;
+                }
+            4. Descendant Selector:
+            This selector selects and applies the style declaration to all elements that are descendants (not immediate/direct children) of a specified element.
+                selector1 selector2 {
+                    property: value;
+                }
+    Pronounciation: https://blog.codinghorror.com/ascii-pronunciation-rules-for-programmers/
+    CSS PROPERTIES (COMMON FEATURES):
+        Shorthand Properties are properties that can set values of multiples other properties simultaneously in one whitespace-seperated style declaration, which usually have a specific order for the values, to obtain more concise code.
+        There are some special values built in every properties:
+            1. initial: to set the property to its default value
+            2. inherit: to inherit the property from its parent element
+
+WHAT IS CSS SPECIFICITY?
+    If there are two or more CSS rules that point at the same element, the CSS selector with the highest specificity value will override the others, and its style declaration will be applied to that element.
+    CSS Specificity Hierarchy: 
+        Universal Selector (+0)
+        Element Selector/Pseudo-Element Selector (+1)
+        Class Selector/Pseudo-Class Selector/Attribute Selectors (+10)
+        ID Selector (+100)
+        Inline Style/Contextual Style (+1000)
+    SIDE NOTE:
+                Inline Style/Contextual Style means instead of having CSS rules written
+                    1. in a seperate CSS file
+                    2. in the <style> tag in the <head> tag of the HTML document
+                    Syntax: <head>
+                                <style>
+                                    CSS rules
+                                </style>
+                            </head>
+                for the styling of the HTML document, you can apply the CSS rules directly into the HTML tag by using the "style" attribute.
+                Syntax: <start-tag style="CSS rule"> content </end-tag>
+
+WHAT ARE CSS BROWSER PREFIXES? 
+    CSS browser prefixes, or vendor prefixes, are a way for browser makers to add support for new features before those features are fully supported in all browsers.
+    There are some common browser prefixes:
+        Android: -webkit-
+        Chrome: -webkit-
+        Firefox: -moz-
+        Internet Explorer: -ms-
+        iOS: -webkit-
+        Opera: -o-
+        Safari: -webkit-
+
+WHAT ARE CSS UNITS?
+    Length is a number followed by a length unit, EX: 100px.
+    One length can be specified in various units.
+    There are two types of length units:
+        1. Absolute Units:
+        These units are fixed, and the length expressed in these units appears exactly as that size.
+        EX: cm, mm, in, px, pc, pt, Q,...
+        2. Relative Units:
+        These units specify a length which scales relative to another length property.
+        EX: %, em, ex, ch, rem, lh, vw, vh, vmin, vmax,...
+    SIDE NOTE:
+                In computing, DPI, which stands for Dots Per Inch, is a measure of the number of dots that can be placed within a span of an inch, or the dot density, of digital printing/scanning devices, such as printer,... 
+                Similarly, PPI, which stands for Pixels Per Inch, is a measure of the pixel density of electronic image devices, such as television display, computer monitor, video, image,...
+                Either DPI or PPI can be used to describe the resolution of an output device. The higher the DPI or PPI, the higher the resolution, the sharper the output.
+                EX: The qualtity setting of a Youtube video can range from 144p, 240p, 360p, 480p, to 720p (HD), 1080p (FHD), 1440p (2K), 2160p (4K). These numbers specify the vertical resolution pixels of the video display (this is not the PPI but the number of pixels the display height has). As you set the higher quality, the video display appears smoother and clearer.
+                So, pixel is an absolute unit but relatively scale based on what output device you're on.
+                EX: The qualtity of a Youtube video is set at 2160p (4K), which means the video display has a resolution of 3840p (width) x 2160p (height), which is a fixed unit. However, the sharpness of the display might differ between when you set the display at full screen and when you set the display at theater mode. The resolution relatively scales based on the size of the display.
+    Full list: https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units
+
+WHAT IS CSS TEXT?
+    1. text-align:
+    Value:
+            center
+            justify
+            left (default value)
+            right
+            start
+            end
+    "text-align-last" can specify the alignment of the last line of a text.
+    2. text-decoration:
+    This is a shorthand property.
+    Order:
+        a. text-decoration-line (required):
+        Value:
+                none
+                underline (default value)
+                line-through
+                overline
+        b. text-decoration-color (optional):
+        Value as in CSS colors
+        c. text-decoration-style (optional):
+        Value:
+                none
+                solid
+                double
+                dotted
+                dashed
+                wavy
+        d. text-decoration-thickness (optional)
+    3. text-transform:
+    Value:
+            capitalize
+            uppercase
+            lowercase
+    4. direction:
+    Value:
+            ltr (default value)
+            rtl
+    "unicode-bidi" is used hand-in-hand with "direction" to set or return whether the text should be overridden to support mulitple languages in the same Web page
+    Value:
+            normal (default value)
+            embed
+            bidi-override
+            isolate
+            isolate-override
+            plaintext
+
+WHAT IS CSS FONT?
+    "font" is a shorthand property.
+    Order:
+        1. font-style (optional):
+        Value:
+                normal
+                italic
+                oblique
+        2. font-variant (optional):
+        Value:
+                normal
+                small-caps
+        3. font-weight (optional):
+        Value can be specified in:
+            a. predefined values:
+            normal, lighter, bold, bolder
+            b. length:
+            x (without unit)
+            "x" ranges from 100 to 900
+        4. font-size (required):
+        Value can be specified in:
+            a. predefined values:
+            xx-small, x-small, small, smaller, medium, large, larger, x-large, xx-large
+            b. absolute size:
+            This sets the text to a specified fixed size.
+            This does not allow user to change the text size in the Web browser, which is not good for accessibility reasons.
+            This is only useful when the physical size of the output is known.
+            c. relative size:
+            This sets the text to a relative size based on the surrounding elements.
+            This allows user to change the text size in the Web browser.
+        By default, the font size is 1em = 16px.
+        SIDE NOTE:
+                    "em" indicates the font size of the element and is a relative unit, where x em means x times the size of the current font.
+                    Setting font size with "em" or "px" allows user to adjust the text size or resize the Web page by zoom tool.
+        SIDE NOTE: 
+                    In some older Web browsers, there is a problem where the text becomes larger or smaller than it should when adjusted.
+                    To solve that problem, set a default font-size in percentage in the "body"
+                        body {
+                            font-size: 100%;
+                        }
+                    This allows the text to be shown the same in all Web browsers as well as allows all Web browsers to zoom or resize the text.
+        5. font-family (required):
+        There are five generic font families: serif, sans-serif, monospace, cursive, fantasy.
+        Each font family is a collection of different font names with similar features.
+        Value:
+                font-name-1, font-name-2,..., font-family
+        Web Safe Fonts are fonts that are universally installed across all browsers.
+        Some commonly used are:
+            Arial (sans-serif)
+            Verdana (sans-serif)
+            Helvetica (sans-serif)
+            Tahoma (sans-serif)
+            Trebuchet MS (sans-serif)
+            Times New Roman (serif)
+            Georgia (serif)
+            Garamond (serif)
+            Courier New (monospace)
+            Brush Script MT (cursive)
+        Fallback Fonts are fonts that are similar to the first declared font in the same font family and added as backup fonts. If the first declared one is not found or not installed properly, the Web browser will try the following one, and the one after, and so on. It is highly suggested to declare more than one font and end the list with the generic font family name.
+        Standard Fonts: https://www.w3schools.com/css/css_font.asp
+        External Fonts: https://fonts.google.com/
+
+WHAT IS CSS COLOR?
+    Three primary colors of light sources (at least determined by computer system) are Red - Green - Blue.
+    One CSS color can be specified in various ways:
+        1. predefined name
+        2. #rrggbb
+        "rr", "gg", and "bb" specify the intensity of red, green, and blue, respectively, by hexadecimal values from 00 to ff.
+        3. rgb(rrr, ggg, bbb)
+        "rrr", "ggg", and "bbb" specify the intensity of red, green, and blue, respectively, which ranges from 0 to 255.
+        4. hsl(hue, saturation, lightness)
+        "hue" specifies the degree on the color wheel, which ranges from 0 to 360, where red is 0, green is 120, blue is 240.
+        "saturation" specifies a percentage of the color intensity, where 0% is a shade of gray, 100% is the pure color.
+        "lightness" specifies a percentage of the color lightness, where 0% is black, 50% is the pure color, 100% is white.
+        5. rgba(rrr, ggg, bbb, aa) & hsla(hue, saturation, lightness, alpha)
+        "rgba" and "hsla" are extensions of "rgb" and "hsl" color values with an alpha channel.
+        "alpha" specifies the opacity/transparency of the color, which ranges from 0.0 to 1.0, where 0.0 is fully transparent, 1.0 is fully opaque.
+    Color Picker: https://www.w3schools.com/colors/colors_picker.asp
+
+WHAT ARE CSS GRADIENT?
+    1. linear-gradient(direction/angle, color1, color2,...)
+    There should be at least 2 color stops.
+    "direction" can be to top, to bottom (default value), to left, to right, to top left, to top right, to bottom left, to bottom right.
+    "angle" ranges from 0deg to 360deg, where to top is 0deg, to right is 90deg, to bottom is 180deg (default value), to left is 270deg.
+    SIDE NOTE:
+                add "repeating-" before the property to repeat the gradients
+                add a percentage after the color stop to adjust the proportion of the color
+    2. radial-gradient(shape size at position, color1, color2,...)
+    There should be at least 2 color stops.
+    "shape" can be ellipse (default value), or circle.
+    "size" can be closest-side, farthest-side, closest-corner, farthest-corner (default value).
+    "position" as in CSS background-position
+    SIDE NOTE:
+                add "repeating-" before the property to repeat the gradients
+                add a percentage after the color stop to adjust the proportion of the color
+    3. conic-gradient(from angle at position, color1, color2,...)
+    There should be at least 2 color stops.
+    By default, "angle" is 0deg, "position" is center (50% 50%).
+    SIDE NOTE:
+                add "repeating-" before the property to repeat the gradients
+                add an angle after the color stop to adjust the proportion of the color
+                add property "border-radius: 50%" to make the conic gradients as a pie
+
+WHAT IS CSS BACKGROUND?
+    "background" is a shorthand property.
+    Order:
+        1. background-color:
+        Value as in CSS colors
+        2. background-image: 
+        Value: 
+                url("source/link/reference of the image")
+        3. background-repeat: 
+        Value:
+                repeat (default value)
+                no-repeat
+                repeat-x
+                repeat-y
+        4. background-attachment:
+        Value:
+                scroll (default value)
+                fixed
+        5. background-position:
+        Value can be specified in:
+            a. predefined values:
+            left top (default value), left bottom, right top, right bottom, center top, center bottom, center
+            b. length (in percentage):
+            x% y%
+            "x" is the horizontal position, "y" is the vertical position, each of which ranges from 0% to 100%, where left top is 0% 0% (default value), right bottom is 100% 100%, center is 50% 50%.
+            c. length (in pixels):
+            xpx ypx
+            "x" is the horizontal position, "y" is the vertical position, where left top is 0px 0px (default value).
+        6. background-size (not in shorthand property order):
+        Value can be specified in:
+            a. predefined values:
+            cover, contain
+            b. length:
+            x+unit of choice (EX: px, %, vw,...) y+unit of choice (EX: px, %, vw,...)
+            "x" is the width, "y" is the height
+        7. background-origin (not in shorthand property order):
+        Value: 
+                border-box
+                padding-box (default value)
+                content-box
+        8. background-clip (not in shorthand property order):
+        Value: 
+                border-box (default value)
+                padding-box 
+                content-box
+
+WHAT IS CSS POSITION?
+    Value:
+        1. static (default value):
+        The element is positioned according to the normal flow of the page.
+        The element is not affected by the "top", "bottom", "left", or "right" properties.
+        2. relative:
+        The element is positioned relative to its normal position.
+        The "top", "bottom", "left", or "right" properties is used to position the element away from its normal position.
+        The element still takes up all of the space even when positioned away from its normal position.
+        Other elements won't be adjusted to fit in any gap left by the element.
+        3. fixed:
+        The element is positioned relative to the viewport, which means it stays in the same place even if the page is scrolled.
+        The "top", "bottom", "left", or "right" properties is used to position the element away from its normal position.
+        After positioned away from its normal position, the element won't take up the space of its normal position.
+        Other elements will be adjusted to fit in any gap left by the element.
+        4. absolute:
+        The element is positioned relative to the position of its nearest parent element.
+        If the absolute element has no nearest parent element, it will be positioned relative to the "body" element.
+        5. sticky:
+        The element is positioned based on the scrolling position.
+        The sticky element toggles between relative and fixed. It is positioned relative, until a given offset position is met in the viewport, it will be positioned fixed.
+    SIDE NOTE:
+                The "position" property must be specified before the element is positioned using the "top", "bottom", "left", or "right" properties.
+
+WHAT IS CSS FLOAT AND CLEAR?
+    1. float:
+    Value:
+            none (default value)
+            left
+            right
+    2. clear:
+    Value:
+            none (default value)
+            left
+            right
+            both
+    SIDE NOTE:
+                If the floating element is taller than the containing element and overflows out of its container, add either
+                    1. the clearfix hack:
+                    selector {
+                        "overflow: auto";
+                    }
+                    SIDE NOTE:
+                                The selector should be the parent element of the floating element and the surrounding element.
+                    2. the new modern clearfix hack:
+                    selector::after {
+                        content: "";
+                        clear: both;
+                        display: table;
+                    }
+                    SIDE NOTE:
+                                The selector should be the parent element of the floating element and the surrounding element.
+                When creating floating boxes side by side, if something is added to enlarge the width of each boxes, the big box might break, then add this property to include the padding and border to the total width of the boxes and make sure the big box doesn't break
+                    * {
+                        box-sizing: border-box;
+                    }
+
+WHAT IS CSS VISIBILITY?
+    Value:
+            visible (default value)
+            hidden
+            collapse
+    SIDE NOTE:
+                The space is still take up if the element is "hidden", but is not if the element is "collapse".
+                "collapse" is only used for table-type element. If "collapse" is used for other elements, they will be specified as "hidden".
+
+WHAT IS CSS DISPLAY?
+    Value:
+            none (default value)
+            block
+            inline
+            inline-block
+    SIDE NOTE:
+                There is a similarity between "display: none" and "visibility: hidden". Both of which hide the element. But with "display: none", the hidden element doesn't take up the space and behaves as if it's not there. And with "visibility: hidden", the hidden element still takes up the space and affects the layout.
+                "margin", "border", and "padding" can be used on "inline", "inline-block" and "block". However, "width" and "height" can only affect "inline-block" and "block".
+
+WHAT IS CSS BOX MODEL?
+    CSS Box Model is a display type with a series of positioning properties to layout HTML elements. Think of it like an invisible box that wraps around every HTML element and is layered like an onion.
+    From outer to inner, there are:
+        I. MARGIN (outer transparent space)
+        The margin layer can be sized by using the "margin" property.
+        Value can be specified in:
+            a. predefined values:
+            auto
+            b. length:
+            x+unit of choice (EX: px, %, vw,...)
+        SIDE NOTE:
+                    Sometimes there can be a collapse of two margins between one's top and one's bottom, whose larger portion will take over.
+        II. BORDER
+        The border layer can be sized by using the "border" property.
+        This is a shorthand property.
+        Order:
+            1. border-width (optional):
+            Value can be specified in:
+                a. predefined values:
+                thin, medium, thick
+                b. length:
+                x+unit of choice (EX: px, %, vw,...)
+            2. border-style (required):
+            Value:
+                    dotted
+                    dashed
+                    solid
+                    double
+                    groove
+                    ridge
+                    inset
+                    outset
+                    hidden
+                    none
+            3. border-color (optional):
+            Value as in CSS colors
+            4. border-radius (not in shorthand property order):
+            Value specified by length:
+                                        x+unit of choice (EX: px, %, vw,...)
+        III. PADDING (innner transparent space)
+        The padding layer can be sized by using the "padding" property.
+        Value specified by length:
+                                    x+unit of choice (EX: px, %, vw,...)
+        IV. CONTENT
+        The content layer can be sized by using the "width" and "height" properties.
+        Value can be specified in:
+            a. predefined values:
+            auto (default value)
+            b. length:
+            x+unit of choice (EX: px, %, vw,...)
+        SIDE NOTE:
+                    Some suggested content properties for a better responsive Web page are "max-width", "min-width", "max-height", "min-height".
+    SIDE NOTE:
+                It is possible to layout individual sides of each layer:
+                    1. by using the property of the specified side:
+                    EX:
+                        margin-top, margin-right, margin-bottom, or margin-left
+                        border-top, border-right, border-bottom, or border-left
+                        padding-top, padding-right, padding-bottom, or padding-left
+                    2. by using the shorthand property:
+                    If the property has four values, the layout will be sized as:
+                        selector {
+                            property: top right bottom left
+                        }
+                    If the property has three values, the layout will be sized as:
+                        selector {
+                            property: top right&left bottom
+                        }
+                    If the property has two values, the layout will be sized as:
+                        selector {
+                            property: top&bottom right&left
+                        }
+                    If the property has one value, the layout will be sized as:
+                        selector {
+                            property: all sizes equal
+                        }
+                To keep the size of the Web page consistent among different devices, it is suggested to use px, %, or vw.
+
+WHAT IS CSS FLEXBOX MODEL?
+    CSS Flexbox Module is a display type with a range of properties to design flexible responsive layout easily. It is similar to the Box Model and is an alternative to using displays, floats, and other positioning properties.
+    From outer to inner, there are two main components:
+        I. FLEX CONTAINER
+        A FLexbox layout must have a parent element. The parent element will be the flex container with this must-have property:
+            selector {
+                display: flex;
+            }
+        Some other flex container properties are:
+            1. flex-flow:
+            This is a shorthand property.
+            Order:
+                a. flex-direction:
+                Value:
+                        row (default value)
+                        row-reverse
+                        column
+                        column-reverse
+                b. flex-wrap:
+                Value:
+                        nonwrap (default value)
+                        wrap
+                        wrap-reverse
+            2. justify-content (horizontal alignment):
+            Value:
+                    center
+                    flex-start (default value)
+                    flex-end
+                    space-around
+                    space-between
+            3. align-items (vertical alignment):
+            Value:
+                    stretch (default value)
+                    center
+                    flex-start
+                    flex-end
+                    baseline
+            4. align-content:
+            Value:
+                    stretch (default value)
+                    center
+                    flex-start
+                    flex-end
+                    space-around
+                    space-between
+        II. FLEX ITEMS
+        The direct child element(s) of the flex container will be the flex items and make up for the contents.
+        Some flex items properties are:
+            1. order:
+            Value:
+                    x
+            "x" is the index of the flex items as in an array but starts with 1
+            0 is default value
+            2. flex: 
+            This is a shorthand property.
+            Order:
+                a. flex-grow:
+                Value:
+                        x
+                "x" is the scale of growth
+                0 means the item doesn't grow (default value)
+                Other numbers mean the item grows relative to the others' sizing
+                b. flex-shrink:
+                Value:
+                        x
+                "x" is the scale of shrinking
+                0 means the item doesn't shrink
+                Other numbers mean the item shrinks relative to the others' sizing (1 is default value)
+                c. flex-basis:
+                Value specified by length:
+                                            x+unit of choice (EX: px, %, vw,...)
+            3. align-self (vertical alignment):
+            Value:
+                    stretch
+                    center
+                    flex-start
+                    flex-end
+            SIDE NOTE:
+                        "align-self" of selected flex item can override "align-items" of the flex container.
+    Flexbox Responsive: https://www.w3schools.com/css/css3_flexbox_responsive.asp
+
+WHAT IS CSS GRID?
+    CSS Grid Module is a display type with a grid-based layout system (with rows and columns) that can activate certain layout features easily. It is similar to the Flexbox and is an alternative to using displays, floats, and other positioning properties. While Flexbox focuses on width mainly, Grid focuses on both width and height.
+    From outer to inner, there are two main components:
+        I. GRID CONTAINER
+        A Grid layout must have a parent element. The parent element will be the grid container with this must-have property:
+            selector {
+                display: grid or inline-grid;
+            }
+        There are four main parts of a grid:
+            1. Columns: are the vertical lines of the grid items
+            2. Rows: are the horizontal lines of the grid items
+            3. Gaps: are the spaces between columns (column gaps) or rows (row gaps)
+            4. Lines: are the lines before/between/after columns (column lines) or rows (row lines), which are numbered so that line numbers can be referred to place the grid items.
+        Some other grid container properties are:
+            1. grid-template-columns:
+            Value:
+                    a space-separated list of auto or x+unit of choice (EX: px, %, vw,...)
+            The number of values in the list specifies the number of columns.
+            Each value specifies the width of the respective column.
+            SIDE NOTE:
+                        If the number of items in the grid container is more than the number of columns, the grid will automatically add a new row and carry that item over to the new row.
+            2. grid-template-rows:
+            Value:
+                    a space-separated list of auto or x+unit of choice (EX: px, %, vw,...)
+            The number of values in the list specifies the number of rows.
+            Each value specifies the height of the respective row.
+            3. grid-template-areas:
+            This is used to refer to named grid items and used together with the "grid-area" property of the grid items.
+            4. gap:
+            This is a shorthand property.
+            Order:
+                a. row-gap:
+                Value specified by length:
+                                            x+unit of choice (EX: px, %, vw,...)
+                b. column-gap:
+                Value specified by length:
+                                            x+unit of choice (EX: px, %, vw,...)
+            SIDE NOTE:
+                        If the property has one value, both "row-gap" and "column-gap" are set equal.
+                        There are CSS older versions of "gap", "row-gap", and "column-gap", which are "grid-gap", "grid-row-gap", and "grid-column-gap".              
+            5. justify-content (horizontal alignment):
+            Value:
+                    center
+                    start
+                    end
+                    space-evenly
+                    space-around
+                    space-between
+            SIDE NOTE:
+                        The total width of the grid has to be less than the width of the grid container.
+            6. align-content (vertical alignment):
+            Value:
+                    center
+                    start
+                    end
+                    space-evenly
+                    space-around
+                    space-between
+            SIDE NOTE:
+                        The total height of the grid has to be less than the height of the grid container.
+        II. GRID ITEMS
+        The direct child element(s) of the grid container will be the grid items and make up for the contents.
+        Some grid items properties are:
+            1. grid-column:
+            This is a shorthand property.
+            Order:
+                a. grid-column-start:
+                Value:
+                        x
+                "x" is the column line number where the span of the grid item starts.
+                b. grid-column-end:
+                Value:
+                        x
+                "x" is the column line number where the span of the grid item ends.
+            SIDE NOTE:
+                        There are two ways to use the shorthand property:
+                            1. selector {
+                                grid-column: grid-column-start / grid-column-end;
+                            }
+                            2. selector {
+                                grid-column: grid-column-start / span x
+                            }
+                            "x" is the number of columns that the grid item spans.
+                        The "/" operator is a must.
+            2. grid-row:
+            This is a shorthand property.
+            Order:
+                a. grid-row-start:
+                Value:
+                        x
+                "x" is the row line number where the span of the grid item starts.
+                b. grid-row-end:
+                Value:
+                        x
+                "x" is the row line number where the span of the grid item ends.
+            SIDE NOTE:
+                        There are two ways to use the shorthand property:
+                            1. selector {
+                                grid-row: grid-row-start / grid-row-end;
+                            }
+                            2. selector {
+                                grid-row: grid-row-start / span y
+                            }
+                            "y" is the number of rows that the grid item spans.
+                        The "/" operator is a must.
+            3. grid-area:
+                3.1. shorthand property:
+                Order:
+                    a. grid-row-start:
+                    Value:
+                            x
+                    "x" is the row line number where the span of the grid item starts.
+                    b. grid-column-start:
+                    Value:
+                            x
+                    "x" is the column line number where the span of the grid item starts.
+                    c. grid-row-end:
+                    Value:
+                            x
+                    "x" is the row line number where the span of the grid item ends.
+                    d. grid-column-end:
+                    Value:
+                            x
+                    "x" is the column line number where the span of the grid item ends.
+                SIDE NOTE:
+                            There are two ways to use the shorthand property:
+                                1. selector {
+                                    grid-row: grid-row-start / grid-column-start / grid-row-end / grid-column-end;
+                                }
+                                2. selector {
+                                    grid-row: grid-row-start / grid-column-start / span y / span x;
+                                }
+                                "y" is the number of rows that the grid item spans.
+                                "x" is the number of columns that the grid item spans.
+                            The "/" operator is a must.
+                            This shorthand property can be used as a way to re-arrange the order of the gird items, in other words, the grid items can be located anywhere in the grid but don't have to follow the original order of the HTML codes.
+                3.2. assign names to the grid items:
+                    selector (of the grid item) {
+                        grid-area: a;
+                    }
+                "a" is replaced by the name of the specified grid item.
+                The "grid-template-areas" property of the grid container can then be used to refer to the named grid items to specify their place and span without using the column and row properties of each grid item.
+                    selector (of the grid container) {
+                        grid-template-areas: 'a1 a2 a3';
+                    }
+                "a1", "a2", "a3",... are replaced by the names of the specified grid items.
+                Each row of the grid is specified by one set of apostrophes (' ').
+                The columns of each row of the grid are specified inside the apostrophes and are space-separated.
+                Multiple rows can be specified in one declaration and are space-separated.
+                EX: selector (grid container) {
+                        grid-template-areas: 'a1 a2 a3' 'a1 a2 a3' 'a1 a2 a3';
+                    }
+                A period "." represents a grid item with no name.
+                EX: selector (grid container) {
+                        grid-template-areas: 'a a a . . .';
+                    } 
+
+WHAT IS CSS TRANSITION?
+    "transition" is a shorthand property.
+    Order:
+        1. transition-property (required):
+        Value:
+                a
+        "a" is replaced by the name of the specified property that the effect is added to.
+        SIDE NOTE:
+                    When there are more than one property that the transition effect is for, use the "all" value.
+        2. transition-duration (required):
+        Value specified by length (in seconds/milliseconds):
+                                                                xs
+                                                                xms
+        3. transition-timing-function (optional):
+        Value:
+                ease (default value)
+                ease-in
+                ease-out
+                ease-in-out
+                linear
+                cubic-bezier(x, x, x, x)
+        4. transition-delay (optional):
+        Value specified by length (in seconds/milliseconds):
+                                                                xs
+                                                                xms
+    SIDE NOTE:
+                The idea behind CSS transition effect is that 
+                    original properties and values --transition--> specified properties overridden with new values
+                Therefore, the "transition" property needs to be declared in the base selector's block with the original properties and values.
+                The base selector needs to perform some action using pseudo selector and declares new values for the specified properties in another declaration block.
+                The transition effect only occurs when the action is taken as specified.
+
+WHAT IS CSS TRANSFORM?
+    There are two types of CSS transformations using the "transform" property, each of which has its own methods:
+        I. 2D TRANSFORM
+            1. translate(x+unit of choice (EX: px, %, vw,...), y+unit of choice (EX: px, %, vw,...))
+                a. translateX(x+unit of choice (EX: px, %, vw,...))
+                b. translateY(y+unit of choice (EX: px, %, vw,...))
+            "x" is the horizontal position.
+            if "x" is positive, the element shifts right.
+            if "x" is negative, the element shifts left.
+            "y" is the vertical position. 
+            if "y" is positive, the element shifts down.
+            if "y" is negative, the element shifts up.
+            2. rotate(xdeg)
+            "x" is the degree of rotation.
+            if "x" is positive, the element rotates clockwise.
+            if "x" is negative, the element rotates counter-clockwise.
+            3. scale(x, y)
+                a. scaleX(x)
+                b. scaleY(y)
+            "x" is the width, "y" is the height.
+            4. skew(xdeg, ydeg)
+                a. skewX(xdeg)
+                b. skewY(ydeg)
+            "x" is the skewing degree along the x-axis, "y" is the skewing degree along the y-axis.
+            5. matrix(a, b, c, d, e, f)
+            "a" is the number that specifies scaleX(x).
+            "b" is the number that specifies skewY(ydeg).
+            "c" is the number that specifies skewX(xdeg).
+            "d" is the number that specifies scaleY(y).
+            "e" is the number that specifies translateX(x+unit of choice (EX: px, %, vw,...)).
+            "f" is the number that specifies translateY(y+unit of choice (EX: px, %, vw,...)).
+        II. 3D TRANSFORM
+            1. translate3d(x, y, z)
+                a. translateX(x)
+                b. translateY(y)
+                c. translateZ(z)
+            2. rotate3d(x, y, z, angle)
+                a. rotateX(xdeg)
+                "x" is the degree of rotation around the x-axis.
+                b. rotateY(ydeg)
+                "y" is the degree of rotation around the y-axis.
+                c. rotateZ(zdeg)
+                "z" is the degree of rotation around the z-axis.
+            SIDE NOTE:
+                        In 3D, x-axis is the horizontal axis, y-axis is the vertical axis, z-axis is the axis pointing into the screen.
+            3. scale3d(x, y, z)
+                a. scaleX(x)
+                b. scaleY(y)
+                c. scaleZ(z)
+            4. matrix3d()
+            5. perspective()
+
+WHAT IS CSS ANIMATION?
+    CSS animation lets an element gradually change from one style to another.
+    For the animation to work, you must bind the animation to a base element where the "animation" property is declared.
+    This is a shorthand property.
+    Order:
+        1. animation-name (required)
+        Value:
+                a
+        "a" is replaced by the name of the animation which is bound to an element.
+        2. animation-duration (required)
+        Value specified by length (in seconds/milliseconds):
+                                                                xs
+                                                                xms
+        3. animation-timing-function (optional):
+        Value:
+                ease (default value)
+                ease-in
+                ease-out
+                ease-in-out
+                linear
+                cubic-bezier(x, x, x, x)
+        4. animation-delay (optional):
+        Value specified by length (in seconds/milliseconds):
+                                                                xs
+                                                                xms
+        5. animation-iteration-count (optional):
+        Value:
+                x
+        "x" is the number of the times the animation runs.
+        "infinite" means the animation continues to run forever.
+        6. animation-direction (optional):
+        Value:
+                normal (default value)
+                reverse
+                alternate
+                alternate-reverse
+        7. animation-fill-mode (optional):
+        Value:
+                none (default value)
+                forwards
+                backwards
+                both
+        8. animation-play-state (optional):
+        Value:
+                running (default value)
+                paused
+    Then, keyframes hold what styles the element will have at certain times.
+        @keyframes a {
+            0% {
+                style(s)
+            }
+            x% {
+                style(s)
+            }
+            y% {
+                style(s)
+            }
+            z% {
+                style(s)
+            }
+            100% {
+                style(s)
+            }
+        }
+    "a" is the name of the animation as specified in "animation-name"
+    "x", "y", "z",... are the percentages that specify the stages of the animation.
+    An animation has at least two keyframes: starting point and ending point. More keyframes can be added in between. 
+    If there are only two keyframes, you can use the keywords:
+        "from" which represents 0%
+        "to" which represents 100%
+    When the animation is finished, it goes back to its original style which is declared in the base element.
+    SIDE NOTE:
+                In the base element, add this property to help the animation to work
+                    selector {
+                        position: relative;
+                    }
+*/
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: lightyellow;
+    margin: 10px;
+    height: 200px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto;
+    background: lightyellow;
+    margin: 10px;
+    height: 200px;
+}
+
+.flex-item {
+    background: violet;
+    margin: 10px;
+    padding: 50px;
+    text-align: center;
+}
+
+.grid-item {
+    background: violet;
+    margin: 10px;
+    text-align: center;
+}
