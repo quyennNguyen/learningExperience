@@ -67,6 +67,7 @@
 * https://www.w3schools.com/sass/default.php
 * https://sass-lang.com/documentation/
 * Icon Library and Toolkit: https://fontawesome.com/
+* Color Palettes: https://colorhunt.co/
 * Check out my sass_notes
 #### JavaScript:
 * https://youtu.be/lI1ae4REbFM
