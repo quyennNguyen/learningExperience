@@ -43,6 +43,7 @@ WHAT IS A JAVASCRIPT VARIABLE?
             1. var:
             Keyword "var" is used typically in older browser.
             Variables defined with "var" can be redeclared and reassigned.
+            Variables can even be initialized before declared with "var".
             Keyword "var" doesn't provide a block scope.
             2. let:
             Keyword "let" is used typically to declare a variable whose value might change.
@@ -135,49 +136,49 @@ WHAT ARE JAVASCRIPT NUMBERS?
             base 8: octal
             base 2: binary
         To convert a number (base 10 decimal) to another base:
-            numberName.toString(base)
+            let numberName2 = numberName1.toString(base);
     IV. Reserved words:
         NaN: is Not a Number, typeof NaN is number.
         Infinity, or -Infinity,: is returned when a calculated number is beyond the largest possible number, typeof Infinity is number.
     V. Properties:
         Number properties belongs to the Number object wrapper called Number.
         1. to return the largest possible number:
-            Number.MAX_VALUE
+            let numberName = Number.MAX_VALUE;
         2. to return the smallest possible number:
-            Number.MIN_VALUE
+            let numberName = Number.MIN_VALUE;
         3. to represent Infinity, or -Infinity, which is returned on overflow,:
-            Number.POSITIVE_INFINITY
-            Number.NEGATIVE_INFINITY
+            let numberName = Number.POSITIVE_INFINITY;
+            let numberName = Number.NEGATIVE_INFINITY;
         5. to specify an illegal number:
-            Number.NaN
+            let numberName = Number.NaN;
     VI. Methods:
         1. to return a number as a string:
-            numberName.toString()
+            let stringName = numberName.toString();
         2. to convert a number to its exponential notation:
-            numberName.toExponential(decimal)
+            let numberName = numberName.toExponential(decimal),
             The number might be rounded if neccessary.
             The "decimal" parameter specifies the number of characters behind the decimal point. It is optional and can't be negative.
         3. to round a number:
-            a. numberName.toFixed(decimal)
+            a. let numberName = numberName.toFixed(decimal);
             The "decimal" parameter specifies the number of characters behind the decimal point. It is optional and can't be negative.
-            b. numberName.toPrecision(digit)
+            b. let numberName = numberName.toPrecision(digit);
             The "digit" parameter specifies the number of digits, or the length of the number. It is optional and can't be zero or negative.
     VII. JavaScript Global Methods:
         Global methods can be used on all data types.
         There are three most relevant methods that work with numbers and strings:
-        1. to covert another data type to a number:
-            Number(value)
+        1. to convert another data type to a number:
+            let numberName = Number(value);
             The "value" parameter can be, for example,:
                 true -> 1
                 false -> 0
                 string number -> number
             If the "value" parameter can't be converted to a number, it will return NaN.
         2. to parse a string to a number:
-            a. parseInt("text")
+            a. let numberName = parseInt("text");
             This returns an integer.
             Spaces are allowed, and only the first number is returned.
             If the "text" parameter can't be converted to a number, it will return NaN.
-            b. parseFloat("text")
+            b. let numberName = parseFloat("text");
             This returns a float.
             Spaces are allowed, and only the first number is returned.
             If the "text" parameter can't be converted to a number, it will return NaN.
@@ -208,23 +209,23 @@ WHAT IS A JAVASCRIPT STRING?
         In JavaScript, string indexes are zero-based, which means they start with O, then 1, then 2,...
     IV. Properties:
         To return the length of a string:
-            stringName.length
+            let numberName = stringName.length;
     V. Methods:
         Strings are immutable, which means they can't be affected, changed or replaced.
         //methods return a number
         1. to return the index of a value in a string:
-            a. stringName.indexOf("text")
+            a. let numberName = stringName.indexOf("text", position);
             This returns the index of the first occurrence.
             If the "text" parameter is not found, it will return -1.
-            stringName.indexOf("text", position)
+            The "position" parameter is optional.
             If the "position" parameter is positive, the search starts from the specified position to the end of the string.
             If the "position" parameter is negative, the search starts from the specified position to the beginning of the string.
-            b. stringName.lastIndexOf("text")
+            b. let numberName = stringName.lastIndexOf("text", position);
             This returns the index of the last occurrence.
             If the "text" parameter is not found, it will return -1.
-            stringName.lastIndexOf("text", position)
+            The "position" parameter is optional.
             The "position" parameter can't be negative, and the search starts from the specified position to the beginning of the string.
-            c. stringName.search("text")
+            c. let numberName = stringName.search("text");
             This returns the index of the first occurrence.
             If the "text" parameter is not found, it will return -1.
             SIDE NOTE:
@@ -233,59 +234,59 @@ WHAT IS A JAVASCRIPT STRING?
                             search("text") can take only one parameter.
         //methods return a string
         2. to extract a part of the string:
-            a. stringName.slice(start, end)
+            a. let stringName2 = stringName1.slice(start, end);
             If the "start" and "end" parameters are positive, the extraction counts from the beginning of the string, and the "end" position is not included.
             If the "start" and "end" parameters are negative, the extraction counts from the end of the string, and the "start" position is not included.
             If only one parameter is specified, the extraction counts from the specified position to the rest of the string. If the parameter is negative, the specified position is not included.
-            b. stringName.substring(start, end)
+            b. let stringName2 = stringName1.substring(start, end);
             If the "start" and "end" parameters are positive, the extraction counts from the beginning of the string, and the "end" position is not included.
             If only one parameter is specified, the extraction counts from the specified position to the rest of the string.
             If the parameter is negative, the position is specified as 0.
-            c. stringName.substr(start, length)
+            c. let stringName2 = stringName1.substr(start, length);
             If the "start" parameter is positive, the extraction counts from the beginning of the string.
             If the "start" parameter is negative, the extraction counts from the end of the string.
             If only one parameter is specified, the extraction counts from the specified position to the rest of the string. If the parameter is negative, the specified position is not included.
             The "length" parameter can't be zero or negative.
         3. to extract a character at a specified position of a string:
-            a. stringName.charAt(position)
+            a. let charName = stringName.charAt(position);
             The "position" parameter can't be negative.
             SIDE NOTE:
                         Property Access: stringName[position]
                         In some cases, stringName.charAt(position) and stringName[position] might return the same result, but there might be some differences/issues.
-            b. stringName.charCodeAt(position)
+            b. let codeName = stringName.charCodeAt(position);
             This returns the unicode (UTF-16 code - an integer from 0 to 65535) of the character.
             The "position" parameter can't be negative.
         4. to replace a value in a string with another value:
-            stringName.replace("text1", "text2")
+            let stringName2 = stringName1.replace("text1", "text2");
         5. to add one or more values to a string:
-            stringName.concat(value1, value2)
+            let stringName2 = stringName1.concat(value1, value2);
         6. to convert a string to an uppercase or a lowercase:
-            stringName.toUpperCase()
-            stringName.toLowerCase()
+            let stringName2 = stringName1.toUpperCase();
+            let stringName2 = stringName1.toLowerCase();
         7. to remove whitespaces on the sides of a string:
-            a. stringName.trim()
+            a. let stringName2 = stringName1.trim();
             This removes on both sides of a string.
-            b. stringName.trimStart()
+            b. let stringName2 = stringName1.trimStart();
             This removes at the beginning of a string.
-            c. stringName.trimEnd()
+            c. let stringName2 = stringName1.trimEnd();
             This removes at the end of a string.
         8. to pad another string to a string:
-            a. stringName.padStart(length, "text")
+            a. let stringName2 = stringName1.padStart(length, "text");
             This pads at the beginning of a string.
             The "length" parameter can't be zero or negative.
-            b. stringName.padEnd(length, "text")
+            b. let stringName2 = stringName1.padEnd(length, "text");
             This pads at the end of a string.
             The "length" parameter can't be zero or negative.
         //methods return a boolean
         9. to check whether a string contains/starts with/ends with a value and return a boolean value:
-            a. stringName.includes("text", position)
+            a. stringName.includes("text", position);
             The "position" parameter is optional and can't be negative.
             If the "position" parameter is omitted, it will check the first occurrence.
             If the "position" parameter is specified, the check starts from the specified position to the end of the string.
-            b. stringName.startsWith("text", position)
+            b. stringName.startsWith("text", position);
             The "position" parameter is optional and can't be negative.
             If the "position" parameter is specified, the check starts from the specified position.
-            c. stringName.endsWith("text", length)
+            c. stringName.endsWith("text", length);
             The "length" parameter is optional and can't be zero or negative.
             If the "length" parameter is specified, it will check within the specified length counting from the beginning of the string.
         //methods return an array
@@ -304,18 +305,18 @@ WHAT IS A JAVASCRIPT STRING?
         Global methods can be used on all data types.
         There are three most relevant methods that work with numbers and strings:
         1. to covert another data type to a number:
-            Number(value)
+            let numberName = Number(value);
             The "value" parameter can be, for example,:
                 true -> 1
                 false -> 0
                 string number -> number
             If the "value" parameter can't be converted to a number, it will return NaN.
         2. to parse a string to a number:
-            a. parseInt("text")
+            a. let numberName = parseInt("text");
             This returns an integer.
             Spaces are allowed, and only the first number is returned.
             If the "text" parameter can't be converted to a number, it will return NaN.
-            b. parseFloat("text")
+            b. let numberName = parseFloat("text");
             This returns a float.
             Spaces are allowed, and only the first number is returned.
             If the "text" parameter can't be converted to a number, it will return NaN.
@@ -346,7 +347,7 @@ WHAT IS A JAVASCRIPT ARRAY?
         In JavaScript, array indexes are numbered and zero-based, which means they start with O, then 1, then 2,...
     II. Properties:
         1. to return the length of an array, which is the number of array elements,:
-            arrayName.length
+            let numberName = arrayName.length;
         2. to access the whole array:
             arrayName
         3. to access an array element:
@@ -360,49 +361,66 @@ WHAT IS A JAVASCRIPT ARRAY?
             delete arrayName[index];
             Instead of completely removing the array element like arrayName.pop() or arrayName.shift(), this leaves an "undefined" hole at the specified index.
     III. Methods:
+        //methods return a number
+        1. to find the index of an array element:
+            a. let numberName = arrayName.indexOf(elementValue, start);
+            This returns the index of the first occurrence.
+            If the element is not found, it will return -1.
+            The "start" parameter is optional.
+            If the "start" parameter is positive, the search starts from the specified position, counted from the beginning of the array, to the end of the array.
+            If the "start" parameter is negative, the search starts from the specified position, counted from the end of the array, to the end of the array.
+            b. let numberName = arrayName.lastIndexOf(elementValue, start);
+            This returns the index of the last occurrence.
+            If the element is not found, it will return -1.
+            The "start" parameter is optional.
+            If the "start" parameter is positive, the search starts from the specified position, counted from the beginning of the array, to the end of the array.
+            If the "start" parameter is negative, the search starts from the specified position, counted from the end of the array, to the beginning of the array.
         //methods return a string
-        1. to convert an array to a string:
-            a. arrayName.toString()
+        2. to convert an array to a string:
+            a. let stringName = arrayName.toString();
             This returns a string of array values separated by commas.
             Because toString() is of default methods of an Array object, using either arrayName or arrayName.toString() will return the same result.
-            b. arrayName.join("separator")
+            b. let stringName = arrayName.join("separator");
             The "separator" parameter is optional.
             If the "separator" parameter is omitted, it will behave like arrayName.toString().
             If the "separator" parameter is specified, it will return a string of array values separated by specified separator.
             The separator can be whitespaces (" "), commas (","), pipes ("|"),...
+        //methods return a boolean
+        3. to check whether an element is present in an array:
+            let variableName = arrayName.includes(elementValue);
         //methods return an array or an array-related value
-        2. to add/remove an element to/from an array:
-            2.1 pushing and popping:
-                a. arrayName.push(value)
+        4. to add/remove an element to/from an array:
+            4.1 pushing and popping:
+                a. let numberName = arrayName.push(value);
                 This pushes a new element into the end of the array, and returns the new length of the array.
-                b. arrayName.pop()
+                b. let variableName = arrayName.pop();
                 This pops the last element out of the array, and returns the element that is popped out.
-            2.2 unshifting and shifting:
-                a. arrayName.unshift(value)
+            4.2 unshifting and shifting:
+                a. let numberName = arrayName.unshift(value);
                 This pushes a new element into the beginning of the array, and returns the new length of the array.
                 The old indexes have to shift according to the added element.
-                b. arrayName.shift()
+                b. let variableName = arrayName.shift();
                 This pops the first element out of the array, and returns the element that is shifted out.
                 The old indexes have to shift according to the removed element.
-            2.3 splicing:
-                arrayName.splice(whereToAdd, howManyRemoved, value1, value2)
+            4.3 splicing:
+                const arrayName2 = arrayName1.splice(whereToAdd, howManyRemoved, value1, value2);
                 This can be used to either add or remove one or more elements, and returns an array of removed elements.
                 The "whereToAdd" parameter specifies the index where new elements should be added. It can't be negative.
                 The "howManyRemoved" parameter specifies how many elements should be removed. It can't be negative.
                 The "value" parameters are optional. If the "value" parameters are omitted, no element is added. If the "value" parameters are specified, more than one element can be added.
-        3. to extract a part of an array:
-            arrayName.slice(start, end)
+        5. to extract a part of an array:
+            const arrayName2 = arrayName1.slice(start, end);
             If the "start" and "end" parameters are positive, the extraction counts from the beginning of the array, and the "end" position is not included.
             If the "start" and "end" parameters are negative, the extraction counts from the end of the array, and the "end" position is not included.
             If only one parameter is specified, the extraction counts from the specified position to the rest of the array.
-        4. to merge, or concatenate, another array to an array:
-            array1.concat(array2, array3)
+        6. to merge, or concatenate, another array to an array:
+            const arrayName2 = arrayName1.concat(value1, value2);
             This can concatenate more than one array to an array.
             This doesn't affect the existing arrays and always returns a new array.
             SIDE NOTE:
                         This method can concatenate other data types like numbers, strings,... to the array.
-        5. to sort an array:
-            5.1 string sort:
+        7. to sort an array:
+            7.1 string sort:
                 a. in ascending order:
                 arrayName.sort()
                 This sorts the array alphabetically.
@@ -415,9 +433,9 @@ WHAT IS A JAVASCRIPT ARRAY?
                 or
                     arrayName.sort().reverse();
                 This sorts the array reverrse-alphabetically.
-            5.2 numeric sort:
+            7.2 numeric sort:
                 a. alphabetically:
-                    arrayName.sort() 
+                arrayName.sort() 
                 b. numerically:
                 A compare function is used to define an alternative numeric sort order.
                     b.1 in ascending order:
@@ -444,7 +462,7 @@ WHAT IS A JAVASCRIPT ARRAY?
                             return 0.5 - Math.random();
                         }
                     )
-                A better way is using the Fisher Yates method:
+                A better way is to use the Fisher Yates method:
                     const arrayName = [item0, item1, item2];
                     for (let i = arrayName.length - 1; i > 0; i--) {
                         let j = Math.floor(Math.random() * i);
@@ -452,7 +470,7 @@ WHAT IS A JAVASCRIPT ARRAY?
                         points[i] = points[j];
                         points[j] = k;
                     }
-            5.3 object sort:
+            7.3 object sort:
                 const arrayName = [
                     {stringName:"stringValue", numberName:numberValue},
                     {stringName:"stringValue", numberName:numberValue},
@@ -500,57 +518,116 @@ WHAT IS A JAVASCRIPT ARRAY?
                             return b.numberName - a.numberName;
                         }
                     )
-            5.4 to find the lowest/highest value in an array:
+            7.4 to find the lowest/highest value in an array:
                 a. sorting in ascending order:
-                arrayName[0] = lowest value
-                arrayName[arrayName.length-1] = highest value
+                let lowestValue = arrayName[0];
+                let highestValue = arrayName[arrayName.length-1];
                 b. sorting in descending order:
-                arrayName[0] = highest value
-                arrayName[arrayName.length-1] = lowest value
+                let highestValue = arrayName[0];
+                let lowestValue = arrayName[arrayName.length-1];
                 c. using Math object:
                     This only works with number values.
                     c.1 to find the lowest:
                     const arrayName = [item0, item1, item2];
-                    Math.min(item0, item1, item2) can find the lowest value in the list, but can't accept array parameter.
-                    Math.min.apply(null, arrayName) can find the lowest value in the array, but can only accept array parameter.
+                    let lowestValue = Math.min(item0, item1, item2);
+                    This can find the lowest value in the list, but can't accept array parameter.
+                    let lowestValue = Math.min.apply(null, arrayName);
+                    This can find the lowest value in the array, but can only accept array parameter.
                     c.2 to find the highest:
                     const arrayName = [item0, item1, item2];
-                    Math.max(item0, item1, item2) can find the highest value in the list, but can't accept array parameter.
-                    Math.max.apply(null, arrayName) can find the highest value in the array, but can only accept array parameter.
+                    let highestValue = Math.max(item0, item1, item2);
+                    This can find the highest value in the list, but can't accept array parameter.
+                    let highestValue = Math.max.apply(null, arrayName);
+                    This can find the highest value in the array, but can only accept array parameter.
         //array iteration
-        6. to loop through an array:
+        8. to loop through an array:
             const arrayName = [item0, item1, item2];
             let text = "<ul>";
             for (let i = 0; i < arrayName.length; i++) {
                 text += "<li>" + arrayName[i] + "</li>";
             }
             text += "</ul>";
-        7. to call a function once for every array element:
-            A callback function is a function called in an array iteration to perform a task once for every array element. 
+        9. to operate a function on every array element:
+            A callback function is a function called in an array iteration to perform a task on every array element. 
+            function functionName(total, value, index, array) {
+                task;
+            }
+            It can take up to four parameters "total", "value", "index", and/or "array" depending on the functionality.
+                -"total": is the total/the initial value/the previously returned value
+                -"value": is the item's value
+                -"index": is the item's index
+                -"array": is the array itself
+            The parameter names are "reserved" for this purpose.
+            a. arrayName.forEach(functionName);
             function functionName(value, index, array) {
                 task;
             }
-            It can take up to three parameters "value", "index", and/or "array", and the parameter names are "reserved" for this purpose.
-            a. arrayName.forEach(functionName);
-                function functionName(value, index, array) {
-                    task;
-                }
             This method itself doesn't return any value.
             b. const arrayName2 = arrayName1.map(functionName);
-                function functionName(value, index, array) {
-                    task;
-                    return value;
-                }
-            This method returns a new array of values returned from each task execution.
+            function functionName(value, index, array) {
+                task;
+                return result;
+            }
+            This method returns a new array of values returned from the task execution.
             The "value" parameter is required.
             c. const arrayName2 = arrayName1.filter(functionName);
-                function functionName(value, index, array) {
-                    task;
-                    return value;
-                }
-            This method returns a new array of values returned from only passing the task.
-        8. 
-            
+            function functionName(value, index, array) {
+                task;
+                return result;
+            }
+            This method returns a new array of values returned from only passing some sort of conditions.
+            d. let variableName = arrayName.every(functionName);
+            function functionName(value, index, array) {
+                task;
+                return result;
+            }
+            This method returns a boolean value of whether all of the array elements pass some sort of conditions.
+            e. let variableName = arrayName.some(functionName);
+            function functionName(value, index, array) {
+                task;
+                return result;
+            }
+            This method returns a boolean value of whether some (at least 1) of the array elements pass some sort of conditions.
+            f. let variableName = arrayName.find(functionName);
+            function functionName(value, index, array) {
+                task;
+                return result;
+            }
+            This method returns the value of the first array element that passes some sort of conditions.
+            g. let variableName = arrayName.findIndex(functionName);
+            function functionName(value, index, array) {
+                task;
+                return result;
+            }
+            This method returns the index of the first array element that passes some sort of conditions.
+            h. 
+                h.1 to operate from left to right:
+                let variableName = arrayName.reduce(functionName, initialValue);
+                h.2 to operate from right to left:
+                let variableName = arrayName.reduceRight(functionName, initialValue);
+            function functionName(total, value, index, array) {
+                task;
+                return result;
+            }
+            This method reduces the array to produce a single value, but doesn't affect the original array.
+            The "initialValue" parameter is optional. If it is omitted, the initial value of the "total" parameter is 0. If it is specified, the initial value of the "total" parameter is the specified value.
+        //special array methods
+        10. to return an array from any object that is either iterable or with a length property:
+            const arrayName = Array.from(value);
+        11. to return an Array Iterator Object containing all the array indexes:
+            const arrayName = [item0, item1, item2];
+            const variableName = arrayName.keys();
+            let text = "";
+            for (let x of variableName) {
+                text += x + "<br>";
+            }
+        12. to return an Array Iterator Object containing all the array index/value pairs:
+            const arrayName = [item0, item1, item2];
+            const variableName = arrayName.entries();
+            let text = "";
+            for (let x of variableName) {
+                text += x + "<br>";
+            }
     SIDE NOTE:
                 While arrays use numbers, or numbered indexes, to access their elements, objects use names, or named indexes, to access their memebers. Therefore, although typeof array is object, it is still best described as array.
                 Try to avoid using "String", "Number", "Boolean", or "Array" object to declare a variable, as it will complicate the code and slow down the execution speed.
