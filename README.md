@@ -71,6 +71,7 @@
 * Check out my sass_notes
 #### JavaScript:
 * https://youtu.be/lI1ae4REbFM
+* https://www.w3schools.com/js/default.asp
 * JavaScript with VSCode: https://code.visualstudio.com/docs/languages/javascript
 * Install npm to run JavaScript in VSCode: https://code.visualstudio.com/docs/nodejs/working-with-javascript
 * Check out my javascript_notes
