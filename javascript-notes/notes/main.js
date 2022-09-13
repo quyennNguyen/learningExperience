@@ -650,6 +650,82 @@ WHAT IS A JAVASCRIPT OBJECT?
             }
         To access an object method:
             objectName.methodName()
+    III. Date Object:
+        The Date object lets you work with date and time.
+            const variableName = new Date();
+        This returns the current date and time according to the Web browser's time zone; in other words, the result might vary because the computer date is relative to your time zone.
+        1. Numeric Date Input:
+            const variableName = new Date(year, month, date, hour, minute, second, millisecond);
+        The constructor can take up to 7 parameters. 
+        The parameters are optional. If the parameters are specified, it will return the date and time as specified. 
+        The "month" parameter is specified from 0 to 11.
+        The "date" parameter is specified from 1 to 31.
+        The "hour" parameter is specified from 0 to 23.
+        The "minute" parameter is specified from 0 to 59.
+        The "second" parameter is specified from 0 to 59.
+        The "millisecond" parameter is specified from 0 to 999.
+        SIDE NOTE:
+                    In case of weekdays, the "day" parameter is specified from 0 to 6, where 0 is Sunday and 6 is Saturday.
+        Specifying the parameters out of their "normal" range will not result in error but will add/deduct the overflow to the next/previous period of time.
+        2. String Date Input:
+            const variableName = new Date("date string");
+        The constructor can also take date string type of parameter.
+        There are three types of date string inputs:
+            a. ISO Date, or ISO 8601,:
+                const variableName = new Date("yyyy-mm-dd");
+            or
+                const variableName = new Date("yyyy-mm-ddThour:minute:secondZ");
+            The date and time parameters are separated by capital "T". 
+            UTC is defined by capital "Z".
+            b. Short Date: 
+                const variableName = new Date("mm/dd/yyyy");
+            c. Long Date:
+                const variableName = new Date("mmm dd yyyy");
+            or
+                const variableName = new Date("dd mmm yyyy");
+            The "month" paramter can be written in full or abbreviated.
+        3. Date Ouput:
+        Date output is indepenedent of Date input.
+        By default, date is returned in full text string format.
+            WeekDay Month Date Year hour:minute:second GMT-xxxx (Eastern Daylight Time)
+        There are other types of date ouput methods:
+            a. variableName.toString():
+            This has the same output as variableName alone.
+            b. variableName.toUTCString():
+            This returns date in UTC standard format.
+                WeekDay, dd mmm yyyy hour:minute:second GMT
+            c. variableName.toDateString():
+            This returns date in a more readable date string format.
+                WeekDay mmm dd yyyy
+            d. variableName.toISOString():
+            This returns date in ISO standard format.
+                yyyy-mm-ddThour:minute:secondZ
+        4. Date Conversion:
+        Dates are stored as number of milliseconds since Zero Time.
+            Jan 01, 1970 00:00:00 UTC (Universal Time Coordinated)
+        to convert from date to milliseconds:
+            let variableName = Date.parse("date string");
+        to convert from milliseconds to date:
+            const variableName = new Date(millisecond);
+        4. Date Methods:
+        Full list of get Date methods: https://www.w3schools.com/js/js_date_methods.asp
+        Full list of set Date methods: https://www.w3schools.com/js/js_date_methods_set.asp
+        Full list of Date methods: https://www.w3schools.com/jsref/jsref_obj_date.asp
+    IV. Math Object:
+        The Math object lets you perform mathematical tasks on numbers.
+        to get pi number:
+            let numberName = Math.PI;
+        1. Math Properties:
+        There are 8 mathematical constants that can be accessed as Math properties:
+            a. Math.E
+            b. Math.PI
+            c. Math.SQRT2
+            d. Math.SQRT1_2
+            e. Math.LN2
+            f. Math.LN10
+            g. Math.LOG2E
+            h. Math.LOG10E
+        2. Math Methods:
     SIDE NOTE:
                 Try to avoid using "String", "Number", "Boolean", or "Array" object to declare a variable, as it will complicate the code and slow down the execution speed.
 
@@ -698,4 +774,4 @@ HOW CAN JAVASCRIPT DISPLAY DATA?
         This method is the only exception that JavaScript can access the output device, which prints the content of the current window.
 */
 
-console.log("Hello World");
+console.log(Date());
