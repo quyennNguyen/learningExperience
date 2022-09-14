@@ -182,7 +182,7 @@ WHAT ARE JAVASCRIPT NUMBERS?
             This returns a float.
             Spaces are allowed, and only the first number is returned.
             If the "text" parameter can't be converted to a number, it will return NaN.
-    Full list of number properties and methods: https://www.w3schools.com/jsref/jsref_obj_number.asp
+    Full list of number reference: https://www.w3schools.com/jsref/jsref_obj_number.asp
     SIDE NOTE:
                 In some programming languages, primitive values can't have properties or methods because they are not objects. On the other hand, JavaScript treats primitive values as objects when they are executed using properties or methods.
                 Try to avoid using "String", "Number", "Boolean", or "Array" object to declare a variable, as it will complicate the code and slow down the execution speed.
@@ -326,7 +326,28 @@ WHAT IS A JAVASCRIPT STRING?
             "/g" is used for global match
             "/i" is used for insensitive case
         https://www.w3schools.com/js/js_regexp.asp
-    Full list of string methods: https://www.w3schools.com/jsref/jsref_obj_string.asp
+    Full list of string reference: https://www.w3schools.com/jsref/jsref_obj_string.asp
+    SIDE NOTE:
+                In some programming languages, primitive values can't have properties or methods because they are not objects. On the other hand, JavaScript treats primitive values as objects when they are executed using properties or methods.
+                Try to avoid using "String", "Number", "Boolean", or "Array" object to declare a variable, as it will complicate the code and slow down the execution speed.
+
+WHAT ARE JAVASCRIPT BOOLEANS?
+    Boolean is a primitive data type.
+    A boolean represents one of two values: true or false / yes or no / on or off.
+    I. Properties:
+        Everything with a value is true.
+        Everything without a value is false.
+            Boolean(0) = false
+            Boolean("") = false
+            Boolean(undefined) = false
+            Boolean(null) = false
+            Boolean(NaN) = false
+    II. Methods:
+        to determine if a variable or an expression is true or false:
+            let variableName = Boolean(variable/expression);
+        or in a simplier way:
+            let variableName = variable/expression;
+    Full list of boolean reference: https://www.w3schools.com/jsref/jsref_obj_boolean.asp
     SIDE NOTE:
                 In some programming languages, primitive values can't have properties or methods because they are not objects. On the other hand, JavaScript treats primitive values as objects when they are executed using properties or methods.
                 Try to avoid using "String", "Number", "Boolean", or "Array" object to declare a variable, as it will complicate the code and slow down the execution speed.
@@ -628,6 +649,7 @@ WHAT IS A JAVASCRIPT ARRAY?
             for (let x of variableName) {
                 text += x + "<br>";
             }
+    Full list of array reference: https://www.w3schools.com/jsref/jsref_obj_array.asp
     SIDE NOTE:
                 While arrays use numbers, or numbered indexes, to access their elements, objects use names, or named indexes, to access their memebers. Therefore, although typeof array is object, it is still best described as array.
                 Try to avoid using "String", "Number", "Boolean", or "Array" object to declare a variable, as it will complicate the code and slow down the execution speed.
@@ -710,11 +732,10 @@ WHAT IS A JAVASCRIPT OBJECT?
         4. Date Methods:
         Full list of get Date methods: https://www.w3schools.com/js/js_date_methods.asp
         Full list of set Date methods: https://www.w3schools.com/js/js_date_methods_set.asp
-        Full list of Date methods: https://www.w3schools.com/jsref/jsref_obj_date.asp
+        Full list of Date reference: https://www.w3schools.com/jsref/jsref_obj_date.asp
     IV. Math Object:
         The Math object lets you perform mathematical tasks on numbers.
-        to get pi number:
-            let numberName = Math.PI;
+        The Math object has no constructor; therefore, it is static, and its properties and methods can be accessed without declaring the object.
         1. Math Properties:
         There are 8 mathematical constants that can be accessed as Math properties:
             a. Math.E
@@ -726,6 +747,7 @@ WHAT IS A JAVASCRIPT OBJECT?
             g. Math.LOG2E
             h. Math.LOG10E
         2. Math Methods:
+        Full list of Math reference: https://www.w3schools.com/jsref/jsref_obj_math.asp
     SIDE NOTE:
                 Try to avoid using "String", "Number", "Boolean", or "Array" object to declare a variable, as it will complicate the code and slow down the execution speed.
 
