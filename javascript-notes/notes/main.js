@@ -77,7 +77,7 @@ WHAT IS A JAVASCRIPT VARIABLE?
             If the operation is performed between a number and a string, it will return a string.
             SIDE NOTE:
                         The computer evaluates expressions from left to right until it returns the final string.
-        3. Comparison and Logical Operators:
+        3. Comparison, Logical, and Conditional Operators:
             Comparison and logical operators are used to test for true or false so as to take action depending on the results.
             Comparison operators (== === != !== > >= < <=) are used in conditional statements to determine equality or difference between values.
             Logical operators (&& || !) are used to determine the logic between values.
@@ -85,7 +85,16 @@ WHAT IS A JAVASCRIPT VARIABLE?
                 let variableName = (condition) ? value1 : value2;
             Full list: https://www.w3schools.com/js/js_comparisons.asp
         4. Type Operators:
-            TypeOf operator (typeof) is used to return the type of a variable or an expression.
+            TypeOf operator (typeof) is used to return the data type of a variable or an expression.
+                typeof a number returns number
+                typeof a string returns string
+                typeof a boolean returns boolean
+                typeof an array returns object
+                typeof an object returns object
+                typeof a function returns function
+                typeof a null returns object
+                typeof an undefined returns undefined
+                typeof a NaN returns number
             Full list: https://www.w3schools.com/js/js_type_conversion.asp
         5. Bitwise Operators:
             Full list: https://www.w3schools.com/js/js_bitwise.asp
@@ -96,15 +105,35 @@ WHAT IS A JAVASCRIPT VARIABLE?
         A value can be assigned to a variable either when or after the variable is declared. 
         If the variable is declared without a value, both of its value and data type will be "undefined".
     V. Data Types:
-        JavaScript data types are dynamic.
-        The same variable can hold different data types.
-        There are different data types: numbers, strings, booleans, arrays, objects,...
+        JavaScript data types are dynamic because the same variable can hold different data types.
+        There are five data types that can contain values:
+            number
+            string
+            boolean
+            object
+            function
+        There are two data types that can't contain values:
+            null
+            undefined
+        There are six types of object:
+            Object
+            Date
+            Number
+            String
+            Boolean
+            Array
+        A primitive data type is a single simple data value with no additional properties and methods.
+            number
+            string
+            boolean
+            undefined
+        
 
 WHAT IS A JAVASCRIPT FUNCTION?
     In a programming langguage, a function is a block of code designed to perform a particular task and compute a return value.
     To declare a function:
         function functionName(parameter1, parameter2, parameter3) {
-            task;
+            action to be executed;
         }
     The parentheses () may or may not include a comma-separated parameter list.
     All variables declared in the function definition including the parameters will behave as local variables.
@@ -198,8 +227,8 @@ WHAT IS A JAVASCRIPT STRING?
             - allows multiline strings
             - allows string interpolation
         String interpolation is a way to interpolate variables, expressions, or HTML templates into strings.
-            - variable substitution: ${variableName}
-            - expression substitution: ${expression}
+            variable substitution: ${variableName}
+            expression substitution: ${expression}
     II. Escape Character:
         The backslash (\) escape character is used to avoid misunderstanding of special characters in a string.
             \character
@@ -210,7 +239,7 @@ WHAT IS A JAVASCRIPT STRING?
     III. Index:
         In JavaScript, string indexes are zero-based, which means they start with O, then 1, then 2,...
     IV. Properties:
-        To return the length of a string:
+        to return the length of a string:
             let numberName = stringName.length;
     V. Methods:
         Strings are immutable, which means they can't be affected, changed or replaced.
@@ -346,9 +375,9 @@ WHAT ARE JAVASCRIPT BOOLEANS?
             Boolean(NaN) = false
     II. Methods:
         to determine if a variable or an expression is true or false:
-            let variableName = Boolean(variable/expression);
+            let booleanName = Boolean(variable/expression);
         or in a simplier way:
-            let variableName = variable/expression;
+            let booleanName = variable/expression;
     Full list of boolean reference: https://www.w3schools.com/jsref/jsref_obj_boolean.asp
     SIDE NOTE:
                 In some programming languages, primitive values can't have properties or methods because they are not objects. On the other hand, JavaScript treats primitive values as objects when they are executed using properties or methods.
@@ -445,10 +474,10 @@ WHAT IS A JAVASCRIPT ARRAY?
         7. to sort an array:
             7.1 string sort:
                 a. in ascending order:
-                    arrayName.sort()
+                    arrayName.sort();
                     This sorts the array alphabetically.
                 b. in descending order:
-                    arrayName.reverse()
+                    arrayName.reverse();
                     This reverses the array.
                     combining
                         arrayName.sort(); 
@@ -458,7 +487,7 @@ WHAT IS A JAVASCRIPT ARRAY?
                     This sorts the array reverrse-alphabetically.
             7.2 numeric sort:
                 a. alphabetically:
-                    arrayName.sort() 
+                    arrayName.sort();
                 b. numerically:
                     A compare function is used to define an alternative numeric sort order.
                     b.1 in ascending order:
@@ -466,7 +495,7 @@ WHAT IS A JAVASCRIPT ARRAY?
                             function(a, b) {
                                 return a - b;
                             }
-                        )
+                        );
                         If it returns negative, "a" < "b", so "a" is sorted before "b".
                         If it returns zero, "a" = "b", so no changes are made.
                         If it returns positive, "a" > "b", so "b" is sorted before "a".
@@ -475,7 +504,7 @@ WHAT IS A JAVASCRIPT ARRAY?
                             function(a, b) {
                                 return b - a;
                             }
-                        )
+                        );
                         If it returns negative, "a" > "b", so "a" is sorted before "b".
                         If it returns zero, "a" = "b", so no changes are made.
                         If it returns positive, "a" < "b", so "b" is sorted before "a".
@@ -484,7 +513,7 @@ WHAT IS A JAVASCRIPT ARRAY?
                             function() {
                                 return 0.5 - Math.random();
                             }
-                        )
+                        );
                     A better way is to use the Fisher Yates method:
                         const arrayName = [item0, item1, item2];
                         for (let i = arrayName.length - 1; i > 0; i--) {
@@ -513,13 +542,13 @@ WHAT IS A JAVASCRIPT ARRAY?
                                 }
                                 return 0;
                             }
-                        )
+                        );
                     a.2 comparing properties with number values:
                         arrayName.sort(
                             function(a, b) {
                                 return a.numberName - b.numberName;
                             }
-                        )
+                        );
                 b. in descending order:
                     b.1 comparing properties with string values:
                         arrayName.sort(
@@ -534,13 +563,13 @@ WHAT IS A JAVASCRIPT ARRAY?
                                 }
                                 return 0;
                             }
-                        )
+                        );
                     b.2 comparing properties with number values:
                         arrayName.sort(
                             function(a, b) {
                                 return b.numberName - a.numberName;
                             }
-                        )
+                        );
             7.4 to find the lowest/highest value in an array:
                 a. sorting in ascending order:
                     let lowestValue = arrayName[0];
@@ -566,7 +595,7 @@ WHAT IS A JAVASCRIPT ARRAY?
         8. to operate a function on every array element:
             A callback function is a function called in an array iteration to perform a task on every array element. 
                 function functionName(total, value, index, array) {
-                    task;
+                    action to be executed;
                 }
             It can take up to four parameters "total", "value", "index", and/or "array" depending on the functionality.
                 -"total": is the total/the initial value/the previously returned value
@@ -576,43 +605,43 @@ WHAT IS A JAVASCRIPT ARRAY?
             The parameter names are "reserved" for this purpose.
             a. arrayName.forEach(functionName);
                 function functionName(value, index, array) {
-                    task;
+                    action to be executed;
                 }
                 This method itself doesn't return any value.
             b. const arrayName2 = arrayName1.map(functionName);
                 function functionName(value, index, array) {
-                    task;
+                    action to be executed;
                     return result;
                 }
                 This method returns a new array of values returned from the task execution.
                 The "value" parameter is required.
             c. const arrayName2 = arrayName1.filter(functionName);
                 function functionName(value, index, array) {
-                    task;
+                    action to be executed;
                     return result;
                 }
                 This method returns a new array of values returned from only passing some sort of conditions.
             d. let variableName = arrayName.every(functionName);
                 function functionName(value, index, array) {
-                    task;
+                    action to be executed;
                     return result;
                 }
                 This method returns a boolean value of whether all of the array elements pass some sort of conditions.
             e. let variableName = arrayName.some(functionName);
                 function functionName(value, index, array) {
-                    task;
+                    action to be executed;
                     return result;
                 }
                 This method returns a boolean value of whether some (at least 1) of the array elements pass some sort of conditions.
             f. let variableName = arrayName.find(functionName);
                 function functionName(value, index, array) {
-                    task;
+                    action to be executed;
                     return result;
                 }
                 This method returns the value of the first array element that passes some sort of conditions.
             g. let variableName = arrayName.findIndex(functionName);
                 function functionName(value, index, array) {
-                    task;
+                    action to be executed;
                     return result;
                 }
                 This method returns the index of the first array element that passes some sort of conditions.
@@ -622,7 +651,7 @@ WHAT IS A JAVASCRIPT ARRAY?
                 h.2 to operate from right to left:
                     let variableName = arrayName.reduceRight(functionName, initialValue);
                 function functionName(total, value, index, array) {
-                    task;
+                    action to be executed;
                     return result;
                 }
                 This method reduces the array to produce a single value, but doesn't affect the original array.
@@ -663,7 +692,7 @@ WHAT IS A JAVASCRIPT OBJECT?
     II. Methods:
         to define an object method:
             methodName:function() {
-                task;
+                action to be executed;
             }
         to access an object method:
             objectName.methodName()
@@ -789,6 +818,16 @@ WHAT ARE JAVASCRIPT CONDITIONAL STATEMENTS?
         The "default" statement specified an action to be executed if no matching cases is found.
         If multiple cases match the evaluation, the first occurence will be executed.
         If no matching cases and no "default" are found, the program will continue to the code after the switch block. 
+    SIDE NOTE:
+                There is a similarity between if-else statement and conditional operator:
+                    if-else statement:
+                        if (condition) {
+                            action to be executed if condition is true;
+                        } else {
+                            action to be executed if condition is false;
+                        }
+                    conditional operator:
+                        let variableName = (condition) ? value1 : value2;
 
 WHAT ARE JAVASCRIPT LOOPS?
     Loops are used to iterate over iterable objects to execute a block of code, with a different value after every iteration.
@@ -885,6 +924,83 @@ WHAT ARE JAVASCRIPT KEYWORDS THAT YOU SHOULD KNOW?
     III. continue;
         The "continue" statement is used to jump over one iteration and continue with the next iteration of a loop.
 
+WHAT IS A JAVASCRIPT SET?
+    A set is a collection of unique values, each of which can only occur once in the set.
+    I. Properties:
+        to return the number of elements in a set:
+            let numberName = setName.size;
+    II. Methods:
+        1. to create a new set:
+            a. to create a new set from an array:
+                const setName = new Set([item0, item1, item2]);
+            b. to create a new set then add values:
+                const setName = new Set();
+                setName.add(value0);
+                setName.add(value1);
+                setName.add(value2);
+        2. to add a new element to a set:
+                setName.add(value);
+            If the added element is duplicate, only the first occurrence is saved in the set.
+        3. to remove an element from a set:
+            delete();
+        4. to check if a value exists in a set:
+            has();
+        5. to invoke a callback function for each element in a set:
+            const setName = new Set([item0, item1, item2]);
+            setName.forEach(function(value) {
+                    action to be executed;
+                }
+            );
+        6. to return an iterable object containing all the elements in a set:
+                const objectName = setName.values();
+            You can use for/of loop to display the object.
+
+WHAT IS A JAVASCRIPT MAP?
+    A map holds key-value pairs, where the keys and values can be of any datatype.
+    A map can remember the original insertion order of the keys.
+    I. Properties:
+        to return the number of elements in a map:
+            let numberName = mapName.size;
+    II. Methods:
+        1. to create a new map:
+            a. to create a new map from an array:
+                const mapName = new Map([
+                        [key0, value0],
+                        [key1, value1],
+                        [key2, value2]
+                    ]
+                );
+            b. to create a new map then set values:
+                const mapName = new Map();
+                mapName.set(key0, value0);
+                mapName.set(key1, value1);
+                mapName.set(key2, value2);
+        2. to set a key and a value for the key in a map:
+            a. to add a new key-value pair to a map:
+                mapName.set(key, value);
+            b. to change the value of an existing key in a map:
+                mapName.set(key, newValue);
+        3. to get the value of a key in a map:
+            let valueName = mapName.get(key);
+        4. to remove an element in a map:
+            mapName.delete(key);
+        5. to check if a key exists in a map:
+            let booleanName = mapName.has(key);
+        6. to invoke a callback function for each element in a map:
+            const mapName = new Map([
+                    [key0, value0],
+                    [key1, value1],
+                    [key2, value2]
+                ]
+            );
+            mapName.forEach(function(value, key) {
+                    action to be executed;
+                }
+            );
+        7. to return an iterable object containing all the elements in a map:
+                const objectName = mapName.entries();
+            You can use for/of loop to display the object.
+
 WHAT ARE JAVASCRIPT TYPES OF SCOPE?
     1. Global Scope
     2. Function Scope
@@ -917,6 +1033,7 @@ HOW CAN JAVASCRIPT DISPLAY DATA?
             innerHTML: is a property that can be used with this method to define the HTML content.
             HTML-attribute: is a property that can be used with this method to change HTML attribute values.
             style.CSS-property: is a property that can be used with this method to change HTML element style with CSS property.
+            https://www.w3schools.com/js/tryit.asp?filename=tryjs_comparison
         2. document.write(content)
             This method should be used for testing only. If it is used after the HTML page is loaded, it will overwrite/delete all existing HTML content.
         3. window.alert(content)
@@ -928,6 +1045,7 @@ HOW CAN JAVASCRIPT DISPLAY DATA?
         5. window.print()
             JavaScript doesn't have any object or methods to get access to output devices like HTML does.
             This method is the only exception that JavaScript can access the output device, which prints the content of the current window.
+            The window object has a globel scope. All variables, properties, and methods belong to the window object by default. Therefore, specifying the "window" keyword is optional.
 */
 
 console.log(Date());
