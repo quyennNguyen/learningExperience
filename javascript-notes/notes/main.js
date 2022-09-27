@@ -71,7 +71,7 @@ WHAT IS A JAVASCRIPT VARIABLE?
             SIDE NOTE:
                         The exponentiation operation x**y produces the same result as the method Math.pow(x,y).
                         The operator precedence in JavaScript arithmetic is the same as in school mathematics.
-            Full list: https://www.w3schools.com/js/js_arithmetic.asp
+            Full reference: https://www.w3schools.com/js/js_arithmetic.asp
         2. String Operator:
             Concatenation operator (+) is used to concatenate strings.
             If the operation is performed between a number and a string, it will return a string.
@@ -83,8 +83,8 @@ WHAT IS A JAVASCRIPT VARIABLE?
             Logical operators (&& || !) are used to determine the logic between values.
             Conditional operator, or Ternary operator, is used to assign a value to a variable based on some conditions.
                 let variableName = (condition) ? value1 : value2;
-            Full list: https://www.w3schools.com/js/js_comparisons.asp
-        4. Type Operators:
+            Full reference: https://www.w3schools.com/js/js_comparisons.asp
+        4. Type Operator:
             TypeOf operator (typeof) is used to return the data type of a variable or an expression.
                 typeof a number returns number
                 typeof a string returns string
@@ -95,12 +95,14 @@ WHAT IS A JAVASCRIPT VARIABLE?
                 typeof a null returns object
                 typeof an undefined returns undefined
                 typeof a NaN returns number
-            Full list: https://www.w3schools.com/js/js_type_conversion.asp
+            Full reference: https://www.w3schools.com/js/js_type_conversion.asp
         5. Bitwise Operators:
-            Full list: https://www.w3schools.com/js/js_bitwise.asp
+            Full reference: https://www.w3schools.com/js/js_bitwise.asp
         6. Assignment Operators:
             Assignment operator (= += -= *= /= %= **=) is used to assign a value to a variable.
-            Full list: https://www.w3schools.com/js/js_assignment.asp
+            Full reference: https://www.w3schools.com/js/js_assignment.asp
+        7. Unary Operator:
+            Unary operator (+) is used to convert another date type to a number.
     IV. Values:
         A value can be assigned to a variable either when or after the variable is declared. 
         If the variable is declared without a value, both of its value and data type will be "undefined".
@@ -122,11 +124,14 @@ WHAT IS A JAVASCRIPT VARIABLE?
             String
             Boolean
             Array
-        A primitive data type is a single simple data value with no additional properties and methods.
+        There are four primitive data type:
             number
             string
             boolean
             undefined
+        There are two complex data types:
+            function
+            object
         
 
 WHAT IS A JAVASCRIPT FUNCTION?
@@ -149,8 +154,8 @@ WHAT ARE JAVASCRIPT NUMBERS?
     I. Scientific Notation, or Exponential Notation,:
         Extra large or extra small numbers can be written in special notation.
         EX:
-            123e4 = 1230000
-            123e-4 = 0.0123
+            123456789 = 1.23456789e+8
+            0.00123456789 = 1.23456789e-3
     II. Number Precision (before round up):
         Integers can store up to 15 digits of precision.
         Decimals can store up to 17 places of precision.
@@ -185,34 +190,42 @@ WHAT ARE JAVASCRIPT NUMBERS?
     VI. Methods:
         1. to return a number as a string:
             let stringName = numberName.toString();
-        2. to convert a number to its exponential notation:
-            let numberName = numberName.toExponential(decimal),
+        2. to return a number as a number:
+                let numberName2 = numberName1.valueOf();
+            Ultimately, this can convert a Number object to a primitive number.
+        3. to return a number in scientific notation, or exponential notation,:
+            let stringName = numberName.toExponential(decimal),
             The number might be rounded if neccessary.
-            The "decimal" parameter specifies the number of characters behind the decimal point. It is optional and can't be negative.
-        3. to round a number:
-            a. let numberName = numberName.toFixed(decimal);
-                The "decimal" parameter specifies the number of characters behind the decimal point. It is optional and can't be negative.
-            b. let numberName = numberName.toPrecision(digit);
-                The "digit" parameter specifies the number of digits, or the length of the number. It is optional and can't be zero or negative.
-    VII. JavaScript Global Methods:
-        Global methods can be used on all data types.
-        There are three most relevant methods that work with numbers and strings:
-            1. to convert another data type to a number:
-                let numberName = Number(value);
-                The "value" parameter can be, for example,:
-                    true -> 1
-                    false -> 0
-                    string number -> number
-                If the "value" parameter can't be converted to a number, it will return NaN.
-            2. to parse a string to a number:
-                a. let numberName = parseInt("text");
-                    This returns an integer.
-                    Spaces are allowed, and only the first number is returned.
-                    If the "text" parameter can't be converted to a number, it will return NaN.
-                b. let numberName = parseFloat("text");
-                    This returns a float.
-                    Spaces are allowed, and only the first number is returned.
-                    If the "text" parameter can't be converted to a number, it will return NaN.
+            The "decimal" parameter specifies the number of characters behind the decimal point. It is optional and can't be negative. If the "decimal" parameter is omitted, the number won't be rounded.
+        4. to round a number:
+            a. let stringName = numberName.toFixed(decimal);
+                The "decimal" parameter specifies the number of characters behind the decimal point. It is optional and can't be negative. If the "decimal" parameter is omitted, it will be specified as 0, which means the number is rounded as a whole number.
+            b. let stringName = numberName.toPrecision(digit);
+                The "digit" parameter specifies the number of digits, or the length of the number. It is optional and can't be zero or negative. If the "digit" parameter is omitted, the number remains unchanged.
+    VII. JavaScript Global Methods (that returns numbers):
+        1. to convert another data type to a number:
+            let numberName = Number(value);
+            The "value" parameter can be, for example,:
+                numeric string -> number
+                empty string"" -> 0
+                true -> 1
+                false -> 0
+            If the "value" parameter can't be converted to a number, it will return NaN.
+            SIDE NOTE:
+                        There is a similarity between Number() method and unary operator.
+                            Number() method:
+                                let numberName = Number(value);
+                            Unary operator:
+                                let numberName = + value;
+        2. to parse a string to a number:
+            a. let numberName = parseInt("text");
+                This returns an integer.
+                Spaces are allowed, and only the first number is returned.
+                If the "text" parameter can't be converted to a number, it will return NaN.
+            b. let numberName = parseFloat("text");
+                This returns a float.
+                Spaces are allowed, and only the first number is returned.
+                If the "text" parameter can't be converted to a number, it will return NaN.
     Full list of number reference: https://www.w3schools.com/jsref/jsref_obj_number.asp
     SIDE NOTE:
                 In some programming languages, primitive values can't have properties or methods because they are not objects. On the other hand, JavaScript treats primitive values as objects when they are executed using properties or methods.
@@ -332,25 +345,13 @@ WHAT IS A JAVASCRIPT STRING?
             If the "separator" parameter is omitted, it will assign the whole string to the item at index[0] of the array.
             If the "separator" parameter is "", it will return an array of every single characters in the string.
             The separator can be whitespaces (" "), commas (","), pipes ("|"),..., then it will return an array of substrings separated by the specified separator.
-    VI. JavaScript Global Methods:
-        Global methods can be used on all data types.
-        There are three most relevant methods that work with numbers and strings:
-            1. to covert another data type to a number:
-                let numberName = Number(value);
-                The "value" parameter can be, for example,:
-                    true -> 1
-                    false -> 0
-                    string number -> number
-                If the "value" parameter can't be converted to a number, it will return NaN.
-            2. to parse a string to a number:
-                a. let numberName = parseInt("text");
-                    This returns an integer.
-                    Spaces are allowed, and only the first number is returned.
-                    If the "text" parameter can't be converted to a number, it will return NaN.
-                b. let numberName = parseFloat("text");
-                    This returns a float.
-                    Spaces are allowed, and only the first number is returned.
-                    If the "text" parameter can't be converted to a number, it will return NaN.
+    VI. JavaScript Global Methods (that returns strings):
+        to convert anpther data type to a string:
+            let stringName = String(value);
+        The "value" parameter can be, for example,:
+                number -> numeric string
+                true -> "true"
+                false -> "false"
     VII. Regular Expressions
         Regular expressions are strings written without quotes.
         Some string methods accept flags:
@@ -749,10 +750,14 @@ WHAT IS A JAVASCRIPT OBJECT?
         4. Date Conversion:
             Dates are stored as number of milliseconds since Zero Time.
                 Jan 01, 1970 00:00:00 UTC (Universal Time Coordinated)
-            to convert from date to milliseconds:
+            a. to convert from date to milliseconds:
                 let variableName = Date.parse("date string");
-            to convert from milliseconds to date:
+            b. to convert from milliseconds to date:
                 const variableName = new Date(millisecond);
+            c. to convert date to a number:
+                let numberName = Number(new Date());
+            d. to convert date to a string:
+                let stringName = String(Date());
         5. Date Methods:
             Full list of get Date methods: https://www.w3schools.com/js/js_date_methods.asp
             Full list of set Date methods: https://www.w3schools.com/js/js_date_methods_set.asp
