@@ -1,11 +1,11 @@
-# *ABOUT ME*
+# ABOUT ME
 
 #### I started by attending community college with major in Computer Science, where I learned the basics, a bit of Java, and a bit of Data Structure. Later on, I transferred to university to continue my major. But not long after that, I decided to do the boldest thing I’ve ever done in my life, DROPPING OUT. Of course, there were a lot of conflicts. But I genuinely think that school is not for me. Two main reasons: it is tedious and it ends up with an overwhelming debt.
 #### In this journal, I want to be crystal clear and note down how I learn to become a SELF-TAUGHT WEB DEVELOPER from SCRATCH. I found this way fascinating and productive as I can keep track of my growth and get over my procrastination.
 
 ***
 
-# *WHERE TO START?*
+# WHERE TO START?
 
 #### When you don't know where to start, go with a simple search like "How to Become a Software Developer?".
 #### Here are some pretty inspiring videos:
@@ -16,35 +16,35 @@
 
 ***
 
-# *WHAT TO LEARN?*
+# WHAT TO LEARN?
 
 #### Having a clear study plan is very crucial. Depending on your career choice, the study plan might vary. As for me, I want to become a Full Stack Web Developer.
 #### Generally, there are two main categories:
 
-### _Basics of Computer Science:_
+## _Intro to Computer Science:_
 #### You can find some useful information from either of these sources:
 * https://github.com/quyennNguyen/learningExperience/files/8527263/Computer.Science.Illuminated.pdf
 * Harvard's Free CS Course: https://www.edx.org/cs50
 
-### _Use Computer to Solve Real-World Problems:_
-#### 1. FRONT END / CLIENT SIDE:
+## _Use Computer to Solve Real-World Problems:_
+### 1. FRONT END / CLIENT SIDE:
    * HTML
    * CSS
    * CSS Preprocessor: SASS
    * CSS Framework: Bootstrap
    * JavaScript
    * Javascript Framework/Library: React
-#### 2. BACK END / SERVER SIDE:
+### 2. BACK END / SERVER SIDE:
    * JavaScript / Java / Python / PHP
    * Framework: NodeJs (JavaScript) / Django (Python)
    * Database: MongoDB (No SQL) / MySQL (SQL)
-#### 3. DATA STRUCTURES & ALGORITHMS
-#### 4. VERSION CONTROL SYSTEM:
+### 3. DATA STRUCTURES & ALGORITHMS
+### 4. VERSION CONTROL SYSTEM:
    * Git / Github
 
 ***
 
-# *RESOURCES*
+# RESOURCES
 
 #### Generic Sources:
 * https://www.w3schools.com/
@@ -75,7 +75,7 @@
 * JavaScript with VSCode: https://code.visualstudio.com/docs/languages/javascript
 * Install npm to run JavaScript in VSCode: https://code.visualstudio.com/docs/nodejs/working-with-javascript
 * Check out my javascript_notes
-#### VERSION CONTROL SYSTEM:
+#### Version Control:
 * https://youtu.be/RGOj5yH7evk
 * Install Git: https://www.atlassian.com/git/tutorials/install-git#windows
 * How SSH Works: https://docs.github.com/en/authentication/connecting-to-github-with-ssh/about-ssh
