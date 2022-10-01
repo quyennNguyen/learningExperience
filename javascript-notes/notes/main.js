@@ -8,7 +8,7 @@ WHERE CAN JAVASCRIPT FILE BE PLACED?
     JavaScript is the default scripting language in HTML.
     There are two ways to place JavaScript code, or script,:
         1. Within the HTML page:
-            Script can be specified between <script> tags, which are placed either at the end of <head> or at the end of <body>.
+            Script can be specified between <script> tags, that are placed either at the end of <head> or at the end of <body>.
         2. In an external file:
             There are many advantages of having script in a separate file.
             To implement the external script, in the src attribute of the <script> tag of the HTML page, place the reference/path of the external script file.
@@ -25,14 +25,12 @@ WHAT IS A JAVASCRIPT PROGRAM?
         -are composed of: values, operators, expressions, keywords/reserved words, comments,...
         -can be grouped together in a code block.
     A code block is used to define statements to be executed together within a braces {} pair.
-
-WHAT IS JAVASCRIPT SYNTAX?
-    In a programming language, the set of rules of how programs in that language are constructed is its syntax.
+    The set of rules of how programs in that language are constructed is its syntax.
     JavaScript syntax defines two types of values:
         1. Literals:
             They are fixed values.
         2. Variables:
-            They are variable values, which means the values are not yet known.
+            They are variable values.
 
 WHAT IS A JAVASCRIPT VARIABLE?
     A JavaScript expression is a combination of variables, operators, and values, that computes to a value. The computation is called an evaluation.
@@ -132,17 +130,16 @@ WHAT IS A JAVASCRIPT VARIABLE?
         There are two complex data types:
             function
             object
-        
 
 WHAT IS A JAVASCRIPT FUNCTION?
-    In a programming langguage, a function is a block of code designed to perform a particular task and compute a return value.
+    In a programming langguage, a function is a code block designed to perform a particular task and compute a return value.
     To declare a function:
         function functionName(parameter1, parameter2, parameter3) {
             action to be executed;
         }
     The parentheses () may or may not include a comma-separated parameter list.
     All variables declared in the function definition including the parameters will behave as local variables.
-    The parentheses () works as an operator which specifies the result of the function (to be returned). Without the parentheses (), the call will return the function definition.
+    The parentheses () works as an operator that specifies the result of the function (to be returned). Without the parentheses (), the call will return the function definition.
     When the function is called/invoked, the task will be executed, and the result will be returned to the caller.
     SIDE NOTE:
                 An argument is the value declared with the function when the function is called/invoked.
@@ -182,7 +179,7 @@ WHAT ARE JAVASCRIPT NUMBERS?
             let numberName = Number.MAX_VALUE;
         2. to return the smallest possible number:
             let numberName = Number.MIN_VALUE;
-        3. to represent Infinity, or -Infinity, which is returned on overflow,:
+        3. to represent Infinity, or -Infinity, that is returned on overflow,:
             let numberName = Number.POSITIVE_INFINITY;
             let numberName = Number.NEGATIVE_INFINITY;
         5. to specify an illegal number:
@@ -199,7 +196,7 @@ WHAT ARE JAVASCRIPT NUMBERS?
             The "decimal" parameter specifies the number of characters behind the decimal point. It is optional and can't be negative. If the "decimal" parameter is omitted, the number won't be rounded.
         4. to round a number:
             a. let stringName = numberName.toFixed(decimal);
-                The "decimal" parameter specifies the number of characters behind the decimal point. It is optional and can't be negative. If the "decimal" parameter is omitted, it will be specified as 0, which means the number is rounded as a whole number.
+                The "decimal" parameter specifies the number of characters behind the decimal point. It is optional and can't be negative. If the "decimal" parameter is omitted, it will be specified as 0, that means the number is rounded as a whole number.
             b. let stringName = numberName.toPrecision(digit);
                 The "digit" parameter specifies the number of digits, or the length of the number. It is optional and can't be zero or negative. If the "digit" parameter is omitted, the number remains unchanged.
     VII. JavaScript Global Methods (that returns numbers):
@@ -249,13 +246,56 @@ WHAT IS A JAVASCRIPT STRING?
                 \' to insert a single quote
                 \" to insert a double quote
                 \\ to insert a backslash
-    III. Index:
-        In JavaScript, string indexes are zero-based, which means they start with O, then 1, then 2,...
-    IV. Properties:
+    III. Regular Expressions
+        A regular expression is a sequence of characters, like strings written without quotes, that forms a search pattern that can be used for text search and text replacement operations.
+            /pattern/
+        1. Properties:
+            a. Modifiers:
+                This can be used to perform case-insensitive matching, global match, or multiline matching,...
+                    /pattern/modifier   
+                /pattern/i: for case-insensitive matching
+                /pattern/g: for global match
+                /pattern/m: for multiline matching
+            b. Brackets:
+                This can be used to find a range of characters.
+                    /[character]/modifier
+                /[xyz]/g: to find all characters specified in the brackets
+                /[x-y]/g: to find all digits specified from x to y
+                /(x|y)/g: to find all the alternatives separated with the pipe
+            c. Metacharacters:
+                This specifies characters with a special meaning.
+                    /\metacharacter/modifier
+                /\d/g: to find all the digits
+                /\s/g: to find all whitespaces
+                /\bword/i: to find the index of the character before the specified word
+                /word\b/i: to find the index of the specified word
+                /\uxxxx/g: to find all the Unicode characters specified by the hexadecimal number "xxxx"
+            d. Quantifiers:
+                This defines quantities.
+                    /quantifier/modifier
+                Full reference: https://www.w3schools.com/js/js_regexp.asp
+        2. Methods:
+            a. regular expression as an argument:
+                a.1 stringName.search(regular expression);
+                a.2 stringName.replace(regular expression);
+                a.3 stringName.match(regular expression);
+            b. regular expression as an object:
+                The RegExp object is a regular expression object with predefined properties and methods.
+                b.1 to check if there is any match of a specified pattern in a string:
+                    const variableName = /pattern/;
+                    let booleanName = variableName.test("text");
+                b.2 to return the match of a specified pattern in a string:
+                        const variableName = /pattern/;
+                        const objectname = variableName.exec("text");
+                    If no match is found, it will return an empty object (null).
+        Full reference: https://www.w3schools.com/jsref/jsref_obj_regexp.asp
+    IV. Index:
+        In JavaScript, string indexes are zero-based, that means they start with O, then 1, then 2,...
+    V. Properties:
         to return the length of a string:
             let numberName = stringName.length;
-    V. Methods:
-        Strings are immutable, which means they can't be affected, changed or replaced.
+    VI. Methods:
+        Strings are immutable, that means they can't be affected, changed or replaced.
         //methods return a number
         1. to return the index of a value in a string:
             a. let numberName = stringName.indexOf("text", position);
@@ -345,19 +385,13 @@ WHAT IS A JAVASCRIPT STRING?
             If the "separator" parameter is omitted, it will assign the whole string to the item at index[0] of the array.
             If the "separator" parameter is "", it will return an array of every single characters in the string.
             The separator can be whitespaces (" "), commas (","), pipes ("|"),..., then it will return an array of substrings separated by the specified separator.
-    VI. JavaScript Global Methods (that returns strings):
+    VII. JavaScript Global Methods (that returns strings):
         to convert anpther data type to a string:
             let stringName = String(value);
         The "value" parameter can be, for example,:
                 number -> numeric string
                 true -> "true"
                 false -> "false"
-    VII. Regular Expressions
-        Regular expressions are strings written without quotes.
-        Some string methods accept flags:
-            "/g" is used for global match
-            "/i" is used for insensitive case
-        https://www.w3schools.com/js/js_regexp.asp
     Full list of string reference: https://www.w3schools.com/jsref/jsref_obj_string.asp
     SIDE NOTE:
                 In some programming languages, primitive values can't have properties or methods because they are not objects. On the other hand, JavaScript treats primitive values as objects when they are executed using properties or methods.
@@ -387,7 +421,7 @@ WHAT ARE JAVASCRIPT BOOLEANS?
 WHAT IS A JAVASCRIPT ARRAY?
     Array is a non-primitive data type.
     Arrays are a special type of objects.
-    Arrays are stored as a list of values which can be of any types of data, numbers, strings, arrays, objects, functions,... They can hold more than one value under one variable, and  the values can be accessed by referring to the associated index numbers.
+    Arrays are stored as a list of values that can be of any types of data, numbers, strings, arrays, objects, functions,... They can hold more than one value under one variable, and  the values can be accessed by referring to the associated index numbers.
     To declare an array:
         const arrayName = [item0, item1, item2];
     or:
@@ -397,9 +431,9 @@ WHAT IS A JAVASCRIPT ARRAY?
         arrayName[2] = value2;
     I. Index:
         In some programming languages, arrays with named indexes are called associative arrays, or hashes.
-        In JavaScript, array indexes are numbered and zero-based, which means they start with O, then 1, then 2,...
+        In JavaScript, array indexes are numbered and zero-based, that means they start with O, then 1, then 2,...
     II. Properties:
-        1. to return the length of an array, which is the number of array elements,:
+        1. to return the length of an array, that is the number of array elements,:
             let numberName = arrayName.length;
         2. to access the whole array:
             arrayName
@@ -681,7 +715,7 @@ WHAT IS A JAVASCRIPT ARRAY?
 
 WHAT IS A JAVASCRIPT OBJECT?
     Object is a non-primitive data type.
-    An object may have properties, which are attributes representing the characteristic of the object, and methods, which are functions representing the behavior/action of the object. Many objects can have the same properties and methods, but the property values might differ, and the methods might perform differently.
+    An object may have properties, that are attributes representing the characteristic of the object, and methods, that are functions representing the behavior/action of the object. Many objects can have the same properties and methods, but the property values might differ, and the methods might perform differently.
     to declare an object:
         const objectName = {name0:value0, name1:value1, name2:value2};
     I. Properties:
@@ -782,19 +816,19 @@ WHAT IS A JAVASCRIPT OBJECT?
 
 WHAT ARE JAVASCRIPT CONDITIONAL STATEMENTS?
     Conditional statements are used to perform different actions based on different conditions.
-    1. If Statement:
+    I. If Statement:
         if (condition) {
             action to be executed if condition is true
         }
-    2. Else If Statement:
+    II. Else If Statement:
         else if (condition) {
             action to be executed if the previous condition is false and the current condition is true
         }
-    3. Else Statement:
+    III. Else Statement:
         else {
             action to be executed if all previous conditions are false
         }
-    4. Switch Statement:
+    IV. Switch Statement:
         This executes alternative actions in different conditions.
             switch (expression) {
                 case value1:
@@ -835,9 +869,9 @@ WHAT ARE JAVASCRIPT CONDITIONAL STATEMENTS?
                         let variableName = (condition) ? value1 : value2;
 
 WHAT ARE JAVASCRIPT LOOPS?
-    Loops are used to iterate over iterable objects to execute a block of code, with a different value after every iteration.
+    Loops are used to iterate over iterable objects to execute a code block, with a different value after every iteration.
     SIDE NOTE:
-                Iterables are iterable objects, which can be iterated over with loops.
+                Iterables are iterable objects, that can be iterated over with loops.
                 Iterating means looping over a sequence of elements.
     I. For Loop:
             for (expression1; expression2; expression3) {
@@ -899,7 +933,7 @@ WHAT ARE JAVASCRIPT LOOPS?
                 }
             "x" specifies the values of the array elements, so "x" can be used directly to access to the values.
     IV. While Loop:
-        This executes a block of code based on some conditions.
+        This executes a code block based on some conditions.
             while (condition) {
                 action to be executed;
             }
@@ -907,27 +941,13 @@ WHAT ARE JAVASCRIPT LOOPS?
         There is a chance that the code won't be executed at all if the condition is false in the first time.
         As long as the condition is true, the execution goes on.
     V. Do/While Loop:
-        This executes a block of code based on some conditions.
+        This executes a code block based on some conditions.
             do {
                 action to be executed;
             } while (condition);
         This executes the code before checking the condition (in the first time only).
         The code will always be executed at least once even if the condition is false in the first time.
         As long as the condition is true, the execution goes on.
-
-WHAT ARE JAVASCRIPT KEYWORDS THAT YOU SHOULD KNOW?
-    I. this
-    II. break;
-        The "break" statement is used to jump out of, or break, a conditional statement or a loop.
-        The "break" statement can be used to jump out of, or break, a block of code with a label reference.
-            label:
-                statement;
-        or
-            label: {
-                block of code;
-            }
-    III. continue;
-        The "continue" statement is used to jump over one iteration and continue with the next iteration of a loop.
 
 WHAT IS A JAVASCRIPT SET?
     A set is a collection of unique values, each of which can only occur once in the set.
@@ -1006,11 +1026,66 @@ WHAT IS A JAVASCRIPT MAP?
                 const objectName = mapName.entries();
             You can use for/of loop to display the object.
 
+WHAT ARE JAVASCRIPT KEYWORDS THAT YOU SHOULD KNOW?
+    I. this
+    II. break;
+        The "break" statement is used to jump out of, or break, a conditional statement or a loop.
+        The "break" statement can be used to jump out of, or break, a code block with a label reference.
+            label:
+                statement;
+        or
+            label: {
+                code block;
+            }
+    III. continue;
+        The "continue" statement is used to jump over one iteration and continue with the next iteration of a loop.
+
 WHAT ARE JAVASCRIPT TYPES OF SCOPE?
     1. Global Scope
     2. Function Scope
     3. Block Scope:
-        Variables which are defined with a block scope when declared within a code block can only be accessed from inside the code block and will be independent from outside the code block.
+        Variables that are defined with a block scope when declared within a code block can only be accessed from inside the code block and will be independent from outside the code block.
+
+WHAT IS JAVASCRIPT ERROR HANDLING?
+    When executing code, different errors might occur due to different reasons.
+    I. Error Object:
+        JavaScript has a built-in Error object that provides error information when errors occur.
+        Properties:
+            1. let stringName = err.name;
+                This can set or return an error name.
+            2. let stringName = err.message;
+                This can set or return an error message.
+            3. let stringName = err;
+                This returns both error name and message.
+        Full reference: https://www.w3schools.com/jsref/jsref_obj_error.asp
+    II. Error Handlers:
+        1. Try-Catch Statement:
+            try {
+                code block defined to be tested for errors while being executed;
+            } catch(err) {
+                code block defined to handle errors that might occur in the try block;
+            }
+        2. Throw Statement:
+            Throw an exception, or throw an error, means when an error occurs, JavaScript will stop and generate an error message.
+            This allows you to create and throw a custom exception, or error.
+                try {
+                    action to be executed;
+                    if (condition)
+                        throw "error message 1";
+                    else (condition)
+                        throw "error message 2";
+                } catch (err) {
+                    action to be executed if error occurs;
+                }
+            The "error message" can be a Number, String, Boolean, or an Object.
+        3. Finally Statement:
+            try {
+                action to be executed;
+            } catch(err) {
+                action to be executed if error occurs;
+            } finally {
+                code block defined to be executed regardless of the result;
+            }
 
 WHAT ARE JAVASCRIPT EVENTS?
     Events are things that happen to the elements of the Web page.
@@ -1020,8 +1095,8 @@ WHAT ARE JAVASCRIPT EVENTS?
         An HTML input field was changed.
     When JavaScript is used in the Web page, it can react on those events.
     When an event is detected, JavaScript will execute the code.
-    HTML allows event handler attributes which are assigned with JavaScript code to be added to its elements.
-        <starting-tag event-attribute="JavaScript-code"> content </closing-tag>
+    HTML allows event handler attributes that are assigned with JavaScript code to be added to its elements.
+        <starting-tag event-handler-attribute="script-code"> content </closing-tag>
     Some HTML event handler attributes are:
         onchange
         onclick
@@ -1029,28 +1104,34 @@ WHAT ARE JAVASCRIPT EVENTS?
         onmouseout
         onkeydown
         onload
-    JavaScript event handlers: https://www.w3schools.com/jsref/dom_obj_event.asp
+    Full reference of event handlers: https://www.w3schools.com/jsref/dom_obj_event.asp
 
 HOW CAN JAVASCRIPT DISPLAY DATA?
     JavaScript can display data in four different ways:
-        1. document.getElementId("HTML-element-id")
-            document.getElementId("HTML-element-id"): is a method to access the HTML element via the id attribute which defines the HTML element.
-            innerHTML: is a property that can be used with this method to define the HTML content.
-            HTML-attribute: is a property that can be used with this method to change HTML attribute values.
-            style.CSS-property: is a property that can be used with this method to change HTML element style with CSS property.
-            https://www.w3schools.com/js/tryit.asp?filename=tryjs_comparison
-        2. document.write(content)
-            This method should be used for testing only. If it is used after the HTML page is loaded, it will overwrite/delete all existing HTML content.
-        3. window.alert(content)
+        1. document.getElementById("HTML-element-id");
+            This is used to access the HTML element via the id attribute that defines the HTML element.
+            a. document.getElementById("HTML-element-id").innerHTML;
+                This can change the HTML content.
+            b. document.getElementById("HTML-element-id").HTML-attribute;
+                This can change HTML attribute values.
+            c. document.getElementById("HTML-element-id").style.CSS-property;
+                This can change the styling of HTML element with CSS property.
+            d. document.getElementById("HTML-element-id").value;
+                This can access the input value of the input tag.
+        2. document.write(content);
+            This should be used for testing only. If it is used after the HTML page is loaded, it will overwrite/delete all existing HTML content.
+        3. window.alert(content);
             The content will be shown in an alert box of the Web browser.
-            The window object has a globel scope. All variables, properties, and methods belong to the window object by default. Therefore, specifying the "window" keyword is optional.
-        4. console.log(content)
+            SIDE NOTE:
+                        The window object has a globel scope. All variables, properties, and methods belong to the window object by default. Therefore, specifying the "window" keyword is optional.
+        4. console.log(content);
             The content will be shown only in the console.
-            This method is used for debugging.
-        5. window.print()
+            This is used for debugging.
+        5. window.print();
             JavaScript doesn't have any object or methods to get access to output devices like HTML does.
-            This method is the only exception that JavaScript can access the output device, which prints the content of the current window.
-            The window object has a globel scope. All variables, properties, and methods belong to the window object by default. Therefore, specifying the "window" keyword is optional.
+            This is the only exception that JavaScript can access the output device, that prints the content of the current window.
+            SIDE NOTE:
+                        The window object has a globel scope. All variables, properties, and methods belong to the window object by default. Therefore, specifying the "window" keyword is optional.
 */
 
 console.log(Date());
