@@ -27,34 +27,38 @@ WHAT IS A JAVASCRIPT PROGRAM?
     A code block is used to define statements to be executed together within a braces {} pair.
     The set of rules of how programs in that language are constructed is its syntax.
     JavaScript syntax defines two types of values:
-        1. Literals:
-            They are fixed values.
-        2. Variables:
-            They are variable values.
+        literals
+        variables
 
 WHAT IS A JAVASCRIPT VARIABLE?
     A JavaScript expression is a combination of variables, operators, and values, that computes to a value. The computation is called an evaluation.
     In a programming language, variables are containers for storing data values.
     I. Keywords:
         Keywords are used to specify actions to be performed, for example, to declare a variable.
-        There are four ways to declare a variable:
-            1. var:
-                Keyword "var" is used typically in older browser.
-                Variables defined with "var" can be redeclared and reassigned.
-                Variables can even be initialized before declared with "var".
-                Keyword "var" doesn't provide a block scope.
-            2. let:
-                Keyword "let" is used typically to declare a variable whose value might change.
-                Variables defined with "let" can't be redeclared but can be reassigned.
-                Keyword "let" provides a block scope.
-            3. const:
-                Keyword "const" is used in a general rule unless value of the variable might change.
-                Keyword "const" doesn't define a constant value but defines a constant reference to a value, as for an array, an object, a function, a RegExp.
-                Variables defined with "const" must be initialized when declared.
-                Variables defined with "const" can't be redeclared and reassigned.
-                Keyword "const" provides a block scope.
-            4. no keyword:
-                If a variable is declared without a keyword, it is called undeclared variable.
+        1. var:
+            Keyword "var" doesn't have block scope but has function scope and global scope.
+            Variables defined with "var" can be used before it is declared, as long as it is assigned with a value before action is taken.
+                variableName = value;
+                var variableName;
+            Variables defined with "var" doesn't have to be declared and initialized all at once.
+            Variables defined with "var" can be redeclared and reassigned.
+        2. let:
+            Keyword "let" has block scope, function scope, and global scope.
+            Variables defined with "let" can't be used until it is declared.
+                let variableName;
+                variableName = value;
+            Variables defined with "let" doesn't have to be declared and initialized all at once.
+            Variables defined with "let" can't be redeclared but can be reassigned.
+        3. const:
+            Keyword "const" doesn't define a constant value but defines a constant reference to a value, as for an array, an object, a function, a RegExp.
+            Keyword "const" has block scope, function scope, and global scope.
+            Variables defined with "const" can't be used until it is declared.
+                const variableName;
+                variableName = value;
+            Variables defined with "const" have to be declared and initialized all at once.
+            Variables defined with "const" can't be redeclared and reassigned.
+        4. no keyword:
+            If a variable is assigned with a value and isn't declared with any keyword, it is defined as undeclared and will automatically have a global scope.
     II. Identifiers:
         Identifiers are used to name variables and functions.
         General rule for JavaScript identifiers:
@@ -101,10 +105,7 @@ WHAT IS A JAVASCRIPT VARIABLE?
             Full reference: https://www.w3schools.com/js/js_assignment.asp
         7. Unary Operator:
             Unary operator (+) is used to convert another date type to a number.
-    IV. Values:
-        A value can be assigned to a variable either when or after the variable is declared. 
-        If the variable is declared without a value, both of its value and data type will be "undefined".
-    V. Data Types:
+    IV. Values & Data Types:
         JavaScript data types are dynamic because the same variable can hold different data types.
         There are five data types that can contain values:
             number
@@ -130,6 +131,21 @@ WHAT IS A JAVASCRIPT VARIABLE?
         There are two complex data types:
             function
             object
+        If a variable is declared without assigned with a value, both of its value and data type will be "undefined".
+    V. Scope:
+        Scope determines the accessibility, or visibility, of variables, objects, functions from different parts of the program.
+        1. Block Scope:
+            Variables that have a block scope when declared within a code block can only be accessed from inside the code block and will be independent from outside the code block.
+        2. Function Scope:
+            Variables that are declared within a function will be local to the function; in other words, they are created when the function starts and deleted when the function is completed; and, will have a function scope.
+            Variables that have a function scope can only be accessed from inside the function.
+        3. Global Scope:
+            Variables that are declared outside any function will have a global scope.
+            Variables that have a global scope can be accessed from anywhere in the program.
+    VI. Hoisting:
+        Hoisting is JavaScript's default behavior of moving all declarations to the top of the scope.
+        JavaScript hoists only declarations not initializations.
+
 
 WHAT IS A JAVASCRIPT FUNCTION?
     In a programming langguage, a function is a code block designed to perform a particular task and compute a return value.
@@ -813,6 +829,81 @@ WHAT IS A JAVASCRIPT OBJECT?
             Full list of Math reference: https://www.w3schools.com/jsref/jsref_obj_math.asp
     SIDE NOTE:
                 Try to avoid using "String", "Number", "Boolean", or "Array" object to declare a variable, as it will complicate the code and slow down the execution speed.
+    V. Set:
+        A set is a collection of unique values, each of which can only occur once in the set.
+        1. Set Properties:
+            to return the number of elements in a set:
+                let numberName = setName.size;
+        2. Set Methods:
+            a. to create a new set:
+                a.1 to create a new set from an array:
+                    const setName = new Set([item0, item1, item2]);
+                a.2 to create a new set then add values:
+                    const setName = new Set();
+                    setName.add(value0);
+                    setName.add(value1);
+                    setName.add(value2);
+            b. to add a new element to a set:
+                    setName.add(value);
+                If the added element is duplicate, only the first occurrence is saved in the set.
+            c. to remove an element from a set:
+                delete();
+            d. to check if a value exists in a set:
+                has();
+            e. to invoke a callback function for each element in a set:
+                const setName = new Set([item0, item1, item2]);
+                setName.forEach(function(value) {
+                        action to be executed;
+                    }
+                );
+            f. to return an iterable object containing all the elements in a set:
+                    const objectName = setName.values();
+                You can use for/of loop to display the object.
+    VI. Map:
+        A map holds key-value pairs, where the keys and values can be of any datatype.
+        A map can remember the original insertion order of the keys.
+        1. Map Properties:
+            to return the number of elements in a map:
+                let numberName = mapName.size;
+        2. Map Methods:
+            a. to create a new map:
+                a.1 to create a new map from an array:
+                    const mapName = new Map([
+                            [key0, value0],
+                            [key1, value1],
+                            [key2, value2]
+                        ]
+                    );
+                a.2 to create a new map then set values:
+                    const mapName = new Map();
+                    mapName.set(key0, value0);
+                    mapName.set(key1, value1);
+                    mapName.set(key2, value2);
+            b. to set a key and a value for the key in a map:
+                b.1 to add a new key-value pair to a map:
+                    mapName.set(key, value);
+                b.2 to change the value of an existing key in a map:
+                    mapName.set(key, newValue);
+            c. to get the value of a key in a map:
+                let valueName = mapName.get(key);
+            d. to remove an element in a map:
+                mapName.delete(key);
+            f. to check if a key exists in a map:
+                let booleanName = mapName.has(key);
+            e. to invoke a callback function for each element in a map:
+                const mapName = new Map([
+                        [key0, value0],
+                        [key1, value1],
+                        [key2, value2]
+                    ]
+                );
+                mapName.forEach(function(value, key) {
+                        action to be executed;
+                    }
+                );
+            g. to return an iterable object containing all the elements in a map:
+                    const objectName = mapName.entries();
+                You can use for/of loop to display the object.
 
 WHAT ARE JAVASCRIPT CONDITIONAL STATEMENTS?
     Conditional statements are used to perform different actions based on different conditions.
@@ -949,83 +1040,6 @@ WHAT ARE JAVASCRIPT LOOPS?
         The code will always be executed at least once even if the condition is false in the first time.
         As long as the condition is true, the execution goes on.
 
-WHAT IS A JAVASCRIPT SET?
-    A set is a collection of unique values, each of which can only occur once in the set.
-    I. Properties:
-        to return the number of elements in a set:
-            let numberName = setName.size;
-    II. Methods:
-        1. to create a new set:
-            a. to create a new set from an array:
-                const setName = new Set([item0, item1, item2]);
-            b. to create a new set then add values:
-                const setName = new Set();
-                setName.add(value0);
-                setName.add(value1);
-                setName.add(value2);
-        2. to add a new element to a set:
-                setName.add(value);
-            If the added element is duplicate, only the first occurrence is saved in the set.
-        3. to remove an element from a set:
-            delete();
-        4. to check if a value exists in a set:
-            has();
-        5. to invoke a callback function for each element in a set:
-            const setName = new Set([item0, item1, item2]);
-            setName.forEach(function(value) {
-                    action to be executed;
-                }
-            );
-        6. to return an iterable object containing all the elements in a set:
-                const objectName = setName.values();
-            You can use for/of loop to display the object.
-
-WHAT IS A JAVASCRIPT MAP?
-    A map holds key-value pairs, where the keys and values can be of any datatype.
-    A map can remember the original insertion order of the keys.
-    I. Properties:
-        to return the number of elements in a map:
-            let numberName = mapName.size;
-    II. Methods:
-        1. to create a new map:
-            a. to create a new map from an array:
-                const mapName = new Map([
-                        [key0, value0],
-                        [key1, value1],
-                        [key2, value2]
-                    ]
-                );
-            b. to create a new map then set values:
-                const mapName = new Map();
-                mapName.set(key0, value0);
-                mapName.set(key1, value1);
-                mapName.set(key2, value2);
-        2. to set a key and a value for the key in a map:
-            a. to add a new key-value pair to a map:
-                mapName.set(key, value);
-            b. to change the value of an existing key in a map:
-                mapName.set(key, newValue);
-        3. to get the value of a key in a map:
-            let valueName = mapName.get(key);
-        4. to remove an element in a map:
-            mapName.delete(key);
-        5. to check if a key exists in a map:
-            let booleanName = mapName.has(key);
-        6. to invoke a callback function for each element in a map:
-            const mapName = new Map([
-                    [key0, value0],
-                    [key1, value1],
-                    [key2, value2]
-                ]
-            );
-            mapName.forEach(function(value, key) {
-                    action to be executed;
-                }
-            );
-        7. to return an iterable object containing all the elements in a map:
-                const objectName = mapName.entries();
-            You can use for/of loop to display the object.
-
 WHAT ARE JAVASCRIPT KEYWORDS THAT YOU SHOULD KNOW?
     I. this
     II. break;
@@ -1039,12 +1053,6 @@ WHAT ARE JAVASCRIPT KEYWORDS THAT YOU SHOULD KNOW?
             }
     III. continue;
         The "continue" statement is used to jump over one iteration and continue with the next iteration of a loop.
-
-WHAT ARE JAVASCRIPT TYPES OF SCOPE?
-    1. Global Scope
-    2. Function Scope
-    3. Block Scope:
-        Variables that are defined with a block scope when declared within a code block can only be accessed from inside the code block and will be independent from outside the code block.
 
 WHAT IS JAVASCRIPT ERROR HANDLING?
     When executing code, different errors might occur due to different reasons.
