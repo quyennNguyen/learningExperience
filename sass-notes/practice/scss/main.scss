@@ -2,467 +2,75 @@
 @import "config";
 
 body {
-    display: grid;
-    grid-template-columns: 90vw;
-    grid-template-rows: 10vh auto 5vh;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-flow: column;
     justify-content: center;
+    align-items: center;
     align-content: center;
     font-family: $font-family;
     color: set-color($primary-color);
     background: $primary-color;
-
-    &.light {
-        color: $primary-color;
-        background: $background-color;
-    }
 }
 
-header {
-    grid-area: 1 / 1 / span 1 / span 1;
-    display: flex;
-    align-items: center;
+.login {
+    margin: 10px;
+    border-radius: 10px;
+    width: 30vw;
+    height: 30vw;
+    display: grid;
+    grid-template-columns: 60%;
+    grid-template-rows: 10% 30% 10% 10%;
+    justify-content: center;
+    align-content: center;
+    background: $background-color;
 
-    .login-btn {
-
-        .login-link,
-        .signup-link {
-            padding: 10px 20px;
-            @include link;
-
-            &.light {
-                @include link($primary-color);
-            }
-        }
-
-        .login-link {
-            border-radius: 20px;
-            background: rgba(set-color($primary-color), 0.5);
-        }
+    p {
+        padding: 10px;
+        font-size: 2rem;
+        font-weight: map-get($font-weight, large);
+        text-align: center;
     }
 
-    .menu {
-        position: fixed;
-        top: 2vh;
-        right: 0;
+    fieldset {
+        margin: 20px 10px;
+        border: none;
+        border-radius: 10px;
+        padding: 10px;
         display: flex;
-        flex-flow: row-reverse;
-        justify-content: flex-end;
+        flex-flow: column;
+        justify-content: space-evenly;
         align-items: center;
+        align-content: center;
+        background: rgba(set-color($primary-color), 0.1);
 
-        .menu-btn {
-            margin: 20px;
-            cursor: pointer;
-        }
-
-        .menu-nav {
-            border-radius: 20px;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            background: rgba(set-color($primary-color), 0.3);
-            visibility: hidden;
-
-            &.open {
-                visibility: visible;
-            }
-
-            .menu-item {
-                margin: 20px;
-                list-style-type: none;
-
-                .menu-link {
-                    @include link;
-
-                    &:hover>i {
-                        display: none;
-                    }
-
-                    &:hover>.menu-title {
-                        display: inline-block;
-                    }
-
-                    &.light {
-                        @include link($primary-color);
-                    }
-
-                    .menu-title {
-                        border-radius: 20px;
-                        padding: 10px 20px;
-                        text-transform: uppercase;
-                        background: rgba(set-color($primary-color), 0.5);
-                        display: none;
-                    }
-                }
-            }
-        }
-    }
-
-    // .menu-btn {
-    //     position: absolute;
-    //     z-index: 2;
-    //     top: 2rem;
-    //     right: 2rem;
-    //     width: 2%;
-    //     height: 3%;
-    //     cursor: pointer;
-    //     @include transition;
-
-    //     .menu-btn-burger {
-    //         position: absolute;
-    //         top: 0;
-    //         right: 0;
-    //         width: 100%;
-    //         height: 100%;
-    //         background: set-color($primary-color);
-    //         @include transition;
-
-    //         &::before {
-    //             content: "";
-    //             position: absolute;
-    //             top: -0.5rem;
-    //             right: 0;
-    //             width: 100%;
-    //             height: 100%;
-    //             background: set-color($primary-color);
-    //             @include transition;
-    //         }
-
-    //         &::after {
-    //             content: "";
-    //             position: absolute;
-    //             top: 0.5rem;
-    //             left: 0;
-    //             width: 80%;
-    //             height: 100%;
-    //             background: set-color($primary-color);
-    //             @include transition;
-    //         }
-
-    //         &.open {
-    //             background: transparent;
-
-    //             &::before {
-    //                 top: 0;
-    //                 right: 0;
-    //                 transform: rotate(45deg);
-    //             }
-
-    //             &::after {
-    //                 top: 0;
-    //                 right: 0;
-    //                 width: 100%;
-    //                 transform: rotate(-45deg);
-    //             }
-    //         }
-    //     }
-    // }
-
-    // .nav {
-    //     position: absolute;
-    //     z-index: 1;
-    //     right: 0;
-    //     width: 20vw;
-    //     visibility: hidden;
-
-    //     &.open {
-    //         visibility: visible;
-    //     }
-
-    //     .menu-nav {
-    //         display: flex;
-    //         flex-flow: column wrap;
-    //         justify-content: center;
-    //         align-items: center;
-    //         height: 100vh;
-    //         overflow: hidden;
-    //         background: $primary-color;
-    //         opacity: 0.95;
-    //         list-style-type: none;
-    //         transform: translateX(20vw);
-    //         @include transition;
-
-    //         &.open {
-    //             transform: translateX(0);
-    //         }
-
-    //         .menu-item.active > a {
-    //                 color: $secondary-color;
-    //         }
-
-    //         .menu-link {
-    //             display: inline-block;
-    //             margin: 2rem;
-    //             text-transform: uppercase;
-    //             @include link;
-    //         }
-    //     }
-    // }
-}
-
-main {
-    grid-area: 2 / 1 / span 1 / span 1;
-
-    article {
-        margin: 10vh 0;
-    }
-
-    #about {
-        display: grid;
-        grid-template-columns: 20vw 70vw;
-        grid-template-rows: auto auto;
-        gap: 20px;
-        justify-content: center;
-        align-items: center;
-
-        .general-info {
-            grid-area: 1 / 1 / span 2 / span 1;
-            border-radius: 20px;
-            color: $primary-color;
-            background: $background-color;
-
-            &.light {
-                color: set-color($primary-color);
-                background: $primary-color;
-            }
-
-            .name,
-            .objective,
-            .education {
-                margin: 30px;
-            }
-
-            .name {
-                text-align: center;
-
-                .avatar-img {
-                    margin: auto;
-                    border-radius: 50%;
-                    width: 200px;
-                    height: 200px;
-                    background: url(../img/avatar_icon.jpg) center;
-                    background-size: cover;
-                }
-            }
-        }
-
-        .skills {
-            grid-area: 1 / 2 / span 1 / span 1;
-
-            h3 {
-                margin: 10px 0;
-            }
-
-            ul {
-                display: inline-block;
-                list-style-type: none;
-
-                li {
-                    margin: 10px 30px;
-                }
-            }
-        }
-
-        .work-experience {
-            grid-area: 2 / 2 / span 1 / span 1;
-
-            h3 {
-                margin: 10px 0;
-            }
-
-            .job {
-                display: flex;
-
-                div {
-                    margin: 10px 30px;
-                }
-            }
-        }
-    }
-
-    #features {
-
-        .search-bar {
-            width: fit-content;
-
-            .search-input,
-            .search-btn {
+            input {
+                border: none;
+                font-size: 1rem;
                 color: set-color($primary-color);
                 background: transparent;
-
-                &.light {
-                    color: $primary-color;
-                }
             }
-
-            .search-input {
-                margin-right: 10px;
-                border: 2px solid;
-                border-radius: 20px;
-                padding: 10px 20px;
-            }
-
-            .search-btn {
-                border: none;
-                cursor: pointer;
-            }
-        }
-
-        .project-list {
-            margin: 30px 0;
-
-            li {
-                margin: 10px 30px;
-            }
-        }
     }
 
-    #contacts {
-
-        .contact-menu {
-            margin: auto;
-            border-radius: 20px;
-            width: fit-content;
-            display: flex;
-            align-items: center;
-            background: $background-color;
-
-            &.light {
-                background: $primary-color;
-            }
-
-            .contact-link {
-                margin: 20px 40px;
-                cursor: pointer;
-                @include link($primary-color);
-
-                &.light {
-                    @include link;
-                }
-            }
-
-            .contact-link:hover>i {
-                display: none;
-            }
-
-            .contact-link:hover>span {
-                display: inline-block;
-            }
-
-            span {
-                border-radius: 20px;
-                padding: 10px 20px;
-                font-weight: map-get($font-weight, large);
-                background: rgba(set-color($primary-color), 0.5);
-                display: none;
-            }
-        }
+    button {
+        margin: 10px;
+        border: none;
+        border-radius: 20px;
+        font-size: 1rem;
+        font-weight: map-get($font-weight, medium);
+        color: set-color($primary-color);
+        background: rgba($primary-color, 0.2);
+        cursor: pointer;
     }
 }
 
-footer {
-    grid-area: 3 / 1 / span 1 / span 1;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.option {
+    margin: 10px;
 
-    .setting-box {
-        border: 2px solid;
-        border-radius: 50px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        .setting-btn {
-            margin: 10px;
-            cursor: pointer;
-        }
-
-        .theme-btn {
-            margin: 10px;
-            display: none;
-
-            &.open {
-                display: block;
-            }
-
-            .theme-checkbox {
-                display: none;
-
-                &:checked+.theme-toggle>#dark {
-                    display: none;
-                }
-
-                &:checked+.theme-toggle>#light {
-                    display: inline;
-                }
-            }
-
-            .theme-toggle {
-                cursor: pointer;
-
-                &>#light {
-                    display: none;
-                }
-            }
-        }
-    }
-}
-
-@media only screen and (max-width: 1880px) {
-    main {
-
-        #about {
-            grid-template-columns: 30vw 60vw;
-            grid-template-rows: auto auto;
-
-            .general-info {
-                grid-area: 1 / 1 / span 1 / span 1;
-            }
-
-            .skills {
-                grid-area: 1 / 2 / span 1 / span 1;
-            }
-
-            .work-experience {
-                grid-area: 2 / 1 / span 1 / span 2;
-            }
-        }
-    }
-}
-
-@media only screen and (max-width: 900px) {
-    header {
-
-        .menu {
-            flex-flow: column;
-            justify-content: center;
-            align-items: flex-end;
-
-            .menu-nav {
-                flex-flow: column;
-                justify-content: center;
-                align-items: flex-end;
-            }
-        }
-    }
-
-    main {
-
-        #about {
-            grid-template-columns: 90vw;
-            grid-template-rows: auto auto auto;
-
-            .general-info {
-                grid-area: 1 / 1 / span 1 / span 1;
-            }
-
-            .skills {
-                grid-area: 2 / 1 / span 1 / span 1;
-            }
-
-            .work-experience {
-                grid-area: 3 / 1 / span 1 / span 1;
-            }
-        }
+    a {
+        font-size: 1.5rem;
+        font-weight: map-get($font-weight, medium);
+        @include link;
     }
 }
