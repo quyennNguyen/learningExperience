@@ -1,5 +1,5 @@
 /*
-SOURCE: https://youtu.be/lI1ae4REbFM
+SOURCE: https://www.youtube.com/watch?v=jS4aFq5-91M&t=242s
 
 WHAT IS JAVASCRIPT?
     JavaScript is of the key programming languages of the Web. While HTML defines the content of the Web page and CSS specifies the layout of the Web page, JavaScript programs the behavior of the Web page.
@@ -66,6 +66,7 @@ WHAT IS A JAVASCRIPT VARIABLE?
             -must not begin with a digit.
             -are case sensitive.
             -must not use reserved words.
+            -should use camelCase naming style.
     III. Operators:
         An operation consists of operand(s) and operator(s).
         1. Arithmetic Operators:
@@ -146,20 +147,37 @@ WHAT IS A JAVASCRIPT VARIABLE?
         Hoisting is JavaScript's default behavior of moving all declarations to the top of the scope.
         JavaScript hoists only declarations not initializations.
 
-
 WHAT IS A JAVASCRIPT FUNCTION?
     In a programming langguage, a function is a code block designed to perform a particular task and compute a return value.
-    To declare a function:
-        function functionName(parameter1, parameter2, parameter3) {
-            action to be executed;
-        }
-    The parentheses () may or may not include a comma-separated parameter list.
-    All variables declared in the function definition including the parameters will behave as local variables.
-    The parentheses () works as an operator that specifies the result of the function (to be returned). Without the parentheses (), the call will return the function definition.
-    When the function is called/invoked, the task will be executed, and the result will be returned to the caller.
+    to declare a function:
+        1. with "function" as a keyword:
+            function functionName(parameter1, parameter2, parameter3) {
+                action to be executed;
+            }
+            let variableName = functionName(argument1, argument2, argument3);
+        2. with "function()" as a method:
+            let functionName = function(parameter1, parameter2, parameter3) {
+                action to be executed;
+            }
+            let variableName = functionName(argument1, argument2, argument3);
+        3. with arrow function:
+                let functionName = (parameter1, parameter2, parameter3) => {
+                    action to be executed;
+                }
+                let variableName = functionName(argument1, argument2, argument3);
+            If the task includes only one statement and returns a value:
+                let functionName = (parameter1, parameter2, parameter3) => action to be executed to return a value;
+                let variableName = functionName(argument1, argument2, argument3);
+            If the function has only one parameter:
+                let functionName = parameter => {
+                    action to be executed;
+                }
+                let variableName = functionName(argument);
     SIDE NOTE:
-                An argument is the value declared with the function when the function is called/invoked.
                 A parameter is the value defined in the function definition when the function is declared.
+                An argument is the value declared with the function when the function is called/invoked.
+                All parameters and arguments are optional.
+                The parentheses () works as an operator that specifies the result of the function (to be returned). Without the parentheses (), the call will return the function definition.
 
 WHAT ARE JAVASCRIPT NUMBERS?
     Number is a primitive data type.
@@ -184,7 +202,7 @@ WHAT ARE JAVASCRIPT NUMBERS?
             base 12: duodecimal
             base 8: octal
             base 2: binary
-        To convert a number (base 10 decimal) to another base:
+        to convert a number (base 10 decimal) to another base:
             let numberName2 = numberName1.toString(base);
     IV. Reserved words:
         NaN: is Not a Number, typeof NaN is number.
@@ -438,7 +456,7 @@ WHAT IS A JAVASCRIPT ARRAY?
     Array is a non-primitive data type.
     Arrays are a special type of objects.
     Arrays are stored as a list of values that can be of any types of data, numbers, strings, arrays, objects, functions,... They can hold more than one value under one variable, and  the values can be accessed by referring to the associated index numbers.
-    To declare an array:
+    to declare an array:
         const arrayName = [item0, item1, item2];
     or:
         const arrayName = [];
@@ -731,7 +749,10 @@ WHAT IS A JAVASCRIPT ARRAY?
 
 WHAT IS A JAVASCRIPT OBJECT?
     Object is a non-primitive data type.
-    An object may have properties, that are attributes representing the characteristic of the object, and methods, that are functions representing the behavior/action of the object. Many objects can have the same properties and methods, but the property values might differ, and the methods might perform differently.
+    An object may have:
+        - properties, or attributes, that represent the characteristic of the object
+        - methods, or functions, that represent the behavior/action of the object
+    Many objects can have the same properties and methods, but the property values might differ, and the methods might perform differently.
     to declare an object:
         const objectName = {name0:value0, name1:value1, name2:value2};
     I. Properties:
@@ -905,6 +926,37 @@ WHAT IS A JAVASCRIPT OBJECT?
                     const objectName = mapName.entries();
                 You can use for/of loop to display the object.
 
+WHAT ARE JAVASCRIPT CLASSES?
+    Classes are basically templates/blueprints/constructors for creating objects.
+    to create a class:
+        class className {
+            constructor(parameter1, parameter2) {
+                this.attribute1 = parameter1;
+                this.attribute2 = parameter2;
+            }
+            methodName1(parameter1, parameter2) {
+                action to be executed;
+            }
+            methodName2(parameter1, parameter2) {
+                action to be executed;
+            }
+        }
+    to use a class to create an object:
+        const objectName = new className(argument1, argument2);
+    to access the object properties:
+        let variableName1 = objectName.attribute1;
+        let variableName2 = objectName.attribute2;
+    to access the object methods:
+        let variableName1 = objectName.methodName1(argument1, argument2);
+        let variableName2 = objectName.methodName2(argument1, argument2);
+    The constructor:
+        - is a special method.
+        - is used to initialize object properties.
+        - is executed automatically when an object is created.
+        - if not defined, JavaScript will autoamatically add an empty one.
+            constructor() { }
+    All the parameters and arguments are optional.
+
 WHAT ARE JAVASCRIPT CONDITIONAL STATEMENTS?
     Conditional statements are used to perform different actions based on different conditions.
     I. If Statement:
@@ -1040,8 +1092,54 @@ WHAT ARE JAVASCRIPT LOOPS?
         The code will always be executed at least once even if the condition is false in the first time.
         As long as the condition is true, the execution goes on.
 
+WHAT ARE JAVASCRIPT MODULES?
+    Modules allow you to break up your code into separate files, which makes it easier to maintain the code-base.
+    I. Import Statement:
+        You can import modules into a file.
+        1. from named export:
+            import {variableName1, variableName2} from "fileName.js";
+        2. from default export:
+            import variableName from "fileName.js";
+    II. Export Statement:
+        You can export a variable or function from one file to another.
+        1. Named Export:
+            a. in-line individually:
+                export const variableName1 = value1;
+                export const variableName2 = value2;
+            b. all at once at the bottom:
+                const variableName1 = value1;
+                const variableName2 = value2;
+                export {variableName1, variableName2};
+        2. Default Export:
+            You can have only one default export in a file.
+                const variableName = value;
+                export default variableName;
+
 WHAT ARE JAVASCRIPT KEYWORDS THAT YOU SHOULD KNOW?
     I. this
+        The "this" keyword refers to an object, and to which object depends on how "this" is invoked, used, or called.
+        1. in a function:
+            In default function binding, "this" refers to the global object.
+            In "strict mode", "this" is defined as "undefined".
+            When the function is called by an object:
+                - if the function is declared with the "function" keyword or "function()" method, "this" refers to the object that calls it.
+                - if the function is declared with the arrow function, "this" refers to the global object.
+        2. in an object method:
+            "this" refers to the object that calls the method.
+            Explicit function binding:
+                a. call()
+                    https://www.w3schools.com/js/js_function_call.asp
+                b. apply()
+                    https://www.w3schools.com/js/js_function_apply.asp
+                c. bind()
+                    https://www.w3schools.com/js/js_function_bind.asp
+        3. in an event handler:
+            "this" refers to the HTML element that receives the event.
+        4. by itself:
+            "this" refers to the global object.
+            In "strict mode", "this" also refers to the global object.
+        SIDE NOTE:
+                    In a browser window, the global object is the Window object [object Window].
     II. break;
         The "break" statement is used to jump out of, or break, a conditional statement or a loop.
         The "break" statement can be used to jump out of, or break, a code block with a label reference.
@@ -1095,7 +1193,7 @@ WHAT IS JAVASCRIPT ERROR HANDLING?
                 code block defined to be executed regardless of the result;
             }
 
-WHAT ARE JAVASCRIPT EVENTS?
+WHAT IS JAVASCRIPT EVENT HANDLING?
     Events are things that happen to the elements of the Web page.
     EX:
         An HTML Web page has finished loading.
@@ -1140,6 +1238,15 @@ HOW CAN JAVASCRIPT DISPLAY DATA?
             This is the only exception that JavaScript can access the output device, that prints the content of the current window.
             SIDE NOTE:
                         The window object has a globel scope. All variables, properties, and methods belong to the window object by default. Therefore, specifying the "window" keyword is optional.
-*/
 
-console.log(Date());
+WHAT IS JAVASCRIPT JSON?
+    JSON, stands for JavaScript Object Notation, is a lightweight data interchange format for storing and transporting data, which is often used when data is sent from a Web server to a Web page. 
+    JSON is language independent, which means the code for reading and generating JSON can be written in any programming language, and self-describing, which means JSON format is text only.
+    JSON format is syntactically identical to the code for creating JavaScript objects because JSON format is deprived from JavaScript object notation syntax. Therefore, a JavaScript program easily converts JSON data to native JavaScript objects.
+    Syntax:
+        1. JSON data is written in name:value pairs.
+            { "fieldName":"value" }
+        2. JSON data is separated by commas.
+        3. JSON objects are written in curly braces {}.
+        4. JSON arrays are written in square brackets [].
+*/
