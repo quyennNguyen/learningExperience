@@ -1,3 +1,4 @@
 let myAge = 24;
-document.getElementById("counter").innerHTML = myAge;
-console.log(myAge);
+let humanDogRatio = 7;
+let myDogAge = myAge * humanDogRatio;
+console.log(myDogAge);
