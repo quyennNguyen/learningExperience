@@ -193,7 +193,7 @@ WHAT ARE SASS FUNCTIONS?
     Full list of SASS introspection functions: https://www.w3schools.com/sass/sass_functions_introspection.php
 */
 
-@import "reset";
+@import "config";
 @import "variables";
 
 @mixin flex-box($direction: row) {

@@ -1,1 +1,11 @@
-/*# sourceMappingURL=style.css.map */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  text-align: center;
+  color: white;
+  background: #171430;
+}/*# sourceMappingURL=style.css.map */
