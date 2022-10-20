@@ -1,5 +1,5 @@
 /*
-SOURCE: https://www.youtube.com/watch?v=jS4aFq5-91M&t=242s
+SOURCE: https://www.youtube.com/watch?v=lI1ae4REbFM&ab_channel=CleverProgrammer
 
 WHAT IS JAVASCRIPT?
     JavaScript is of the key programming languages of the Web. While HTML defines the content of the Web page and CSS specifies the layout of the Web page, JavaScript programs the behavior of the Web page.
@@ -42,6 +42,8 @@ WHAT IS A JAVASCRIPT VARIABLE?
                 var variableName;
             Variables defined with "var" doesn't have to be declared and initialized all at once.
             Variables defined with "var" can be redeclared and reassigned.
+            With "var", the value can be changed.
+            However, "var" is outdated and not recommended to use.
         2. let:
             Keyword "let" has block scope, function scope, and global scope.
             Variables defined with "let" can't be used until it is declared.
@@ -49,18 +51,18 @@ WHAT IS A JAVASCRIPT VARIABLE?
                 variableName = value;
             Variables defined with "let" doesn't have to be declared and initialized all at once.
             Variables defined with "let" can't be redeclared but can be reassigned.
+            With "let", the value can be changed.
         3. const:
-            Keyword "const" doesn't define a constant value but defines a constant reference to a value, as for an array, an object, a function, a RegExp.
             Keyword "const" has block scope, function scope, and global scope.
             Variables defined with "const" can't be used until it is declared.
-                const variableName;
-                variableName = value;
+                const variableName = value;
             Variables defined with "const" have to be declared and initialized all at once.
             Variables defined with "const" can't be redeclared and reassigned.
+            Keyword "const" doesn't define a constant value but defines a constant reference to a value, as for an array, an object, a function, a RegExp. Therefore, in a sense, the value can't be changed.
         4. no keyword:
             If a variable is assigned with a value and isn't declared with any keyword, it is defined as undeclared and will automatically have a global scope.
     II. Identifiers:
-        Identifiers are used to name variables and functions.
+        Identifiers are used to name, or to create a reference for, variables and functions.
         General rule for JavaScript identifiers:
             -can contain letters, digits, underscores (_), dollar signs ($).
             -must not begin with a digit.
@@ -148,7 +150,7 @@ WHAT IS A JAVASCRIPT VARIABLE?
         JavaScript hoists only declarations not initializations.
 
 WHAT IS A JAVASCRIPT FUNCTION?
-    In a programming langguage, a function is a code block designed to perform a particular task and compute a return value.
+    A function is a code block designed to perform a particular task and is executed to compute a return value when called/invoked/run.
     to declare a function:
         1. with "function" as a keyword:
             function functionName(parameter1, parameter2, parameter3) {
@@ -175,7 +177,7 @@ WHAT IS A JAVASCRIPT FUNCTION?
                 let variableName = functionName(argument);
     SIDE NOTE:
                 A parameter is the value defined in the function definition when the function is declared.
-                An argument is the value declared with the function when the function is called/invoked.
+                An argument is the value passed to, or received by, the function when the function is called/invoked/run.
                 All parameters and arguments are optional.
                 The parentheses () works as an operator that specifies the result of the function (to be returned). Without the parentheses (), the call will return the function definition.
 
@@ -266,13 +268,13 @@ WHAT IS A JAVASCRIPT STRING?
     String is a primitive data type.
     Strings are text values containing zero or more characters written within single (' ') or double (" ") quotes.
     I. Template Literals, or String Template, or Back-Tics Syntax:
-        Template literals use back-ticks (` `) instead of single quotes (' ') or double quotes (" ") to define a string.
-            - allows to use either single quotes (' ') or double quotes (" ") or both inside a string
-            - allows multiline strings
-            - allows string interpolation
-        String interpolation is a way to interpolate variables, expressions, or HTML templates into strings.
-            variable substitution: ${variableName}
-            expression substitution: ${expression}
+        Template literals:
+            - use back-ticks (` `) instead of single quotes (' ') or double quotes (" ") to define a string.
+            - allows to use either single quotes (' ') or double quotes (" ") or both inside a string.
+            - allows multiline strings.
+            - allows string interpolation, which is an easy way to interpolate variables, expressions, or HTML templates into strings; in other words, an efficient way of string concatenation.
+                variable substitution: ${variableName}
+                expression substitution: ${expression}
     II. Escape Character:
         The backslash (\) escape character is used to avoid misunderstanding of special characters in a string.
             \character
@@ -847,9 +849,15 @@ WHAT IS A JAVASCRIPT OBJECT?
                 g. Math.LOG2E
                 h. Math.LOG10E
         2. Math Methods:
-            Full list of Math reference: https://www.w3schools.com/jsref/jsref_obj_math.asp
-    SIDE NOTE:
-                Try to avoid using "String", "Number", "Boolean", or "Array" object to declare a variable, as it will complicate the code and slow down the execution speed.
+            a. let numberName = Math.round(number);
+                This returns a new number rounded to the nearest integer as in common rounding rule.
+            b. let numberName = Math.ceil(number);
+                This returns a new number rounded up to the nearest integer.
+            c. let numberName = Math.floor(number);
+                This returns a new number rounded down to the nearest integer.
+            d. let numberName = Math.trunc(number);
+                This returns the integer part of the number.
+            Full list of Math reference: https://www.w3schools.com/js/js_math.asp
     V. Set:
         A set is a collection of unique values, each of which can only occur once in the set.
         1. Set Properties:
@@ -1115,43 +1123,6 @@ WHAT ARE JAVASCRIPT MODULES?
                 const variableName = value;
                 export default variableName;
 
-WHAT ARE JAVASCRIPT KEYWORDS THAT YOU SHOULD KNOW?
-    I. this
-        The "this" keyword refers to an object, and to which object depends on how "this" is invoked, used, or called.
-        1. in a function:
-            In default function binding, "this" refers to the global object.
-            In "strict mode", "this" is defined as "undefined".
-            When the function is called by an object:
-                - if the function is declared with the "function" keyword or "function()" method, "this" refers to the object that calls it.
-                - if the function is declared with the arrow function, "this" refers to the global object.
-        2. in an object method:
-            "this" refers to the object that calls the method.
-            Explicit function binding:
-                a. call()
-                    https://www.w3schools.com/js/js_function_call.asp
-                b. apply()
-                    https://www.w3schools.com/js/js_function_apply.asp
-                c. bind()
-                    https://www.w3schools.com/js/js_function_bind.asp
-        3. in an event handler:
-            "this" refers to the HTML element that receives the event.
-        4. by itself:
-            "this" refers to the global object.
-            In "strict mode", "this" also refers to the global object.
-        SIDE NOTE:
-                    In a browser window, the global object is the Window object [object Window].
-    II. break;
-        The "break" statement is used to jump out of, or break, a conditional statement or a loop.
-        The "break" statement can be used to jump out of, or break, a code block with a label reference.
-            label:
-                statement;
-        or
-            label: {
-                code block;
-            }
-    III. continue;
-        The "continue" statement is used to jump over one iteration and continue with the next iteration of a loop.
-
 WHAT IS JAVASCRIPT ERROR HANDLING?
     When executing code, different errors might occur due to different reasons.
     I. Error Object:
@@ -1212,10 +1183,50 @@ WHAT IS JAVASCRIPT EVENT HANDLING?
         onload
     Full reference of event handlers: https://www.w3schools.com/jsref/dom_obj_event.asp
 
-HOW CAN JAVASCRIPT DISPLAY DATA?
-    JavaScript can display data in four different ways:
-        1. document.getElementById("HTML-element-id");
-            This is used to access the HTML element via the id attribute that defines the HTML element.
+WHAT ARE JAVASCRIPT KEYWORDS THAT YOU SHOULD KNOW?
+    I. this
+        The "this" keyword refers to an object, and to which object depends on how "this" is invoked, used, or called.
+        1. in a function:
+            In default function binding, "this" refers to the global object.
+            In "strict mode", "this" is defined as "undefined".
+            When the function is called by an object:
+                - if the function is declared with the "function" keyword or "function()" method, "this" refers to the object that calls it.
+                - if the function is declared with the arrow function, "this" refers to the global object.
+        2. in an object method:
+            "this" refers to the object that calls the method.
+            Explicit function binding:
+                a. call()
+                    https://www.w3schools.com/js/js_function_call.asp
+                b. apply()
+                    https://www.w3schools.com/js/js_function_apply.asp
+                c. bind()
+                    https://www.w3schools.com/js/js_function_bind.asp
+        3. in an event handler:
+            "this" refers to the HTML element that receives the event.
+        4. by itself:
+            "this" refers to the global object.
+            In "strict mode", "this" also refers to the global object.
+        SIDE NOTE:
+                    In a browser window, the global object is the Window object [object Window].
+    II. break;
+        The "break" statement is used to jump out of, or break, a conditional statement or a loop.
+        The "break" statement can be used to jump out of, or break, a code block with a label reference.
+            label:
+                statement;
+        or
+            label: {
+                code block;
+            }
+    III. continue;
+        The "continue" statement is used to jump over one iteration and continue with the next iteration of a loop.
+
+WHAT ARE JAVASCRIPT BUILT-IN FUNCTIONALITY THAT YOU SHOULD KNOW?
+    I. To Display Data:
+        1. console.log(content);
+            The content will be shown only in the console.
+            This is used for testing and debugging.
+        2. document.getElementById("HTML-element-id");
+            This can access the HTML element via the id attribute that defines the HTML element.
             a. document.getElementById("HTML-element-id").innerHTML;
                 This can change the HTML content.
             b. document.getElementById("HTML-element-id").HTML-attribute;
@@ -1224,20 +1235,17 @@ HOW CAN JAVASCRIPT DISPLAY DATA?
                 This can change the styling of HTML element with CSS property.
             d. document.getElementById("HTML-element-id").value;
                 This can access the input value of the input tag.
-        2. document.write(content);
+        3. document.write(content);
             This should be used for testing only. If it is used after the HTML page is loaded, it will overwrite/delete all existing HTML content.
-        3. window.alert(content);
+        4. window.alert(content);
             The content will be shown in an alert box of the Web browser.
-            SIDE NOTE:
-                        The window object has a globel scope. All variables, properties, and methods belong to the window object by default. Therefore, specifying the "window" keyword is optional.
-        4. console.log(content);
-            The content will be shown only in the console.
-            This is used for debugging.
         5. window.print();
             JavaScript doesn't have any object or methods to get access to output devices like HTML does.
             This is the only exception that JavaScript can access the output device, that prints the content of the current window.
-            SIDE NOTE:
-                        The window object has a globel scope. All variables, properties, and methods belong to the window object by default. Therefore, specifying the "window" keyword is optional.
+        SIDE NOTE:
+                    The window object has a globel scope. All variables, properties, and methods belong to the window object by default. Therefore, specifying the "window" keyword is optional.
+    II. To Prompt User's Input:
+        let variableName = prompt(question);
 
 WHAT IS JAVASCRIPT JSON?
     JSON, stands for JavaScript Object Notation, is a lightweight data interchange format for storing and transporting data, which is often used when data is sent from a Web server to a Web page. 
