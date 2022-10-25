@@ -180,6 +180,7 @@ WHAT IS A JAVASCRIPT FUNCTION?
                 An argument is the value passed to, or received by, the function when the function is called/invoked/run.
                 All parameters and arguments are optional.
                 The parentheses () works as an operator that specifies the result of the function (to be returned). Without the parentheses (), the call will return the function definition.
+                A method is fundamentally a property with a function definition.
 
 WHAT ARE JAVASCRIPT NUMBERS?
     Number is a primitive data type.
@@ -469,7 +470,7 @@ WHAT IS A JAVASCRIPT ARRAY?
         In some programming languages, arrays with named indexes are called associative arrays, or hashes.
         In JavaScript, array indexes are numbered and zero-based, that means they start with O, then 1, then 2,...
     II. Properties:
-        1. to return the length of an array, that is the number of array elements,:
+        1. to return the length of an array, which is the number of array elements,:
             let numberName = arrayName.length;
         2. to access the whole array:
             arrayName
@@ -758,17 +759,21 @@ WHAT IS A JAVASCRIPT OBJECT?
     to declare an object:
         const objectName = {name0:value0, name1:value1, name2:value2};
     I. Properties:
-        to define an object property:
+        1. to define an object property:
             propertyName:propertyValue
-        to access an object method:
-            1. objectName.propertyName
-            2. objectName["propertyName"]
+        2. to access an object method:
+            1. with dot notation:
+                objectName.propertyName
+            2. with bracket notation:
+                objectName["propertyName"]
+        3. to add a new property:
+            objectName.propertyName = propertyValue;
     II. Methods:
-        to define an object method:
+        1. to define an object method:
             methodName:function() {
                 action to be executed;
             }
-        to access an object method:
+        2. to access an object method:
             objectName.methodName()
     III. Date Object:
         The Date object lets you work with date and time.
