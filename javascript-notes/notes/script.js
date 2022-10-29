@@ -236,6 +236,8 @@ WHAT ARE JAVASCRIPT NUMBERS?
                 The "decimal" parameter specifies the number of characters behind the decimal point. It is optional and can't be negative. If the "decimal" parameter is omitted, it will be specified as 0, that means the number is rounded as a whole number.
             b. let stringName = numberName.toPrecision(digit);
                 The "digit" parameter specifies the number of digits, or the length of the number. It is optional and can't be zero or negative. If the "digit" parameter is omitted, the number remains unchanged.
+        5. to check if a value is a number:
+            let booleanName = isNaN(value);
     VII. JavaScript Global Methods (that returns numbers):
         1. to convert another data type to a number:
             let numberName = Number(value);
@@ -484,6 +486,9 @@ WHAT IS A JAVASCRIPT ARRAY?
         6. to delete an array element:
             delete arrayName[index];
             Instead of completely removing the array element like arrayName.pop() or arrayName.shift(), this leaves an "undefined" hole at the specified index.
+        7. to display an array of object:
+            const arrayName = [object1, object2, object3];
+            console.log(JSON.stringify(arrayName));
     III. Methods:
         //methods return a number
         1. to find the index of an array element:
@@ -665,7 +670,7 @@ WHAT IS A JAVASCRIPT ARRAY?
                         This can find the highest value in the array, but can only accept array parameter.
         //array iteration
         8. to operate a function on every array element:
-            A callback function is a function called in an array iteration to perform a task on every array element. 
+            A callback function (a higher-order function) is a function called in an array iteration to perform a task on every array element. 
                 function functionName(total, value, index, array) {
                     action to be executed;
                 }
@@ -726,7 +731,7 @@ WHAT IS A JAVASCRIPT ARRAY?
                     action to be executed;
                     return result;
                 }
-                This method reduces the array to produce a single value, but doesn't affect the original array.
+                This method takes the array and reduces it to a single value, but doesn't affect the original array.
                 The "initialValue" parameter is optional. If it is omitted, the initial value of the "total" parameter is 0. If it is specified, the initial value of the "total" parameter is the specified value.
         //special array methods
         9. to return an array from any object that is either iterable or with a length property:
@@ -1262,4 +1267,11 @@ WHAT IS JAVASCRIPT JSON?
         2. JSON data is separated by commas.
         3. JSON objects are written in curly braces {}.
         4. JSON arrays are written in square brackets [].
+
+WHAT IS DOM?
+    DOM, stands for Document Object Model, 
+    document.getElementById("").innerHTML
+    document.getElementById("").innerText 
+    document.querySelector("")
+    document.querySelectorAll("")
 */

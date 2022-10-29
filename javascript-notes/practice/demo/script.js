@@ -27,13 +27,24 @@
 // console.log(groceries.length);
 
 // const numbers = [1, 2, 3, 4, 5, 6]; 
-
 // console.log(numbers.map(num => num * 2));
 // console.log(numbers.map(num => num ** 2));
-
 // console.log(numbers.filter(num => num >= 3));
 
+// const numbers = [1, 2, 3, 4];
+// console.log(numbers.reduce((a, b) => a + b));
+// console.log(numbers.reduce((a, b) => a - b));
+// console.log(numbers.reduce((a, b) => a * b));
+// a represents the "pre" or the initial variable like let sum = 0, and b represents the "curr" like sum += b
 
+// const actors = [
+//     {name: "Joe Biden", networth: 200000},
+//     {name: "Donald Trump", networth: 400000},
+//     {name: "Barack Obama", networth: 500000}
+// ];
+// console.log(actors.map(actor => actor.name).join(", "));
+// console.log(JSON.stringify(actors.filter(actor => actor.networth > 300000)));
+// console.log(actors.reduce((a, b) => a + b.networth, 0));
 
 // -----------------------------------------------------------------
 

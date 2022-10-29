@@ -39,7 +39,8 @@
    * Framework: NodeJs (JavaScript) / Django (Python)
    * Database: MongoDB (No SQL) / MySQL (SQL)
 ### 3. DATA STRUCTURES & ALGORITHMS
-### 4. VERSION CONTROL SYSTEM:
+### 4. TIME AND SPACE COMPLEXITY
+### 5. VERSION CONTROL SYSTEM:
    * Git / Github
 
 ***
@@ -72,8 +73,8 @@
 #### JavaScript:
 * https://youtu.be/lI1ae4REbFM
 * https://www.w3schools.com/js/default.asp
-* JavaScript with VSCode: https://code.visualstudio.com/docs/languages/javascript
-* Install npm to run JavaScript in VSCode: https://code.visualstudio.com/docs/nodejs/working-with-javascript
+* JavaScript with VSCode: https://youtu.be/x_2sYpk75Ic
+* Install Node.js: https://nodejs.org/en/download/
 * Check out my javascript_notes
 #### Version Control:
 * https://youtu.be/RGOj5yH7evk
