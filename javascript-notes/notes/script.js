@@ -867,6 +867,31 @@ WHAT IS A JAVASCRIPT OBJECT?
                 This returns a new number rounded down to the nearest integer.
             d. let numberName = Math.trunc(number);
                 This returns the integer part of the number.
+            e. let numberName = Math.sign(number);
+                This returns:
+                    -1 if the number is negative
+                    0 if the number is 0
+                    1 if the number is positive
+            f. let numberName = Math.pow(x, y);
+                This returns x to the power of y.
+                SIDE NOTE:
+                            Math.pow(x, y) = x ** y
+            g. let numberName = Math.sqrt(x);
+                This returns the square root of x.
+                SIDE NOTE:
+                            Math.sqrt(x) = Math.pow(x, 1/2) = x ** 1/2
+            h. let numberName = Math.abs(number);
+                This returns the absolute value of the number.
+            i. 
+                let numberName = Math.min(list of numbers);
+                    This returns the smallest value in a list of numbers.
+                let numberName = Math.max(list of numbers);
+                    This returns the largest value in a list of numbers.
+            j. let numberName = Math.random();
+                This returns a random number between 0 (inclusive) and 1 (exclusive).
+                SIDE NOTE:
+                            to find a random number 0 (inclusive) and x (exclusive):
+                                let numberName = Math.floor(Math.random() * (x + 1)) = Math.ceil(Math.random() * x);
             Full list of Math reference: https://www.w3schools.com/js/js_math.asp
     V. Set:
         A set is a collection of unique values, each of which can only occur once in the set.
@@ -943,37 +968,36 @@ WHAT IS A JAVASCRIPT OBJECT?
             g. to return an iterable object containing all the elements in a map:
                     const objectName = mapName.entries();
                 You can use for/of loop to display the object.
-
-WHAT ARE JAVASCRIPT CLASSES?
-    Classes are basically templates/blueprints/constructors for creating objects.
-    to create a class:
-        class className {
-            constructor(parameter1, parameter2) {
-                this.attribute1 = parameter1;
-                this.attribute2 = parameter2;
+    VII. Class:
+        Classes are basically templates/blueprints/constructors for creating objects.
+        to create a class:
+            class className {
+                constructor(parameter1, parameter2) {
+                    this.attribute1 = parameter1;
+                    this.attribute2 = parameter2;
+                }
+                methodName1(parameter1, parameter2) {
+                    action to be executed;
+                }
+                methodName2(parameter1, parameter2) {
+                    action to be executed;
+                }
             }
-            methodName1(parameter1, parameter2) {
-                action to be executed;
-            }
-            methodName2(parameter1, parameter2) {
-                action to be executed;
-            }
-        }
-    to use a class to create an object:
-        const objectName = new className(argument1, argument2);
-    to access the object properties:
-        let variableName1 = objectName.attribute1;
-        let variableName2 = objectName.attribute2;
-    to access the object methods:
-        let variableName1 = objectName.methodName1(argument1, argument2);
-        let variableName2 = objectName.methodName2(argument1, argument2);
-    The constructor:
-        - is a special method.
-        - is used to initialize object properties.
-        - is executed automatically when an object is created.
-        - if not defined, JavaScript will autoamatically add an empty one.
-            constructor() { }
-    All the parameters and arguments are optional.
+        to use a class to create an object:
+            const objectName = new className(argument1, argument2);
+        to access the object properties:
+            let variableName1 = objectName.attribute1;
+            let variableName2 = objectName.attribute2;
+        to access the object methods:
+            let variableName1 = objectName.methodName1(argument1, argument2);
+            let variableName2 = objectName.methodName2(argument1, argument2);
+        The constructor:
+            - is a special method.
+            - is used to initialize object properties.
+            - is executed automatically when an object is created.
+            - if not defined, JavaScript will autoamatically add an empty one.
+                constructor() { }
+        All the parameters and arguments are optional.
 
 WHAT ARE JAVASCRIPT CONDITIONAL STATEMENTS?
     Conditional statements are used to perform different actions based on different conditions.
