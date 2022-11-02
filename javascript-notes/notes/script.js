@@ -1281,7 +1281,17 @@ WHAT ARE JAVASCRIPT BUILT-IN FUNCTIONALITY THAT YOU SHOULD KNOW?
     II. To Prompt User's Input:
         let variableName = prompt(question);
 
-WHAT IS JAVASCRIPT JSON?
+WHAT IS DOM?
+    DOM, stands for Document Object Model, is a W3C, World Wide Web Consortium, standard, a platform and language-neutral interface that allows programs and scripts to dynamically access and update the content, structure, and style of a document.
+    The HTML DOM is a standard object model and programming interface for HTML, that defines:
+        - the HTML elements as objects
+        - the properties of the HTML elements
+        - the methods to access the HTML elements
+        - the events for the HTML elements
+    When a Web page is loaded, the Web browser creates a Document Object Model of the HTML page, where the HTML DOM is constructed as a tree of Objects.
+    With the HTML DOM, JavaScript can access/change/add/remove all the HTML elements/attributes and CSS styles, and react to HTML events.
+
+WHAT IS JSON?
     JSON, stands for JavaScript Object Notation, is a lightweight data interchange format for storing and transporting data, which is often used when data is sent from a Web server to a Web page. 
     JSON is language independent, which means the code for reading and generating JSON can be written in any programming language, and self-describing, which means JSON format is text only.
     JSON format is syntactically identical to the code for creating JavaScript objects because JSON format is deprived from JavaScript object notation syntax. Therefore, a JavaScript program easily converts JSON data to native JavaScript objects.
@@ -1292,10 +1302,9 @@ WHAT IS JAVASCRIPT JSON?
         3. JSON objects are written in curly braces {}.
         4. JSON arrays are written in square brackets [].
 
-WHAT IS DOM?
-    DOM, stands for Document Object Model, 
-    document.getElementById("").innerHTML
-    document.getElementById("").innerText 
-    document.querySelector("")
-    document.querySelectorAll("")
+WHAT IS API?
+    API, stands for Application Programming Interface, is a way to help program communicate with servers to fetch data.
+    A Web API is an API for the Web.
+    A Browser API can extend the functionality of a Web browser.
+    A Server API can extend the functionality of a Web server.
 */

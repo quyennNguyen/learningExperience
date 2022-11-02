@@ -26,7 +26,7 @@
 // console.log(groceries.indexOf("orange"));
 // console.log(groceries.length);
 
-// const numbers = [1, 2, 3, 4, 5, 6]; 
+// const numbers = [1, 2, 3, 4, 5, 6];
 // console.log(numbers.map(num => num * 2));
 // console.log(numbers.map(num => num ** 2));
 // console.log(numbers.filter(num => num >= 3));
@@ -206,3 +206,16 @@
 // console.log(filter([1, 2, 3, 4, 5, 6], 3));
 
 // -----------------------------------------------------------------
+
+// PRACTICE ON API:
+
+// const info = document.getElementById(`test-info`);
+// const getPet = () => {
+//   fetch(`https://dog.ceo/api/breeds/image/random`)
+//     .then((result) => result.json())
+//     .then(
+//       (json) =>
+//         (info.innerHTML = `<img src="${json.message}" alt="random pet image"></img>`)
+//     );
+// };
+// getPet();
