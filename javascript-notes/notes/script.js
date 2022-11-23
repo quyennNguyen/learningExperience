@@ -425,7 +425,7 @@ WHAT IS A JAVASCRIPT STRING?
             If the "separator" parameter is "", it will return an array of every single characters in the string.
             The separator can be whitespaces (" "), commas (","), pipes ("|"),..., then it will return an array of substrings separated by the specified separator.
     VII. JavaScript Global Methods (that returns strings):
-        to convert anpther data type to a string:
+        to convert another data type to a string:
             let stringName = String(value);
         The "value" parameter can be, for example,:
                 number -> numeric string

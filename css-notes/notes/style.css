@@ -492,6 +492,7 @@ WHAT IS CSS BOX MODEL?
             x+unit of choice (EX: px, %, vw,...)
         SIDE NOTE:
                     Some suggested content properties for a better responsive Web page are "max-width", "min-width", "max-height", "min-height".
+                    The "width" and "height" properties only work on block-type element.
     SIDE NOTE:
                 It is possible to layout individual sides of each layer:
                     1. by using the property of the specified side:
