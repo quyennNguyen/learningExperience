@@ -1154,7 +1154,8 @@ WHAT ARE JAVASCRIPT LOOPS?
                     action to be executed;
                     use arrayName[x] to access to the values;
                 }
-            "x" specifies the array indexes; therefore, to get access to the element values, you have to use arrayName[x].
+            "x" specifies the array indexes, but the indexes are in type string; therefore, to use the indexes, you have to typecast it to Number(i).
+            To get access to the element values, you have to use arrayName[x].
             If the index order is crucial in the execution, don't use for/in loop over an array. 
         2. to iterate over an object:
                 const objectName = {name0:value0, name1:value1, name2:value2};
@@ -1162,7 +1163,8 @@ WHAT ARE JAVASCRIPT LOOPS?
                     action to be executed;
                     use objectName[x] to access to the values;
                 }
-            "x" specifies the object properties; therefore, to get access to the property values, you have to use objectName[x].
+            "x" specifies the object properties.
+            To get access to the property values, you have to use objectName[x].
     III. For/Of Loop:
         This loops through values of an iterable object.
         1. to iterate over a string:
