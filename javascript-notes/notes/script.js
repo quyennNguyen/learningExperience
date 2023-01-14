@@ -1060,6 +1060,21 @@ WHAT IS A JAVASCRIPT OBJECT?
                 }
             to call the static method:
                 className.methodName3(argument1, argument2);
+        8. Prototype:
+            "prototype" is a property available with all JavaScript objects, which allows new properties and methods to be added to the objects.
+                a. Property:
+                    ObjectName.prototype.propertyName = value;
+                b. Method:
+                    ObjectName.prototype.methodName = function(parameter1, parameter2) {
+                        action to be executed;
+                    }
+            EX:
+                to add a new method to the Array Object:
+                    Array.prototype.methodName = function() {
+                        action to be executed;
+                    }
+                    const arrayName = [item0, item1, item2];
+                    const variableName = arrayName.methodName(); 
 
 WHAT ARE JAVASCRIPT CONDITIONAL STATEMENTS?
     Conditional statements are used to perform different actions based on different conditions.
@@ -1727,7 +1742,7 @@ WHAT IS ASYNCHRONOUS PROGRAMMING?
             DON'T:
                 - function invocation: functionName()
     III. Asynchronous:
-        Asynchronous functions are functions running in parallel with other functions.
+        Asynchronous functions are functions running in parallel with other functions; in other words, they run out of order based on a set time.
         1. setTimeout():
                 const functionName = (parameter1, parameter2) => {
                     action to be executed;
@@ -1742,6 +1757,8 @@ WHAT IS ASYNCHRONOUS PROGRAMMING?
                 setInterval(functionName, timer);
             The "timer" parameter specifies the time in milliseconds of when the function should be invoked.
             The function will be invoked once every set time.
+        SIDE NOTE:
+                    In often time, using "setTimeout()" or "setInterval()" can be thread-blocking, which means it might block other code to be executed, as in case it reduces errors; therefore, you need to use Promise.
     IV. Promise:
         Producing code is code that can take some time.
         Consuming code is code that must wait for the result.
@@ -1749,8 +1766,8 @@ WHAT IS ASYNCHRONOUS PROGRAMMING?
         It contains both the producing code and calls to the consuming code.
             let objectName = new Promise((resolve, reject) => {
                 action to be executed;
-                use resolve(value) when successful; 
-                use reject(error) when error;  
+                use "resolve(value) when successful; 
+                use "reject(error) when error;  
             });
             objectName.then(
                 (value) => {
@@ -1827,8 +1844,11 @@ WHAT IS ASYNCHRONOUS PROGRAMMING?
             write:
                 async function functionName() {
                     let objectName = new Promise(resolve => resolve(value));
-                    use await objectName to act on the resolved value;
-                };        
+                    use "await objectName" to act on the resolved value;
+                };
+            SIDE NOTE:   
+                        If a "Promise{}" is returned, the function is likely to be an "async" function. 
+                        In other to extract the data from it, you have to use either "then()" method or "await" keyword.
 
 WHAT IS JSON?
     JSON, stands for JavaScript Object Notation, is a lightweight data interchange format for storing and transporting data, which is often used when data is sent from a Web server to a Web page. 

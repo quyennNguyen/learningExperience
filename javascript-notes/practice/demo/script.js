@@ -221,3 +221,77 @@
 // getPet();
 
 // -----------------------------------------------------------------
+
+// PRACTICE ON ASYNCHRONOUS:
+
+// const promise1 = () => {
+//     console.log("soup please?");
+// };
+// console.log("Hi");
+// setTimeout(promise1, 2000);
+// console.log("Thank you");
+
+// const promise2 = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     isReady = [false, true][Math.floor(Math.random() * 2)];
+//     isReady
+//       ? resolve("Your soup is ready.")
+//       : reject("Your soup is out of order.");
+//   }, 2000);
+// });
+
+// promise2.then(
+//     (value) => console.log(value),
+//     (error) => console.log(error)
+// );
+
+// promise2
+//   .then((value) => console.log(value))
+//   .catch((error) => console.log(error));
+
+// const promise3 = async () => {
+//   try {
+//     console.log(await promise2);
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
+// promise3();
+
+// -----------------------------------------------------------------
+
+// PRACTICE ON CLASSES:
+
+// class Bank {
+//     constructor() {
+//         this.balance = 0;
+//     }
+
+//     deposit(amount) {
+//         if (amount < 0) {
+//             return "invalid deposit! amount can't be negative"
+//         } else {
+//             this.balance += amount;
+//             return this.balance;
+//         }
+//     }
+
+//     withdraw(amount) {
+//         if (amount < 0) {
+//             return "invalid withdrawal! amount can't be negative"
+//         } else if (amount > this.balance) {
+//             return "invalid withdrawal! amount exceeds current balance"
+//         } else {
+//             this.balance -= amount;
+//             return this.balance;
+//         }
+//     }
+// }
+// const myBank = new Bank();
+// console.log(myBank);
+// console.log(myBank.deposit(-100));
+// console.log(myBank.deposit(100));
+// console.log(myBank.withdraw(-100));
+// console.log(myBank.withdraw(100));
+// console.log(myBank.withdraw(50));
+// console.log(myBank.withdraw(0));
