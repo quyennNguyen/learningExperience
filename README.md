@@ -47,16 +47,10 @@
 
 # RESOURCES
 
-#### Generic Sources:
-* https://www.w3schools.com/
-* https://www.freecodecamp.org/learn/
-* https://www.codecademy.com/
-* https://www.udemy.com/
 #### HTML:
 * https://youtu.be/kUMe1FH4CHE
 * https://www.w3schools.com/html/default.asp
 * https://developer.mozilla.org/en-US/docs/Web/HTML
-* Google Chrome Extension: HTML5 Outliner
 * Check out my html_notes
 #### CSS:
 * https://youtu.be/1Rs2ND1ryYc
@@ -67,21 +61,41 @@
 * https://youtu.be/_a5j7KoflTs
 * https://www.w3schools.com/sass/default.php
 * https://sass-lang.com/documentation/
-* Icon Library and Toolkit: https://fontawesome.com/
-* Color Palettes: https://colorhunt.co/
+* https://fontawesome.com/
 * Check out my sass_notes
 #### JavaScript:
 * https://youtu.be/lI1ae4REbFM
 * https://www.w3schools.com/js/default.asp
-* JavaScript with VSCode: https://youtu.be/x_2sYpk75Ic
-* Install Node.js: https://nodejs.org/en/download/
+* https://developer.mozilla.org/en-US/docs/Web/JavaScript
+* https://javascript.info/
+* https://youtu.be/x_2sYpk75Ic
+* https://nodejs.org/en/download/
 * Check out my javascript_notes
+#### React:
+* https://youtu.be/bMknfKXIFA8
+* https://www.w3schools.com/react/default.asp
+* https://reactjs.org/
+* https://babeljs.io/docs/en/
 #### Version Control:
 * https://youtu.be/RGOj5yH7evk
-* Install Git: https://www.atlassian.com/git/tutorials/install-git#windows
-* How SSH Works: https://docs.github.com/en/authentication/connecting-to-github-with-ssh/about-ssh
+* https://www.atlassian.com/git/tutorials/install-git#windows
+* https://docs.github.com/en/authentication/connecting-to-github-with-ssh/about-ssh
 * Check out my git_notes
 
 ***
 
 #### P/s: This journal might change along with my learning progress.
+
+***
+
+# OFF TOPICS
+
+## What is ChatGPT?
+#### ChatGPT is an advanced-language chatbot that can read, understand, and generate texts which includes programming questions.
+#### ChatGPT uses an AI software called Language Model which can understand and generate languages. Once the model has learned a language, it can be used to generate texts in that language.
+#### There are different types of ChatGPT for different purposes:
+* GPT3: is used to generate natural languages
+* Codex: is used to generate programming languages/codes
+#### Drawback: It might provide incorrect, harmful, or biased information.
+
+***
