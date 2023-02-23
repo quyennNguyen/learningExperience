@@ -5,6 +5,7 @@ INSTALLATIONS:
 
 WHAT IS .NET?
     .NET is a free cross-platform open-source developer platform for building many different types of applications.
+    .NET can be executed on all platforms which have a .NET implementation, but the most common platform is still Microsoft Windows.
     You can use multiple languages, editors, and libraries to build web, mobile, desktop, games,...
     Your code will run natively on any compatible operating system.
     .NET provides a standard set of base class libraries and APIs common to all .NET applications. Each app model can expose additional APIs specific to the operating system it runs on or the capabilities it provides.
@@ -21,24 +22,127 @@ WHAT IS NUGET?
     Full source: https://learn.microsoft.com/en-us/nuget/what-is-nuget
 
 WHAT IS WPF?
-    WPF, stands for WIndow Presentation Foundation, is a GUI framework that is used with .NET framework to create applications.
     GUI, stands for Graphical User Interface, framework allows you to create an application with a wide range of GUI elements. Without it, you would have to manually create the elements and handle the user interactions/events.
-    WPF is a combination of XAML, stands for Extensible Application Markup Language, and C#/VB.NET/any other .NET language to provide a declarative model for application programming.
+    WPF, stands for WIndow Presentation Foundation, is a GUI framework that is used with .NET framework to create applications.
     The WPF development platform supports a broad set of application development features, including an application model, resources, controls, graphics, layout, data binding, documents, and security.
+    A WPF window is a combination of a XAML (.xaml) file and a CodeBehind (.cs) file in C#/VB.NET/any other .NET language to provide a declarative model for application programming.
+    I. Breaking Down a WPF App:
+        1. MainWindow files:
+            a) .xaml file:
 
-    The basic "Hello World" WPF app:
-        <Window x:Class="WpfApp.MainWindow"
-            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-            xmlns:local="clr-namespace:WpfApp"
-            mc:Ignorable="d"
-            Title="MainWindow" Height="450" Width="800">
-            <Grid>
-                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="72">Hello, World!</TextBlock>
-            </Grid>
-        </Window>
+                <Window x:Class="AppName.MainWindow"
+                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    xmlns:local="clr-namespace:AppName"
+                    mc:Ignorable="d"
+                    Title="MainWindow" Height="450" Width="800">
+                    <Grid>
+                        <TextBlock>Hello, World!</TextBlock>
+                    </Grid>
+                </Window>
+
+                <Window></Window>:
+                    this class/tag serves as the root of the Window and provodes you with the standard border, title bar, max/min, and close buttons
+                x:Class:
+                    this attribute tells the XAML file which class to use, which, in this case, is "MainWindow"
+                Title:
+                    this attribute defines the title of the window shown in the title bar
+                Height and Width:
+                    these attributes define the starting height and width of the window
+                Icon:
+                    this attribute defines the icon of the window
+                ResizeMode:
+                    CanResize (default) / CanMinimize / NoResize
+                    this attribute controls whether and how the end-user can resize the window
+                ShowInTaskbar:
+                    true (default) / false
+                    this attribute allows the window to be or not to be represented in the Windows taskbar
+                SizeToContent:
+                    Manual (default) / Width / Height / WidthAndHeight
+                    this attribute decides if the window should resize itself to automatically fit its content
+                Topmost:
+                    false (default) / true
+                    this attribute allows the window to or not to stay on top of other windows
+                WindowStartupLocation:
+                    Manual (default) / CenterOwner / CenterScreen
+                    this attribute controls the initial position of the window
+                WindowState:
+                    Normal (default) / Maximized / Minimized
+                    this attribute controls the initial window state
+                <Grid></Grid>:
+                    this panel/control is one of the WPF panels; while it could be any panel or control, the Window can only have one child control; a panel can have multiple child controls
+            b) .cs file:
+
+                using System;
+                using System.Windows;
+                using System.Windows.Controls;
+
+                namespace WpfApp
+                {
+                    /// <summary>
+                    /// Interaction logic for MainWindow.xaml
+                    /// </summary>
+                    public partial class MainWindow : Window
+                    {
+                        public MainWindow()
+                        {
+                            InitializeComponent();
+                        }
+                    }
+                }
+
+                public partial class MainWindow : Window:
+                    this class is definied as partial because it's being combined with the XAML file in runtime to give you the full window and is required to get a full functioning window up and running. 
+                InitializeComponent():
+                    this method is what gives you the full window
+        2. App files:
+            a) .xaml file: 
+                this is the declarative starting point of your application
+
+                <Application x:Class="WpfApp.App"
+                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:WpfApp"
+                    StartupUri="MainWindow.xaml">
+                    <Application.Resources>
+                        
+                    </Application.Resources>
+                </Application>
+            
+                StartupUri:
+                    this attribute instructs which Window or Page to start up when the application is launched, which, in this case, is "MainWindow.xaml"
+                Startup:
+                    this attribute allows you to subscribe to the Startup event through XAML where you can manually create the starting window
+            b) .cs file: 
+                this extends the Application class, which is a central class in a WPF Windows application, and is also the place to subscribe to important application events, like the Startup event where you can manually create the starting window, unhandled exceptions,... allowing you to do stuff on the application level
+
+                using System;
+                using System.Collections.Generic;
+                using System.Windows;
+
+                namespace WpfApp
+                {
+                    /// <summary>
+                    /// Interaction logic for App.xaml
+                    /// </summary>
+                    public partial class App : Application
+                    {
+                    }
+                }
+
+                private void Application_Startup(object sender, StartupEventArgs e)
+                {
+                    // Create the startup window
+                    MainWindow wnd = new MainWindow();
+                    // Do stuff here, e.g. to the window
+                    wnd.Title = "Something else";
+                    // Show the window
+                    wnd.Show();
+                } -> adding this method allows you to manipulate the startup window before showing it
+    II. Command-line Parameters:
+
 
     Full source: 
                 https://learn.microsoft.com/en-us/dotnet/desktop/wpf/get-started/create-app-visual-studio?view=netdesktop-7.0
@@ -46,3 +150,25 @@ WHAT IS WPF?
 
 WHAT IS XAML?
     XAML, stands for Extensible Application Markup Language, is a variant of XML for describing a GUI.
+    File extension: .xaml
+    I. Characteristics:
+        case-sensitive because the control name has to correspond to a type in the .NET framework, ex, the attribute name corresponds to the properties of the control
+        PascalCase
+    II. Attributes:
+        Content="Value" -> the content only allows one child element, in other words, all the content inside a tag has to be under one parent element
+        HorizontalAlignment="Value"
+        VerticalAlignment="Value"
+        FontSize="value"
+        FontWeight="Value"
+        Background="Value"
+    III. Events:
+        KeyDown
+        KeyUp
+        MouseDown
+        MouseUp
+        MouseEnter
+        MouseLeave
+
+WHAT IS C#?
+    C#, pronounced as C Sharp, is an object-oriented programming language that is used with .NET framework.
+    File extension: .cs (.xaml.cs)

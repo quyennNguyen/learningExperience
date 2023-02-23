@@ -1,4 +1,3 @@
-/*
 SOURCE: https://youtu.be/bMknfKXIFA8
 
 WHAT IS REACT?
@@ -99,4 +98,3 @@ WHAT IS JSX?
           <starting-tag attribute={argument}> content </closing-tags>
         );
       Curly braces are used to embed a JavaScript expression in an element attribute.
-*/

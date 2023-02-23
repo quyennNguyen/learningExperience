@@ -31,7 +31,7 @@
    * HTML
    * CSS
    * CSS Preprocessor: SASS
-   * CSS Framework: Bootstrap
+   * CSS Framework: Bootstrap / Tailwind
    * JavaScript
    * Javascript Framework/Library: React
 ### 2. BACK END / SERVER SIDE:
@@ -52,11 +52,14 @@
 * https://www.w3schools.com/html/default.asp
 * https://developer.mozilla.org/en-US/docs/Web/HTML
 * Check out my html_notes
+* Tip: to comment out HTML -> <!-- --> -> Ctrl + /
+* Tip: to comment out XAML -> <!-- --> -> Ctrl + K Ctrl C -> Ctrl + K Ctrl + U
 #### CSS:
 * https://youtu.be/1Rs2ND1ryYc
 * https://www.w3schools.com/css/default.asp
 * https://developer.mozilla.org/en-US/docs/Web/CSS
 * Check out my css_notes
+* Tip: to comment out CSS -> /* */ -> Ctrl + /
 #### SASS:
 * https://youtu.be/_a5j7KoflTs
 * https://www.w3schools.com/sass/default.php
@@ -71,6 +74,7 @@
 * https://youtu.be/x_2sYpk75Ic
 * https://nodejs.org/en/download/
 * Check out my javascript_notes
+* Tip: to comment out JavaScript -> // -> Ctrl + /
 #### React:
 * https://youtu.be/bMknfKXIFA8
 * https://www.w3schools.com/react/default.asp
