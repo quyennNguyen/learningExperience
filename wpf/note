@@ -1,7 +1,9 @@
 INSTALLATIONS:
     - Visual Studio 2019: https://visualstudio.microsoft.com/vs/older-downloads/
     - .NET: https://dotnet.microsoft.com/en-us/download
-    - Clone Git Repo: https://learn.microsoft.com/en-us/visualstudio/version-control/git-clone-repository?view=vs-2022
+    - Git Clone: https://learn.microsoft.com/en-us/visualstudio/version-control/git-clone-repository?view=vs-2022
+    - Icon: https://uxwing.com/
+    - App Deploy: https://learn.microsoft.com/en-us/dotnet/desktop/wpf/app-development/deploying-a-wpf-application-wpf?view=netframeworkdesktop-4.8
 
 WHAT IS .NET?
     .NET is a free cross-platform open-source developer platform for building many different types of applications.
