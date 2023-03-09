@@ -1747,17 +1747,26 @@ WHAT IS ASYNCHRONOUS PROGRAMMING?
                 const functionName = (parameter1, parameter2) => {
                     action to be executed;
                 };
-                setTimeout(functionName, timer);
+                let timeoutID = setTimeout(functionName, timer, argument1, argument2);
+            This sets a timer which executes a function once the timer expires; in other words, the function will only be invoked once.
+            This returns a non-zero timeout ID which uniquely identifies the timer so it can be removed later.
             The "timer" parameter specifies the time in milliseconds of when the function should be invoked.
-            The function will only be invoked once.
+            To cancel setTimeout():
+                clearTimeout(timeoutID);
+                timeoutID = null;
         2. setInterval():
                 const functionName = (parameter1, parameter2) => {
                     action to be executed;
                 };
-                setInterval(functionName, timer);
+                let intervalID = setInterval(functionName, timer, argument1, argument2);
+            This repeatedly calls a function with a fixed time delay between each call; in other words, the function will be invoked once every set time.
+            This returns a non-zero interval ID which uniquely identifies the timer so it can be removed later.
             The "timer" parameter specifies the time in milliseconds of when the function should be invoked.
-            The function will be invoked once every set time.
+            To cancel setInterval():
+                clearInterval(intervalID);
+                intervalID = null;
         SIDE NOTE:
+                    The same object that uses these functions might share the same pool of IDs. However, different objects use separate pools of IDs.
                     In often time, using "setTimeout()" or "setInterval()" can be thread-blocking, which means it might block other code to be executed, as in case it reduces errors; therefore, you need to use Promise.
     IV. Promise:
         Producing code is code that can take some time.

@@ -11,7 +11,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}\\reactjs-notes\\notes\\script.js"
+            "program": "${workspaceFolder}\\javascript\\practice\\script.js"
         }
     ]
 }

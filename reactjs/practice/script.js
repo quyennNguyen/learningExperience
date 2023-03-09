@@ -123,3 +123,96 @@
 // When inspecting the code, you will see only the text node whose content changes gets updated by ReactDOM.
 
 // -------------------------------------------------------------------
+
+// const root = ReactDOM.createRoot(document.getElementById("root"));
+
+// function Timer(props) {
+//   return (
+//     <div>
+//       <p>Hello, World!</p>
+//       <p>It is {props.date.toLocaleTimeString()}.</p>
+//     </div>
+//   );
+// }
+
+// function Clock() {
+//     root.render(<Timer date={new Date()} />);
+// }
+
+// setInterval(Clock, 1000);
+
+// -------------------------------------------------------------------
+
+// const root = ReactDOM.createRoot(document.getElementById("root"));
+
+// class Clock extends React.Component {
+//   render() {
+//     return (
+//       <div>
+//         <p>Hello, World!</p>
+//         <p>It is {this.props.date.toLocaleTimeString()}.</p>
+//       </div>
+//     );
+//   }
+// }
+
+// root.render(<Clock date={new Date()} />)
+
+// -------------------------------------------------------------------
+
+// const root = ReactDOM.createRoot(document.getElementById("root"));
+
+// class Clock extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {date: new Date()};
+//   }
+
+//   render() {
+//     return (
+//       <div>
+//         <p>Hello, World!</p>
+//         <p>It is {this.state.date.toLocaleTimeString()}.</p>
+//       </div>
+//     );
+//   }
+// }
+
+// root.render(<Clock />);
+
+// -------------------------------------------------------------------
+
+// const root = ReactDOM.createRoot(document.getElementById("root"));
+
+// class Clock extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = { date: new Date() };
+//   }
+
+//   componentDidMount() {
+//     this.intervalID = setInterval(() => {
+//       this.setState({ date: new Date() });
+//     }, 1000);
+//   }
+
+//   componentWillUnmount() {
+//     clearInterval(intervalID);
+//   }
+
+//   render() {
+//     return (
+//       <div>
+//         <p>Hello, World!</p>
+//         <p>It is {this.state.date.toLocaleTimeString()}.</p>
+//       </div>
+//     );
+//   }
+// }
+
+// root.render(<Clock />);
+
+// You are free to add additional fields to the class manually if you need to store something that doesn’t participate in the data flow.
+
+// -------------------------------------------------------------------
+
