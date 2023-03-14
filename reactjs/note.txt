@@ -98,12 +98,12 @@ WHAT IS JSX?
         "onclick" in HTML = "onClick" in React
       Literals rules are also different in React when assigning a value to an attribbute.
       a. String Literals:
-        Quotes are used to specify a numeric or string value.
+        Quotes are used to specify a number/string value.
           const variableName = (
             <starting-tag attribute="value"> content </closing-tags>
           );
       b. Template Literals:
-        Curly braces are used to embed a function or object value.
+        Curly braces are used to embed a boolean/array/object value or a function.
           const variableName = (
             <starting-tag attribute={argument}> content </closing-tags>
           );
@@ -206,7 +206,7 @@ WHAT IS JSX?
                 }
               A component may choose to pass its state down as props to its child components. Any data derived from that state can only affect components “below” them in the tree. Neither parent nor child components can know if a certain component is stateful or stateless. Whether a component is stateful or stateless is considered an implementation detail of the component that may change over time. You can use stateless components inside stateful components, and vice versa.
   VI. Conditional Rendering:
-    In React, you can create distinct components that encapsulate behavior you need, then you can render only some of them depending on the state of your application.
+    React allows you to create distinct components that encapsulate behavior you need, then you can render only some of them depending on the state of your application.
     Conditional operators are used to create elements representing the current state and let React update the UI to match them.
     1. If-Else Statements:
       if (condition) {
@@ -215,17 +215,73 @@ WHAT IS JSX?
         action;
       }
     2. Inline If with Logical Operator:
-        {
-          condition &&
-          expression
-        }
+      This is used as an expression embedded in JSX.
+        <starting-tag>
+          {
+            condition &&
+            expression
+          }
+        </closing-tags>        
       If the condition is true, the expression will be evaluated. If the condition is false, React will ignore and skip the expression.
     3. Inline If-Else with Ternary Operator:
-      {
-        condition ? trueExpression : falseExpression
-      }
+      This is used as an expression embedded in JSX.
+        <starting-tag>
+          {
+            condition ? trueExpression : falseExpression
+          }
+        </closing-tags>       
     4. Preventing Component from Rendering:
       In some cases, it is better to return "null" and hide the component than returning the output and rendering the component.
       Returning "null" from the "render()" method of the component does not affect the firing of the component’s lifecycle methods.
-  VII. Event Handling:
+  VII. Lists and Keys:
+    1. Lists:
+      In React, transforming arrays into lists of elements is nearly identical.
+        const arrayName = [element0, element1, element2];
+        const listName = arrayName.map(element => {
+          <starting-tag>
+            {element}
+          </closing-tags> 
+        });
+        const variableName = <starting-tag> {listName} </closing-tags>;
+    2. Keys:
+      A key is a special string attribute that needs to be given to each element when creating their list to give them a stable unique identity.
+      Keys help React identify which elements have changed, are added, or are removed.
+        const listName = arrayName.map(element => {
+          <starting-tag key={id}>
+            {element}
+          </closing-tags> 
+        });
+      a. use element values:
+        If it is a list of different numeric elements, you can use their own values as unique keys.
+          const arrayName = [number0, number1, number2];
+          const listName = arrayName.map(element => {
+            <starting-tag key={element.toString()}>
+              {element}
+            </closing-tags> 
+          });
+      b. use element data:
+        If it is a list of object elements, you can use IDs from your data as unique keys.
+          const arrayName = [
+            {id:value0, name:value1},
+            {id:value0, name:value1},
+            {id:value0, name:value1}
+          ];
+          const listName = arrayName.map(element => {
+            <starting-tag key={element.id}>
+              {element.name}
+            </closing-tags> 
+          });
+      c. use indexes:
+        When you don’t have stable IDs for rendered elements, you may use the element indexes as keys as a last resort.
+          const arrayName = [element0, element1, element2];
+          const listName = arrayName.map((element, index) => {
+            <starting-tag key={index}>
+              {element.text}
+            </closing-tags> 
+          });
+        Using indexes for keys is not highly recommended if the order of elements may change. This can negatively impact performance and may cause issues with the component state.
+      Keys used within a list should be unique among elements. However, they don't have to be globally unique. Different lists can use duplicate sets of keys.
+      Keys should be assigned to the list elements specifically inside the main array method call, not any where else.
+      If you need to pass the keys to the children components, pass it explicitly as a props.
+  VIII. Event Handling:
     https://reactjs.org/docs/handling-events.html

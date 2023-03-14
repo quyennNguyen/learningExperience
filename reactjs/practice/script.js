@@ -216,3 +216,157 @@
 
 // -------------------------------------------------------------------
 
+// const root = ReactDOM.createRoot(document.getElementById("root"));
+
+// function GuestGreeting() {
+//   return <div>Please sign in!</div>;
+// }
+
+// function UserGreeting() {
+//   return <div>Welcome!</div>;
+// }
+
+// function LoginButton(props) {
+//   return (
+//     <button type="submit" onSubmit="">
+//       Log in
+//     </button>
+//   );
+// }
+
+// function LogoutButton(props) {
+//   return (
+//     <button type="submit" onSubmit="">
+//       Log out
+//     </button>
+//   );
+// }
+
+// function LoginControl(props) {
+//   if (props.isLoggedIn) {
+//     return (
+//       <div>
+//         <UserGreeting />
+//         <LogoutButton />
+//       </div>
+//     );
+//   } else {
+//     return (
+//       <div>
+//         <GuestGreeting />
+//         <LoginButton />
+//       </div>
+//     );
+//   }
+// }
+
+// root.render(<LoginControl isLoggedIn={true} />);
+
+// -------------------------------------------------------------------
+
+// const root = ReactDOM.createRoot(document.getElementById("root"));
+
+// function GuestGreeting() {
+//   return <div>Please sign in!</div>;
+// }
+
+// function UserGreeting() {
+//   return <div>Welcome!</div>;
+// }
+
+// function LoginButton(props) {
+//   return (
+//     <button onClick={props.onClick}>
+//       Log in
+//     </button>
+//   );
+// }
+
+// function LogoutButton(props) {
+//   return (
+//     <button onClick={props.onClick}>
+//       Log out
+//     </button>
+//   );
+// }
+
+// class LoginControl extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = { isLoggedIn: false };
+//     this.handleLogInClick = this.handleLogInClick.bind(this);
+//     this.handleLogOutClick = this.handleLogOutClick.bind(this);
+//   }
+
+//   handleLogInClick() {
+//     this.setState({ isLoggedIn: true });
+//   }
+
+//   handleLogOutClick() {
+//     this.setState({ isLoggedIn: false });
+//   }
+
+//   render() {
+//     if (this.state.isLoggedIn) {
+//       return (
+//         <div>
+//           <UserGreeting />
+//           <LogoutButton onClick={this.handleLogOutClick} />
+//         </div>
+//       );
+//     } else {
+//       return (
+//         <div>
+//           <GuestGreeting />
+//           <LoginButton onClick={this.handleLogInClick} />
+//         </div>
+//       );
+//     }
+//   }
+// }
+
+// root.render(<LoginControl />);
+
+// -------------------------------------------------------------------
+
+// const root = ReactDOM.createRoot(document.getElementById("root"));
+
+// function Mailbox(props) {
+//     let count = props.messages.length;
+
+//     return (
+//         <div>
+//             <div>Hello,</div>
+//             {
+//                 count > 0 &&
+//                 <div>You have {count} message(s).</div>
+//             }
+//         </div>
+//     );
+// }
+
+// root.render(<Mailbox messages={['React', 'Re: React', 'Re:Re: React']} />);
+
+// -------------------------------------------------------------------
+
+// const root = ReactDOM.createRoot(document.getElementById("root"));
+
+// function LoginControl(props) {
+//   return <div>You are {props.isLoggedIn ? `currently` : `not`} logged in.</div>;
+// }
+
+// root.render(<LoginControl isLoggedIn={false} />);
+
+// -------------------------------------------------------------------
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+const posts = [
+  { id: 1, title: "Hello World", content: "Welcome to learning React!" },
+  { id: 2, title: "Installation", content: "You can install React from npm." },
+];
+
+function Blog(props) {
+    props.posts.map
+}
+
+root.render(<Blog posts={posts} />);
