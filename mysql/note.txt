@@ -1,0 +1,49 @@
+WHAT IS DATABASE?
+    Database is a storage for a collection of data/information.
+    DBMS, Database Management System, is the software that manages the database.
+    There are 2 types of DBMS:
+        1. Relational Database: MySQL -> tables
+        2. No-relational Database: NoSQL -> documents
+    JDBC, Java Database Connectivity, is a Java API that allows Java to access the DBMS.
+
+WHAT IS SQL AND MYSQL?
+    SQL, Structured Query Language, is a programming language used in DBMS. 
+    SQL is not case-sensitive.
+    Data types in SQL:
+        - VARCHAR(length) (length is variable)
+        - CHAR(length) (length is fixed)
+        - INT
+    MySQL is a type of DBMS.
+    To start MySQL from Ubuntu: mysql -h 127.0.0.1 -p -u root -p
+    Syntax:    
+        - SELECT is used to retrieve data from a table.
+        - The data returned is stored in a result table called ResultSet.
+        1. Database:
+            SHOW DATABASES;
+            CREATE DATABASE dbname_db;
+            USE dbname_db;
+        2. Table:
+            SHOW TABLES;
+            CREATE TABLE tbname( … );
+            DESCRIBE tbname;
+            ALTER TABLE tbname RENAME TABLE oldname TO newname;
+            DROP TABLE tbname;
+            SELECT * FROM tbname;
+            SELECT what FROM what WHERE condition;
+            SELECT multiple column separated by commas FROM what WHERE (multiple conditions separated by AND/OR);
+            SELECT DISTINT what FROM what;
+            SELECT what FROM what ORDER by what; (ascending order)
+            SELECT what FROM what ORDER by what DESC; (descending order)
+            SELECT what FROM what WHERE what IN( … );
+            SELECT what FROM what WHERE what BETWEEN what AND what;
+            SELECT what FROM what WHERE what LIKE ‘pattern’; (EX: ‘%A%’)
+            SELECT what FROM what WHERE what LIMIT howmuch;
+        3. Row:
+            INSERT INTO tbname VALUES( …);
+            UPDATE tbname SET what=newvalue WHERE condition;
+            DELETE FROM tbname WHERE condition;
+        4. Column:
+            ALTER TABLE tbname ADD what type;
+            ALTER TABLE tbname MODIFY what newtype;
+            ALTER TABLE tbname RENAME COLUMN oldname TO newname;
+            ALTER TABLE tbname DROP what;
