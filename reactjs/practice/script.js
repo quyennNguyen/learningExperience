@@ -359,14 +359,81 @@
 
 // -------------------------------------------------------------------
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-const posts = [
-  { id: 1, title: "Hello World", content: "Welcome to learning React!" },
-  { id: 2, title: "Installation", content: "You can install React from npm." },
-];
+// const root = ReactDOM.createRoot(document.getElementById("root"));
+// const posts = [
+//   { id: 1, title: "Hello World", content: "Welcome to learning React!" },
+//   { id: 2, title: "Installation", content: "You can install React from npm." },
+// ];
 
-function Blog(props) {
-    props.posts.map
-}
+// function Blog(props) {
+//   const list = props.posts.map((element) => (
+//     <li>
+//       <h3>{element.title}</h3>
+//       <p>{element.content}</p>
+//     </li>
+//   ));
 
-root.render(<Blog posts={posts} />);
+//   return <ul>{list}</ul>;
+// }
+
+// root.render(<Blog posts={posts} />);
+
+// Without assigning each list element with a unique key, you might get a warning says "Warning: Each child in a list should have a unique "key" prop.".
+
+// -------------------------------------------------------------------
+
+// const root = ReactDOM.createRoot(document.getElementById("root"));
+// const posts = [
+//   { id: 1, title: "Hello World", content: "Welcome to learning React!" },
+//   { id: 2, title: "Installation", content: "You can install React from npm." },
+// ];
+
+// function ListItem(props) {
+//   return (
+//     <li>
+//       <h3>{props.value.title}</h3>
+//       <p>{props.value.content}</p>
+//     </li>
+//   );
+// }
+
+// function Blog(props) {
+//   const list = props.posts.map((element) => (
+//     <ListItem key={element.id} value={element} />
+//   ));
+
+//   return <ul>{list}</ul>;
+// }
+
+// root.render(<Blog posts={posts} />);
+
+// The list elements inside the main array method call are the ones that need keys.
+
+// -------------------------------------------------------------------
+
+// const root = ReactDOM.createRoot(document.getElementById("root"));
+// const posts = [
+//   { id: 1, title: "Hello World", content: "Welcome to learning React!" },
+//   { id: 2, title: "Installation", content: "You can install React from npm." },
+// ];
+
+// function Blog(props) {
+//   return (
+//     <ul>
+//       {props.posts.map((element) => (
+//         <li key={element.id}>
+//           <h3>{element.title}</h3>
+//           <p>{element.content}</p>
+//         </li>
+//       ))}
+//     </ul>
+//   );
+// }
+
+// root.render(<Blog posts={posts} />);
+
+// JSX allows embedding any expression in curly braces, so another way to solve this is to inline the map() result.
+// If the list is too nested, this way is not highly recommended.
+
+// -------------------------------------------------------------------
+

@@ -193,7 +193,7 @@ WHAT IS JSX?
         this.setState({attribute: "value"});
         or
         this.setState((state, props) => {
-          attribute: "value"
+          attribute: new value derived from previous value which is retrieved by using "state.attribute"
         });
       When the "setState()" method is called, React merges the object you provide into the current state. If state includes multiple independent variables, they can be updated independently with separate "setState()" calls.
     SIDE NOTE:
@@ -281,7 +281,83 @@ WHAT IS JSX?
           });
         Using indexes for keys is not highly recommended if the order of elements may change. This can negatively impact performance and may cause issues with the component state.
       Keys used within a list should be unique among elements. However, they don't have to be globally unique. Different lists can use duplicate sets of keys.
-      Keys should be assigned to the list elements specifically inside the main array method call, not any where else.
+      Keys only make sense in the context of the surrounding array. Therefore, they should be assigned to the list elements specifically inside the main array method call, not any where else.
+      A good rule of thumb is that list elements inside the main array method call need keys.
       If you need to pass the keys to the children components, pass it explicitly as a props.
-  VIII. Event Handling:
+  VIII. Forms:
+    HTML form elements work a bit differently from other DOM elements in React because form elements naturally keep some internal state.
+    In HTML, form elements such as "<input>", "<textarea>", and "<select>" typically maintain their own state and update it based on user input.
+    In React, mutable state is typically kept in the "state" property of components and only updated with the "setState()" method.
+    You can combine these by making the React state the “single source of truth”. Then the React component that renders a form also controls what happens in that form on subsequent user input.
+    1. Comtrolled Components:
+      A controlled component is a form element whose value is controlled by React.
+        class ClassName extends React.Component {
+          constructor(props) {
+            super(props);
+            this.state = {value: ''};
+            this.handleChange = this.handleChange.bind(this);
+            this.handleSubmit = this.handleSubmit.bind(this);
+          }
+
+          handleChange(event) {
+            this.setState({value: event.target.value});
+          }
+
+          handleSubmit(event) {
+            alert('A name was submitted: ' + this.state.value);
+            event.preventDefault();
+          }
+
+          render() {
+            return ();
+          }
+        }
+      a. input text:
+        render() {
+          return (
+            <form onSubmit={this.handleSubmit}>
+              <label>
+                Name:
+                <input type="text" value={this.state.value} onChange={this.handleChange} />
+              </label>
+              <input type="submit" value="Submit" />
+            </form>
+          );
+        }
+      b. textarea:
+        render() {
+          return (
+            <form onSubmit={this.handleSubmit}>
+              <label>
+                Essay:
+                <textarea value={this.state.value} onChange={this.handleChange} />
+              </label>
+              <input type="submit" value="Submit" />
+            </form>
+          );
+        }
+      c. select drop-down list:
+        render() {
+          return (
+            <form onSubmit={this.handleSubmit}>
+              <label>
+                Pick your favorite flavor:
+                <select value={this.state.value} onChange={this.handleChange}>
+                  <option value="grapefruit">Grapefruit</option>
+                  <option value="lime">Lime</option>
+                  <option value="coconut">Coconut</option>
+                  <option value="mango">Mango</option>
+                </select>
+              </label>
+              <input type="submit" value="Submit" />
+            </form>
+          );
+        }
+        The "select" element can also accept multiple options by adding "multiple={true}" attribute.
+      This makes it so that "<input type="text">", "<textarea>", and "<select>" elements work very similarly. They all accept a "value" attribute that can be used to implement a controlled component.
+    2. Uncontrolled Components:
+
+  IX. Lifting State Up:
+    Often, several components need to reflect the same changing data. We recommend lifting the shared state up to their closest common ancestor.
+  X. Event Handling:
     https://reactjs.org/docs/handling-events.html
