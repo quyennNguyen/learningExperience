@@ -1,14 +1,7 @@
-# ABOUT ME
-
-#### I started by attending community college with major in Computer Science, where I learned the basics, a bit of Java, and a bit of Data Structure. Later on, I transferred to university to continue my major. But not long after that, I decided to do the boldest thing I’ve ever done in my life, DROPPING OUT. Of course, there were a lot of conflicts. But I genuinely think that school is not for me. Two main reasons: it is tedious and it ends up with an overwhelming debt.
-#### In this journal, I want to be crystal clear and note down how I learn to become a SELF-TAUGHT WEB DEVELOPER from SCRATCH. I found this way fascinating and productive as I can keep track of my growth and get over my procrastination.
-
-***
-
 # WHERE TO START?
 
 #### When you don't know where to start, go with a simple search like "How to Become a Software Developer?".
-#### Here are some pretty inspiring videos:
+#### Here are some pretty inspiring videos I started with:
 * https://youtu.be/V1PdbnuPMi8
 * https://youtu.be/hOqOj85jvn0
 * https://youtu.be/s9iPo9YMU70
@@ -18,11 +11,10 @@
 
 # WHAT TO LEARN?
 
-#### Having a clear study plan is very crucial. Depending on your career choice, the study plan might vary. As for me, I want to become a Full Stack Web Developer.
+#### Having a clear study plan is very crucial. Depending on your career choice, the study plan might vary. As for me, I want to become a Full Stack Developer.
 #### Generally, there are two main categories:
 
 ## _Intro to Computer Science:_
-#### You can find some useful information from either of these sources:
 * https://github.com/quyennNguyen/learningExperience/files/8527263/Computer.Science.Illuminated.pdf
 * Harvard's Free CS Course: https://www.edx.org/cs50
 
@@ -51,40 +43,51 @@
 * https://youtu.be/kUMe1FH4CHE
 * https://www.w3schools.com/html/default.asp
 * https://developer.mozilla.org/en-US/docs/Web/HTML
-* Check out my html_notes
+* html
 * Tip: to comment out HTML -> <!-- --> -> Ctrl + /
 * Tip: to comment out XAML -> <!-- --> -> Ctrl + K Ctrl C -> Ctrl + K Ctrl + U
 #### CSS:
 * https://youtu.be/1Rs2ND1ryYc
 * https://www.w3schools.com/css/default.asp
 * https://developer.mozilla.org/en-US/docs/Web/CSS
-* Check out my css_notes
+* css
 * Tip: to comment out CSS -> /* */ -> Ctrl + /
 #### SASS:
 * https://youtu.be/_a5j7KoflTs
 * https://www.w3schools.com/sass/default.php
 * https://sass-lang.com/documentation/
 * https://fontawesome.com/
-* Check out my sass_notes
+* sass
 #### JavaScript:
 * https://youtu.be/lI1ae4REbFM
 * https://www.w3schools.com/js/default.asp
-* https://developer.mozilla.org/en-US/docs/Web/JavaScript
 * https://javascript.info/
+* https://www.theodinproject.com/paths
 * https://youtu.be/x_2sYpk75Ic
 * https://nodejs.org/en/download/
-* Check out my javascript_notes
+* javascript
 * Tip: to comment out JavaScript -> // -> Ctrl + /
 #### React:
 * https://youtu.be/bMknfKXIFA8
 * https://www.w3schools.com/react/default.asp
 * https://reactjs.org/
-* https://babeljs.io/docs/en/
+* reactjs
+#### Java:
+* https://www.w3schools.com/java/default.asp
+* https://docs.oracle.com/javase/tutorial/java/javaOO/index.html
+* https://www.oracle.com/java/technologies/downloads/
+#### MySQL:
+* https://www.w3schools.com/MySQL/default.asp
+* https://learn.microsoft.com/en-us/windows/wsl/install
+* https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-database
+* https://dev.mysql.com/downloads/windows/installer/8.0.html
+* https://www.mysql.com/products/connector/
+* https://dev.mysql.com/downloads/connector/j/
 #### Version Control:
 * https://youtu.be/RGOj5yH7evk
 * https://www.atlassian.com/git/tutorials/install-git#windows
 * https://docs.github.com/en/authentication/connecting-to-github-with-ssh/about-ssh
-* Check out my git_notes
+* git_notes
 
 ***
 
