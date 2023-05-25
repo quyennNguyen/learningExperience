@@ -63,8 +63,9 @@
 * https://www.w3schools.com/js/default.asp
 * https://javascript.info/
 * https://www.theodinproject.com/paths
+* VSCode: https://code.visualstudio.com/download
 * https://youtu.be/x_2sYpk75Ic
-* https://nodejs.org/en/download/
+* NodeJs: https://nodejs.org/en/download/
 * javascript
 * Tip: to comment out JavaScript -> // -> Ctrl + /
 #### React:
@@ -75,14 +76,14 @@
 #### Java:
 * https://www.w3schools.com/java/default.asp
 * https://docs.oracle.com/javase/tutorial/java/javaOO/index.html
-* https://www.oracle.com/java/technologies/downloads/
+* IntelliJ: https://www.jetbrains.com/idea/download/#section=windows
+* JDK: https://www.oracle.com/java/technologies/downloads/
 #### MySQL:
 * https://www.w3schools.com/MySQL/default.asp
 * https://learn.microsoft.com/en-us/windows/wsl/install
 * https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-database
-* https://dev.mysql.com/downloads/windows/installer/8.0.html
-* https://www.mysql.com/products/connector/
-* https://dev.mysql.com/downloads/connector/j/
+* MySQL Workbench: https://dev.mysql.com/downloads/windows/installer/8.0.html
+* JDBC Driver: https://dev.mysql.com/downloads/connector/j/
 #### Version Control:
 * https://youtu.be/RGOj5yH7evk
 * https://www.atlassian.com/git/tutorials/install-git#windows
