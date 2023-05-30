@@ -1,18 +1,31 @@
 WHAT IS DATABASE?
-    Database is a storage for a collection of data/information.
-    DBMS, Database Management System, is the software that manages the database.
+    Database is a collection of data stored in format that can be accessed, managed, and updated.
+    DBMS, stands for Database Management System, serves as an interface between the end-user (back-end) and the database, allows the user to create, read, update, and delete the data in the database.
     There are 2 types of DBMS:
-        1. Relational Database: MySQL -> tables
-        2. No-relational Database: NoSQL -> documents
-    JDBC, Java Database Connectivity, is a Java API that allows Java to access the DBMS.
+        1. Relational Database:
+        2. No-relational Database:
+    
+WHAT IS JDBC?
+    API, stands for Application Programming Interface, is a tool that connects different software together.
+    JDBC, stands for Java Database Connectivity, is a Java API that allows Java to access the DBMS.
+    To add JDBC Driver to a Java application from IntelliJ:
+        - File
+        - Project Structure
+        - Project Settings
+        - Modules
+        - Dependencies
+        - Add JARS or Directories
+        - Attach Files and Directories
+        - Look for mysql-connector-j-8.0.33.jar
 
 WHAT IS SQL AND MYSQL?
-    SQL, Structured Query Language, is a programming language used in DBMS. 
+    SQL, stands for Structured Query Language, is a programming language used in DBMS. 
     SQL is not case-sensitive.
     Data types in SQL:
         - VARCHAR(length) (length is variable)
         - CHAR(length) (length is fixed)
         - INT
+        - DECIMAL
     MySQL is a type of DBMS.
     To start MySQL from Ubuntu: mysql -h 127.0.0.1 -p -u root -p
     Syntax:    
