@@ -29,8 +29,13 @@ WHAT IS SQL AND MYSQL?
     MySQL is a type of DBMS.
     To start MySQL from Ubuntu: mysql -h 127.0.0.1 -p -u root -p
     Syntax:    
-        - SELECT is used to retrieve data from a table.
-        - The data returned is stored in a result table called ResultSet.
+        SELECT is used to retrieve data from a table.
+        The data returned is stored in a result table called ResultSet.
+        DAO
+        DDL -> CREATE / ALTER
+        DML -> SELECT / INSERT / UPDATE
+        DCL -> GRANT / REVOKE
+        TCL -> COMMIT / ROLLBACK
         1. Database:
             SHOW DATABASES;
             CREATE DATABASE dbname_db;
