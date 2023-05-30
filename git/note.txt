@@ -6,7 +6,7 @@ WHAT IS VERSION CONTROL SYSTEM?
 
 TERMINOLOGY:
     GitHub: is the website that hosts your Git repositories online.
-    CLI: is Command Line Interface. I will mainly use Windows Powershell for this.
+    CLI: is Command Line Interface.
     Terminal, or Command Line,: is the interface for text commands.
     Code Editor: is the word processor, or text editor, for writing code.
     repository: is your project, or the folder where your project is kept. repo: is short for repository
