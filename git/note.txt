@@ -42,30 +42,23 @@ GENERAL CLI COMMASNDS:
     la, or ls -a,: to list all files and folders in the current directory, including hidden ones
     mkdir <folder's name>: to create a folder in the current directory
     rm <file's name> or <folder's name>: to remove a file or a folder in the current directory
-    there are multiple ways to create a file in the current directory:
+    There are multiple ways to create a file in the current directory:
         1. touch <file's name>
         2. cat > <file's name>
-        3. echo "content" > <file's name>
-    
+            type content here
+            press Ctrl+C to finish
+        3. echo "content goes here" > <file's name>: this is to create a new file or override an existing file
+            echo "content goes here" >> <file's name>: this is to create a new file or continue an existing file
+    more <file's name>: to read a file
     clear: to clear the CLI window
     press Q key: to exit the list
 
 GIT COMMANDS:
-    General Commands:
+    I. COMMANDS FOR GENERAL GIT WORKFLOW:
         .git: is the hidden folder that stores all the changes/updates/deletes of your files that are saved in Git commits
         git --version: to check Git's version
         git status: to show all the changed/updated/deleted files that are not yet saved in Git commits
         git log: to show a log of all Git commits in reverse chronological order
-    Commands for Local Git Workflow:
-        If you don't have any local repo to start with and you want to follow up with a remote repo:
-            git clone <repo's SSH>: to bring a remote repo where your project is hosted (remotely) into a local repo on your local machine (locally)
-        If you already have a local repo to start with and you want to connect it with a remote repo:
-            git init: to initialize a new empty Git repo or to convert the curent directory into a Git repo
-            git remote add origin <repo's SSH>: to add a reference to the remote repo to set up the connection between the current local repo and the remote repo
-            git remote -v: to check if there's any remote repo that is connected to the local repo you are working on
-            git pull -rebase origin <branch's name>
-            git push origin <branch's name>
-    General Git Workflow:
         git add <file's name>: to inform Git to track changes/updates/deletes of the specified files in the current directory
             you can use <.> for <file's name> to track all (modified/updated/untracked) files in the current directory
         git commit -m "Message 1 (usually for what you do and when you do it)", -m "Message 2 (usually for further description)": to save changes/updates/deletes of all files in the current directory in Git
@@ -75,7 +68,16 @@ GIT COMMANDS:
         git pull origin <branch's name>: to download Git commits from the specified branch of the current directory from the remote repo to the local repo
         -u, or --set-upstream,: can be added to git push or git pull before origin <branch's name> to set the specified branch of the current directory as a default branch so that everytime you want to push or pull Git commits from current directory, you can use git push or git pull without typing out origin <branch'name>
         pr, or pull request: you might need to make a pull request when you have an access right or need a code review before merging changes in your codes
-    Commands for Git Branching:
+    II. COMMANDS FOR LOCAL GIT WORKFLOW:
+        1. If you don't have any local repo to start with and you want to follow up with a remote repo:
+            git clone <repo's SSH>: to bring a remote repo where your project is hosted (remotely) into a local repo on your local machine (locally)
+        2. If you already have a local repo to start with and you want to connect it with a remote repo:
+            git init: to initialize a new empty Git repo or to convert the curent directory into a Git repo
+            git remote add origin <repo's SSH>: to add a reference to the remote repo to set up the connection between the current local repo and the remote repo
+            git remote -v: to check if there's any remote repo that is connected to the local repo you are working on
+            git pull -rebase origin <branch's name>
+            git push origin <branch's name>
+    III. COMMANDS FOR GIT BRANCHING:
         Your codes can be branched like a tree. The main/base branch is named "master". The sub branch can be named "feature". To fix a bug real quick, you can create a branch named "hot fix". Individual branches are completely independent before merging.
         git branch: to list all branches in the current directory; the asterisk before a branch's name shows your current position in the tree
         git branch -d <branch's name>: to delete the specified branch in the current directory
@@ -86,7 +88,7 @@ GIT COMMANDS:
         git merge <branch's name>: to merge Git commits from the current branch to the specified branch in the current directory
             if there're any merge conflicts, you have to fix them then commit the results
             sometimes if you start a local repo and then connect it to a remote repo, these branches would have different history bases, and when you merge them, there is likely to lead to "refusing to merge unrelated histories" error, then try add –allow-unrelated-histories after the command to allow merging branches with no common history base
-    Commands for Unstaging:
+    IV. COMMANDS FOR GIT UNSTAGING:
         git reset <file's name>: to unstage any uncommited changes/updates/deletes of the specified file in the current directory
         git reset HEAD, or git reset HEAD~<pointer's index>: to unstage any uncommited and commited changes/updates/deletes of all files in the current directory; the index starts with 0, HEAD = HEAD~0, so after HEAD is HEAD~1,..., HEAD means the pointer to the latest commit, HEAD~1 means the pointer to one commit before the latest commit
         git reset <commit's hash number>: to unstage any commited changes/updates/deletes of all files in the current directory after the specified commit; the codes will still be there but not saved in Git commits
