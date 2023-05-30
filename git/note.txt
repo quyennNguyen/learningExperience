@@ -32,15 +32,26 @@ WHAT IS SSH?
             Copy the public key to your clipboard: clip < ~/.ssh/id_ed25519.pub
             In GitHub/Settings/Access/SSH and GPG keys/New SSH key, add a title for your key pair and paste the public key, then add SSH key
         3. Test SSH Connection: ssh -T git@github.com
+
+GENERAL CLI COMMASNDS:
+    pwd: to print the full path of the working directory
+    cd, or cd ~: to get to home directory
+    cd <directory's name>: to change from the current directory to the specified directory
+    cd ..: to get to one level above the current directory
+    ls: to list all available files and folders in the current directory
+    la, or ls -a,: to list all files and folders in the current directory, including hidden ones
+    mkdir <folder's name>: to create a folder in the current directory
+    rm <file's name> or <folder's name>: to remove a file or a folder in the current directory
+    there are multiple ways to create a file in the current directory:
+        1. touch <file's name>
+        2. cat > <file's name>
+        3. echo "content" > <file's name>
     
+    clear: to clear the CLI window
+    press Q key: to exit the list
+
 GIT COMMANDS:
     General Commands:
-        cd <directory's name>: to change from the current directory to the specified directory
-        cd, or cd ~: to get to home directory
-        cd ..: to get to one level above the current directory
-        ls -la: to list all files and folders, including hidden ones, that are saved in Git commits
-        clear: to clear the CLI window
-        press Q key: to exit the list
         .git: is the hidden folder that stores all the changes/updates/deletes of your files that are saved in Git commits
         git --version: to check Git's version
         git status: to show all the changed/updated/deleted files that are not yet saved in Git commits
@@ -62,7 +73,7 @@ GIT COMMANDS:
         git commit -am "message": to simultaneously add and save changes/updates/deletes of modified files only in the current directory in Git (a short cut for git add and git commit)
         git push origin <branch's name>: to upload Git commits from the specified branch of the current directory from the local repo to the remote repo
         git pull origin <branch's name>: to download Git commits from the specified branch of the current directory from the remote repo to the local repo
-        -u (or --set-upstream): can be added to git push or git pull before origin <branch's name> to set the specified branch of the current directory as a default branch so that everytime you want to push or pull Git commits from current directory, you can use git push or git pull without typing out origin <branch'name>
+        -u, or --set-upstream,: can be added to git push or git pull before origin <branch's name> to set the specified branch of the current directory as a default branch so that everytime you want to push or pull Git commits from current directory, you can use git push or git pull without typing out origin <branch'name>
         pr, or pull request: you might need to make a pull request when you have an access right or need a code review before merging changes in your codes
     Commands for Git Branching:
         Your codes can be branched like a tree. The main/base branch is named "master". The sub branch can be named "feature". To fix a bug real quick, you can create a branch named "hot fix". Individual branches are completely independent before merging.
