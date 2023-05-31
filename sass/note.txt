@@ -1,5 +1,3 @@
-SOURCE: https://youtu.be/_a5j7KoflTs
-
 WHAT IS SASS?
     SASS, stands for Syntactically Awesome Stylesheet, is an extention to CSS and the preprocessor of CSS, which reduces repetition of CSS.
     The Web browser doesn't understand SASS code; therefore, SASS code needs a preprocessor to convert into standard CSS. The transpiling program is called transpiler.
