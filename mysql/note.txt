@@ -18,6 +18,7 @@ WHAT IS DATABASE?
                 It uses SQL to query data.
             e. Application:
                 It is well-suited for applications that require complex queries and support transactions such as financial or e-commerce systems.
+            EX: MySQL, PostgreSQL, MicrosoftSQLServer, MariaDB,...
         2. NoSQL Database:
             a. Data Model:
                 It stores data in a variety of data models including key-value pairs, documents, or graphs.
@@ -26,10 +27,11 @@ WHAT IS DATABASE?
                 It is highly scalable and flexible, and can handle a large amount of data and traffics.
             c. Consistency:
                 It sacrifices consistency in favor of scalability and performance.
-            4. Querying:
+            d. Querying:
                 It often uses its own query language or APIs.
-            5. Application:
+            e. Application:
                 It is often used for large-scale web applications such as social media platforms, where data is highly distributed and the schema may evolve rapidly.
+            EX: MongoDB, Firebase, Redis, Cassandra,...
 WHAT IS JDBC?
     API, stands for Application Programming Interface, is a tool that connects different software together.
     JDBC, stands for Java Database Connectivity, is a Java API that allows Java to access the DBMS.
