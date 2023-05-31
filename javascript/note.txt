@@ -1,10 +1,8 @@
-SOURCE: https://www.youtube.com/watch?v=lI1ae4REbFM&ab_channel=CleverProgrammer
-
 WHAT IS JAVASCRIPT?
     JavaScript is of the key programming languages of the Web. While HTML defines the content of the Web page and CSS specifies the layout of the Web page, JavaScript programs the behavior of the Web page.
     File extension: .js
 
-WHERE CAN JAVASCRIPT FILE BE PLACED?
+HOW TO ADD JAVASCRIPT TO HTML?
     JavaScript is the default scripting language in HTML.
     There are two ways to place JavaScript code, or script,:
         1. Within the HTML page:
