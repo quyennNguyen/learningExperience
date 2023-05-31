@@ -1,5 +1,3 @@
-SOURCE: https://youtu.be/bMknfKXIFA8
-
 WHAT IS REACT?
   React, or ReactJs, is a JavaScript library for building user interfaces and developing web applications.
   React embraces the fact that rendering logic is inherently coupled with other UI logic: how events are handled, how the state changes over time, and how the data is prepared for display.
