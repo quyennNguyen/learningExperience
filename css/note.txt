@@ -1,5 +1,3 @@
-SOURCE: https://youtu.be/1Rs2ND1ryYc 
-
 WHAT IS CSS?
     CSS, stands for Cascading Style Sheet, is a standard language used to give styling and design to websites.
     While HTML forms the structural foundation of a Web page, CSS describes its presentation (colors, backgrounds, font sizes, layouts,...).
