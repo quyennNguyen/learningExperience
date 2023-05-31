@@ -1,10 +1,35 @@
 WHAT IS DATABASE?
     Database is a collection of data stored in format that can be accessed, managed, and updated.
-    DBMS, stands for Database Management System, serves as an interface between the end-user (back-end) and the database, allows the user to create, read, update, and delete the data in the database.
-    There are 2 types of DBMS:
-        1. Relational Database:
-        2. No-relational Database:
-    
+    DBMS, stands for Database Management System, serves as an interface between the end-user (back-end) and the database, and allows the user to create, read, update, and delete the data in the database.
+    There are 2 types of DBMS used to store, retrieve, and manage data:
+        1. Relational Database (RDBMS):
+            a. Data Model:
+                It stores data in a relational data model that uses tables.
+                It is based on a fixed schema to define the tables and their relationaships.
+                Each table is made of rows and columns.
+                Each row represents a single record.
+                Each column represents a particular attribute of the record.
+            b. Scalability:
+                It is less scalable, and may require more complex scaling strategies.
+            c. Consistency:
+                It is highly structured and provides a strong consistency.
+                Data is always in a consistent state.
+            d. Querying:
+                It uses SQL to query data.
+            e. Application:
+                It is well-suited for applications that require complex queries and support transactions such as financial or e-commerce systems.
+        2. NoSQL Database:
+            a. Data Model:
+                It stores data in a variety of data models including key-value pairs, documents, or graphs.
+                It is not based on a fixed schema (schemaless).
+            b. Scalability:
+                It is highly scalable and flexible, and can handle a large amount of data and traffics.
+            c. Consistency:
+                It sacrifices consistency in favor of scalability and performance.
+            4. Querying:
+                It often uses its own query language or APIs.
+            5. Application:
+                It is often used for large-scale web applications such as social media platforms, where data is highly distributed and the schema may evolve rapidly.
 WHAT IS JDBC?
     API, stands for Application Programming Interface, is a tool that connects different software together.
     JDBC, stands for Java Database Connectivity, is a Java API that allows Java to access the DBMS.
