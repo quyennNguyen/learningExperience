@@ -6,7 +6,25 @@ WHAT IS CSS?
     HTML and CSS usually go hand-in-hand.
     File extension: .css
 
+HOW TO ADD CSS TO HTML?
+    1. In a separate file:
+        CSS can be written in a separate file.
+        To connect an HTML file and its CSS file, in the HTML document, add a <link> tag in the <head> tag.
+            <link rel="stylesheet" href="link to the CSS file">
+    2. In a style block, or internal CSS:
+        CSS can be added in the <style> tag in the <head> tag of the HTML document.
+            <head>
+                <style>
+                    CSS rules
+                </style>
+            </head>
+    3. Inline style, or inline CSS:
+        CSS can be added directly into the HTML tag by using the "style" attribute.
+            <start-tag style="CSS rules"> content </end-tag>
+
 WHATS ARE CSS SELECTORS AND PROPERTIES?
+    HTML elements are built as a block with margin, border, padding, and content.
+    When styling an HTML element, imagine it as the whole block.
     CSS rule consists of a selector and a style declaration block and is defined by:
         SELECTOR {
             PROPERTY: VALUE;
@@ -124,17 +142,6 @@ WHAT IS CSS SPECIFICITY?
         Class Selector/Pseudo-Class Selector/Attribute Selectors (+10)
         ID Selector (+100)
         Inline Style/Contextual Style (+1000)
-    SIDE NOTE:
-                Inline Style/Contextual Style means instead of having CSS rules written
-                    1. in a seperate CSS file
-                    2. in the <style> tag in the <head> tag of the HTML document
-                    Syntax: <head>
-                                <style>
-                                    CSS rules
-                                </style>
-                            </head>
-                for the styling of the HTML document, you can apply the CSS rules directly into the HTML tag by using the "style" attribute.
-                Syntax: <start-tag style="CSS rule"> content </end-tag>
 
 WHAT ARE CSS BROWSER PREFIXES? 
     CSS browser prefixes, or vendor prefixes, are a way for browser makers to add support for new features before those features are fully supported in all browsers.
