@@ -23,7 +23,7 @@ HOW TO ADD CSS TO HTML?
 WHATS ARE CSS SELECTORS AND PROPERTIES?
     HTML elements are built as a block with margin, border, padding, and content.
     When styling an HTML element, imagine it as the whole block.
-    CSS rule consists of a selector and a style declaration block and is defined by:
+    A CSS rule consists of a selector and a style declaration block:
         SELECTOR {
             PROPERTY: VALUE;
         }
@@ -35,7 +35,7 @@ WHATS ARE CSS SELECTORS AND PROPERTIES?
             * {
                 property: value;
             }
-        II. Simple Selectors:
+        II. General Selectors:
             1. Element Selector:
             By selecting the tag name of an element, the style declaration is applied to all elements with that tag name on the Web page.
                 tag-name {
@@ -125,7 +125,6 @@ WHATS ARE CSS SELECTORS AND PROPERTIES?
                 selector1 selector2 {
                     property: value;
                 }
-    Pronounciation: https://blog.codinghorror.com/ascii-pronunciation-rules-for-programmers/
     CSS PROPERTIES (COMMON FEATURES):
         Shorthand Properties are properties that can set values of multiples other properties simultaneously in one whitespace-seperated style declaration, which usually have a specific order for the values, to obtain more concise code.
         There are some special values built in every properties:
