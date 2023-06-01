@@ -18,7 +18,7 @@ WHAT IS DATABASE?
                 This uses SQL to query data.
             e. Application:
                 This is well-suited for applications that require complex queries and support transactions such as financial or e-commerce systems.
-            EX: MySQL, PostgreSQL, MicrosoftSQLServer, MariaDB,...
+            EX: MySQL, PostgreSQL, Microsoft SQL Server, MariaDB, Oracle,...
         2. NoSQL Database:
             a. Data Model:
                 This stores data in a variety of data models including key-value pairs, documents, or graphs.
@@ -143,7 +143,9 @@ WHAT IS SQL AND MYSQL?
             
 WHAT IS JDBC?
     API, stands for Application Programming Interface, is a tool that connects different software together.
-    JDBC, stands for Java Database Connectivity, is a Java API that allows Java to access the DBMS.
+    JDBC, stands for Java Database Connectivity, is a Java API that provides the standard mechanism for Java applications to interact with relational databases.
+    It allows you to build database-driven aplications, where you can establish connections to the databases, execute SQL statements, store, retrieve, and manipulate data dynamically, and manage database transactions within Java code.
+    It follows a client-server architecture where Java applications act as clients coomuniccating with the database server to perform database operations.
     To add JDBC Driver to a Java application from IntelliJ:
         - File
         - Project Structure
