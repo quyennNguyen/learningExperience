@@ -78,14 +78,20 @@ GENERAL SYNTAX:
             But if other arithmetic operators like substraction- multiplication* division/ modulus% increment++ decrement-- exponentiation** are used on numeric strings, it will implicitly convert the strings to numbers and return a number. 
             SIDE NOTE:
                         The computer evaluates expressions from left to right until it returns the final string.
-        3. Comparison, Logical, and Conditional Operators:
+        3. Unary Operator:
+            Unary operator (+) is used to convert another date type to a number.
+        4. Comparison and Logical Operators:
             Comparison and logical operators are used to test for true or false so as to take action depending on the results.
             Comparison operators (== === != !== > >= < <=) are used in conditional statements to determine equality or difference between values.
             Logical operators (&& || !) are used to determine the logic between values.
-            Conditional operator, or Ternary operator, is used to assign a value to a variable based on some conditions.
-                let variableName = (condition) ? value1 : value2;
             Full reference: https://www.w3schools.com/js/js_comparisons.asp
-        4. Type Operator:
+        5. Ternary Operator:
+            Ternary operator, or conditional operator, is used to assign a value to a variable based on some conditions.
+                let variableName = (condition) ? value1 : value2;
+        6. Assignment Operators:
+            Assignment operator (= += -= *= /= %= **=) is used to assign a value to a variable.
+            Full reference: https://www.w3schools.com/js/js_assignment.asp
+        7. Type Operator:
             TypeOf operator (typeof) is used to return the data type of a variable or an expression.
                 typeof a number returns number
                 typeof a string returns string
@@ -97,13 +103,8 @@ GENERAL SYNTAX:
                 typeof an undefined returns undefined
                 typeof a NaN returns number
             Full reference: https://www.w3schools.com/js/js_type_conversion.asp
-        5. Bitwise Operators:
+        8. Bitwise Operators:
             Full reference: https://www.w3schools.com/js/js_bitwise.asp
-        6. Assignment Operators:
-            Assignment operator (= += -= *= /= %= **=) is used to assign a value to a variable.
-            Full reference: https://www.w3schools.com/js/js_assignment.asp
-        7. Unary Operator:
-            Unary operator (+) is used to convert another date type to a number.
     IV. Values & Data Types:
         JavaScript data types are dynamic because the same variable can hold different data types.
         1. Primitive Data Types:
