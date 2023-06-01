@@ -72,9 +72,10 @@ GENERAL SYNTAX:
                         The exponentiation operation x**y produces the same result as the method Math.pow(x,y).
                         The operator precedence in JavaScript arithmetic is the same as in school mathematics.
             Full reference: https://www.w3schools.com/js/js_arithmetic.asp
-        2. String Operator:
-            Concatenation operator (+) is used to concatenate strings.
-            If the operation is performed between a number and a string, it will return a string.
+        2. Concatenation Operator:
+            Concatenation operator (+) is used to concatenate strings or strings and other data types.
+            If the operation is performed between a string and another data type, it will always return a string.
+            But if other arithmetic operators like substraction- multiplication* division/ modulus% increment++ decrement-- exponentiation** are used on numeric strings, it will implicitly convert the strings to numbers and return a number. 
             SIDE NOTE:
                         The computer evaluates expressions from left to right until it returns the final string.
         3. Comparison, Logical, and Conditional Operators:
@@ -140,7 +141,10 @@ GENERAL SYNTAX:
             If a variable is assigned with a value and isn't declared with any keyword, it is defined as "undeclared" and will automatically have a global scope.
         6. No Value:
             If a variable is declared with a keyword but isn't assigned with a value, both of its value and data type will be "undefined".
-    V. Scope:
+    V. Conversion:
+        1. Implicit Conversion:
+        2. Explicit Conversion:
+    VI. Scope:
         Scope determines the accessibility, or visibility, of variables, objects, functions from different parts of the program.
         1. Block Scope:
             Variables that have a block scope when declared within a code block can only be accessed from inside the code block and will be independent from outside the code block.
@@ -150,7 +154,7 @@ GENERAL SYNTAX:
         3. Global Scope:
             Variables that are declared outside any function will have a global scope.
             Variables that have a global scope can be accessed from anywhere in the program.
-    VI. Hoisting:
+    VII. Hoisting:
         Hoisting is JavaScript's default behavior of moving all declarations to the top of the scope.
         JavaScript hoists only declarations not initializations.
 
@@ -268,9 +272,13 @@ WHAT ARE JAVASCRIPT NUMBERS?
             let numberName = Number(value);
             The "value" parameter can be, for example,:
                 numeric string -> number
-                empty string"" -> 0
+                empty string ("") -> 0
+                string -> NaN
                 true -> 1
                 false -> 0
+                undefined -> NaN
+                null -> 0
+                NaN -> NaN
             If the "value" parameter can't be converted to a number, it will return NaN.
             SIDE NOTE:
                         There is a similarity between Number() method and unary operator.
@@ -284,7 +292,7 @@ WHAT ARE JAVASCRIPT NUMBERS?
                 Spaces are allowed, and only the first number is returned.
                 If the "text" parameter can't be converted to a number, it will return NaN.
             b. let numberName = parseFloat("text");
-                This returns a float.
+                This returns a decimal.
                 Spaces are allowed, and only the first number is returned.
                 If the "text" parameter can't be converted to a number, it will return NaN.
     Full list of number reference: https://www.w3schools.com/jsref/jsref_obj_number.asp
@@ -456,6 +464,9 @@ WHAT IS A JAVASCRIPT STRING?
                 number -> numeric string
                 true -> "true"
                 false -> "false"
+                undefined -> "undefined"
+                null -> "null"
+                NaN -> "NaN"
     Full list of string reference: https://www.w3schools.com/jsref/jsref_obj_string.asp
     SIDE NOTE:
                 In some programming languages, primitive values can't have properties or methods because they are not objects. On the other hand, JavaScript treats primitive values as objects when they are executed using properties or methods.
