@@ -191,14 +191,17 @@ WHAT IS A JAVASCRIPT SYMBOL?
     Symbol is a primitive data type.
     I. Constructor:
         A Symbol object is created when the Symbol(key) constructor is called.
-        The returned value is unique.
+        The returned symbol value is unique in the global symbol registry.
+        The value passed in the parameter of the constructor is the key of the Symbol object.
     II. Properties:
     III. Methods:
         1. Static Methods:
             a. to look for a symbol in the global symbol registry:
-                    const variableName = Symbol.for(targeted symbol);
-                If the targeted symbol is found, it will return the same value of the targeted symbol. If not found, a new symbol object of the targeted value will be created.
-            Symbol.keyFor()
+                    const variableName = Symbol.for(key);
+                If the symbol object with the specified key is found, it will return the same Symbol object. If not found, a new Symbol object with the specified key will be created.
+            b. to get the key of a Symbol object in the global symbol registry:
+                const variableName1 = Symbol.for(key);
+                let variableName2 = Symbol.keyFor(variableName1);
         2. Instance Methods:
             toString()
             valueOf()
@@ -780,9 +783,9 @@ WHAT IS A JAVASCRIPT ARRAY?
 WHAT IS A JAVASCRIPT OBJECT?
     Object is a non-primitive data type.
     An object may have:
-        - properties, or attributes, that represent the characteristic of the object
-        - methods, or functions, that represent the behavior/action of the object
-    Many objects can have the same properties and methods, but the property values might differ, and the methods might perform differently.
+        - properties that represent the characteristic of the object
+        - methods that represent the behavior of the object
+    An object is made of key-value pairs that represent the properties or methods of the object.
     to declare an object:
         const objectName = {name0:value0, name1:value1, name2:value2};
     I. Properties:
