@@ -109,9 +109,9 @@ GENERAL SYNTAX:
             number
             string
             boolean
-            undefined: represents a variable is initialized but isn't assigned to any value or a function returns undefined if its variable doesn't return any value
-            null: represents an absence of value
-            symbol??
+            undefined
+            null
+            symbol
             a. Data types that can have values:
                 number
                 string
@@ -132,9 +132,13 @@ GENERAL SYNTAX:
             Array
             Date
             RegEX
-        3. No Keyword:
+        3. Undefined:
+            This data type represents a variable is initialized but isn't assigned to any value or a function returns undefined if its variable doesn't return any value.
+        4. Null:
+            This data type represents an absence of value.
+        5. No Keyword:
             If a variable is assigned with a value and isn't declared with any keyword, it is defined as "undeclared" and will automatically have a global scope.
-        4. No Value:
+        6. No Value:
             If a variable is declared with a keyword but isn't assigned with a value, both of its value and data type will be "undefined".
     V. Scope:
         Scope determines the accessibility, or visibility, of variables, objects, functions from different parts of the program.
@@ -182,6 +186,23 @@ WHAT IS A JAVASCRIPT FUNCTION?
                 All parameters and arguments are optional.
                 The parentheses () works as an operator that specifies the result of the function (to be returned). Without the parentheses (), the call will return the function definition.
                 A method is fundamentally a property with a function definition.
+
+WHAT IS A JAVASCRIPT SYMBOL?
+    Symbol is a primitive data type.
+    I. Constructor:
+        A Symbol object is created when the Symbol(key) constructor is called.
+        The returned value is unique.
+    II. Properties:
+    III. Methods:
+        1. Static Methods:
+            a. to look for a symbol in the global symbol registry:
+                    const variableName = Symbol.for(targeted symbol);
+                If the targeted symbol is found, it will return the same value of the targeted symbol. If not found, a new symbol object of the targeted value will be created.
+            Symbol.keyFor()
+        2. Instance Methods:
+            toString()
+            valueOf()
+            @@ToPrimitive()
 
 WHAT ARE JAVASCRIPT NUMBERS?
     Number is a primitive data type.
