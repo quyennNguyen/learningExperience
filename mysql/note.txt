@@ -84,46 +84,62 @@ WHAT IS SQL AND MYSQL?
             INSERT
             UPDATE
             DELETE
+            NOTE: SELECT is used to retrieve data from a table. The data returned is stored in a result table called ResultSet.
         3. (DCL):
             GRANT / REVOKE
         4. (TCL):
             COMMIT / ROLLBACK
-        
-        
-        
-        
-        SELECT is used to retrieve data from a table.
-        The data returned is stored in a result table called ResultSet.
-        1. Database:
+        5. Aggregate Functions:
+            COUNT
+            MAX
+            MIN
+            SUM
+            AVG
+    III. OPERATORS:
+        There are used in WHERE clause.
+        = > < >= <= != <> 
+        BETWEEN LIKE IN
+        AND OR NOT
+    IV. SQL ALIAS:
+        Alias is a shorthand for a table or a column name.
+        Using aliases reduces the amount of typing required to enter a query and makes complex queries easier to read.
+        It is useful with JOINs and aggregate functions.
+        It only exists for the duration of the query.
+    III. COMMON COMMANDS:
+        1. For Databases:
             SHOW DATABASES;
             CREATE DATABASE dbname_db;
             USE dbname_db;
-        2. Table:
+        2. For Tables:
             SHOW TABLES;
-            CREATE TABLE tbname( … );
+            CREATE TABLE tbname(name datatype pairs separated by commas); 
+            CREATE TABLE tbname(columnname1 DATATYPE, columnname2 DATATYPE, columnname3 DATATYPE);
             DESCRIBE tbname;
             ALTER TABLE tbname RENAME TABLE oldname TO newname;
             DROP TABLE tbname;
+        3. For Records:
+            SELECT specific columns separated by commas FROM tbname WHERE (multiple conditions separated by AND/OR);
             SELECT * FROM tbname;
-            SELECT what FROM what WHERE condition;
-            SELECT multiple column separated by commas FROM what WHERE (multiple conditions separated by AND/OR);
-            SELECT DISTINT what FROM what;
-            SELECT what FROM what ORDER by what; (ascending order)
-            SELECT what FROM what ORDER by what DESC; (descending order)
-            SELECT what FROM what WHERE what IN( … );
-            SELECT what FROM what WHERE what BETWEEN what AND what;
-            SELECT what FROM what WHERE what LIKE ‘pattern’; (EX: ‘%A%’)
-            SELECT what FROM what WHERE what LIMIT howmuch;
-        3. Row:
-            INSERT INTO tbname VALUES( …);
+            SELECT DISTINT what FROM tbname;
+            SELECT what FROM tbname ORDER by what; (ascending order)
+            SELECT what FROM tbname ORDER by what DESC; (descending order)
+            SELECT what FROM tbname WHERE condition;
+            SELECT what FROM tbname WHERE what IN( … );
+            SELECT what FROM tbname WHERE what BETWEEN what AND what;
+            SELECT what FROM tbname WHERE what LIKE ‘pattern’; (EX: ‘%A%’)
+            SELECT what FROM tbname WHERE what LIMIT howmuch;
+            INSERT INTO tbname VALUES(values for each column separated by commas);
+            INSERT INTO tbname(specific columns separated by commas) VALUES(values for each column separated by commas);
             UPDATE tbname SET what=newvalue WHERE condition;
             DELETE FROM tbname WHERE condition;
-        4. Column:
-            ALTER TABLE tbname ADD what type;
-            ALTER TABLE tbname MODIFY what newtype;
+            GROUP BY
+            HAVING
+        4. For Columns:
+            ALTER TABLE tbname ADD what datatype;
+            ALTER TABLE tbname MODIFY what newdatatype;
+            ALTER TABLE tbname CHANGE oldname newname datatype;
             ALTER TABLE tbname RENAME COLUMN oldname TO newname;
             ALTER TABLE tbname DROP what;
-           
 WHAT IS JDBC?
     API, stands for Application Programming Interface, is a tool that connects different software together.
     JDBC, stands for Java Database Connectivity, is a Java API that allows Java to access the DBMS.
