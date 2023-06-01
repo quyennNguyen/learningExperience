@@ -269,7 +269,9 @@ WHAT ARE JAVASCRIPT NUMBERS?
             let booleanName = isNaN(value);
     VII. JavaScript Global Methods (that returns numbers):
         1. to convert another data type to a number:
-            let numberName = Number(value);
+                let numberName = Number(value);
+            or
+                let numberName = + value;
             The "value" parameter can be, for example,:
                 numeric string -> number
                 empty string ("") -> 0
@@ -280,12 +282,6 @@ WHAT ARE JAVASCRIPT NUMBERS?
                 null -> 0
                 NaN -> NaN
             If the "value" parameter can't be converted to a number, it will return NaN.
-            SIDE NOTE:
-                        There is a similarity between Number() method and unary operator.
-                            Number() method:
-                                let numberName = Number(value);
-                            Unary operator:
-                                let numberName = + value;
         2. to parse a string to a number:
             a. let numberName = parseInt("text");
                 This returns an integer.
@@ -460,6 +456,8 @@ WHAT IS A JAVASCRIPT STRING?
     VII. JavaScript Global Methods (that returns strings):
         to convert another data type to a string:
             let stringName = String(value);
+        or
+            let stringName = (value).toString();
         The "value" parameter can be, for example,:
                 number -> numeric string
                 true -> "true"
@@ -488,6 +486,17 @@ WHAT ARE JAVASCRIPT BOOLEANS?
             let booleanName = Boolean(variable/expression);
         or in a simplier way:
             let booleanName = variable/expression;
+    III. JavaScript Global Methods (that returns boolean):
+        to convert another data type to a boolean:
+            let booleanName = Boolean(value);
+        The "value" parameter can be, for example,:
+                number (not 0) -> true
+                0 -> false
+                string (including " ") -> true
+                empty string "" -> false
+                undefined -> false
+                null -> false
+                NaN -> false
     Full list of boolean reference: https://www.w3schools.com/jsref/jsref_obj_boolean.asp
     SIDE NOTE:
                 In some programming languages, primitive values can't have properties or methods because they are not objects. On the other hand, JavaScript treats primitive values as objects when they are executed using properties or methods.
