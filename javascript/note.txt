@@ -227,7 +227,7 @@ WHAT IS A JAVASCRIPT FUNCTION?
                 An argument is the value passed to, or received by, the function when the function is called/invoked/run.
                 All parameters and arguments are optional.
                 The parentheses () works as an operator that specifies the result of the function (to be returned). Without the parentheses (), the call will return the function definition.
-                A method is fundamentally a property with a function definition.
+                A method is fundamentally a property of an object with a function definition. In other words, a method is a function that belongs to an object.
 
 WHAT IS A JAVASCRIPT SYMBOL?
     Symbol is a primitive data type.
@@ -1193,16 +1193,15 @@ WHAT ARE JAVASCRIPT CONDITIONAL STATEMENTS?
         The "default" statement specified an action to be executed if no matching cases is found.
         If multiple cases match the evaluation, the first occurence will be executed.
         If no matching cases and no "default" are found, the program will continue to the code after the switch block. 
-    SIDE NOTE:
-                There is a similarity between if-else statement and conditional/ternary operator:
-                    if-else statement:
-                        if (condition) {
-                            action to be executed if condition is true;
-                        } else {
-                            action to be executed if condition is false;
-                        }
-                    conditional/ternary operator:
-                        let variableName = (condition) ? value1 : value2;
+    V. Ternary Statement:
+        Instead of using if-else statement:
+            if (condition) {
+                action to be executed if condition is true;
+            } else {
+                action to be executed if condition is false;
+            }
+        Conditional/Ternary statement acts as a shorthand:
+            let variableName = (condition) ? value1 : value2;
 
 WHAT ARE JAVASCRIPT LOOPS?
     Loops are used to iterate over iterable objects to execute a code block, with a different value after every iteration.
