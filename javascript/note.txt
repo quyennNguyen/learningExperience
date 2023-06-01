@@ -1,17 +1,15 @@
 WHAT IS JAVASCRIPT?
-    JavaScript is the default scripting language in HTML and of the key programming languages of the Web. 
-    JavaScript is a dynamically typed language.
+    JavaScript is the default scripting language in HTML and of the key programming languages of the Web.
     While HTML defines the content of the Web page and CSS specifies the layout of the Web page, JavaScript programs the behavior of the Web page.
     File extension: .js
 
 HOW TO ADD JAVASCRIPT TO HTML?
-    There are two ways to place JavaScript code, or script,:
-        1. Within the HTML page:
-            Script can be specified between <script> tags, that are placed either at the end of <head> or at the end of <body>.
-        2. In an external file:
-            There are many advantages of having script in a separate file.
-            To implement the external script, in the src attribute of the <script> tag of the HTML page, place the reference/path of the external script file.
-            JavaScript files have the file extension .js
+    1. Within the HTML page:
+        Script can be specified between <script> tags, that are placed either at the end of <head> or at the end of <body>.
+    2. In an external file:
+        There are many advantages of having script in a separate file.
+        To implement the external script, in the src attribute of the <script> tag of the HTML page, place the reference/path of the external script file.
+        JavaScript files have the file extension .js
     SIDE NOTE:
                 Several <script> tags can be used to add several script files to one HTML page.
 
@@ -29,7 +27,7 @@ WHAT IS A JAVASCRIPT PROGRAM?
         literals
         variables
 
-WHAT IS A JAVASCRIPT VARIABLE?
+GENERAL SYNTAX:
     A JavaScript expression is a combination of variables, operators, and values, that computes to a value. The computation is called an evaluation.
     In a programming language, variables are containers for storing data values.
     I. Keywords:
@@ -58,8 +56,6 @@ WHAT IS A JAVASCRIPT VARIABLE?
             Variables defined with "const" have to be declared and initialized all at once.
             Variables defined with "const" can't be redeclared and reassigned.
             Keyword "const" doesn't define a constant value but defines a constant reference to a value, as for an array, an object, a function, a RegExp. Therefore, in a sense, the value can't be changed.
-        4. no keyword:
-            If a variable is assigned with a value and isn't declared with any keyword, it is defined as undeclared and will automatically have a global scope.
     II. Identifiers:
         Identifiers are used to name, or to create a reference for, variables and functions.
         General rule for JavaScript identifiers:
@@ -109,31 +105,37 @@ WHAT IS A JAVASCRIPT VARIABLE?
             Unary operator (+) is used to convert another date type to a number.
     IV. Values & Data Types:
         JavaScript data types are dynamic because the same variable can hold different data types.
-        There are five data types that can contain values:
+        1. Primitive Data Types:
             number
             string
             boolean
-            object
-            function
-        There are two data types that can't contain values:
-            null
-            undefined
-        There are six types of object:
+            undefined: represents a variable is initialized but isn't assigned to any value or a function returns undefined if its variable doesn't return any value
+            null: represents an absence of value
+            symbol??
+            a. Data types that can have values:
+                number
+                string
+                boolean
+                object
+                function
+            b. Data types that don't have values:
+                undefined
+                null
+            c. Complex data types:
+                object
+                function                
+        2. Object Data Types:
             Object
-            Date
             Number
             String
             Boolean
             Array
-        There are four primitive data type:
-            number
-            string
-            boolean
-            undefined
-        There are two complex data types:
-            function
-            object
-        If a variable is declared without assigned with a value, both of its value and data type will be "undefined".
+            Date
+            RegEX
+        3. No Keyword:
+            If a variable is assigned with a value and isn't declared with any keyword, it is defined as "undeclared" and will automatically have a global scope.
+        4. No Value:
+            If a variable is declared with a keyword but isn't assigned with a value, both of its value and data type will be "undefined".
     V. Scope:
         Scope determines the accessibility, or visibility, of variables, objects, functions from different parts of the program.
         1. Block Scope:
