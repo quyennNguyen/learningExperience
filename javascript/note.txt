@@ -274,9 +274,10 @@ WHAT ARE JAVASCRIPT NUMBERS?
             or
                 let numberName = + value;
             The "value" parameter can be, for example,:
-                numeric string -> number
-                empty string ("") -> 0
                 string -> NaN
+                numeric string -> number
+                string " " -> 0
+                empty string ("") -> 0
                 true -> 1
                 false -> 0
                 undefined -> NaN
@@ -460,12 +461,12 @@ WHAT IS A JAVASCRIPT STRING?
         or
             let stringName = (value).toString();
         The "value" parameter can be, for example,:
-                number -> numeric string
-                true -> "true"
-                false -> "false"
-                undefined -> "undefined"
-                null -> "null"
-                NaN -> "NaN"
+            number -> numeric string
+            true -> "true"
+            false -> "false"
+            undefined -> "undefined"
+            null -> "null"
+            NaN -> "NaN"
     Full list of string reference: https://www.w3schools.com/jsref/jsref_obj_string.asp
     SIDE NOTE:
                 In some programming languages, primitive values can't have properties or methods because they are not objects. On the other hand, JavaScript treats primitive values as objects when they are executed using properties or methods.
@@ -474,30 +475,19 @@ WHAT IS A JAVASCRIPT STRING?
 WHAT ARE JAVASCRIPT BOOLEANS?
     Boolean is a primitive data type.
     A boolean represents one of two values: true or false / yes or no / on or off.
-    I. Properties:
-        Everything with a value is true.
-        Everything without a value is false.
-            Boolean(0) = false
-            Boolean("") = false
-            Boolean(undefined) = false
-            Boolean(null) = false
-            Boolean(NaN) = false
-    II. Methods:
-        to determine if a variable or an expression is true or false:
-            let booleanName = Boolean(variable/expression);
-        or in a simplier way:
-            let booleanName = variable/expression;
-    III. JavaScript Global Methods (that returns boolean):
+    Everything with a value is true.
+    Everything without a value is false.
+    JavaScript Global Methods (that returns boolean):
         to convert another data type to a boolean:
             let booleanName = Boolean(value);
         The "value" parameter can be, for example,:
-                number (not 0) -> true
-                0 -> false
-                string (including " ") -> true
-                empty string "" -> false
-                undefined -> false
-                null -> false
-                NaN -> false
+            number (not 0) -> true
+            0 -> false
+            string (including " ") -> true
+            empty string "" -> false
+            undefined -> false
+            null -> false
+            NaN -> false
     Full list of boolean reference: https://www.w3schools.com/jsref/jsref_obj_boolean.asp
     SIDE NOTE:
                 In some programming languages, primitive values can't have properties or methods because they are not objects. On the other hand, JavaScript treats primitive values as objects when they are executed using properties or methods.
