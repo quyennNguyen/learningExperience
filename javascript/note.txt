@@ -161,7 +161,6 @@ GENERAL SYNTAX:
                     undefined -> NaN
                     null -> 0
                     NaN -> NaN
-                If the "value" parameter can't be converted to a number, it will return NaN.
             b. String:
                     let stringName = String(value);
                 or
