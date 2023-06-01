@@ -105,7 +105,7 @@ WHAT IS SQL AND MYSQL?
         Using aliases reduces the amount of typing required to enter a query and makes complex queries easier to read.
         It is useful with JOINs and aggregate functions.
         It only exists for the duration of the query.
-    III. COMMON COMMANDS:
+    IV. COMMON COMMANDS:
         1. For Databases:
             SHOW DATABASES;
             CREATE DATABASE dbname_db;
@@ -140,6 +140,7 @@ WHAT IS SQL AND MYSQL?
             ALTER TABLE tbname CHANGE oldname newname datatype;
             ALTER TABLE tbname RENAME COLUMN oldname TO newname;
             ALTER TABLE tbname DROP what;
+            
 WHAT IS JDBC?
     API, stands for Application Programming Interface, is a tool that connects different software together.
     JDBC, stands for Java Database Connectivity, is a Java API that allows Java to access the DBMS.
