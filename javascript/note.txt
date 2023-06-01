@@ -144,7 +144,45 @@ GENERAL SYNTAX:
             If a variable is declared with a keyword but isn't assigned with a value, both of its value and data type will be "undefined".
     V. Conversion:
         1. Implicit Conversion:
+            When you operate different data types together, JavaScript will implicitly convert them to return the appropriate type (if possible).
         2. Explicit Conversion:
+            This is when you want to convert from one data type to another.
+            a. Number:
+                    let numberName = Number(value);
+                or
+                    let numberName = + value;
+                The "value" parameter can be, for example,:
+                    string -> NaN
+                    numeric string -> number
+                    string " " -> 0
+                    empty string ("") -> 0
+                    true -> 1
+                    false -> 0
+                    undefined -> NaN
+                    null -> 0
+                    NaN -> NaN
+                If the "value" parameter can't be converted to a number, it will return NaN.
+            b. String:
+                    let stringName = String(value);
+                or
+                    let stringName = (value).toString();
+                The "value" parameter can be, for example,:
+                    number -> numeric string
+                    true -> "true"
+                    false -> "false"
+                    undefined -> "undefined"
+                    null -> "null"
+                    NaN -> "NaN"
+            c. Boolean:
+                    let booleanName = Boolean(value);
+                The "value" parameter can be, for example,:
+                    number (not 0) -> true
+                    0 -> false
+                    string (including " ") -> true
+                    empty string "" -> false
+                    undefined -> false
+                    null -> false
+                    NaN -> false
     VI. Scope:
         Scope determines the accessibility, or visibility, of variables, objects, functions from different parts of the program.
         1. Block Scope:
