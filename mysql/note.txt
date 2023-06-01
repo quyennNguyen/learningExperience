@@ -4,33 +4,33 @@ WHAT IS DATABASE?
     There are 2 types of DBMS used to store, retrieve, and manage data:
         1. Relational Database (RDBMS):
             a. Data Model:
-                It stores data in a relational data model that uses tables.
-                It is based on a fixed schema to define the tables and their relationaships.
+                This stores data in a relational data model that uses tables.
+                This is based on a fixed schema to define the tables and their relationaships.
                 Each table is made of rows and columns.
                 Each row represents a single record with unique key/id.
                 Each column represents a particular attribute of the record.
             b. Scalability:
-                It is less scalable, and may require more complex scaling strategies.
+                This is less scalable, and may require more complex scaling strategies.
             c. Consistency:
-                It is highly structured and provides a strong consistency.
+                This is highly structured and provides a strong consistency.
                 Data is always in a consistent state.
             d. Querying:
-                It uses SQL to query data.
+                This uses SQL to query data.
             e. Application:
-                It is well-suited for applications that require complex queries and support transactions such as financial or e-commerce systems.
+                This is well-suited for applications that require complex queries and support transactions such as financial or e-commerce systems.
             EX: MySQL, PostgreSQL, MicrosoftSQLServer, MariaDB,...
         2. NoSQL Database:
             a. Data Model:
-                It stores data in a variety of data models including key-value pairs, documents, or graphs.
-                It is not based on a fixed schema (schemaless).
+                This stores data in a variety of data models including key-value pairs, documents, or graphs.
+                This is not based on a fixed schema (schemaless).
             b. Scalability:
-                It is highly scalable and flexible, and can handle a large amount of data and traffics.
+                This is highly scalable and flexible, and can handle a large amount of data and traffics.
             c. Consistency:
-                It sacrifices consistency in favor of scalability and performance.
+                This sacrifices consistency in favor of scalability and performance.
             d. Querying:
-                It often uses its own query language or APIs.
+                This often uses its own query language or APIs.
             e. Application:
-                It is often used for large-scale web applications such as social media platforms, where data is highly distributed and the schema may evolve rapidly.
+                This is often used for large-scale web applications such as social media platforms, where data is highly distributed and the schema may evolve rapidly.
             EX: MongoDB, Firebase, Redis, Cassandra,...
 
 WHAT IS SQL AND MYSQL?
@@ -38,19 +38,62 @@ WHAT IS SQL AND MYSQL?
     SQL is not case-sensitive.
     MySQL is a type of RDMS that provides a managing user interface for operating data in a database. 
     To start MySQL from Ubuntu: mysql -h 127.0.0.1 -p -u root -p
-    Syntax:    
+    I. DATA TYPES:
+        When creating a table in a database, each column in the table is required to have a name and a data type.
+        The data types let the SQL know what type of value will be stored in the columns.
+        1. Character/String:
+            CHAR
+            VARCHAR
+            TEXT
+        2. Numeric:
+            BIT
+            TINYINT
+            SMALLINT
+            INT
+            BIGINT
+            DECIMAL
+            NUMERIC
+            FLOAT
+            REAL
+        3. Date/Time:
+            DATE
+            TIME
+            DATETIME
+            TIMESTAMP
+            YEAR
+        4. Binary:
+            BINARY
+            VARBINARY
+            IMAGE
+        5. Miscellaneous:
+            CLOB
+            BLOB
+            XML
+            JSON
+    II. FUNCTIONS:
+        1. Data Definition Language (DDL):
+            This defines and deals with database schemas and descriptions of how data should exist in the database.
+            DROP
+            RENAME
+            CREATE
+            ALTER
+            TRUNCATE
+        2. Data Manipulation Language (DML):
+            This deals with data manipulation such as storing, retrieving, updating, and deleting data in the database.
+            SELECT
+            INSERT
+            UPDATE
+            DELETE
+        3. (DCL):
+            GRANT / REVOKE
+        4. (TCL):
+            COMMIT / ROLLBACK
+        
+        
+        
+        
         SELECT is used to retrieve data from a table.
         The data returned is stored in a result table called ResultSet.
-        DAO
-        DDL -> CREATE / ALTER
-        DML -> SELECT / INSERT / UPDATE
-        DCL -> GRANT / REVOKE
-        TCL -> COMMIT / ROLLBACK
-        1. Data Types:
-            - VARCHAR(length) (length is variable)
-            - CHAR(length) (length is fixed)
-            - INT
-            - DECIMAL
         1. Database:
             SHOW DATABASES;
             CREATE DATABASE dbname_db;
