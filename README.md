@@ -1,24 +1,15 @@
 # WHERE TO START?
 
+#### Being a developer means you should be good at googling and problem-solving.
 #### When you don't know where to start, go with a simple search like "How to Become a Software Developer?".
-#### Here are some pretty inspiring videos I started with:
-* https://youtu.be/V1PdbnuPMi8
-* https://youtu.be/hOqOj85jvn0
-* https://youtu.be/s9iPo9YMU70
-* https://youtu.be/To8hKb112Aw
 
 ***
 
 # WHAT TO LEARN?
 
-#### Having a clear study plan is very crucial. Depending on your career choice, the study plan might vary. As for me, I want to become a Full Stack Developer.
-#### Generally, there are two main categories:
+#### Having a clear study plan is very crucial. Depending on your career choice, the study plan might vary.
+#### As for my study plan will focus on Full Stack Developement.
 
-## _Intro to Computer Science:_
-* https://github.com/quyennNguyen/learningExperience/files/8527263/Computer.Science.Illuminated.pdf
-* Harvard's Free CS Course: https://www.edx.org/cs50
-
-## _Use Computer to Solve Real-World Problems:_
 ### 1. FRONT END / CLIENT SIDE:
    * HTML
    * CSS
@@ -27,17 +18,21 @@
    * JavaScript
    * Javascript Framework/Library: React
 ### 2. BACK END / SERVER SIDE:
-   * JavaScript / Java / Python / PHP
-   * Framework: NodeJs (JavaScript) / Django (Python)
-   * Database: MongoDB (No SQL) / MySQL (SQL)
-### 3. DATA STRUCTURES & ALGORITHMS
-### 4. TIME AND SPACE COMPLEXITY
-### 5. VERSION CONTROL SYSTEM:
-   * Git / Github
+   * Java / Python / JavaScript
+   * Framework: Springboot (Java) / Django (Python) / NodeJs (JavaScript)
+### 3. DATABASES:
+   * Database: MySQL (SQL) / MongoDB (No SQL)
+### 4. DATA STRUCTURES & ALGORITHMS
+### 5. TIME AND SPACE COMPLEXITY
+### 6. VERSION CONTROL SYSTEM
 
 ***
 
 # RESOURCES
+
+#### INTRODUCTION:
+* https://github.com/quyennNguyen/learningExperience/files/8527263/Computer.Science.Illuminated.pdf
+* Harvard's Free CS Course: https://www.edx.org/cs50
 
 #### HTML:
 * https://youtu.be/kUMe1FH4CHE
@@ -92,18 +87,4 @@
 
 ***
 
-#### P/s: This journal might change along with my learning progress.
-
-***
-
-# OFF TOPICS
-
-## What is ChatGPT?
-#### ChatGPT is an advanced-language chatbot that can read, understand, and generate texts which includes programming questions.
-#### ChatGPT uses an AI software called Language Model which can understand and generate languages. Once the model has learned a language, it can be used to generate texts in that language.
-#### There are different types of ChatGPT for different purposes:
-* GPT3: is used to generate natural languages
-* Codex: is used to generate programming languages/codes
-#### Drawback: It might provide incorrect, harmful, or biased information.
-
-***
+# This journal changes along with my learning progress.
