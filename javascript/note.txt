@@ -833,12 +833,14 @@ WHAT IS A JAVASCRIPT ARRAY?
 WHAT IS A JAVASCRIPT OBJECT?
     Object is a non-primitive data type.
     An object may have:
+        - an unique id/name
         - properties that represent the characteristic of the object
         - methods that represent the behavior of the object
-    An object is made of name-value pairs that represent the properties or methods of the object.
+    An object is made of key-value pairs that represent the properties or methods of the object.
     to declare an object:
-        const objectName = {name0:value0, name1:value1, name2:value2};
-    If the name consists of 1 word, it doesn't require any quotes around it. If it consists of more than 1 word, it needs to be wrapped around with a pair of single quotes ('') or double quotes("").
+        const objectName = {key0:value0, key1:value1, key2:value2};
+    If the key consists of 1 word, it doesn't require any quotes around it. If it consists of more than 1 word, it needs to be wrapped around with a pair of single quotes ('') or double quotes("").
+    In JavaScript, a global object always exists. Every object created in a JavaScript program inherits some properties and methods from the global object. One of the inherited properties is the Prototype object which consists of its own properties and methods.
     I. Properties:
         1. to define an object property:
             propertyName:propertyValue
