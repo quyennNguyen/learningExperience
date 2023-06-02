@@ -1422,7 +1422,7 @@ WHAT IS DOM?
             This is a standard object model and programming interface for HTML documents.
     I. HTML DOM:
         1. HTML DOM Navigation:
-            When a Web page is loaded, the Web browser creates a Document Object Model of the HTML page, where the HTML DOM is constructed as a tree of Objects.
+            When a Web page is loaded, the Web browser creates a Document Object Model of the HTML page, where the HTML DOM is constructed as a tree of Objects and Document is the parent object of all objects.
             a. HTML DOM Navigation as Object Tree:
                 All the HTML elements are objects.
                 The programming interface is the properties and methods of each object.
