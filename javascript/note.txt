@@ -92,6 +92,10 @@ GENERAL SYNTAX:
                 let variableName = (condition) ? value1 : value2;
         6. Assignment Operators:
             Assignment operator (= += -= *= /= %= **=) is used to assign a value to a variable.
+            NOTE:
+                    The difference between == and ===:
+                        == only checks the content
+                        === checks the content and the data types
             Full reference: https://www.w3schools.com/js/js_assignment.asp
         7. Type Operator:
             TypeOf operator (typeof) is used to return the data type of a variable or an expression.
@@ -612,6 +616,7 @@ WHAT IS A JAVASCRIPT ARRAY?
                 The "whereToAdd" parameter specifies the index where new elements should be added. It can't be negative.
                 The "howManyRemoved" parameter specifies how many elements should be removed. It can't be negative.
                 The "value" parameters are optional. If the "value" parameters are omitted, no element is added. If the "value" parameters are specified, more than one element can be added.
+                If only one parameter is specified, this will remove all elements starting from the specified index and return an array of removed elements.
         5. to extract a part of an array:
             const arrayName2 = arrayName1.slice(start, end);
             If the "start" and "end" parameters are positive, the extraction counts from the beginning of the array, and the "end" position is not included.
@@ -841,6 +846,7 @@ WHAT IS A JAVASCRIPT OBJECT?
         const objectName = {key0:value0, key1:value1, key2:value2};
     If the key consists of 1 word, it doesn't require any quotes around it. If it consists of more than 1 word, it needs to be wrapped around with a pair of single quotes ('') or double quotes("").
     In JavaScript, a global object always exists. Every object created in a JavaScript program inherits some properties and methods from the global object. One of the inherited properties is the Prototype object which consists of its own properties and methods.
+    In JavaScript, you can have nested objects where one object can be inside another object.
     I. Properties:
         1. to define an object property:
             propertyName:propertyValue
@@ -850,13 +856,27 @@ WHAT IS A JAVASCRIPT OBJECT?
             2. with bracket notation:
                 objectName["propertyName"]
         3. to add a new property:
-            objectName.propertyName = propertyValue;
+                objectName.propertyName = propertyValue;
+            or
+                objectName["propertyName"] = propertyValue;
+        4. to delete an object property with "delete" operator:
+                delete objectName.propertyName;
+            or
+                delete objectName["propertyName"];
     II. Methods:
         1. to define an object method:
-            methodName:function() {
-                action to be executed;
-            }
-        2. to access an object method:
+                methodName:function() {
+                    action to be executed;
+                }
+            or
+                methodName () {
+                    action to be executed;
+                }
+            or
+                methodName: () => {
+                    action to be executed;
+                }
+        2. to call an object method:
             objectName.methodName()
     III. Date Object:
         The Date object lets you work with date and time.
