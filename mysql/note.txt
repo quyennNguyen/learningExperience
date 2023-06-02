@@ -155,3 +155,48 @@ WHAT IS JDBC?
         - Add JARS or Directories
         - Attach Files and Directories
         - Look for mysql-connector-j-8.0.33.jar
+    To set up the connection between Java application and database:
+        1. Load JDBC Driver:
+            try {
+                Class.forName("com.mysql.cj.jdbc.Driver");
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+        2. Establish the connection with the database:
+            String URL = "jdbc:mysql://localhost:xxxx/nameOfYourDatabase_db";
+            String USERNAME = "yourDatabaseUsername";
+            String PASSWORD = "yourDatabasePassword";
+            try {
+                Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        3. Execute SQL statements:
+            try {
+                    Statement statement = connection.createStatement();
+                    ResultSet result = statement.executeQuery("SQL commands");
+                    while (result.next()) {
+                        // action
+                    }
+                or
+                    Statement statement = connection.prepareStatement("SQL commands");
+                    // action
+                    statement.executeUpdate();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }       
+        4. Close resources:
+            result.close();
+            statement.close();
+            connection.close();
+        
+
+
+What is the difference between 3 types of Statement in JDBC?
+There are 3 types of Statement interfaces:
+Statement (grandparent)
+PreapredStatement (parent)
+CallableStatement (child)
+
+What is SQL injection attack? 
+What is schema?
