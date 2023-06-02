@@ -158,23 +158,27 @@ WHAT IS JDBC?
             3. Network Protocol Driver
             4. JDBC Driver for Database Middleware
             5. JDBC Driver for Database Server
+        JDBC drivers are usually provided by the database vendor and need to be included in your project's classpath.
         To add JDBC Driver to a Java application from IntelliJ:
-            - File
-            - Project Structure
-            - Project Settings
-            - Modules
-            - Dependencies
-            - Add JARS or Directories
-            - Attach Files and Directories
-            - Look for mysql-connector-j-8.0.33.jar
+            1. File
+            2. Project Structure
+            3. Project Settings
+            4. Modules
+            5. Dependencies
+            6. Add JARS or Directories
+            7. Attach Files and Directories
+            8. Look for mysql-connector-j-8.0.33.jar
     II. Connection:
         1. Load the JDBC Driver:
+            import java.sql.SQLException;
             try {
                 Class.forName("com.mysql.cj.jdbc.Driver");
             } catch (ClassNotFoundException e) {
                 throw new RuntimeException(e);
             }
         2. Establish the connection with the database:
+            import java.sql.Connection;
+            import java.sql.DriverManager;
             String URL = "jdbc:mysql://localhost:xxxx/nameOfYourDatabase_db";
             String USERNAME = "yourDatabaseUsername";
             String PASSWORD = "yourDatabasePassword";
@@ -184,28 +188,38 @@ WHAT IS JDBC?
                 throw new RuntimeException(e);
             }
         3. Create statements, execute SQL queries, and handle results:
+            import java.sql.Statement;
+            import java.sql.ResultSet;
             try {
-                    Statement statement = connection.createStatement();
-                    ResultSet result = statement.executeQuery("SQL commands");
-                or
-                    Statement statement = connection.prepareStatement("SQL commands");
-                    
-                    statement.executeQuery(); // to retrieve query results
-                    statement.executeUpdate();
-                    
-                    There are 3 types of Statement interfaces:
-                        Statement (grandparent)
-                        PreapredStatement (parent)
-                        CallableStatement (child)
+                Statement statement = connection.createStatement();
+                PreparedStatement statement = connection.prepareStatement("SQL command");
+
+                statement.executeQuery("SQL commands"); // for SELECT queries
+                statement.executeUpdate(); // for INSERT, UPDATE, DELETE queries
+
+                There are 3 types of Statement interfaces in JDBC:
+                    - Statement (grandparent)
+                    - PreapredStatement (parent)
+                    - CallableStatement (child)
+
+                ResultSet result = statement.executeQuery("SQL command"); // the results returned from the executeQuery() methods are objects of type ResultSet.                       
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }       
-        4. Close resources:
+        4. Close database resources:
             result.close();
             statement.close();
             connection.close();
-        
-
+            This is to free up system resources and avoid potential memory leaks.
+    III. Batch Update:
+        This refers to a feature that allows you to execute multiple SQL statements as a batch in a single round-trip to the database, instead of executing them one by one.
+        This can improve performance and reduce the overhead of database communication.
+        to create SQL statements:
+            statement.addBatch("SQL command");
+        to execute the SQL statements:
+            int[] updateCounts = statement.executeBatch(); // this returns an array of update counts, which represent the number of rows affected by each statement.
+        to clear the batch and restart with new SQL statements:
+            clearBatch();
 What is SQL injection attack? 
 What is schema?
 What is query?
