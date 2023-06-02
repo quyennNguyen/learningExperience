@@ -140,23 +140,35 @@ WHAT IS SQL AND MYSQL?
             ALTER TABLE tbname CHANGE oldname newname datatype;
             ALTER TABLE tbname RENAME COLUMN oldname TO newname;
             ALTER TABLE tbname DROP what;
-            
+
+WHAT IS AN API?
+    API, stands for Application Programming Interface, is a set of rules, protocols, and conventions that define how software components interact with each other.
+    It provides a standardized way for different software components or systems to communicate and exchange data, to work together seamlessly.
+
 WHAT IS JDBC?
-    API, stands for Application Programming Interface, is a tool that connects different software together.
     JDBC, stands for Java Database Connectivity, is a Java API that provides the standard mechanism for Java applications to interact with relational databases.
     It allows you to build database-driven aplications, where you can establish connections to the databases, execute SQL statements, store, retrieve, and manipulate data dynamically, and manage database transactions within Java code.
-    It follows a client-server architecture where Java applications act as clients coomuniccating with the database server to perform database operations.
-    To add JDBC Driver to a Java application from IntelliJ:
-        - File
-        - Project Structure
-        - Project Settings
-        - Modules
-        - Dependencies
-        - Add JARS or Directories
-        - Attach Files and Directories
-        - Look for mysql-connector-j-8.0.33.jar
-    To set up the connection between Java application and database:
-        1. Load JDBC Driver:
+    It follows a client-server architecture where Java applications act as clients communicating with the database server to perform database operations.
+    It provides a set of interfaces and classes that defines the necessary methods to interact with the databases.
+    I. Drivers:
+        JDBC drivers are software components that allow Java applications to interact with different databases as to establish connections, execute SQL statements, retrieve and manipulate data, and manage transactions in databases.
+        There are different types of JDBC drivers:
+            1. JDBC-ODBC Bridge Driver
+            2. Native-API Driver
+            3. Network Protocol Driver
+            4. JDBC Driver for Database Middleware
+            5. JDBC Driver for Database Server
+        To add JDBC Driver to a Java application from IntelliJ:
+            - File
+            - Project Structure
+            - Project Settings
+            - Modules
+            - Dependencies
+            - Add JARS or Directories
+            - Attach Files and Directories
+            - Look for mysql-connector-j-8.0.33.jar
+    II. Connection:
+        1. Load the JDBC Driver:
             try {
                 Class.forName("com.mysql.cj.jdbc.Driver");
             } catch (ClassNotFoundException e) {
@@ -171,14 +183,14 @@ WHAT IS JDBC?
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
-        3. Execute SQL statements:
+        3. Create statements, execute SQL queries, and handle results:
             try {
                     Statement statement = connection.createStatement();
                     ResultSet result = statement.executeQuery("SQL commands");
                 or
                     Statement statement = connection.prepareStatement("SQL commands");
                     
-                    statement.executeQuery();
+                    statement.executeQuery(); // to retrieve query results
                     statement.executeUpdate();
                     
                     There are 3 types of Statement interfaces:
@@ -196,3 +208,4 @@ WHAT IS JDBC?
 
 What is SQL injection attack? 
 What is schema?
+What is query?
