@@ -175,13 +175,16 @@ WHAT IS JDBC?
             try {
                     Statement statement = connection.createStatement();
                     ResultSet result = statement.executeQuery("SQL commands");
-                    while (result.next()) {
-                        // action
-                    }
                 or
                     Statement statement = connection.prepareStatement("SQL commands");
-                    // action
+                    
+                    statement.executeQuery();
                     statement.executeUpdate();
+                    
+                    There are 3 types of Statement interfaces:
+                        Statement (grandparent)
+                        PreapredStatement (parent)
+                        CallableStatement (child)
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }       
@@ -190,13 +193,6 @@ WHAT IS JDBC?
             statement.close();
             connection.close();
         
-
-
-What is the difference between 3 types of Statement in JDBC?
-There are 3 types of Statement interfaces:
-Statement (grandparent)
-PreapredStatement (parent)
-CallableStatement (child)
 
 What is SQL injection attack? 
 What is schema?
