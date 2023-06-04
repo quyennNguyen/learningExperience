@@ -4,9 +4,8 @@ WHAT IS VERSION CONTROL SYSTEM?
 
 TERMINOLOGY:
     GitHub: is the website that hosts your Git repositories online.
-    CLI: is Command Line Interface.
-    Terminal, or Command Line,: is the interface for text commands.
-    Code Editor: is the word processor, or text editor, for writing code.
+    CLI: stands for Command Line Interface, is the text interface for a computer's operating system.
+    Code Editor: is the text editor for writing code.
     repository: is your project, or the folder where your project is kept. repo: is short for repository
     directory: is folder, in general.
 
@@ -32,24 +31,38 @@ WHAT IS SSH?
         3. Test SSH Connection: ssh -T git@github.com
 
 GENERAL CLI COMMASNDS:
-    pwd: to print the full path of the working directory
-    cd, or cd ~: to get to home directory
-    cd <directory's name>: to change from the current directory to the specified directory
-    cd ..: to get to one level above the current directory
-    ls: to list all available files and folders in the current directory
-    la, or ls -a,: to list all files and folders in the current directory, including hidden ones
-    mkdir <folder's name>: to create a folder in the current directory
-    rm <file's name> or <folder's name>: to remove a file or a folder in the current directory
-    There are multiple ways to create a file in the current directory:
-        1. touch <file's name>
-        2. cat > <file's name>
-            type content here
-            press Ctrl+C to finish
-        3. echo "content goes here" > <file's name>: this is to create a new file or override an existing file
-            echo "content goes here" >> <file's name>: this is to create a new file or continue an existing file
-    more <file's name>: to read a file
+    1. Windows:
+        cd: to print the current directory path
+        cd <directory path>: to change directory to the specified directory
+        dir: to list all files and directories in the current directory
+        mkdir <folder's name>: to create a new folder in the current directory 
+        echo "content goes here" > <file's name>: to create a new file or override an existing file in the current directory
+        echo "content goes here" >> <file's name>: to create a new file or continue an existing file in the current directory
+        type <file's name>: to display the content of an existing file in the current directory
+        find "search term" <file's name>: to search for a string in an existing file in the current directory
+        ren <old file's name> <new file's name>: to rename an existing file in the current directory
+        del <file's name>: to delete an existing file in the current directory
+        rmdir <folder's name>: to remove an existing folder and its content in the current directory
+        copy <file's name> <directory path>: to copy an existing file from the current directory to another directory
+    2. Ubuntu:
+        pwd: to print the full path of the working directory
+        cd, or cd ~: to get to home directory
+        cd <directory path>: to change directory to the specified directory
+        cd ..: to get to one level above the current directory
+        ls: to list all files and folders in the current directory
+        la, or ls -a,: to list all files and folders in the current directory, including hidden ones
+        mkdir <folder's name>: to create a new folder in the current directory
+        There are multiple ways to create a new file in the current directory:
+            1. touch <file's name>
+            2. cat > <file's name>
+                type content here
+                press Ctrl+C to finish
+            3. echo "content goes here" > <file's name>: this is to create a new file or override an existing file
+                echo "content goes here" >> <file's name>: this is to create a new file or continue an existing file
+        more <file's name>: to display the content of an existing file in the current directory
+        rm <file's name> or <folder's name>: to remove an existing file or folder in the current directory
     clear: to clear the CLI window
-    press Q key: to exit the list
+    press Q key: to exit a list
 
 GIT COMMANDS:
     I. COMMANDS FOR GENERAL GIT WORKFLOW:
