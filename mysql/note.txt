@@ -4,11 +4,11 @@ WHAT IS DATABASE?
     There are 2 types of DBMS used to store, retrieve, and manage data:
         1. Relational Database (RDBMS):
             a. Data Model:
-                This stores data in a relational data model that uses tables.
+                This stores data in a relational data model that uses tables, each of which is a collection of related data entries.
                 This is based on a fixed schema to define the tables and their relationaships.
                 Each table is made of rows and columns.
-                Each row represents a single record with unique key/id.
-                Each column represents a particular attribute of the record.
+                Each row represents an individual record/entry with unique key/id in the table.
+                Each column represents a particular attribute/specific information of the record/entries in the table.
             b. Scalability:
                 This is less scalable, and may require more complex scaling strategies.
             c. Consistency:
