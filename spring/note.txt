@@ -1,1 +1,4 @@
-
+WHAT IS SPRING?
+  Spring is an open-source Java framework that provides a comprehensive set of features for building enterprise-grade Java applications.
+  It is a light-weight alternative to Java Enterprise Edition (JavaEE) that focuses on simplicity, modularity, and extensibility.
+  
