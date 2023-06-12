@@ -17,6 +17,71 @@ WHAT IS SPRING?
     9. Testability:
       Spring's modular and decoupled architecture makes it highly testable, allowing for easy unit testing and integration testing of individual components or entire applications.
       
+HOW TO SET UP A SPRING PROJECT?
+  1. Use Spring Initializr to set up the project.
+  2. Recommended Dependencies: Spring Web, Spring Data JPA, Spring Boot Dev Tools, MySQL Driver
+  3. Configure "application.properties" file with database settings:
+      spring.jpa.hibernate.ddl-auto=create-drop
+      spring.datasource.url=jdbc:mysql://localhost:3306/name_db
+      spring.datasource.username=root
+      spring.datasource.password=password
+      spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+      spring.jpa.database-platform= org.hibernate.dialect.MySQLDialect
+      spring.jpa.show-sql: true
+  4. In "pom.xml" file, check if you have all necessary dependencies:
+      <dependencies>
+        <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-devtools</artifactId>
+          <scope>runtime</scope>
+          <optional>true</optional>
+        </dependency>
+        <dependency>
+          <groupId>com.mysql</groupId>
+          <artifactId>mysql-connector-j</artifactId>
+          <scope>runtime</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-test</artifactId>
+          <scope>test</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+        <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+        <dependency>
+          <groupId>io.jsonwebtoken</groupId>
+          <artifactId>jjwt-api</artifactId>
+          <version>0.11.5</version>
+        </dependency>
+        <dependency>
+          <groupId>io.jsonwebtoken</groupId>
+          <artifactId>jjwt-impl</artifactId>
+          <version>0.11.5</version>
+          <scope>runtime</scope>
+        </dependency>
+        <dependency>
+          <groupId>io.jsonwebtoken</groupId>
+          <artifactId>jjwt-jackson</artifactId> <!-- or jjwt-gson if Gson is preferred -->
+          <version>0.11.5</version>
+          <scope>runtime</scope>
+        </dependency>
+      </dependencies>
+  5. A typical Spring Boot application should consist of the following directories: entity, repository, service, controller, exception, security, jwt.
+
 WHAT IS IOC?
   IoC, stands for Inversion of Control,
   Spring IoC container manages the instantiation and lifecycle of objects, allowing for loose coupling and easier testing.
@@ -86,72 +151,49 @@ WHAT IS BEAN?
 WHAT IS AOP?
   AOP, stands for Aspect-Oriented Programming,
   It allows you to apply cross-cutting concerns, such as logging, caching, and security, to multiple components in a declarative way, improving code modularity and maintainability.
-
-HOW TO SET UP A SPRING PROJECT?
-  1. Use Spring Initializr to set up the project.
-  2. Add base dependencies: Spring Web, Spring Data JPA, Spring Boot Dev Tools, MySQL Driver
-  3. Configure "application.properties" file with database settings:
-      spring.jpa.hibernate.ddl-auto=create-drop
-      spring.datasource.url=jdbc:mysql://localhost:3306/name_db
-      spring.datasource.username=root
-      spring.datasource.password=password
-      spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
-      spring.jpa.database-platform= org.hibernate.dialect.MySQLDialect
-      spring.jpa.show-sql: true
-  4. In "pom.xml" file, check if you have all necessary dependencies:
-      <dependencies>
-        <dependency>
-          <groupId>org.springframework.boot</groupId>
-          <artifactId>spring-boot-starter-data-jpa</artifactId>
-        </dependency>
-        <dependency>
-          <groupId>org.springframework.boot</groupId>
-          <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
-          <groupId>org.springframework.boot</groupId>
-          <artifactId>spring-boot-devtools</artifactId>
-          <scope>runtime</scope>
-          <optional>true</optional>
-        </dependency>
-        <dependency>
-          <groupId>com.mysql</groupId>
-          <artifactId>mysql-connector-j</artifactId>
-          <scope>runtime</scope>
-        </dependency>
-        <dependency>
-          <groupId>org.springframework.boot</groupId>
-          <artifactId>spring-boot-starter-test</artifactId>
-          <scope>test</scope>
-        </dependency>
-        <dependency>
-          <groupId>org.springframework.boot</groupId>
-          <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>
-        <dependency>
-          <groupId>org.springframework.boot</groupId>
-          <artifactId>spring-boot-starter-validation</artifactId>
-        </dependency>
-        <dependency>
-          <groupId>io.jsonwebtoken</groupId>
-          <artifactId>jjwt-api</artifactId>
-          <version>0.11.5</version>
-        </dependency>
-        <dependency>
-          <groupId>io.jsonwebtoken</groupId>
-          <artifactId>jjwt-impl</artifactId>
-          <version>0.11.5</version>
-          <scope>runtime</scope>
-        </dependency>
-        <dependency>
-          <groupId>io.jsonwebtoken</groupId>
-          <artifactId>jjwt-jackson</artifactId> <!-- or jjwt-gson if Gson is preferred -->
-          <version>0.11.5</version>
-          <scope>runtime</scope>
-        </dependency>
-      </dependencies>
-  5. A typical Spring Boot application should consist of the following directories: entity, repository, service, controller, exception, security, jwt.
   
+WHAT IS REST?
+  REST, stands for Representational State Transfer, is a web architectural style or integration style for application-to-application communication.
+  It provides standards between computer systems on the web, which makes it easier for systems to communicate with each other.
+  It encourages you to use the web with constraints and guiding principles:
+    - Everything is a resource.
+    - Each resource is identified by a unique identifier (URI).
+    - Use the standard HTTP method
+    - Resources can have multiple representations.
+    - Be stateless
+  Spring Boot simplifies the developement of RESTful web services without writing boilerplate code.
+  I. REST Controller:
+    Controllers are special beans in the Spring ecosystem that handle HTTP web requests.
+    Related annotation:
+      @RestController: consists of @Controller and @ResponseBody
+  II. REST Endpoint:
+    There are 4 basic HTTP verbs used in requests to interact with resources in a REST system:
+      1. GET:
+        Spring annotation: @GetMapping
+        Description: to retrieve a resource
+      2. POST:
+        Spring annotation: @PostMapping
+        Description: to create a resource
+      3. PUT:
+        Spring annotation: @PutMapping
+        Description: to modify/update a resource
+      4. DELETE:
+        Spring annotation: @DeleteMapping
+        Description: to delete a resource
+    Each annotation contains parameters that deal with the HTTP requests and responses.
+      1. Path:
+      An URL path or resource location.
+      2. Headers:
+      The headers of the mapped request, narrowing the primary mapping. Header attributes restrict the scope of the controller method. Request only mapped if each such title is found to have the given value.
+
+SPRING STEREOTYPE ANNOTATONS:
+  @Bean
+  @Entity
+  @Repository
+  @Controller: declares the annotated class as an MVC controller
+  @ResponseBody: binds a method return value to the web response body. It uses HTTP Message converters to convert the return value to the HTTP response body based on the content type in the request HTTP header.
+  @RestController
+
 WHAT IS ORM?
   ORM, stands for Object Relational Mapping, is a connection between object-oriented programming language (OOP) and relational database management system (RDBMS).
   JPA, stands for Java Persistence API, is a standard for creating an ORM.
