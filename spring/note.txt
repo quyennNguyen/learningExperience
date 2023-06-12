@@ -3,33 +3,13 @@ WHAT IS SPRING?
   There are several advantages of using Spring framework:
     1. Modular and Extensible:
       Spring Framework follows a modular and extensible architecture, allowing developers to selectively use the components they need and easily integrate with other frameworks or libraries.
-    2. Inversion of Control (IoC):
-      Inversion of Control container manages the instantiation and lifecycle of objects, allowing for loose coupling and easier testing. 
-    3. Dependency Injection (DI):
-      Dependency Injection is a design pattern that simplifies object dependencies by providing a mechanism for injecting dependencies into objects, and promotes loose coupling between components, which makes you code more modular, testable, and maintainable.
-      Benefits of using Dependency Injection:
-        a. Modularity
-        b. Testability
-        c. Maintainability
-        d. Reusability
-      Spring provides various approaches for implementing DI:
-        a. Constructor Injection:
-          Dependencies are injected via the constructor of a class.
-          Spring container automatically resolves and provides the appropriate dependencies when creating the object.
-        b. Setter Injection:
-          Dependencies are injected via setter methods of a class.
-          Spring container invokes these setter methods to set the dependencies after creating the object.
-        c. Field Injection:
-          Dependencies are directly injected into class fields using annotations.
-          Spring container automatically sets the values of the annotated fields after creating the object.
-          Related annotation:
-            @Autowired
-    4. Aspect-Oriented Programming (AOP):
-      Aspect-Oriented Programming allows developers to apply cross-cutting concerns, such as logging, caching, and security, to multiple components in a declarative way, improving code modularity and maintainability.
+    2. Inversion of Control (IoC)
+    3. Dependency Injection (DI)
+    4. Aspect-Oriented Programming (AOP)
     5. Abstraction and Integration:
       Spring provides abstractions for common technologies used in enterprise applications, such as JDBC, JPA, JMS, and REST, making it easier to integrate with different data sources and services.
     6. Productivity:
-      Spring Framework provides a wide range of tools, templates, and utilities that enable developers to be more productive and focus on building business logic rather than dealing with low-level infrastructure code.
+      Spring Framework provides a wide range of tools, templates, and utilities that enable you to be more productive and focus on building business logic rather than dealing with low-level infrastructure code.
     7. Community and Ecosystem:
       Spring has a large and active community of developers and users, with extensive documentation, tutorials, and forums available. It also has a rich ecosystem of plugins, extensions, and integrations with other popular frameworks and libraries.
     8. Scalability and Performance:
@@ -37,11 +17,76 @@ WHAT IS SPRING?
     9. Testability:
       Spring's modular and decoupled architecture makes it highly testable, allowing for easy unit testing and integration testing of individual components or entire applications.
       
-WHAT IS TIGHT COUPLING AND LOOSE COUPLING?
-  Tight coupling is a situation where multiple entities are strongly dependent on each other. Changing in one entity can directly impact other entities. This makes the code more difficult to maintain, extend, or manipulate.
-  Loose coupling is a design principle in software engineering that aims to minimize the dependencies between components in a system. It promotes a more flexible and maintainable codebase by reducing the direct reliance of one component on another, allowing them to evolve independently.
-  There are several ways to apply loose coupling to your program, one of which is using Dependency Injection (DI). It allows you to decoupling the dependencies of a class and inject them from the outside, which makes you code more modular, testable, and maintainable.
+WHAT IS IOC?
+  IoC, stands for Inversion of Control,
+  Spring IoC container manages the instantiation and lifecycle of objects, allowing for loose coupling and easier testing.
+
+WHAT IS DI?
+  I. Types of Coupling:
+    Tight coupling is a situation where multiple entities are strongly dependent on each other. Changing in one entity can directly impact other entities. This makes the code more difficult to maintain, extend, or manipulate.
+    Loose coupling is a design principle in software engineering that aims to minimize the dependencies between components in a system. It promotes a more flexible and maintainable codebase by reducing the direct reliance of one component on another, allowing them to evolve independently.
+  II. Dependency Injection:
+    DI, stands for Dependency Injection, is a design pattern that simplifies object dependencies by providing a mechanism for injecting dependencies into objects externally, and promotes loose coupling between components, which makes you code more modular, testable, and maintainable.
+    Benefits of using Dependency Injection are modularity, testability, maintainability, and reusability.
+    Spring provides various approaches for implementing Dependency Injection:
+      1. Constructor Injection:
+        Dependencies are injected via the constructor of a class.
+        Spring container automatically resolves and provides the appropriate dependencies when creating the object.
+      2. Setter Injection:
+        Dependencies are injected via setter methods of a class.
+        Spring container invokes these setter methods to set the dependencies after creating the object.
+      3. Field Injection:
+        Dependencies are directly injected into class fields using annotations.
+        Spring container automatically sets the values of the annotated fields after creating the object.
+        Related annotation:
+          @Autowired: marks the field as a dependency to be injected by the Spring container
   
+WHAT IS BEAN?
+  In Spring, a bean is an object created and managed by the Spring IoC container.
+  Beans are the building blocks of a Spring application, which represent components such as data access objects (DAO), services, controllers,...
+  They are stored in the Spring IoC container, which handles their lifecycle, dependencies, and configuration.
+  I. Bean Definition:
+    A bean definition is a configuration metadata that defines how a bean is created, managed, and used in a Spring application.
+    It includes information such as class, scope, lifecycle callbacks, and dependencies.
+    It can be specified using XML configuration, Java-based configuration, or annotations.
+  II. Bean Scope:
+    A bean scope defines the lifecycle and visibility of a bean within the Spring IoC container.
+      1. Singleton:
+        A single instance of the bean is created and shared by all requests for the same bean. 
+        This is the default scope in Spring.
+      2. Prototype:
+        A new instance of the bean is created for each request for the bean.
+      3. Request:
+        A new instance of the bean is created for each HTTP request in a web application.
+      4. Session:
+        A new instance of the bean is created for each HTTP session in a web application.
+      5. Custom Scopes:
+        You can define your own custom bean scopes to suit your specific requirements and coding style.
+  III. Bean Lifecycle:
+    Spring provides hooks for managing the lifecycle of beans such as initializing and destroying beans. 
+      1. Annotations:
+        @PostConstruct
+        @PreDestroy
+      2. Interfaces:
+        InitializingBean
+        DisposableBean interfaces
+    These lifecycle callbacks allow you to perform initialization and cleanup tasks on beans.
+  IV. Bean Dependencies:
+    Beans can have dependencies on other beans.
+    Spring provides mechanisms for managing these dependencies such as constructor injection, setter injection, and field injection.
+  V. Bean Configuration:
+    Beans can be configured using various approaches in Spring such as XML configuration, Java-based configuration, and annotations.
+  VI. Bean Autowiring:
+    Bean autowiring is a feature in Spring that automatically wires dependencies between beans without the need for explicit configuration.
+    Spring provides different autowiring modes such as byType, byName, constructor, and autodetect, which determine how beans are automatically wired together.
+  VII. Bean Scanning:
+    Bean scanning is a feature in Spring that automatically detects and registers beans based on certain conventions or annotations.
+    This eliminates the need for explicit bean definition and allows for more flexible and dynamic configuration.
+
+WHAT IS AOP?
+  AOP, stands for Aspect-Oriented Programming,
+  It allows you to apply cross-cutting concerns, such as logging, caching, and security, to multiple components in a declarative way, improving code modularity and maintainability.
+
 HOW TO SET UP A SPRING PROJECT?
   1. Use Spring Initializr to set up the project.
   2. Add base dependencies: Spring Web, Spring Data JPA, Spring Boot Dev Tools, MySQL Driver
