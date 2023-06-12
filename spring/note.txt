@@ -149,10 +149,22 @@ WHAT IS BEAN?
   VII. Bean Scanning:
     Bean scanning is a feature in Spring that automatically detects and registers beans based on certain conventions or annotations.
     This eliminates the need for explicit bean definition and allows for more flexible and dynamic configuration.
-
-WHAT IS AOP?
-  AOP, stands for Aspect-Oriented Programming,
-  It allows you to apply cross-cutting concerns, such as logging, caching, and security, to multiple components in a declarative way, improving code modularity and maintainability.
+  
+WHAT IS ORM?
+  ORM, stands for Object Relational Mapping, is a connection between object-oriented programming language (OOP) and relational database management system (RDBMS).
+  JPA, stands for Java Persistence API, is a standard for creating an ORM.
+  There are 2 common ORM types: JDBC and Hibernate.
+  
+WHAT IS HIBERNATE?
+  When using Hibernate, there are 3 rules to follow:
+    1. Keyword @Entity
+    2. Unique IDs:
+      There are 4 ways to create IDs:
+        AUTO: allows database to vendor your IDs
+        IDENTITY: increments the IDs
+        SEQUENCE: you have to type what type of sequence you want to use (this is good for PostgreSQL)
+        TABLE: this will create a separate table for your IDs aside the table of your entity
+    3. Default constructor
   
 WHAT IS REST?
   REST, stands for Representational State Transfer, is a web architectural style or integration style for application-to-application and server-to-server communication.
@@ -204,7 +216,7 @@ WHAT IS REST?
     @Configuration: defines a configuration class that provides beans to the Spring application context
     @Bean
     @Entity
-    @Repository: marks a class as a data access object (DAO)
+    @Repository: marks a class as a data access object (DAO). There are 2 common interfaces you can extend from: CrudRepository<T, R> and JpaRepository<T, R>
     @Service: marks a class as a service
     @RestController: consists of @Controller and @ResponseBody, which marks a class as a RESTful controller and capable of handling web requests. It eliminates the need for @ResponseBody annotations on every method.
     @Controller: declares the annotated class as an MVC controller
@@ -213,26 +225,15 @@ WHAT IS REST?
     @PathVariable: extracts a value from a URL path variable.
     @RequestBody: binds the HTTP request body to a Java object.
     @Autowired: marks the field as a dependency to be injected into a Spring-managed bean by the Spring container
-    
 
-WHAT IS ORM?
-  ORM, stands for Object Relational Mapping, is a connection between object-oriented programming language (OOP) and relational database management system (RDBMS).
-  JPA, stands for Java Persistence API, is a standard for creating an ORM.
-  There are 2 common ORM types: JDBC and Hibernate.
+WHAT ARE HTTP PROTOCOLS AND HTTP METHODS?
+  HTTP, stands for Hyper Text Transfer Protocols, is a communication protocol used to transfer hypertext (text with hyperlinks) over the World Wide Web. 
+  It is the foundation of the web, allowing web browsers to retrieve web pages from web servers and display them to users. 
+  It follows a client-server model, where clients (such as web browsers) send requests to servers (such as web servers) for resources, and servers respond with the requested resources.
+
+WHAT IS AOP?
+  AOP, stands for Aspect-Oriented Programming,
+  It allows you to apply cross-cutting concerns, such as logging, caching, and security, to multiple components in a declarative way, improving code modularity and maintainability.
   
-WHAT IS HIBERNATE?
-  When using Hibernate, there are 3 rules to follow:
-    1. Keyword @Entity
-    2. Unique IDs:
-      There are 4 ways to create IDs:
-        AUTO: allows database to vendor your IDs
-        IDENTITY: increments the IDs
-        SEQUENCE: you have to type what type of sequence you want to use (this is good for PostgreSQL)
-        TABLE: this will create a separate table for your IDs aside the table of your entity
-    3. Default constructor
-
 WHAT IS MVC?
   MVC, stands for Model View Controller
-
-
-JpaRepository<User, Long>
