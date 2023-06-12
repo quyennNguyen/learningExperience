@@ -220,6 +220,3 @@ WHAT IS JDBC?
             int[] updateCounts = statement.executeBatch(); // this returns an array of update counts, which represent the number of rows affected by each statement.
         to clear the batch and restart with new SQL statements:
             clearBatch();
-What is SQL injection attack? 
-What is schema?
-What is query?
