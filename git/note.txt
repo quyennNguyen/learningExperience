@@ -61,6 +61,7 @@ GENERAL CLI COMMASNDS:
                 echo "content goes here" >> <file's name>: this is to create a new file or continue an existing file
         more <file's name>: to display the content of an existing file in the current directory
         rm <file's name> or <folder's name>: to remove an existing file or folder in the current directory
+    code .: to run your program
     clear: to clear the CLI window
     press Q key: to exit a list
 
