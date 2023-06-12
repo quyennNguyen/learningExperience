@@ -1,6 +1,46 @@
 WHAT IS SPRING?
-  Spring is an open-source Java framework that provides a comprehensive set of features for building enterprise-grade Java applications.
-  It is a light-weight alternative to Java Enterprise Edition (JavaEE) that focuses on simplicity, modularity, and extensibility.
+  Spring is an open-source Java framework that provides a comprehensive set of features for building enterprise-grade Java applications and a light-weight alternative to Java Enterprise Edition (JavaEE).
+  There are several advantages of using Spring framework:
+    1. Modular and Extensible:
+      Spring Framework follows a modular and extensible architecture, allowing developers to selectively use the components they need and easily integrate with other frameworks or libraries.
+    2. Inversion of Control (IoC):
+      Inversion of Control container manages the instantiation and lifecycle of objects, allowing for loose coupling and easier testing. 
+    3. Dependency Injection (DI):
+      Dependency Injection is a design pattern that simplifies object dependencies by providing a mechanism for injecting dependencies into objects, and promotes loose coupling between components, which makes you code more modular, testable, and maintainable.
+      Benefits of using Dependency Injection:
+        a. Modularity
+        b. Testability
+        c. Maintainability
+        d. Reusability
+      Spring provides various approaches for implementing DI:
+        a. Constructor Injection:
+          Dependencies are injected via the constructor of a class.
+          Spring container automatically resolves and provides the appropriate dependencies when creating the object.
+        b. Setter Injection:
+          Dependencies are injected via setter methods of a class.
+          Spring container invokes these setter methods to set the dependencies after creating the object.
+        c. Field Injection:
+          Dependencies are directly injected into class fields using annotations.
+          Spring container automatically sets the values of the annotated fields after creating the object.
+          Related annotation:
+            @Autowired
+    4. Aspect-Oriented Programming (AOP):
+      Aspect-Oriented Programming allows developers to apply cross-cutting concerns, such as logging, caching, and security, to multiple components in a declarative way, improving code modularity and maintainability.
+    5. Abstraction and Integration:
+      Spring provides abstractions for common technologies used in enterprise applications, such as JDBC, JPA, JMS, and REST, making it easier to integrate with different data sources and services.
+    6. Productivity:
+      Spring Framework provides a wide range of tools, templates, and utilities that enable developers to be more productive and focus on building business logic rather than dealing with low-level infrastructure code.
+    7. Community and Ecosystem:
+      Spring has a large and active community of developers and users, with extensive documentation, tutorials, and forums available. It also has a rich ecosystem of plugins, extensions, and integrations with other popular frameworks and libraries.
+    8. Scalability and Performance:
+      Spring Framework is designed to be scalable and performant, with features such as caching, connection pooling, and optimized data access that help improve application performance in enterprise environments.
+    9. Testability:
+      Spring's modular and decoupled architecture makes it highly testable, allowing for easy unit testing and integration testing of individual components or entire applications.
+      
+WHAT IS TIGHT COUPLING AND LOOSE COUPLING?
+  Tight coupling is a situation where multiple entities are strongly dependent on each other. Changing in one entity can directly impact other entities. This makes the code more difficult to maintain, extend, or manipulate.
+  Loose coupling is a design principle in software engineering that aims to minimize the dependencies between components in a system. It promotes a more flexible and maintainable codebase by reducing the direct reliance of one component on another, allowing them to evolve independently.
+  There are several ways to apply loose coupling to your program, one of which is using Dependency Injection (DI). It allows you to decoupling the dependencies of a class and inject them from the outside, which makes you code more modular, testable, and maintainable.
   
 HOW TO SET UP A SPRING PROJECT?
   1. Use Spring Initializr to set up the project.
@@ -66,7 +106,7 @@ HOW TO SET UP A SPRING PROJECT?
         </dependency>
       </dependencies>
   5. A typical Spring Boot application should consist of the following directories: entity, repository, service, controller, exception, security, jwt.
-
+  
 WHAT IS ORM?
   ORM, stands for Object Relational Mapping, is a connection between object-oriented programming language (OOP) and relational database management system (RDBMS).
   JPA, stands for Java Persistence API, is a standard for creating an ORM.
@@ -74,11 +114,15 @@ WHAT IS ORM?
   
 WHAT IS HIBERNATE?
   When using Hibernate, there are 3 rules to follow:
-    Keyword @Entity
-    Unique IDs:
+    1. Keyword @Entity
+    2. Unique IDs:
       There are 4 ways to create IDs:
         AUTO: allows database to vendor your IDs
         IDENTITY: increments the IDs
         SEQUENCE: you have to type what type of sequence you want to use (this is good for PostgreSQL)
         TABLE: this will create a separate table for your IDs aside the table of your entity
-    Default constructor
+    3. Default constructor
+
+WHAT IS MVC?
+  MVC, stands for Model View Controller
+
