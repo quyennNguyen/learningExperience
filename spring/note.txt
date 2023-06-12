@@ -91,7 +91,9 @@ WHAT IS DI?
     Tight coupling is a situation where multiple entities are strongly dependent on each other. Changing in one entity can directly impact other entities. This makes the code more difficult to maintain, extend, or manipulate.
     Loose coupling is a design principle in software engineering that aims to minimize the dependencies between components in a system. It promotes a more flexible and maintainable codebase by reducing the direct reliance of one component on another, allowing them to evolve independently.
   II. Dependency Injection:
-    DI, stands for Dependency Injection, is a design pattern that simplifies object dependencies by providing a mechanism for injecting dependencies into objects externally, and promotes loose coupling between components, which makes you code more modular, testable, and maintainable.
+    DI, stands for Dependency Injection, is a design pattern that simplifies object dependencies by providing a mechanism for injecting dependencies into objects externally.
+    Components in an application shouldn't directly depend on each other (tight coupling) but should depend on abstraction (loose coupling).
+    Dependency Injection promotes loose coupling between components, which makes you code more modular, testable, and maintainable.
     Benefits of using Dependency Injection are modularity, testability, maintainability, and reusability.
     Spring provides various approaches for implementing Dependency Injection:
       1. Constructor Injection:
@@ -104,7 +106,7 @@ WHAT IS DI?
         Dependencies are directly injected into class fields using annotations.
         Spring container automatically sets the values of the annotated fields after creating the object.
         Related annotation:
-          @Autowired: marks the field as a dependency to be injected by the Spring container
+          @Autowired
   
 WHAT IS BEAN?
   In Spring, a bean is an object created and managed by the Spring IoC container.
@@ -153,7 +155,7 @@ WHAT IS AOP?
   It allows you to apply cross-cutting concerns, such as logging, caching, and security, to multiple components in a declarative way, improving code modularity and maintainability.
   
 WHAT IS REST?
-  REST, stands for Representational State Transfer, is a web architectural style or integration style for application-to-application communication.
+  REST, stands for Representational State Transfer, is a web architectural style or integration style for application-to-application and server-to-server communication.
   It provides standards between computer systems on the web, which makes it easier for systems to communicate with each other.
   It encourages you to use the web with constraints and guiding principles:
     - Everything is a resource.
@@ -165,9 +167,10 @@ WHAT IS REST?
   I. REST Controller:
     Controllers are special beans in the Spring ecosystem that handle HTTP web requests.
     Related annotation:
-      @RestController: consists of @Controller and @ResponseBody
-  II. REST Endpoint:
-    There are 4 basic HTTP verbs used in requests to interact with resources in a REST system:
+      @RestController
+  II. Expose REST Endpoint:
+    Spring boot provides mapping annotations for each type of HTTP verbs that are used in requests to interact with resources in a REST system.
+    There are 4 basic HTTP verbs:
       1. GET:
         Spring annotation: @GetMapping
         Description: to retrieve a resource
@@ -182,17 +185,35 @@ WHAT IS REST?
         Description: to delete a resource
     Each annotation contains parameters that deal with the HTTP requests and responses.
       1. Path:
-      An URL path or resource location.
+        An URL path or resource location.
+          value = "/path"
       2. Headers:
-      The headers of the mapped request, narrowing the primary mapping. Header attributes restrict the scope of the controller method. Request only mapped if each such title is found to have the given value.
-
-SPRING STEREOTYPE ANNOTATONS:
-  @Bean
-  @Entity
-  @Repository
-  @Controller: declares the annotated class as an MVC controller
-  @ResponseBody: binds a method return value to the web response body. It uses HTTP Message converters to convert the return value to the HTTP response body based on the content type in the request HTTP header.
-  @RestController
+        The headers of the mapped request, narrowing the primary mapping. 
+        Header attributes restrict the scope of the controller method. 
+        Request only mapped if each such title is found to have the given value.
+          headers = "content-type=text/html"
+      3. Consumes: 
+        Narrows the primary mapping by media types that the handler can consume.
+          consumes="application/json"
+      4. Produces:
+        Narrows the primary mapping by media types that the mapped handler can produce.
+          produces = "application/json"
+  III. Spring Boot Annotations:
+    @SpringBootApplication: is the main annotation used in a Spring Boot application. It combines the functionalities of @Configuration, @EnableAutoConfiguration, and @ComponentScan. It is used to configure the Spring application context and enable the auto-configuration feature.
+    @Component: marks a class as a Spring-managed bean. The class will be automatically detected and registered as a bean in the application context. Spring will automatically create an instance of it, which can then be injected into other beans or used within the application.
+    @Configuration: defines a configuration class that provides beans to the Spring application context
+    @Bean
+    @Entity
+    @Repository: marks a class as a data access object (DAO)
+    @Service: marks a class as a service
+    @RestController: consists of @Controller and @ResponseBody, which marks a class as a RESTful controller and capable of handling web requests. It eliminates the need for @ResponseBody annotations on every method.
+    @Controller: declares the annotated class as an MVC controller
+    @ResponseBody: binds a method return value to the web response body. It uses HTTP Message converters to convert the return value to the HTTP response body based on the content type in the request HTTP header.
+    @RequestMapping("/path"): applies the mapping the all the handlers. We don't have to repeat the same mapping in all the handler methods.
+    @PathVariable: extracts a value from a URL path variable.
+    @RequestBody: binds the HTTP request body to a Java object.
+    @Autowired: marks the field as a dependency to be injected into a Spring-managed bean by the Spring container
+    
 
 WHAT IS ORM?
   ORM, stands for Object Relational Mapping, is a connection between object-oriented programming language (OOP) and relational database management system (RDBMS).
@@ -213,3 +234,5 @@ WHAT IS HIBERNATE?
 WHAT IS MVC?
   MVC, stands for Model View Controller
 
+
+JpaRepository<User, Long>
