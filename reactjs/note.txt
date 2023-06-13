@@ -1,16 +1,19 @@
 WHAT IS REACT?
   React, or ReactJs, is a JavaScript library for building user interfaces and developing web applications.
   React embraces the fact that rendering logic is inherently coupled with other UI logic: how events are handled, how the state changes over time, and how the data is prepared for display.
-  I. How to add React to an HTML page?
-    - add <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    - add <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-  II. Declarative:
+  I. Declarative:
     React is declarative. 
     Being declarative means I can tell the computer WHAT to do and the computer can handle the details, while being imperative means I have to tell the computer HOW to do WHAT steps by steps.
-  III. Composable and Reusable:
+  II. Composable and Reusable:
     Elements are the smallest building blocks of a Web page that describe what you want to see on the page. And, components are made of elements.
     Unlike browser DOM elements, React elements are plain JavaScript objects created and returned by JSX that represents DOM elements. And, React components are essentially functions that return React elements.
     Components let you split the UI into independent reusable pieces.
+
+HOW TO SET UP A REACT PROJECT?
+  1. On Terminal, run: npx create-react-app <name of your app>
+  2. To add React to an HTML page, add these tags at the end of the body tag:
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
 
 WHAT IS REACTDOM?
   ReactDOM is a global variable of the ReactDOM library.
