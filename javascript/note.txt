@@ -577,6 +577,15 @@ WHAT IS A JAVASCRIPT ARRAY?
         7. to display an array of object:
             const arrayName = [object1, object2, object3];
             console.log(JSON.stringify(arrayName));
+        8. to assign each array element to a reference:
+            instead of:
+                const arrayName = [object1, object2, object3];
+                let variable1 = arrayName[0];
+                let variable2 = arrayName[1];
+                let variable3 = arrayName[2];
+            a shortcut is:
+                const arrayName = [object1, object2, object3];
+                let [variable1, variable2, variable3] = arrayName;
     III. Methods:
         //methods return a number
         1. to find the index of an array element:
@@ -852,7 +861,7 @@ WHAT IS A JAVASCRIPT OBJECT?
         - methods that represent the behavior of the object
     An object is made of key-value pairs that represent the properties or methods of the object.
     to declare an object:
-        const objectName = {key0:value0, key1:value1, key2:value2};
+        const objectName = {key1:value, key2:value, key3:value};
     If the key consists of 1 word, it doesn't require any quotes around it. If it consists of more than 1 word, it needs to be wrapped around with a pair of single quotes ('') or double quotes("").
     In JavaScript, a global object always exists. Every object created in a JavaScript program inherits some properties and methods from the global object. One of the inherited properties is the Prototype object which consists of its own properties and methods.
     In JavaScript, you can have nested objects where one object can be inside another object.
@@ -860,18 +869,31 @@ WHAT IS A JAVASCRIPT OBJECT?
         1. to define an object property:
             propertyName:propertyValue
         2. to access an object method:
-            1. with dot notation:
+            a. with dot notation:
                 objectName.propertyName
-            2. with bracket notation:
+            b. with bracket notation:
                 objectName["propertyName"]
         3. to add a new property:
                 objectName.propertyName = propertyValue;
             or
                 objectName["propertyName"] = propertyValue;
-        4. to delete an object property with "delete" operator:
+        4. to delete an object property:
                 delete objectName.propertyName;
             or
                 delete objectName["propertyName"];
+        5. to assign each object element to a reference:
+            instead of:
+                const objectName = {key1:value, key2:value, key3:value};
+                let key1 = objectName.key1;
+                let key2 = objectName.key2;
+                let key3 = objectName.key3;
+            a shortcut is:
+                const objectName = {key1:value, key2:value, key3:value};
+                let {key1, key2, key3} = objectName;
+            In the first case, the references might or might not be named different from the names of the object elements.
+            In the second case, the references must be named the same as the names of the object elements. To name differently:
+                const objectName = {key1:value, key2:value, key3:value};
+                let {key1:newKey1, key2:newKey2, key3:newKey3} = objectName;
     II. Methods:
         1. to define an object method:
                 methodName:function() {
