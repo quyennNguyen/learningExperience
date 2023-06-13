@@ -228,8 +228,17 @@ WHAT IS REST?
 
 WHAT ARE HTTP PROTOCOLS AND HTTP METHODS?
   HTTP, stands for Hyper Text Transfer Protocols, is a communication protocol used to transfer hypertext (text with hyperlinks) over the World Wide Web. 
-  It is the foundation of the web, allowing web browsers to retrieve web pages from web servers and display them to users. 
-  It follows a client-server model, where clients (such as web browsers) send requests to servers (such as web servers) for resources, and servers respond with the requested resources.
+  It is the foundation of the web, allowing web browsers to retrieve web pages from web servers and display them to users.
+  I. Client-Server Model:
+    In HTTP, the communication occurs between clients (such as web browsers) and servers (such as web servers). Clients send requests to servers for resources, and servers respond with the requested resources.
+  II. Request-Response Cycle:
+    HTTP follows a request-response model, where clients send requests to servers, and servers respond with the requested resources or an error message.
+  III. Stateless Protocol:
+    HTTP is a stateless protocol.
+    Each request from a client to a server is independent and does not carry any information about previous requests. 
+    Servers do not remember past requests from clients, and clients need to include all necessary information in each request.
+  IV. URI:
+    URIs, stands for Uniform  are used to identify resources on the web, such as web pages, images, or files. URIs are used in HTTP requests to specify the resources that clients want to retrieve from servers.
 
 WHAT IS AOP?
   AOP, stands for Aspect-Oriented Programming,
