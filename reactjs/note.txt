@@ -12,20 +12,36 @@ HOW TO SET UP A REACT PROJECT?
     in JS file, add the following statements at the start of your file:
       import React from 'react';
       import ReactDOM from 'react-dom/client';
+How to add JSX to an HTML page?
+  1. Method 1:
+      - add <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+      - add <script src="script.js" type="text/babel"></script>
+    This method may slow down your Website and isn't suitable for production.
+  2. Method 2:
+      - download Node.js
+      - run npm init -y
+      - run npm install babel-cli@6 babel-preset-react-app@3
+      - create a "src" folder where the "script.js" file will locate
+      - run npx babel --watch src --out-dir . --presets react-app/prod
+    This method is the setup for a production-ready JSX preprocessor to convert all "script" tags automatically.
 
 WHAT IS REACTDOM?
+  Elements are the smallest building blocks of a Web page that describe what you want to see on the page. And, components are made of elements.
+  Unlike browser DOM elements, React elements are plain JavaScript objects created and returned by JSX that represents DOM elements. And, React components are essentially functions that return React elements.
+  Components let you split the UI into independent reusable pieces.
   ReactDOM is a global variable of the ReactDOM library.
-  React DOM is used to render React components and take care of efficiently updating the DOM to match the React elements. It compares the elements and their children to the previous one, and only applies the DOM updates necessary to bring the DOM to the desired state.
-  I. Rendering Elements:
-    Elements are the smallest building blocks of a Web page that describe what you want to see on the page. And, components are made of elements.
-    Unlike browser DOM elements, React elements are plain JavaScript objects created and returned by JSX that represents DOM elements. And, React components are essentially functions that return React elements.
-    Components let you split the UI into independent reusable pieces.
-    ReactDOM renders the elements by:
-      ReactDOM.render(
-        <>React elements</>,
-        document.getElementById("root-element")
-      );
-  II. Root Element:
+  ReactDOM is used to render React components and take care of efficiently updating the DOM to match the React elements. It compares the elements and their children to the previous one, and only applies the DOM updates necessary to bring the DOM to the desired state.
+
+WHAT IS JSX?
+  JSX, stands for JavaScript XML, is a syntax extension to JavaScript, which is basically the "JavaScript verion of HTML". What looks like HTML in JavaScript code is JSX.
+  Babel acts as a compiler to convert JSX down to React.createElement() calls. After compilation, JSX expressions become regular JavaScript function calls and evaluate to JavaScript objects. These objects are React elements that describe what React should add to the real DOM on the HTML page. React reads these objects, interprets them, and uses them to construct the DOM elements and keep them up to date.
+
+HOW DOES REACTDOM RENDER ELEMENTS?
+  ReactDOM.render(
+    <>React elements</>,
+    document.getElementById("root-element")
+  );
+  I. Root Element:
     A root DOM node/container is required to mark the spot where React DOM should display its components on the HTML page. It will be managed by React DOM.
     To declare a root element:
       const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -33,7 +49,7 @@ WHAT IS REACTDOM?
         <>React elements</>
       );    
     Web pages built with just React usually have a single root DOM node. If you are integrating React into an existing page, you may have as many isolated root DOM nodes as you like.
-  III. React Components:
+  II. React Components:
     To declare a React component:
     1. as a variable:
       const variableName = (
@@ -56,73 +72,58 @@ WHAT IS REACTDOM?
         }
       }
       ReactDOM.render(<ClassName />, document.getElementById("root-element"));
+  III. NOTES:
     All React elements must be nested in one single parent element/tag. Fragment tags "<></>" can be used as the parent tag.
     React elements are immutable, which means they, their children, and their attributes can't be changed. The only way to update the rendered element is to create a new element and re-render it.
+    JSX can't be read by the DOM.
+    EX:
+      const variableName = (
+        <>React elements</>
+      );
+      document.getElementById("root").append(variableName);
+    JSX needs to be rendered by React.
+    EX:
+      const variableName = (
+        <>React elements</>
+      );
+      ReactDOM.render(variableName, document.getElementById("root-element"));
 
-WHAT IS JSX?
-  JSX, stands for JavaScript XML, is a syntax extension to JavaScript, which produces React elements.
-  JSX makes it easier to write HTML and JavaScript in one file.
-  React is what defines JSX, so JSX needs to be used together with React.
-  I. How to add JSX to an HTML page?
-    1. Method 1:
-        - add <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-        - add <script src="script.js" type="text/babel"></script>
-      This method may slow down your Website and isn't suitable for production.
-    2. Method 2:
-        - download Node.js
-        - run npm init -y
-        - run npm install babel-cli@6 babel-preset-react-app@3
-        - create a "src" folder where the "script.js" file will locate
-        - run npx babel --watch src --out-dir . --presets react-app/prod
-      This method is the setup for a production-ready JSX preprocessor to convert all "script" tags automatically.
-  II. Object Representation:
-    Babel compiles JSX down to React.createElement() calls.
-    After compilation, JSX expressions become regular JavaScript function calls and evaluate to JavaScript objects.
-    These objects are React elements that describe what React should add to the real DOM on the HTML page.
-    React reads these objects, interprets them, and uses them to construct the DOM elements and keep them up to date.
-    SIDE NOTE:
-              JSX can't be read by the DOM.
-              EX:
-                const variableName = (
-                  <>React elements</>
-                );
-                document.getElementById("root").append(variableName);
-              JSX needs to be rendered by React.
-              EX:
-                const variableName = (
-                  <>React elements</>
-                );
-                ReactDOM.render(variableName, document.getElementById("root-element"));
-  III. Naming Convention:
-    1. Attributes:
-      React uses camelCase instead of all lowercase when naming element attributes and event handlers.
-      EX:
-        "class" in HTML = "className" in React
-        "onclick" in HTML = "onClick" in React
-      Literals rules are also different in React when assigning a value to an attribbute.
-      a. String Literals:
-        Quotes are used to specify a number/string value.
-          const variableName = (
-            <starting-tag attribute="value"> content </closing-tags>
-          );
-      b. Template Literals:
-        Curly braces are used to embed a boolean/array/object value or a function.
-          const variableName = (
-            <starting-tag attribute={argument}> content </closing-tags>
-          );
-        SIDE NOTE:
-                  If a function is assigned, it should be anonymous.
-                  EX:
-                      attribute="functionName()" in HTML = attribute={FunctionName} in React
-        Curly braces are also used to embed expressions in JSX.
-          <starting-tag>
-            content
-            {expresion}
-          </closing-tags>
-    2. Functions:
-      React uses PascalCase instead of camelCase when naming functions.
-      EX:
-        "functionName" in JavaScript = "FunctionName" in React
+WHAT ARE THE NAMING CONVENTIONS IN REACT?
+  I. Attributes:
+    React uses camelCase instead of all lowercase when naming element attributes and event handlers.
+    EX:
+      "class" in HTML = "className" in React
+      "onclick" in HTML = "onClick" in React
+    Literals rules are also different in React when assigning a value to an attribbute.
+    1. String Literals:
+      Quotes are used to specify a number/string value.
+        const variableName = (
+          <starting-tag attribute="value"> content </closing-tags>
+        );
+    2. Template Literals:
+      Curly braces are used to embed a boolean/array/object value or a function.
+        const variableName = (
+          <starting-tag attribute={argument}> content </closing-tags>
+        );
+      SIDE NOTE:
+                If a function is assigned, it should be anonymous.
+                EX:
+                    attribute="functionName()" in HTML = attribute={FunctionName} in React
+      Curly braces are also used to embed expressions in JSX.
+        <starting-tag>
+          {expresion}
+        </closing-tags>
+  II. Functions:
+    React uses PascalCase instead of camelCase when naming functions.
+    EX:
+      "functionName" in JavaScript = "FunctionName" in React
+  
+HOW TO IMPORT AND EXPORT FILES IN REACT?
+  I. Import:
+    import ComponentName from 'file path';
+  II Export:
+    export default ComponentName;
+  
   IV. Props:
     React components can accept arbitrary inputs, called props (properties) object argument with data.
     1. Function Component:
