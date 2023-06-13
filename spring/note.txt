@@ -238,7 +238,65 @@ WHAT ARE HTTP PROTOCOLS AND HTTP METHODS?
     Each request from a client to a server is independent and does not carry any information about previous requests. 
     Servers do not remember past requests from clients, and clients need to include all necessary information in each request.
   IV. URI:
-    URIs, stands for Uniform  are used to identify resources on the web, such as web pages, images, or files. URIs are used in HTTP requests to specify the resources that clients want to retrieve from servers.
+    URI, stands for Uniform Resource Identifier, is a sequence of character used in HTTP requests to identify the resources on the web such as web pages, images, files,... that clients want to retrieve from servers. 
+    A URI distinguishes one resource from another.
+    A URI contains scheme, authority, path, query, and a fragment.
+      scheme:[//authority]path[?query][#fragment]
+      1. Scheme:
+        Scheme is a sequence of characters followed by a colon (:).
+        Schemes should be registered with Internet Assigned Numbers Authority (IANA).
+        Some common URI schemes are http, https, file, data, ftp, irc, idp, telnet,...
+      2. Authority:
+        Authority is a sequence of characters preceded by 2 forward slashes (//).
+        It consists of 3 components:
+          a. userinfo: 
+            It may contain a username and an optional password separated by colon (:).
+            It's followed by an @.
+          b. host: 
+            It contains either a registered name or an IP address.
+            The IP address must be enclosed in a pair of brackets [ ].
+          c. port:
+            It is optional.
+        Authority is optional.
+      3. Path:
+        Path consists of a sequence of path segments separated by a slash (/).
+        It may be empty or of 0 length.
+      4. Query:
+        Query contains a query string of non-hierarchical data and is preceded by a question mark (?).
+        It is optional.
+      5. Fragment:
+        Fragment consists of a fragment identifier and is preceded by a hash (#).
+        It is optional.
+    URI consists of URN and URL, to identify the name or location or both of a resource.
+      1. URL:
+        URL, stands for Uniform Resource Locator, is a reference that specifies the location/address of the resource on the web. (to find its location and to access it)
+        Each HTTP URL follows the syntax of its generic URI:
+          scheme:[//authority]path[?query][#fragment]
+          a. Scheme:
+            Scheme represents a protocol that a web browser needs to use to request a resource from a web server.
+          b. Authority:
+            Authority consists of 2 components separated by colon (:):
+              a. domain name: 
+                It can be a registered name of the resource.
+                Some commonly used protocols for websites are HTTP and HTTPS.
+              b. port: 
+                It is the technical gate to access the resource on a web server.
+                Port 80 is used for HTTP, and port 443 is used for HTTPS.
+            Authority is optional.
+          c. Path:
+            Path specifies a complete path to a resource on a web server.
+          d. Query:
+            Query contains the name-value pairs that follows the path to provide additional informaiton.
+          e. Fragment:
+            Fragment provides direction to a secondary resource.
+        Each URL can be a URI, but a URI might not be a URL.
+        URI can specify name and location of a resource, but URL can only specify the location.
+        URI can also find resources in HTML, XML, and other files, but URL can only locate web pages.
+      2. URN:
+        URN, stands for Uniform Resource Number, 
+    
+    
+    
 
 WHAT IS AOP?
   AOP, stands for Aspect-Oriented Programming,
