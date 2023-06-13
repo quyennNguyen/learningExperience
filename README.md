@@ -59,7 +59,6 @@
 * https://javascript.info/
 * https://www.theodinproject.com/paths
 * VSCode: https://code.visualstudio.com/download
-* https://youtu.be/x_2sYpk75Ic
 * NodeJs: https://nodejs.org/en
 * javascript note
 #### React:
