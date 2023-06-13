@@ -22,15 +22,17 @@ HOW TO SET UP A REACT PROJECT?
 
 HOW TO SET UP JSX IN A REACT PROJECT?
   1. Method 1:
-      - add <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-      - add <script src="script.js" type="text/babel"></script>
+    In HTML file, add the following tags at the end of the body tag:
+      <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+      <script src="script.js" type="text/babel"></script>
     This method may slow down your Website and isn't suitable for production.
   2. Method 2:
-      - download Node.js
-      - run npm init -y
-      - run npm install babel-cli@6 babel-preset-react-app@3
-      - create a "src" folder where the "script.js" file will locate
-      - run npx babel --watch src --out-dir . --presets react-app/prod
+    Download Node.js    
+    Create a "src" folder where the "script.js" file will locate
+    On Terminal, run:
+      npm init -y
+      npm install babel-cli@6 babel-preset-react-app@3
+      npx babel --watch src --out-dir . --presets react-app/prod
     This method is the setup for a production-ready JSX preprocessor to convert all "script" tags automatically.
 
 WHAT IS REACTDOM?
@@ -96,13 +98,17 @@ HOW DOES REACTDOM RENDER ELEMENTS?
       );
       ReactDOM.render(variableName, document.getElementById("root-element"));
 
-WHAT ARE THE NAMING CONVENTIONS IN REACT?
-  I. Attributes:
+WHAT ARE SOME SYNTAX IN REACT DIFFERENT FROM NORMAL?
+  I. HTML Attributes:
     React uses camelCase instead of all lowercase when naming element attributes and event handlers.
     EX:
       "class" in HTML = "className" in React
       "onclick" in HTML = "onClick" in React
-    Literals rules are also different in React when assigning a value to an attribbute.
+  II. JavaScript Functions:
+    React uses PascalCase instead of camelCase when naming functions.
+    EX:
+      "functionName" in JavaScript = "FunctionName" in React
+  III. Literals:
     1. String Literals:
       Quotes are used to specify a number/string value.
         const variableName = (
@@ -113,50 +119,44 @@ WHAT ARE THE NAMING CONVENTIONS IN REACT?
         const variableName = (
           <starting-tag attribute={argument}> content </closing-tags>
         );
-      SIDE NOTE:
-                If a function is assigned, it should be anonymous.
-                EX:
-                    attribute="functionName()" in HTML = attribute={FunctionName} in React
+      If a function is assigned, it should be anonymous.
+      EX:
+          attribute="functionName()" in HTML = attribute={FunctionName} in React
       Curly braces are also used to embed expressions in JSX.
-        <starting-tag>
-          {expresion}
-        </closing-tags>
-  II. Functions:
-    React uses PascalCase instead of camelCase when naming functions.
-    EX:
-      "functionName" in JavaScript = "FunctionName" in React
-  
+        <starting-tag> {expresion} </closing-tags>
+
 HOW TO IMPORT AND EXPORT FILES IN REACT?
   I. Import:
     import ComponentName from 'file path';
   II Export:
     export default ComponentName;
   
-  IV. Props:
-    React components can accept arbitrary inputs, called props (properties) object argument with data.
-    1. Function Component:
-      const root = ReactDOM.createRoot(document.getElementById("root"));
-      function FunctionName(props) {
+WHAT IS PROPS?
+  React components can accept arbitrary inputs, called props (properties) object argument with data.
+  1. Function Component:
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    function FunctionName(props) {
+      return (
+        <>{props.attribute}</>
+      );
+    }
+    const variableName = (
+      <FunctionName atribute="value" />
+    );
+    root.render(variableName);
+  2. Class Component:
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    class ClassName extends React.Component {
+      render() {
         return (
-          <>React elements {props.attribute}</>
+          <>{this.props.attribute}</>
         );
       }
-      const variableName = (
-        <FunctionName atribute="value" />
-      );
-      root.render(variableName);
-    2. Class Component:
-      const root = ReactDOM.createRoot(document.getElementById("root"));
-      class ClassName extends React.Component {
-        render() {
-          return (
-            <>React elements {this.props.attribute}</>
-          );
-        }
-      }
-      root.render(<ClassName atribute="value" />);
-    Props must never be modified. All React components must act like pure functions with respect to their props.
-    With props, whenever the component is rendered into the DOM node, only a single instance of the component is executed. Therefore, when the component needs to be re-rendered over the time, state and lifecycle are preferred to use.
+    }
+    root.render(<ClassName atribute="value" />);
+  Props must never be modified. All React components must act like pure functions with respect to their props.
+  With props, whenever the component is rendered into the DOM node, only a single instance of the component is executed. Therefore, when the component needs to be re-rendered over the time, state and lifecycle are preferred to use.
+  
   V. State and Lifecycle:
     1. State:
       State is similar to props.
