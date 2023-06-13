@@ -1,28 +1,30 @@
 WHAT IS REACT?
   React, or ReactJs, is a JavaScript library for building user interfaces and developing web applications.
   React embraces the fact that rendering logic is inherently coupled with other UI logic: how events are handled, how the state changes over time, and how the data is prepared for display.
-  I. Declarative:
-    React is declarative. 
-    Being declarative means I can tell the computer WHAT to do and the computer can handle the details, while being imperative means I have to tell the computer HOW to do WHAT steps by steps.
-  II. Composable and Reusable:
-    Elements are the smallest building blocks of a Web page that describe what you want to see on the page. And, components are made of elements.
-    Unlike browser DOM elements, React elements are plain JavaScript objects created and returned by JSX that represents DOM elements. And, React components are essentially functions that return React elements.
-    Components let you split the UI into independent reusable pieces.
+  React is declarative. Being declarative means I can tell the computer WHAT to do and the computer can handle the details, while being imperative means I have to tell the computer HOW to do WHAT steps by steps.
 
 HOW TO SET UP A REACT PROJECT?
   1. On Terminal, run: npx create-react-app <name of your app>
-  2. To add React to an HTML page, add these tags at the end of the body tag:
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  2. After your app is created, 
+    in HTML file, add the following tags at the end of the body tag:
+      <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script
+      <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    in JS file, add the following statements at the start of your file:
+      import React from 'react';
+      import ReactDOM from 'react-dom/client';
 
 WHAT IS REACTDOM?
   ReactDOM is a global variable of the ReactDOM library.
   React DOM is used to render React components and take care of efficiently updating the DOM to match the React elements. It compares the elements and their children to the previous one, and only applies the DOM updates necessary to bring the DOM to the desired state.
   I. Rendering Elements:
-    ReactDOM.render(
-      <>React elements</>,
-      document.getElementById("root-element")
-    );
+    Elements are the smallest building blocks of a Web page that describe what you want to see on the page. And, components are made of elements.
+    Unlike browser DOM elements, React elements are plain JavaScript objects created and returned by JSX that represents DOM elements. And, React components are essentially functions that return React elements.
+    Components let you split the UI into independent reusable pieces.
+    ReactDOM renders the elements by:
+      ReactDOM.render(
+        <>React elements</>,
+        document.getElementById("root-element")
+      );
   II. Root Element:
     A root DOM node/container is required to mark the spot where React DOM should display its components on the HTML page. It will be managed by React DOM.
     To declare a root element:
