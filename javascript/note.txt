@@ -550,12 +550,12 @@ WHAT IS A JAVASCRIPT ARRAY?
     Arrays are a special type of objects.
     Arrays are stored as a list of values that can be of any types of data, numbers, strings, arrays, objects, functions,... They can hold more than one value under one variable, and  the values can be accessed by referring to the associated index numbers.
     to declare an array:
-        const arrayName = [item0, item1, item2];
+        const arrayName = [element0, element1, element2];
     or:
         const arrayName = [];
-        arrayName[0] = value0;
-        arrayName[1] = value1;
-        arrayName[2] = value2;
+        arrayName[0] = value;
+        arrayName[1] = value;
+        arrayName[2] = value;
     I. Index:
         In some programming languages, arrays with named indexes are called associative arrays, or hashes.
         In JavaScript, array indexes are numbered and zero-based, that means they start with O, then 1, then 2,...
@@ -575,16 +575,16 @@ WHAT IS A JAVASCRIPT ARRAY?
             delete arrayName[index];
             Instead of completely removing the array element like arrayName.pop() or arrayName.shift(), this leaves an "undefined" hole at the specified index.
         7. to display an array of object:
-            const arrayName = [object1, object2, object3];
+            const arrayName = [element0, element1, element2];
             console.log(JSON.stringify(arrayName));
         8. to assign each array element to a reference:
             instead of:
-                const arrayName = [object1, object2, object3];
+                const arrayName = [element0, element1, element2];
                 let variable1 = arrayName[0];
                 let variable2 = arrayName[1];
                 let variable3 = arrayName[2];
             a shortcut is:
-                const arrayName = [object1, object2, object3];
+                const arrayName = [element0, element1, element2];
                 let [variable1, variable2, variable3] = arrayName;
     III. Methods:
         //methods return a number
