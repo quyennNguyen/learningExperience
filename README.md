@@ -38,17 +38,20 @@
 * https://youtu.be/kUMe1FH4CHE
 * https://www.w3schools.com/html/default.asp
 * https://developer.mozilla.org/en-US/docs/Web/HTML
+* VSCode: https://code.visualstudio.com/download
 * html note
 #### CSS:
 * https://youtu.be/1Rs2ND1ryYc
 * https://www.w3schools.com/css/default.asp
 * https://developer.mozilla.org/en-US/docs/Web/CSS
+* VSCode: https://code.visualstudio.com/download
 * css note
 #### SASS:
 * https://youtu.be/_a5j7KoflTs
 * https://www.w3schools.com/sass/default.php
 * https://sass-lang.com/documentation/
 * Fontawesome: https://fontawesome.com/
+* VSCode: https://code.visualstudio.com/download
 * sass note
 #### JavaScript:
 * https://youtu.be/lI1ae4REbFM
@@ -63,6 +66,7 @@
 * https://youtu.be/bMknfKXIFA8
 * https://www.w3schools.com/react/default.asp
 * https://reactjs.org/
+* NodeJs: https://nodejs.org/en
 * reactjs note
 #### Java:
 * https://www.w3schools.com/java/default.asp
@@ -73,6 +77,8 @@
 #### Springboot:
 * Spring Initializr: https://start.spring.io/
 * Postman API: https://www.postman.com/
+* IntelliJ: https://www.jetbrains.com/idea/download/#section=windows
+* spring note
 #### MySQL:
 * https://www.w3schools.com/MySQL/default.asp
 * Ubuntu: https://learn.microsoft.com/en-us/windows/wsl/install
