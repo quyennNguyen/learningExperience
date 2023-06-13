@@ -42,7 +42,8 @@ GENERAL CLI COMMASNDS:
         find "search term" <file's name>: to search for a string in an existing file in the current directory
         ren <old file's name> <new file's name>: to rename an existing file in the current directory
         del <file's name>: to delete an existing file in the current directory
-        rmdir <folder's name>: to remove an existing folder and its content in the current directory
+        rmdir <folder's name>: to remove an existing empty folder
+        rmdir /s <folder'name>: to remove an existing non-empty folder
         copy <file's name> <directory path>: to copy an existing file from the current directory to another directory
     2. Ubuntu:
         pwd: to print the full path of the working directory
