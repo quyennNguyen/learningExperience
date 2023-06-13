@@ -4,15 +4,23 @@ WHAT IS REACT?
   React is declarative. Being declarative means I can tell the computer WHAT to do and the computer can handle the details, while being imperative means I have to tell the computer HOW to do WHAT steps by steps.
 
 HOW TO SET UP A REACT PROJECT?
-  1. On Terminal, run: npx create-react-app <name of your app>
-  2. After your app is created, 
-    in HTML file, add the following tags at the end of the body tag:
+  1. Method 1:
+    On Terminal, run
+      npx create-react-app <name of your app>
+    Some other npm commands:
+      npm create vite@latest
+      npm start
+      npm run dev
+      npm i
+  2. Method 2: 
+    In HTML file, add the following tags at the end of the body tag:
       <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script
       <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-    in JS file, add the following statements at the start of your file:
+    In JS file, add the following statements at the start of your file:
       import React from 'react';
       import ReactDOM from 'react-dom/client';
-How to add JSX to an HTML page?
+
+HOW TO SET UP JSX IN A REACT PROJECT?
   1. Method 1:
       - add <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
       - add <script src="script.js" type="text/babel"></script>
