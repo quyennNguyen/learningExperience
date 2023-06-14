@@ -19,6 +19,13 @@ HOW TO SET UP A REACT PROJECT AND JSX IN IT?
     In JS file, add the following statements at the start of your file:
       import React from 'react';
       import ReactDOM from 'react-dom/client';
+    To connect CSS with JavaScript:
+      a. Method 1:
+        In HTML file, add the following tag in the head tag:
+          <link rel="stylesheet" href="file path">
+      b. Method 2:
+        In JS file, add the following statements at the start of your file:
+          import "file path";
     To set up JSX:
       a. Method 1:
         In HTML file, add the following tags at the end of the body tag:
