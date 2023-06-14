@@ -3,7 +3,7 @@ WHAT IS REACT?
   React embraces the fact that rendering logic is inherently coupled with other UI logic: how events are handled, how the state changes over time, and how the data is prepared for display.
   React is declarative. Being declarative means I can tell the computer WHAT to do and the computer can handle the details, while being imperative means I have to tell the computer HOW to do WHAT steps by steps.
 
-HOW TO SET UP A REACT PROJECT?
+HOW TO SET UP A REACT PROJECT AND JSX IN IT?
   1. Method 1:
     On Terminal, run
       npx create-react-app <name of your app>
@@ -19,21 +19,20 @@ HOW TO SET UP A REACT PROJECT?
     In JS file, add the following statements at the start of your file:
       import React from 'react';
       import ReactDOM from 'react-dom/client';
-
-HOW TO SET UP JSX IN A REACT PROJECT?
-  1. Method 1:
-    In HTML file, add the following tags at the end of the body tag:
-      <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-      <script src="script.js" type="text/babel"></script>
-    This method may slow down your Website and isn't suitable for production.
-  2. Method 2:
-    Download Node.js    
-    Create a "src" folder where the "script.js" file will locate
-    On Terminal, run:
-      npm init -y
-      npm install babel-cli@6 babel-preset-react-app@3
-      npx babel --watch src --out-dir . --presets react-app/prod
-    This method is the setup for a production-ready JSX preprocessor to convert all "script" tags automatically.
+    To set up JSX:
+      a. Method 1:
+        In HTML file, add the following tags at the end of the body tag:
+          <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+          <script src="script.js" type="text/babel"></script>
+        This method may slow down your Website and isn't suitable for production.
+      b. Method 2:
+        Download Node.js    
+        Create a "src" folder where the "script.js" file will locate
+        On Terminal, run:
+          npm init -y
+          npm install babel-cli@6 babel-preset-react-app@3
+          npx babel --watch src --out-dir . --presets react-app/prod
+        This method is the setup for a production-ready JSX preprocessor to convert all "script" tags automatically.
 
 WHAT IS REACTDOM?
   Elements are the smallest building blocks of a Web page that describe what you want to see on the page. And, components are made of elements.
@@ -98,7 +97,7 @@ HOW DOES REACTDOM RENDER ELEMENTS?
       );
       ReactDOM.render(variableName, document.getElementById("root-element"));
 
-WHAT ARE SOME SYNTAX IN REACT DIFFERENT FROM NORMAL?
+WHAT ARE SOME SYNTAX IN REACT THAT ARE DIFFERENT FROM REGULAR JAVASCRIPT?
   I. HTML Attributes:
     React uses camelCase instead of all lowercase when naming element attributes and event handlers.
     EX:
@@ -130,9 +129,36 @@ HOW TO IMPORT AND EXPORT FILES IN REACT?
     import ComponentName from 'file path';
   II Export:
     export default ComponentName;
+    
+WHAT IS CONDITIONAL RENDERING?
+  React allows you to create distinct components that encapsulate behavior you need, then you can render only some of them depending on the state of your application.
+  Conditional operators are used to create elements representing the current state and let React update the UI to match them.
+  I. If-Else Statements:
+    if (condition) {
+      // action to be executed
+    } else {
+      // action to be executed
+    }
+  II. Inline If with Logical Operator:
+    <starting-tag>
+      {
+        condition &&
+        expression
+      }
+    </closing-tags>
+  III. Inline If-Else with Ternary Operator:
+    <starting-tag>
+      {
+        condition ? trueExpression : falseExpression
+      }
+    </closing-tags>       
+  IV. Preventing Component from Rendering:
+    In some cases, it is better to return "null" and hide the component than returning the output and rendering the component.
+    Returning "null" from the "render()" method of the component does not affect the firing of the component’s lifecycle methods.
   
-WHAT IS PROPS?
-  React components can accept arbitrary inputs, called props (properties) object argument with data.
+WHAT ARE PROPS?
+  React components can accept arbitrary inputs, called props (properties).
+  Props are basically objects that can be passed as arguments in React components.
   1. Function Component:
     const root = ReactDOM.createRoot(document.getElementById("root"));
     function FunctionName(props) {
@@ -154,222 +180,198 @@ WHAT IS PROPS?
       }
     }
     root.render(<ClassName atribute="value" />);
-  Props must never be modified. All React components must act like pure functions with respect to their props.
   With props, whenever the component is rendered into the DOM node, only a single instance of the component is executed. Therefore, when the component needs to be re-rendered over the time, state and lifecycle are preferred to use.
   
-  V. State and Lifecycle:
-    1. State:
-      State is similar to props.
-      While props is set up by ReactDOM, state is private/local and encapsulated.
-      State is fully controlled by the component and is not accessible to any component other than the one that owns and sets it.
-        const root = ReactDOM.createRoot(document.getElementById("root"));
-        class ClassName extends React.Component {
-          constructor(props) {
-            super(props);
-            this.state = {attribute: "value"};
-          }
-          render() {
-            return (
-              <>React elements {this.state.attribute}</>
-            );
-          }
+WHAT ARE STATE AND LIFECYCLE?
+  I. State:
+    State is similar to props.
+    While props is set up by ReactDOM, state is private/local and encapsulated.
+    State is fully controlled by the component and is not accessible to any component other than the one that owns and sets it.
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      class ClassName extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {attribute: "value"};
         }
-        root.render(<ClassName />);
-    2. Lifecycle:
-      Lifecycle methods are methods on the React component class that run when the component mounts or unmounts.
-        const root = ReactDOM.createRoot(document.getElementById("root"));
-        class ClassName extends React.Component {
-          constructor(props) {
-            super(props);
-            this.state = {attribute: "value"};
-          }
-          componentDidMount() {
-            action;
-          }
-          componentWillUnmount() {
-            action;
-          }
-          render() {
-            return (
-              <>React elements {this.state.attribute}</>
-            );
-          }
+        render() {
+          return (
+            <>React elements {this.state.attribute}</>
+          );
         }
-        root.render(<ClassName />);
-      The "componentDidMount()" lifecycle method runs after the component output has been rendered to the DOM.
-      The "componentWillUnmount()" lifecycle method runs after the component is ever removed from the DOM.
-    3. State Update:
-      State must not be modified directly. To update state:
-        this.setState({attribute: "value"});
-      State and props may be updated asynchronously. Therefore, you should not rely on their values for calculating the next state. Depending on the situation, update state with a function or an object:
-        this.setState({attribute: "value"});
-        or
-        this.setState((state, props) => {
-          attribute: new value derived from previous value which is retrieved by using "state.attribute"
-        });
-      When the "setState()" method is called, React merges the object you provide into the current state. If state includes multiple independent variables, they can be updated independently with separate "setState()" calls.
-    SIDE NOTE:
-              You can declare as many class properties as you need as long as they don't interfere the data flow.
-              If any callback functions are used within the "render()" method, you need to bind all of them to the component class in the constructor in order to use them.
-                constructor(props) {
-                  super(props);
-                  this.state = {attribute: "value"};
-                  this.functionName = this.functionName.bind(this);
-                }
-              A component may choose to pass its state down as props to its child components. Any data derived from that state can only affect components “below” them in the tree. Neither parent nor child components can know if a certain component is stateful or stateless. Whether a component is stateful or stateless is considered an implementation detail of the component that may change over time. You can use stateless components inside stateful components, and vice versa.
-  VI. Conditional Rendering:
-    React allows you to create distinct components that encapsulate behavior you need, then you can render only some of them depending on the state of your application.
-    Conditional operators are used to create elements representing the current state and let React update the UI to match them.
-    1. If-Else Statements:
-      if (condition) {
-        action;
-      } else {
-        action;
       }
-    2. Inline If with Logical Operator:
-      This is used as an expression embedded in JSX.
+      root.render(<ClassName />);
+  II. Lifecycle:
+    Lifecycle methods are methods on the React component class that run when the component mounts or unmounts.
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      class ClassName extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {attribute: "value"};
+        }
+        componentDidMount() {
+          action;
+        }
+        componentWillUnmount() {
+          action;
+        }
+        render() {
+          return (
+            <>React elements {this.state.attribute}</>
+          );
+        }
+      }
+      root.render(<ClassName />);
+    The "componentDidMount()" lifecycle method runs after the component output has been rendered to the DOM.
+    The "componentWillUnmount()" lifecycle method runs after the component is ever removed from the DOM.
+  III. State Update:
+    State must not be modified directly. To update state:
+      this.setState({attribute: "value"});
+    State and props may be updated asynchronously. Therefore, you should not rely on their values for calculating the next state. Depending on the situation, update state with a function or an object:
+      this.setState({attribute: "value"});
+      or
+      this.setState((state, props) => {
+        attribute: new value derived from previous value which is retrieved by using "state.attribute"
+      });
+    When the "setState()" method is called, React merges the object you provide into the current state. If state includes multiple independent variables, they can be updated independently with separate "setState()" calls.
+  SIDE NOTE:
+            You can declare as many class properties as you need as long as they don't interfere the data flow.
+            If any callback functions are used within the "render()" method, you need to bind all of them to the component class in the constructor in order to use them.
+              constructor(props) {
+                super(props);
+                this.state = {attribute: "value"};
+                this.functionName = this.functionName.bind(this);
+              }
+            A component may choose to pass its state down as props to its child components. Any data derived from that state can only affect components “below” them in the tree. Neither parent nor child components can know if a certain component is stateful or stateless. Whether a component is stateful or stateless is considered an implementation detail of the component that may change over time. You can use stateless components inside stateful components, and vice versa.
+  IV. Hooks:
+    const [variablename, setterName] = useState(default value);
+  
+WHAT ARE LIST AND KEY?
+  1. Lists:
+    In React, transforming arrays into lists of elements is nearly identical.
+      const arrayName = [element0, element1, element2];
+      const listName = arrayName.map(element => {
         <starting-tag>
-          {
-            condition &&
-            expression
-          }
-        </closing-tags>        
-      If the condition is true, the expression will be evaluated. If the condition is false, React will ignore and skip the expression.
-    3. Inline If-Else with Ternary Operator:
-      This is used as an expression embedded in JSX.
-        <starting-tag>
-          {
-            condition ? trueExpression : falseExpression
-          }
-        </closing-tags>       
-    4. Preventing Component from Rendering:
-      In some cases, it is better to return "null" and hide the component than returning the output and rendering the component.
-      Returning "null" from the "render()" method of the component does not affect the firing of the component’s lifecycle methods.
-  VII. Lists and Keys:
-    1. Lists:
-      In React, transforming arrays into lists of elements is nearly identical.
+          {element}
+        </closing-tags> 
+      });
+      const variableName = <starting-tag> {listName} </closing-tags>;
+  2. Keys:
+    A key is a special string attribute that needs to be given to each element when creating their list to give them a stable unique identity.
+    Keys help React identify which elements have changed, are added, or are removed.
+      const listName = arrayName.map(element => {
+        <starting-tag key={id}>
+          {element}
+        </closing-tags> 
+      });
+    a. use element values:
+      If it is a list of different numeric elements, you can use their own values as unique keys.
+        const arrayName = [number0, number1, number2];
+        const listName = arrayName.map(element => {
+          <starting-tag key={element.toString()}>
+            {element}
+          </closing-tags> 
+        });
+    b. use element data:
+      If it is a list of object elements, you can use IDs from your data as unique keys.
+        const arrayName = [
+          {id:value0, name:value1},
+          {id:value0, name:value1},
+          {id:value0, name:value1}
+        ];
+        const listName = arrayName.map(element => {
+          <starting-tag key={element.id}>
+            {element.name}
+          </closing-tags> 
+        });
+    c. use indexes:
+      When you don’t have stable IDs for rendered elements, you may use the element indexes as keys as a last resort.
         const arrayName = [element0, element1, element2];
-        const listName = arrayName.map(element => {
-          <starting-tag>
-            {element}
+        const listName = arrayName.map((element, index) => {
+          <starting-tag key={index}>
+            {element.text}
           </closing-tags> 
         });
-        const variableName = <starting-tag> {listName} </closing-tags>;
-    2. Keys:
-      A key is a special string attribute that needs to be given to each element when creating their list to give them a stable unique identity.
-      Keys help React identify which elements have changed, are added, or are removed.
-        const listName = arrayName.map(element => {
-          <starting-tag key={id}>
-            {element}
-          </closing-tags> 
-        });
-      a. use element values:
-        If it is a list of different numeric elements, you can use their own values as unique keys.
-          const arrayName = [number0, number1, number2];
-          const listName = arrayName.map(element => {
-            <starting-tag key={element.toString()}>
-              {element}
-            </closing-tags> 
-          });
-      b. use element data:
-        If it is a list of object elements, you can use IDs from your data as unique keys.
-          const arrayName = [
-            {id:value0, name:value1},
-            {id:value0, name:value1},
-            {id:value0, name:value1}
-          ];
-          const listName = arrayName.map(element => {
-            <starting-tag key={element.id}>
-              {element.name}
-            </closing-tags> 
-          });
-      c. use indexes:
-        When you don’t have stable IDs for rendered elements, you may use the element indexes as keys as a last resort.
-          const arrayName = [element0, element1, element2];
-          const listName = arrayName.map((element, index) => {
-            <starting-tag key={index}>
-              {element.text}
-            </closing-tags> 
-          });
-        Using indexes for keys is not highly recommended if the order of elements may change. This can negatively impact performance and may cause issues with the component state.
-      Keys used within a list should be unique among elements. However, they don't have to be globally unique. Different lists can use duplicate sets of keys.
-      Keys only make sense in the context of the surrounding array. Therefore, they should be assigned to the list elements specifically inside the main array method call, not any where else.
-      A good rule of thumb is that list elements inside the main array method call need keys.
-      If you need to pass the keys to the children components, pass it explicitly as a props.
-  VIII. Forms:
-    HTML form elements work a bit differently from other DOM elements in React because form elements naturally keep some internal state.
-    In HTML, form elements such as "<input>", "<textarea>", and "<select>" typically maintain their own state and update it based on user input.
-    In React, mutable state is typically kept in the "state" property of components and only updated with the "setState()" method.
-    You can combine these by making the React state the “single source of truth”. Then the React component that renders a form also controls what happens in that form on subsequent user input.
-    1. Comtrolled Components:
-      A controlled component is a form element whose value is controlled by React.
-        class ClassName extends React.Component {
-          constructor(props) {
-            super(props);
-            this.state = {value: ''};
-            this.handleChange = this.handleChange.bind(this);
-            this.handleSubmit = this.handleSubmit.bind(this);
-          }
-
-          handleChange(event) {
-            this.setState({value: event.target.value});
-          }
-
-          handleSubmit(event) {
-            alert('A name was submitted: ' + this.state.value);
-            event.preventDefault();
-          }
-
-          render() {
-            return ();
-          }
+      Using indexes for keys is not highly recommended if the order of elements may change. This can negatively impact performance and may cause issues with the component state.
+    Keys used within a list should be unique among elements. However, they don't have to be globally unique. Different lists can use duplicate sets of keys.
+    Keys only make sense in the context of the surrounding array. Therefore, they should be assigned to the list elements specifically inside the main array method call, not any where else.
+    A good rule of thumb is that list elements inside the main array method call need keys.
+    If you need to pass the keys to the children components, pass it explicitly as a props.
+ 
+WHAT IS FORM?
+  HTML form elements work a bit differently from other DOM elements in React because form elements naturally keep some internal state.
+  In HTML, form elements such as "<input>", "<textarea>", and "<select>" typically maintain their own state and update it based on user input.
+  In React, mutable state is typically kept in the "state" property of components and only updated with the "setState()" method.
+  You can combine these by making the React state the “single source of truth”. Then the React component that renders a form also controls what happens in that form on subsequent user input.
+  1. Comtrolled Components:
+    A controlled component is a form element whose value is controlled by React.
+      class ClassName extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {value: ''};
+          this.handleChange = this.handleChange.bind(this);
+          this.handleSubmit = this.handleSubmit.bind(this);
         }
-      a. input text:
+
+        handleChange(event) {
+          this.setState({value: event.target.value});
+        }
+
+        handleSubmit(event) {
+          alert('A name was submitted: ' + this.state.value);
+          event.preventDefault();
+        }
+
         render() {
-          return (
-            <form onSubmit={this.handleSubmit}>
-              <label>
-                Name:
-                <input type="text" value={this.state.value} onChange={this.handleChange} />
-              </label>
-              <input type="submit" value="Submit" />
-            </form>
-          );
+          return ();
         }
-      b. textarea:
-        render() {
-          return (
-            <form onSubmit={this.handleSubmit}>
-              <label>
-                Essay:
-                <textarea value={this.state.value} onChange={this.handleChange} />
-              </label>
-              <input type="submit" value="Submit" />
-            </form>
-          );
-        }
-      c. select drop-down list:
-        render() {
-          return (
-            <form onSubmit={this.handleSubmit}>
-              <label>
-                Pick your favorite flavor:
-                <select value={this.state.value} onChange={this.handleChange}>
-                  <option value="grapefruit">Grapefruit</option>
-                  <option value="lime">Lime</option>
-                  <option value="coconut">Coconut</option>
-                  <option value="mango">Mango</option>
-                </select>
-              </label>
-              <input type="submit" value="Submit" />
-            </form>
-          );
-        }
-        The "select" element can also accept multiple options by adding "multiple={true}" attribute.
-      This makes it so that "<input type="text">", "<textarea>", and "<select>" elements work very similarly. They all accept a "value" attribute that can be used to implement a controlled component.
-    2. Uncontrolled Components:
+      }
+    a. input text:
+      render() {
+        return (
+          <form onSubmit={this.handleSubmit}>
+            <label>
+              Name:
+              <input type="text" value={this.state.value} onChange={this.handleChange} />
+            </label>
+            <input type="submit" value="Submit" />
+          </form>
+        );
+      }
+    b. textarea:
+      render() {
+        return (
+          <form onSubmit={this.handleSubmit}>
+            <label>
+              Essay:
+              <textarea value={this.state.value} onChange={this.handleChange} />
+            </label>
+            <input type="submit" value="Submit" />
+          </form>
+        );
+      }
+    c. select drop-down list:
+      render() {
+        return (
+          <form onSubmit={this.handleSubmit}>
+            <label>
+              Pick your favorite flavor:
+              <select value={this.state.value} onChange={this.handleChange}>
+                <option value="grapefruit">Grapefruit</option>
+                <option value="lime">Lime</option>
+                <option value="coconut">Coconut</option>
+                <option value="mango">Mango</option>
+              </select>
+            </label>
+            <input type="submit" value="Submit" />
+          </form>
+        );
+      }
+      The "select" element can also accept multiple options by adding "multiple={true}" attribute.
+    This makes it so that "<input type="text">", "<textarea>", and "<select>" elements work very similarly. They all accept a "value" attribute that can be used to implement a controlled component.
+  2. Uncontrolled Components:
 
-  IX. Lifting State Up:
-    Often, several components need to reflect the same changing data. We recommend lifting the shared state up to their closest common ancestor.
-  X. Event Handling:
-    https://reactjs.org/docs/handling-events.html
+WHAT IS LIFTING STATE UP?
+  Often, several components need to reflect the same changing data. We recommend lifting the shared state up to their closest common ancestor.
+
+WHAT IS EVENT HANDLING?
+  https://reactjs.org/docs/handling-events.html
