@@ -862,26 +862,36 @@ WHAT IS A JAVASCRIPT OBJECT?
     An object is made of key-value pairs that represent the properties or methods of the object.
     to declare an object:
         const objectName = {key1:value, key2:value, key3:value};
-    If the key consists of 1 word, it doesn't require any quotes around it. If it consists of more than 1 word, it needs to be wrapped around with a pair of single quotes ('') or double quotes("").
-    In JavaScript, a global object always exists. Every object created in a JavaScript program inherits some properties and methods from the global object. One of the inherited properties is the Prototype object which consists of its own properties and methods.
-    In JavaScript, you can have nested objects where one object can be inside another object.
     I. Properties:
         1. to define an object property:
-            propertyName:propertyValue
+            a. if the name contains only 1 word:
+                propertyName: propertyValue
+            b. if the name contains more than 1 word:
+                "property name": propertyValue
+            c. If the name is a reference from another scope:
+                [propertyName]: propertyValue
         2. to access an object method:
-            a. with dot notation:
+            a. Case 1:
                 objectName.propertyName
-            b. with bracket notation:
-                objectName["propertyName"]
+            b. Case 2:
+                objectName["property name"]
+            c. Case 3:
+                objectName[propertyName]
         3. to add a new property:
+            a. Case 1:
                 objectName.propertyName = propertyValue;
-            or
-                objectName["propertyName"] = propertyValue;
-        4. to delete an object property:
-                delete objectName.propertyName;
-            or
-                delete objectName["propertyName"];
-        5. to assign each object element to a reference:
+            b. Case 2:
+                objectName["property name"] = propertyValue;
+            c. Case 3:
+                objectName[propertyName] = propertyValue;
+        4. to delete an object property with "delete" operator:
+            a. Case 1:
+                delete objectName.propertyName
+            b. Case 2:
+                delete objectName["property name"]
+            c. Case 3:
+                delete objectName[propertyName]
+        5. to reference object elements:
             instead of:
                 const objectName = {key1:value, key2:value, key3:value};
                 let key1 = objectName.key1;
@@ -894,13 +904,14 @@ WHAT IS A JAVASCRIPT OBJECT?
             In the second case, the references must be named the same as the names of the object elements. To name differently:
                 const objectName = {key1:value, key2:value, key3:value};
                 let {key1:newKey1, key2:newKey2, key3:newKey3} = objectName;
+        6. In JavaScript, a global object always exists. Every object created in a JavaScript program inherits some properties and methods from the global object. One of the inherited properties is the Prototype object which consists of its own properties and methods.
     II. Methods:
         1. to define an object method:
-                methodName:function() {
+                methodName: function() {
                     action to be executed;
                 }
             or
-                methodName () {
+                methodName() {
                     action to be executed;
                 }
             or
@@ -909,7 +920,8 @@ WHAT IS A JAVASCRIPT OBJECT?
                 }
         2. to call an object method:
             objectName.methodName()
-    III. Date Object:
+    III. Object Literals and Spread Operator:
+    IV. Date Object:
         The Date object lets you work with date and time.
             const variableName = new Date();
         This returns the current date and time according to the Web browser's time zone; in other words, the result might vary because the computer date is relative to your time zone.
@@ -974,7 +986,7 @@ WHAT IS A JAVASCRIPT OBJECT?
             Full list of get Date methods: https://www.w3schools.com/js/js_date_methods.asp
             Full list of set Date methods: https://www.w3schools.com/js/js_date_methods_set.asp
             Full list of Date reference: https://www.w3schools.com/jsref/jsref_obj_date.asp
-    IV. Math Object:
+    V. Math Object:
         The Math object lets you perform mathematical tasks on numbers.
         The Math object has no constructor; therefore, it is static, and its properties and methods can be accessed without declaring the object.
         1. Math Properties:
@@ -1022,7 +1034,7 @@ WHAT IS A JAVASCRIPT OBJECT?
                             to find a random number 0 (inclusive) and x (exclusive):
                                 let numberName = Math.floor(Math.random() * (x + 1)) = Math.ceil(Math.random() * x);
             Full list of Math reference: https://www.w3schools.com/js/js_math.asp
-    V. Set:
+    VI. Set:
         A set is a collection of unique values, each of which can only occur once in the set.
         1. Set Properties:
             to return the number of elements in a set:
@@ -1052,7 +1064,7 @@ WHAT IS A JAVASCRIPT OBJECT?
             f. to return an iterable object containing all the elements in a set:
                     const objectName = setName.values();
                 You can use for/of loop to display the object.
-    VI. Map:
+    VII. Map:
         A map holds key-value pairs, where the keys and values can be of any datatype.
         A map can remember the original insertion order of the keys.
         1. Map Properties:
@@ -1097,7 +1109,7 @@ WHAT IS A JAVASCRIPT OBJECT?
             g. to return an iterable object containing all the elements in a map:
                     const objectName = mapName.entries();
                 You can use for/of loop to display the object.
-    VII. Class:
+    VIII. Class:
         Classes are basically templates/blueprints/constructors for creating objects.
         to create a class:
             class className {
