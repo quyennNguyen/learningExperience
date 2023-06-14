@@ -562,22 +562,20 @@ WHAT IS A JAVASCRIPT ARRAY?
     II. Properties:
         1. to return the length of an array, which is the number of array elements,:
             let numberName = arrayName.length;
-        2. to access the whole array:
-            arrayName
-        3. to access an array element:
+        2. to access an array element:
             arrayName[index]
-        4. to change the value of an array element:
-            arrayName[index] = newValue;
-        5. to append an element to an array:
-            arrayName[arrayName.length] = newValue;
+        3. to change the value of an array element:
+            arrayName[index] = value;
+        4. to append an element to an array:
+            arrayName[arrayName.length] = value;
             Items at indexes that aren't assigned with any value will be assigned with "undefined".
-        6. to delete an array element:
+        5. to delete an array element with "delete" operator:
             delete arrayName[index];
             Instead of completely removing the array element like arrayName.pop() or arrayName.shift(), this leaves an "undefined" hole at the specified index.
-        7. to display an array of object:
+        6. to display an array of object:
             const arrayName = [element0, element1, element2];
             console.log(JSON.stringify(arrayName));
-        8. to assign each array element to a reference:
+        7. to reference array elements:
             instead of:
                 const arrayName = [element0, element1, element2];
                 let variable1 = arrayName[0];
