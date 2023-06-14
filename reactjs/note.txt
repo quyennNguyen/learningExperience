@@ -245,9 +245,26 @@ WHAT ARE STATE AND LIFECYCLE?
   IV. Hooks:
     const [variablename, setterName] = useState(default value);
     useEffect(
-      () => {},
-      []
+      () => {}, // parameter 1 represents a callback function to manipulate the data from useState()
+      [] // parameter 2 is used to inform React to keep the data updated and re-render whenever changes occur  
     );
+    EX of how to fetch data using useState() and useEffect():
+      const [data, setData] = useState(value);
+      useEffect(
+        () => {
+          const fetchData = async () => {
+            try {
+              const response = await fetch("API URL");
+              const {results} = await response.json(); // make sure to check what type of data is returned from the response to store it in an appropriate variable
+              setData(results);
+            } catch (error) {
+              console.error("Error Message", error);
+            } // handle exceptions when data is not available            
+          };
+          fetchData();
+        },
+        [] // you can use either [] or [data.length]
+      );
   
 WHAT ARE LIST AND KEY?
   1. Lists:
@@ -376,6 +393,3 @@ WHAT IS FORM?
 
 WHAT IS LIFTING STATE UP?
   Often, several components need to reflect the same changing data. We recommend lifting the shared state up to their closest common ancestor.
-
-WHAT IS EVENT HANDLING?
-  https://reactjs.org/docs/handling-events.html
