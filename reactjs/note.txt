@@ -244,6 +244,10 @@ WHAT ARE STATE AND LIFECYCLE?
             A component may choose to pass its state down as props to its child components. Any data derived from that state can only affect components “below” them in the tree. Neither parent nor child components can know if a certain component is stateful or stateless. Whether a component is stateful or stateless is considered an implementation detail of the component that may change over time. You can use stateless components inside stateful components, and vice versa.
   IV. Hooks:
     const [variablename, setterName] = useState(default value);
+    useEffect(
+      () => {},
+      []
+    );
   
 WHAT ARE LIST AND KEY?
   1. Lists:
