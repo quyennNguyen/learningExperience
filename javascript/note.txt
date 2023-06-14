@@ -586,6 +586,10 @@ WHAT IS A JAVASCRIPT ARRAY?
                 const arrayName = [element0, element1, element2];
                 let [variable1, variable2, variable3] = arrayName;
     III. Array Literals with Spread Operator:
+        The spread operator allows an iterable to expand/copy/concat in another iterable.
+            const arrayName1 = [element0, element1, element2]; 
+            const arrayName2 = [element0, element1, element2];
+            const arrayName3 = [...arrayName1, ...arrayName2];
     IV. Methods:
         //methods return a number
         1. to find the index of an array element:
