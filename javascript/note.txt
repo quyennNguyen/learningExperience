@@ -940,7 +940,7 @@ WHAT IS A JAVASCRIPT OBJECT?
         2. to call an object method:
             objectName.methodName()
     III. Object Literals and Spread Operator:
-        The spread operator is used to make a copy of an existing iterable and allow it to expand in another iterable.
+        The spread operator is used to make a copy of an existing iterable and allow it to enumerate in another iterable.
         1. concat:
             const objectName1 = {key1:value, key2:value, key3:value};
             const objectName2 = {key1:value, key2:value, key3:value};
