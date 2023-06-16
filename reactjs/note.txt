@@ -53,10 +53,11 @@ WHAT IS JSX?
   Babel acts as a compiler to convert JSX down to React.createElement() calls. After compilation, JSX expressions become regular JavaScript function calls and evaluate to JavaScript objects. These objects are React elements that describe what React should add to the real DOM on the HTML page. React reads these objects, interprets them, and uses them to construct the DOM elements and keep them up to date.
 
 HOW DOES REACTDOM RENDER ELEMENTS?
-  ReactDOM.render(
-    <>React elements</>,
-    document.getElementById("root-element")
-  );
+    ReactDOM.render(
+      <>React elements</>,
+      document.getElementById("root-element")
+    );
+  React is rendering means React is calling its components.
   I. Root Element:
     A root DOM node/container is required to mark the spot where React DOM should display its components on the HTML page. It will be managed by React DOM.
     To declare a root element:
