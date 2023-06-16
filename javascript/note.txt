@@ -585,12 +585,7 @@ WHAT IS A JAVASCRIPT ARRAY?
             a shortcut is:
                 const arrayName = [element0, element1, element2];
                 let [variable1, variable2, variable3] = arrayName;
-    III. Array Literals with Spread Operator:
-        The spread operator allows an iterable to expand/copy/concat in another iterable.
-            const arrayName1 = [element0, element1, element2]; 
-            const arrayName2 = [element0, element1, element2];
-            const arrayName3 = [...arrayName1, ...arrayName2];
-    IV. Methods:
+    III. Methods:
         //methods return a number
         1. to find the index of an array element:
             a. let numberName = arrayName.indexOf(elementValue, start);
@@ -853,6 +848,26 @@ WHAT IS A JAVASCRIPT ARRAY?
                 text += x + "<br>";
             }
     Full list of array reference: https://www.w3schools.com/jsref/jsref_obj_array.asp
+    IV. Array Literals with Spread Operator:
+        The spread operator is used to make a copy of an existing iterable and allow it to expand in another iterable.
+        1. concat:
+            instead of:
+                const arrayName1 = [element0, element1, element2]; 
+                const arrayName2 = [element0, element1, element2];
+                const arrayName3 = arrayName1.concat(arrayName2);
+            do this:
+                const arrayName1 = [element0, element1, element2]; 
+                const arrayName2 = [element0, element1, element2];
+                const arrayName3 = [...arrayName1, ...arrayName2];
+            In this situation, case 1 is more suitable than case 2. Because in case of big data set, using the spread operator is slower.
+        2. copy & expand:
+            instead of:
+                const arrayName1 = [element0, element1, element2]; 
+                const arrayName2 = arrayName1;
+            do this:
+                const arrayName1 = [element0, element1, element2]; 
+                const arrayName2 = [...arrayName1];
+            In this situation, case 2 is more suitable than case 1. Because case 1 involves deep copy while case 2 involves shallow copy. In case 1, both references point at 1 array object, so whatever happens to one of them happens to both. In case 2, the first array expands into the second array, so the second array is technically its own object.
     SIDE NOTE:
                 While arrays use numbers, or numbered indexes, to access their elements, objects use names, or named indexes, to access their memebers. Therefore, although typeof array is object, it is still best described as array.
                 Try to avoid using "String", "Number", "Boolean", or "Array" object to declare a variable, as it will complicate the code and slow down the execution speed.
@@ -860,7 +875,7 @@ WHAT IS A JAVASCRIPT ARRAY?
 WHAT IS A JAVASCRIPT OBJECT?
     Object is a non-primitive data type.
     An object may have:
-        - an unique id/name
+        - a unique id/name
         - properties that represent the characteristic of the object
         - methods that represent the behavior of the object
     An object is made of key-value pairs that represent the properties or methods of the object.
@@ -904,7 +919,7 @@ WHAT IS A JAVASCRIPT OBJECT?
             a shortcut is:
                 const objectName = {key1:value, key2:value, key3:value};
                 let {key1, key2, key3} = objectName;
-            In the first case, the references might or might not be named different from the names of the object elements.
+            In the first case, the references might or might not be named differently from the names of the object elements.
             In the second case, the references must be named the same as the names of the object elements. To name differently:
                 const objectName = {key1:value, key2:value, key3:value};
                 let {key1:newKey1, key2:newKey2, key3:newKey3} = objectName;
@@ -925,6 +940,14 @@ WHAT IS A JAVASCRIPT OBJECT?
         2. to call an object method:
             objectName.methodName()
     III. Object Literals and Spread Operator:
+        The spread operator is used to make a copy of an existing iterable and allow it to expand in another iterable.
+        1. concat:
+            const objectName1 = {key1:value, key2:value, key3:value};
+            const objectName2 = {key1:value, key2:value, key3:value};
+            const objectName3 = {...objectName1, ...objectName2};
+        2. copy & expand:
+            const objectName1 = {key1:value, key2:value, key3:value};
+            const objectName2 = {...objectName1};
     IV. Date Object:
         The Date object lets you work with date and time.
             const variableName = new Date();
