@@ -207,17 +207,17 @@ WHAT IS A JAVASCRIPT FUNCTION?
     I. Function Declartion:
         1. with "function" as a keyword:
             function functionName(parameter1, parameter2, parameter3) {
-                action to be executed;
+                // action to be executed
             }
             let variableName = functionName(argument1, argument2, argument3);
         2. with "function()" as a method:
             let functionName = function(parameter1, parameter2, parameter3) {
-                action to be executed;
+                // action to be executed
             }
             let variableName = functionName(argument1, argument2, argument3);
         3. with arrow function:
                 let functionName = (parameter1, parameter2, parameter3) => {
-                    action to be executed;
+                    // action to be executed
                 }
                 let variableName = functionName(argument1, argument2, argument3);
             If the task includes only one statement and returns a value:
@@ -225,7 +225,7 @@ WHAT IS A JAVASCRIPT FUNCTION?
                 let variableName = functionName(argument1, argument2, argument3);
             If the function has only one parameter:
                 let functionName = parameter => {
-                    action to be executed;
+                    // action to be executed
                 }
                 let variableName = functionName(argument);
     II. Function Structure:
@@ -238,10 +238,10 @@ WHAT IS A JAVASCRIPT FUNCTION?
         A high order function is a function that accepts another function as a parameter and/or returns another function.
         A callback function is a function that can be passed as an argument to another function. 
             const hof = (cbf) => {
-                    action be executed;
+                    // action to be executed
                 };
             const cbf = (parameter1, parameter2, parameter3) => {
-                    action to be executed;
+                    // action to be executed
                 };
     III. Function Literals with Spread Operator:
 
@@ -769,7 +769,7 @@ WHAT IS A JAVASCRIPT ARRAY?
         8. to operate a function on every array element:
             Callback function used in array functions:
                 function functionName(total, value, index, array) {
-                    action to be executed;
+                    // action to be executed
                 }
             It can take up to four parameters "total", "value", "index", and/or "array" depending on the functionality.
                 -"total": is the total/the initial value/the previously returned value
@@ -779,43 +779,43 @@ WHAT IS A JAVASCRIPT ARRAY?
             The parameter names are "reserved" for this purpose.
             a. arrayName.forEach(functionName);
                 function functionName(value, index, array) {
-                    action to be executed;
+                    // action to be executed
                 }
                 This method itself doesn't return any value.
             b. const arrayName2 = arrayName1.map(functionName);
                 function functionName(value, index, array) {
-                    action to be executed;
+                    // action to be executed
                     return result;
                 }
                 This method returns a new array of values returned from the task execution.
                 The "value" parameter is required.
             c. const arrayName2 = arrayName1.filter(functionName);
                 function functionName(value, index, array) {
-                    action to be executed;
+                    // action to be executed
                     return result;
                 }
                 This method returns a new array of values returned from only passing some sort of conditions.
             d. let variableName = arrayName.every(functionName);
                 function functionName(value, index, array) {
-                    action to be executed;
+                    // action to be executed
                     return result;
                 }
                 This method returns a boolean value of whether all of the array elements pass some sort of conditions.
             e. let variableName = arrayName.some(functionName);
                 function functionName(value, index, array) {
-                    action to be executed;
+                    // action to be executed
                     return result;
                 }
                 This method returns a boolean value of whether some (at least 1) of the array elements pass some sort of conditions.
             f. let variableName = arrayName.find(functionName);
                 function functionName(value, index, array) {
-                    action to be executed;
+                    // action to be executed
                     return result;
                 }
                 This method returns the value of the first array element that passes some sort of conditions.
             g. let variableName = arrayName.findIndex(functionName);
                 function functionName(value, index, array) {
-                    action to be executed;
+                    // action to be executed
                     return result;
                 }
                 This method returns the index of the first array element that passes some sort of conditions.
@@ -825,7 +825,7 @@ WHAT IS A JAVASCRIPT ARRAY?
                 h.2 to operate from right to left:
                     let variableName = arrayName.reduceRight(functionName, initialValue);
                 function functionName(total, value, index, array) {
-                    action to be executed;
+                    // action to be executed
                     return result;
                 }
                 This method takes the array and reduces it to a single value, but doesn't affect the original array.
@@ -927,15 +927,15 @@ WHAT IS A JAVASCRIPT OBJECT?
     II. Methods:
         1. to define an object method:
                 methodName: function() {
-                    action to be executed;
+                    // action to be executed
                 }
             or
                 methodName() {
-                    action to be executed;
+                    // action to be executed
                 }
             or
                 methodName: () => {
-                    action to be executed;
+                    // action to be executed
                 }
         2. to call an object method:
             objectName.methodName()
@@ -1085,7 +1085,7 @@ WHAT IS A JAVASCRIPT OBJECT?
             e. to invoke a callback function for each element in a set:
                 const setName = new Set([item0, item1, item2]);
                 setName.forEach(function(value) {
-                        action to be executed;
+                        // action to be executed
                     }
                 );
             f. to return an iterable object containing all the elements in a set:
@@ -1130,7 +1130,7 @@ WHAT IS A JAVASCRIPT OBJECT?
                     ]
                 );
                 mapName.forEach(function(value, key) {
-                        action to be executed;
+                        // action to be executed
                     }
                 );
             g. to return an iterable object containing all the elements in a map:
@@ -1145,10 +1145,10 @@ WHAT IS A JAVASCRIPT OBJECT?
                     this.propertyName2 = parameter2;
                 }
                 methodName1(parameter1, parameter2) {
-                    action to be executed;
+                    // action to be executed
                 }
                 methodName2(parameter1, parameter2) {
-                    action to be executed;
+                    // action to be executed
                 }
             }
         All the parameters and arguments are optional.
@@ -1179,7 +1179,7 @@ WHAT IS A JAVASCRIPT OBJECT?
                         this.propertyName3 = parameter3;
                     }
                     methodName3(parameter1, parameter2) {
-                        action to be executed;
+                        // action to be executed
                     }
                 }
             The "super()" method prefers to the parent constructor amd gives access to the parent properties and methods.
@@ -1197,10 +1197,10 @@ WHAT IS A JAVASCRIPT OBJECT?
                         this.propertyName1 = value;
                     }
                     methodName1(parameter1, parameter2) {
-                        action to be executed;
+                        // action to be executed
                     }
                     methodName2(parameter1, parameter2) {
-                        action to be executed;
+                        // action to be executed
                     }
                 }
             to get a property:
@@ -1217,13 +1217,13 @@ WHAT IS A JAVASCRIPT OBJECT?
                         this.propertyName2 = parameter2;
                     }
                     methodName1(parameter1, parameter2) {
-                        action to be executed;
+                        // action to be executed
                     }
                     methodName2(parameter1, parameter2) {
-                        action to be executed;
+                        // action to be executed
                     }
                     static methodName3(parameter1, parameter2) {
-                        action to be executed;
+                        // action to be executed
                     }
                 }
             to call the static method:
@@ -1234,12 +1234,12 @@ WHAT IS A JAVASCRIPT OBJECT?
                     ObjectName.prototype.propertyName = value;
                 b. Method:
                     ObjectName.prototype.methodName = function(parameter1, parameter2) {
-                        action to be executed;
+                        // action to be executed
                     }
             EX:
                 to add a new method to the Array Object:
                     Array.prototype.methodName = function() {
-                        action to be executed;
+                        // action to be executed
                     }
                     const arrayName = [item0, item1, item2];
                     const variableName = arrayName.methodName(); 
@@ -1304,37 +1304,37 @@ WHAT ARE JAVASCRIPT LOOPS?
                 Iterating means looping over a sequence of elements.
     I. For Loop:
             for (expression1; expression2; expression3) {
-                action to be executed;
+                // action to be executed
             }
         to iterate over an array:
             const arrayName = [item0, item1, item2];
             for (let i = 0; i < arrayName.length; i++) {
-                action to be executed;
-                use arrayName[i] to access to the values;
+                // action to be executed
+                // use arrayName[i] to access to the values
             }
         All three expressions are optional.
         Expression 1 declares and initializes the variable(s) used in the loop separated by comma and is executed once before the execution of the loop. If expression 1 is omitted, you have to declare and initialize the variable(s) before the loop.
             let variable1 = value1, variable2 = value2, variable3 = value3;
             for ( ; expression2; expression3) {
-                action to be executed;
+                // action to be executed
             }
         Expression 2 specifies the condition for the iteration. If expression 2 is omitted, you have to specify the running/stopping condition inside the loop.
             for (expression1; ; expression3) {
-                action to be executed;
-                specify condition;
+                // action to be executed
+                // specify condition
             }
         Expression 3 specifies the counter of the loop and is executed after every iteration. If expression 3 is omitted, you have to specify the counter inside the loop.
             for (expression1; expression2; ) {
-                action to be executed;
-                specify counter;
+                // action to be executed
+                // specify counter
             }
     II. For/In Loop:
         This loops through properties of an iterable object.
         1. to iterate over an array:
                 const arrayName = [item0, item1, item2];
                 for (let x in arrayName) {
-                    action to be executed;
-                    use arrayName[x] to access to the values;
+                    // action to be executed
+                    // use arrayName[x] to access to the values
                 }
             "x" specifies the array indexes, but the indexes are in type string; therefore, to use the indexes, you have to typecast it to Number(i).
             To get access to the element values, you have to use arrayName[x].
@@ -1342,8 +1342,8 @@ WHAT ARE JAVASCRIPT LOOPS?
         2. to iterate over an object:
                 const objectName = {name0:value0, name1:value1, name2:value2};
                 for (let x in objectName) {
-                    action to be executed;
-                    use objectName[x] to access to the values;
+                    // action to be executed
+                    // use objectName[x] to access to the values
                 }
             "x" specifies the object properties.
             To get access to the property values, you have to use objectName[x].
@@ -1352,21 +1352,21 @@ WHAT ARE JAVASCRIPT LOOPS?
         1. to iterate over a string:
                 let stringname = "abcxyz";
                 for (let x of stringName) {
-                    action to be executed;
-                    use x to access to the values;
+                    // action to be executed
+                    // use x to access to the values
                 }
             "x" specifies the values of the string characters, so "x" can be used directly to access to the values.
         2. to iterate over an array:
                 const arrayName = [item0, item1, item2];
                 for (let x of arrayName) {
-                    action to be executed;
-                    use x to access to the values;
+                    // action to be executed
+                    // use x to access to the values
                 }
             "x" specifies the values of the array elements, so "x" can be used directly to access to the values.
     IV. While Loop:
         This executes a code block based on some conditions.
             while (condition) {
-                action to be executed;
+                // action to be executed
             }
         This checkes the condition before executing the code.
         There is a chance that the code won't be executed at all if the condition is false in the first time.
@@ -1374,7 +1374,7 @@ WHAT ARE JAVASCRIPT LOOPS?
     V. Do/While Loop:
         This executes a code block based on some conditions.
             do {
-                action to be executed;
+                // action to be executed
             } while (condition);
         This executes the code before checking the condition (in the first time only).
         The code will always be executed at least once even if the condition is false in the first time.
@@ -1440,22 +1440,22 @@ WHAT IS JAVASCRIPT ERROR HANDLING?
             Throw an exception, or throw an error, means when an error occurs, JavaScript will stop and generate an error message.
             This allows you to create and throw a custom exception, or error.
                 try {
-                    action to be executed;
-                    if (condition)
-                        throw "error message 1";
-                    else (condition)
-                        throw "error message 2";
+                    // action to be executed
+                    // if (condition)
+                    //     throw "error message 1"
+                    // else (condition)
+                    //     throw "error message 2"
                 } catch (err) {
-                    action to be executed if error occurs;
+                    // action to be executed if error occurs
                 }
             The "error message" can be a Number, String, Boolean, or an Object.
         3. Finally Statement:
             try {
-                action to be executed;
+                // action to be executed
             } catch(err) {
-                action to be executed if error occurs;
+                // action to be executed if error occurs
             } finally {
-                code block defined to be executed regardless of the result;
+                // code block defined to be executed regardless of the result
             }
 
 WHAT ARE JAVASCRIPT MODULES?
@@ -1672,7 +1672,7 @@ WHAT IS DOM?
             Js:
                 const functionName = () => {
                     let variableName = document.form["formName"]["inputName"].value;
-                    action to be executed;
+                    // action to be executed
                 }
     IV. HTML DOM Animation:
         Animations are done by programming gradual changes in an element' style. The changes are called by a timer. When the timer interval is small, the animation looks continuous.
@@ -1698,7 +1698,7 @@ WHAT IS DOM?
                     if (condition to stop animation) {
                         clearInteravl(id);
                     } else {
-                        action to be executed;
+                        // action to be executed
                     }
                 }
     V. HTML DOM Event Handling:
@@ -1717,7 +1717,7 @@ WHAT IS DOM?
                 HTML:
                     <div event-handler-attribute="action to be executed"></div>
                     <script>
-                        action to be executed;
+                        // action to be executed
                     </script>
                 Js:
                     const objectName = document.getElementById("id");
@@ -1814,7 +1814,7 @@ WHAT IS WEB API?
             The Web worker API is an independent script running in the background without affecting the performance of the Web page.
             a. to check if Web worker is supported:
                 if (typeof(Worker) !== "underfined") {
-                    action to be executed;
+                    // action to be executed
                 }
             b. to create a Web worker:
                 b.1 in an external file:
@@ -1830,7 +1830,7 @@ WHAT IS WEB API?
                     - when the worker posts a message, JavaScript reacts on the event and executes the function.
                     - the data received from the worker will be stored in "event.data" and can be used further.
                         objectName.onmessage = (event) => {
-                            action to be executed;
+                            // action to be executed
                         };
             c. to terminate the Web worker:
                 objectName.terminate();
@@ -1843,7 +1843,7 @@ WHAT IS WEB API?
             The Geolocation API allows to get the geographical position of the user.
             a. to check if Web geolocation is supported:
                 if (navigator.geolocation) {
-                    action to be executed;
+                    // action to be executed
                 }
             b. to get the user's position:
                 b.1 getCurrentPosition():
@@ -1896,10 +1896,10 @@ WHAT IS ASYNCHRONOUS PROGRAMMING?
         A callback is a function passed as an argument to another function. 
         This technique allows a function to call another function.
             const functionName1 = (parameter1, parameter2) => {
-                action to be executed;
+                // action to be executed
             };
             const functionName2 = (parameter1, parameter2, functionName) => {
-                action to be executed;
+                // action to be executed
             };
             functionsName2(argument1, argument2, functionName1);
         When passing a function as an argument:
@@ -1912,7 +1912,7 @@ WHAT IS ASYNCHRONOUS PROGRAMMING?
         Asynchronous functions are functions running in parallel with other functions; in other words, they run out of order based on a set time.
         1. setTimeout():
                 const functionName = (parameter1, parameter2) => {
-                    action to be executed;
+                    // action to be executed
                 };
                 let timeoutID = setTimeout(functionName, timer, argument1, argument2);
             This sets a timer which executes a function once the timer expires; in other words, the function will only be invoked once.
@@ -1923,7 +1923,7 @@ WHAT IS ASYNCHRONOUS PROGRAMMING?
                 timeoutID = null;
         2. setInterval():
                 const functionName = (parameter1, parameter2) => {
-                    action to be executed;
+                    // action to be executed
                 };
                 let intervalID = setInterval(functionName, timer, argument1, argument2);
             This repeatedly calls a function with a fixed time delay between each call; in other words, the function will be invoked once every set time.
@@ -1941,16 +1941,16 @@ WHAT IS ASYNCHRONOUS PROGRAMMING?
         A Promise is an object that links producing code and consuming code.
         It contains both the producing code and calls to the consuming code.
             let objectName = new Promise((resolve, reject) => {
-                action to be executed;
-                use "resolve(value) when successful; 
-                use "reject(error) when error;  
+                // action to be executed
+                // use "resolve(value) when successful
+                // use "reject(error) when error
             });
             objectName.then(
                 (value) => {
-                    action to be executed;
+                    // action to be executed
                 },
                 (error) => {
-                    action to be executed;
+                    // action to be executed
                 }
             );
         Properties:
@@ -1977,7 +1977,7 @@ WHAT IS ASYNCHRONOUS PROGRAMMING?
                 let objectName = new Promise(resolve => resolve(value));
                 objectName.then(
                     (value) => {
-                        action to be executed;
+                        // action to be executed
                     }
                 );
             or:
@@ -1986,7 +1986,7 @@ WHAT IS ASYNCHRONOUS PROGRAMMING?
                 };
                 functionName().then(
                     (value) => {
-                        action to be executed;
+                        // action to be executed
                     }
                 );
             write:
@@ -1995,7 +1995,7 @@ WHAT IS ASYNCHRONOUS PROGRAMMING?
                 };
                 functionName().then(
                     (value) => {
-                        action to be executed;
+                        // action to be executed
                     }
                 );
         2. await:
@@ -2005,7 +2005,7 @@ WHAT IS ASYNCHRONOUS PROGRAMMING?
                 let objectName = new Promise(resolve => resolve(value));
                 objectName.then(
                     (value) => {
-                        action to be executed;
+                        // action to be executed
                     }
                 );
             or:
@@ -2014,7 +2014,7 @@ WHAT IS ASYNCHRONOUS PROGRAMMING?
                 };
                 functionName().then(
                     (value) => {
-                        action to be executed;
+                        // action to be executed
                     }
                 );
             write:
