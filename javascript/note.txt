@@ -111,6 +111,7 @@ GENERAL SYNTAX:
             Full reference: https://www.w3schools.com/js/js_type_conversion.asp
         8. Bitwise Operators:
             Full reference: https://www.w3schools.com/js/js_bitwise.asp
+        Full reference: https://www.geeksforgeeks.org/javascript-operators-complete-reference/
     IV. Values & Data Types:
         JavaScript data types are dynamic because the same variable can hold different data types.
         1. Primitive Data Types:
@@ -228,12 +229,17 @@ WHAT IS A JAVASCRIPT FUNCTION?
                     // action to be executed
                 }
                 let variableName = functionName(argument);
-    II. Function Structure:
-        A parameter is the value defined in the function definition when the function is declared.
-        An argument is the value passed to, or received by, the function when the function is called/invoked/run.
-        All parameters and arguments are optional.
-        The parentheses () works as an operator that specifies the result of the function (to be returned). Without the parentheses (), the call will return the function definition.
-        A method is fundamentally a property of an object with a function definition. In other words, a method is a function that belongs to an object.
+    II. Function Definition:
+        1. Parameter and Argument:
+            A parameter is the value defined in the function definition when the function is declared.
+            An argument is the value passed to, or received by, the function when the function is called/invoked/run.
+            All parameters and arguments are optional.
+        2. Parentheses:
+            The parentheses () works as an operator that specifies the result of the function (to be returned). Without the parentheses (), the call will return the function definition.
+        3. Length Property:
+            The length of a function specifies its number of parameters excluding the rest parameter.
+        4. Function and Method:
+            A method is fundamentally a property of an object with a function definition. In other words, a method is a function that belongs to an object.
     II. High Order Function and Callback Function:
         A high order function is a function that accepts another function as a parameter and/or returns another function.
         A callback function is a function that can be passed as an argument to another function. 
@@ -243,7 +249,33 @@ WHAT IS A JAVASCRIPT FUNCTION?
             const cbf = (parameter1, parameter2, parameter3) => {
                     // action to be executed
                 };
-    III. Function Literals with Spread Operator:
+    III. Variatic Function with Rest Parameter:
+        The rest parameter is used to handle various inputs as parameters in a function by representing an indefinite number of arguments as an array. 
+        The rest parameter is essentially an Array instance. As a result, it can use any method of an array.
+        A function can be called with any number of arguments no matter how the function is defined.
+        instead of:
+            const functionName = (parameter1, parameter2, parameter3) => {
+                // action to be executed
+            };
+        do this:
+            const functionName = (parameter1, parameter2, ...parameters) => {
+                // action to be executed
+                // use for-of loop to traverse the array
+                // for (let x of parameters) {
+                //     // action to be executed
+                // }
+            };
+        The rest parameter must be specified last in the function definition. It doesn't know how many elements it's containing. By specified last, it knows it needs to contain the remaining arguments.
+        One function definition can only have one rest parameter.
+    IV. Spread Syntax:
+        The spread syntax looks exactly like the rest syntax but they are completely opposite.
+        While the rest syntax condenses multiple elements into one array, the spread syntax expands an array into its elements.
+            const arrayName = [element0, element1, element2];
+            const functionName = (parameter1, parameter2, parameter3) => {
+                // action to be executed
+            };
+            functionName(...arrayName);
+        The rest syntax is used as defining an indefinite number of parameters of a function as an array, and the spread syntax is used as passing an array as arguments to a function.
 
 WHAT IS A JAVASCRIPT SYMBOL?
     Symbol is a primitive data type.
@@ -1459,12 +1491,15 @@ WHAT IS JAVASCRIPT ERROR HANDLING?
             }
 
 WHAT ARE JAVASCRIPT MODULES?
-    Modules allow you to break up your code into separate files, which makes it easier to maintain the code-base.
+    A module is a logical grouping of files.
+    Modules are used to organize code and dependencies to improve performance, maintenaince, and security.
+    You can import or export modules among files.
+    To import a module from a file requires permission of the module. The module needs to export its components first before you can import it.
     I. Import Statement:
-        You can import modules into a file.
-        1. from named export:
+        You can import modules from one file to another.
+        1. From Named Export:
             import {variableName1, variableName2} from "fileName.js";
-        2. from default export:
+        2. From Default Export:
             import variableName from "fileName.js";
     II. Export Statement:
         You can export a variable or function from one file to another.

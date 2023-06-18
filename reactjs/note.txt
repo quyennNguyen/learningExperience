@@ -1,5 +1,5 @@
 WHAT IS REACT?
-  React, or ReactJs, is a JavaScript library for building user interfaces and developing web applications.
+  React, or ReactJs, is a JavaScript library for building interactive user interfaces and developing web applications.
   React embraces the fact that rendering logic is inherently coupled with other UI logic: how events are handled, how the state changes over time, and how the data is prepared for display.
   React is declarative. Being declarative means I can tell the computer WHAT to do and the computer can handle the details, while being imperative means I have to tell the computer HOW to do WHAT steps by steps.
 
@@ -105,7 +105,7 @@ HOW DOES REACTDOM RENDER ELEMENTS?
       );
       ReactDOM.render(variableName, document.getElementById("root-element"));
 
-WHAT ARE SOME SYNTAX IN REACT THAT ARE DIFFERENT FROM REGULAR JAVASCRIPT?
+WHAT ARE SOME SYNTAX IN REACT THAT ARE DIFFERENT FROM JAVASCRIPT?
   I. HTML Attributes:
     React uses camelCase instead of all lowercase when naming element attributes and event handlers.
     EX:
@@ -131,12 +131,6 @@ WHAT ARE SOME SYNTAX IN REACT THAT ARE DIFFERENT FROM REGULAR JAVASCRIPT?
           attribute="functionName()" in HTML = attribute={FunctionName} in React
       Curly braces are also used to embed expressions in JSX.
         <starting-tag> {expresion} </closing-tags>
-
-HOW TO IMPORT AND EXPORT FILES IN REACT?
-  I. Import:
-    import ComponentName from 'file path';
-  II Export:
-    export default ComponentName;
     
 WHAT IS CONDITIONAL RENDERING?
   React allows you to create distinct components that encapsulate behavior you need, then you can render only some of them depending on the state of your application.
