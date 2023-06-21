@@ -66,8 +66,14 @@
 * https://www.w3schools.com/react/default.asp
 * https://reactjs.org/
 * MUI: https://mui.com/
+* VSCode: https://code.visualstudio.com/download
 * NodeJs: https://nodejs.org/en
 * reactjs note
+#### Angular:
+* VSCode: https://code.visualstudio.com/download
+* NodeJs: https://nodejs.org/en
+* Angular: https://angular.io/guide/setup-local
+* angular note
 #### Java:
 * https://www.w3schools.com/java/default.asp
 * https://docs.oracle.com/javase/tutorial/java/javaOO/index.html
