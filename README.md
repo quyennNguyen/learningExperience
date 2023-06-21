@@ -69,10 +69,14 @@
 * VSCode: https://code.visualstudio.com/download
 * NodeJs: https://nodejs.org/en
 * reactjs note
+#### TypeScript:
+* https://www.w3schools.com/typescript/index.php
+* https://www.typescriptlang.org/docs/
 #### Angular:
+* https://www.w3schools.com/angular/default.asp
+* https://angular.io/docs
 * VSCode: https://code.visualstudio.com/download
 * NodeJs: https://nodejs.org/en
-* Angular: https://angular.io/guide/setup-local
 * angular note
 #### Java:
 * https://www.w3schools.com/java/default.asp
@@ -81,12 +85,14 @@
 * JDK: https://www.oracle.com/java/technologies/downloads/
 * java note
 #### Spring Boot:
+* https://www.tutorialspoint.com/spring_boot/index.htm
 * IntelliJ: https://www.jetbrains.com/idea/download/#section=windows
 * Spring Initializr: https://start.spring.io/
 * Postman API: https://www.postman.com/
 * MVN: https://mvnrepository.com/
 * spring note
 #### MySQL:
+* https://www.w3schools.com/sql/default.asp
 * https://www.w3schools.com/MySQL/default.asp
 * Ubuntu: https://learn.microsoft.com/en-us/windows/wsl/install
 * MySQL Install: https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-database
