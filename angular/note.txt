@@ -1,0 +1,4 @@
+Install: npm install -g @angular/cli
+Angular is used to build single page applications.
+Angular uses TypeScript.
+TypeScript is a superset of JavaScript.
