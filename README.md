@@ -74,10 +74,11 @@
 * IntelliJ: https://www.jetbrains.com/idea/download/#section=windows
 * JDK: https://www.oracle.com/java/technologies/downloads/
 * java note
-#### Springboot:
+#### Spring Boot:
+* IntelliJ: https://www.jetbrains.com/idea/download/#section=windows
 * Spring Initializr: https://start.spring.io/
 * Postman API: https://www.postman.com/
-* IntelliJ: https://www.jetbrains.com/idea/download/#section=windows
+* MVN: https://mvnrepository.com/
 * spring note
 #### MySQL:
 * https://www.w3schools.com/MySQL/default.asp
