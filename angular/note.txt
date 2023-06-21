@@ -1,4 +1,12 @@
-Install: npm install -g @angular/cli
-Angular is used to build single page applications.
-Angular uses TypeScript.
-TypeScript is a superset of JavaScript.
+WHAT IS ANGULAR?
+  Angular is used to build single-page applications.
+  Angular uses TypeScript.
+  TypeScript is a superset of JavaScript.
+  Angular is also called HTML/JS framework.
+
+HOW TO SET UP AN ANGULAR PROJECT?
+  On Terminal, run
+    npm install -g @angular/cli
+    Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+    ng new <folder's name>
+    ng serve
