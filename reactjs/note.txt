@@ -7,12 +7,12 @@ HOW TO SET UP A REACT PROJECT AND JSX IN IT?
   1. Method 1:
     On Terminal, run
       npx create-react-app <name of your app>
-    Some other npm commands:
-      npm create vite@latest
       npm start
+  2. Method 2:
+    On Terminal, run
+      npm create vite@latest
       npm run dev
-      npm i
-  2. Method 2: 
+  3. Method 3: 
     In HTML file, add the following tags at the end of the body tag:
       <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script
       <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
