@@ -107,7 +107,30 @@ WHAT IS DI?
         Spring container automatically sets the values of the annotated fields after creating the object.
         Related annotation:
           @Autowired
+
+WHAT IS AOP?
+  AOP, stands for Aspect-Oriented Programming,
+  It allows you to apply cross-cutting concerns, such as logging, caching, and security, to multiple components in a declarative way, improving code modularity and maintainability.
   
+WHAT IS MVC?
+  MVC, stands for Model View Controller
+
+WHAT IS ORM?
+  ORM, stands for Object Relational Mapping, is a connection between object-oriented programming language (OOP) and relational database management system (RDBMS).
+  JPA, stands for Java Persistence API, is a standard for creating an ORM.
+  There are 2 common ORM types: JDBC and Hibernate.
+  
+WHAT IS HIBERNATE?
+  When using Hibernate, there are 3 rules to follow:
+    1. Keyword @Entity
+    2. Unique IDs:
+      There are 4 ways to create IDs:
+        AUTO: allows database to vendor your IDs
+        IDENTITY: increments the IDs
+        SEQUENCE: you have to type what type of sequence you want to use (this is good for PostgreSQL)
+        TABLE: this will create a separate table for your IDs aside the table of your entity
+    3. Default constructor
+
 WHAT IS BEAN?
   In Spring, a bean is an object created and managed by the Spring IoC container.
   Beans are the building blocks of a Spring application, which represent components such as data access objects (DAO), services, controllers,...
@@ -149,22 +172,6 @@ WHAT IS BEAN?
   VII. Bean Scanning:
     Bean scanning is a feature in Spring that automatically detects and registers beans based on certain conventions or annotations.
     This eliminates the need for explicit bean definition and allows for more flexible and dynamic configuration.
-  
-WHAT IS ORM?
-  ORM, stands for Object Relational Mapping, is a connection between object-oriented programming language (OOP) and relational database management system (RDBMS).
-  JPA, stands for Java Persistence API, is a standard for creating an ORM.
-  There are 2 common ORM types: JDBC and Hibernate.
-  
-WHAT IS HIBERNATE?
-  When using Hibernate, there are 3 rules to follow:
-    1. Keyword @Entity
-    2. Unique IDs:
-      There are 4 ways to create IDs:
-        AUTO: allows database to vendor your IDs
-        IDENTITY: increments the IDs
-        SEQUENCE: you have to type what type of sequence you want to use (this is good for PostgreSQL)
-        TABLE: this will create a separate table for your IDs aside the table of your entity
-    3. Default constructor
   
 WHAT IS REST?
   REST, stands for Representational State Transfer, is a web architectural style or integration style for application-to-application and server-to-server communication.
@@ -293,14 +300,5 @@ WHAT ARE HTTP PROTOCOLS AND HTTP METHODS?
         URI can specify name and location of a resource, but URL can only specify the location.
         URI can also find resources in HTML, XML, and other files, but URL can only locate web pages.
       2. URN:
-        URN, stands for Uniform Resource Number, 
-    
-    
-    
+        URN, stands for Uniform Resource Number,
 
-WHAT IS AOP?
-  AOP, stands for Aspect-Oriented Programming,
-  It allows you to apply cross-cutting concerns, such as logging, caching, and security, to multiple components in a declarative way, improving code modularity and maintainability.
-  
-WHAT IS MVC?
-  MVC, stands for Model View Controller
