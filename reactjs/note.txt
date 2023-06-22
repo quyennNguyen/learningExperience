@@ -122,18 +122,30 @@ WHAT ARE SOME SYNTAX IN REACT THAT ARE DIFFERENT FROM JAVASCRIPT?
           <starting-tag attribute="value"> content </closing-tags>
         );
     2. Template Literals:
-      Curly braces are used to embed a boolean/array/object value or a function.
+      Curly braces are used to embed an expression such as a boolean/array/object value or a function.
         const variableName = (
           <starting-tag attribute={argument}> content </closing-tags>
         );
       If a function is assigned, it should be anonymous.
       EX:
           attribute="functionName()" in HTML = attribute={FunctionName} in React
-      Curly braces are also used to embed expressions in JSX.
-        <starting-tag> {expresion} </closing-tags>
+  IV. NOTES:
+    If a JavaScript expression is embedded inside JSX, it has to be inside curly braces.
+      <starting-tag> 
+        {expression} 
+      </closing-tags>
+    If JSX is embedded inside a JavaScript statement, it has to be inside parentheses.
+      a regular JavaScript statement might look like this:
+        const functionName = () => {
+          // action to be executed
+        };
+      JSX inside JavaScript should look like this:
+      const functionName = () => (
+          <starting-tag attribute="value"> content </closing-tags>
+      );
     
 WHAT IS CONDITIONAL RENDERING?
-  React allows you to create distinct components that encapsulate behavior you need, then you can render only some of them depending on the state of your application.
+  React allows you to create distinct components that encapsulate the behavior you need, then you can render only some of them depending on the state of your application.
   Conditional operators are used to create elements representing the current state and let React update the UI to match them.
   I. If-Else Statements:
     if (condition) {
