@@ -112,7 +112,3 @@
 #### Full-Stack JavaScript Developement Path:
 * MongoDB - ExpressJS - React - NodeJS
 * MongoDB - ExpressJS - Angular - Node JS
-
-***
-
-# This journal changes along with my learning progress.
