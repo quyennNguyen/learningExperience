@@ -10,3 +10,9 @@ HOW TO SET UP AN ANGULAR PROJECT?
     Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
     ng new <folder's name>
     ng serve
+
+HOW ANGULAR COMPONENTS ARE GENERATED?
+  On Terminal, run
+    ng generate component _<folder's name>/<file's name>
+  or
+    ng g c _<folder's name>/<file's name>
