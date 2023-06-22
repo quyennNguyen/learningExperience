@@ -172,7 +172,7 @@ WHAT IS CONDITIONAL RENDERING?
   
 WHAT ARE PROPS?
   React components can accept arbitrary inputs, called props (properties).
-  Props are basically objects that can be passed as arguments in React components.
+  Props acts as a parameter for an object that will be passed as an argument in a React component.
   1. Function Component:
     const root = ReactDOM.createRoot(document.getElementById("root"));
     function FunctionName(props) {
@@ -194,7 +194,7 @@ WHAT ARE PROPS?
       }
     }
     root.render(<ClassName atribute="value" />);
-  With props, whenever the component is rendered into the DOM node, only a single instance of the component is executed. Therefore, when the component needs to be re-rendered over the time, state and lifecycle are preferred to use.
+  With props, whenever the component is rendered into the DOM node, only a single instance of the component is executed. Therefore, when the component needs to be re-rendered over time, it needs state and lifecycle.
   
 WHAT ARE STATE AND LIFECYCLE?
   I. State:
