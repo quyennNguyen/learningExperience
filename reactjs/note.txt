@@ -49,8 +49,8 @@ WHAT IS REACTDOM?
   ReactDOM is used to render React components and take care of efficiently updating the DOM to match the React elements. It compares the elements and their children to the previous one, and only applies the DOM updates necessary to bring the DOM to the desired state.
 
 WHAT IS JSX?
-  JSX, stands for JavaScript XML, is a syntax extension to JavaScript, which is basically the "JavaScript verion of HTML". What looks like HTML in JavaScript code is JSX.
-  Babel acts as a compiler to convert JSX down to React.createElement() calls. After compilation, JSX expressions become regular JavaScript function calls and evaluate to JavaScript objects. These objects are React elements that describe what React should add to the real DOM on the HTML page. React reads these objects, interprets them, and uses them to construct the DOM elements and keep them up to date.
+  JSX, stands for JavaScript XML, is a syntax extension to JavaScript, which is basically the "JavaScript version of HTML". What looks like HTML in JavaScript code is JSX.
+  Babel acts as a compiler to convert JSX down to React.createElement() calls. After compilation, JSX expressions become regular JavaScript function calls and return JavaScript objects. These objects are React elements that describe what React should add to the real DOM on the HTML page. React reads these objects, interprets them, and uses them to construct the DOM elements and keep them up to date.
 
 HOW DOES REACTDOM RENDER ELEMENTS?
     ReactDOM.render(
@@ -140,9 +140,11 @@ WHAT ARE SOME SYNTAX IN REACT THAT ARE DIFFERENT FROM JAVASCRIPT?
           // action to be executed
         };
       JSX inside JavaScript should look like this:
-      const functionName = () => (
-          <starting-tag attribute="value"> content </closing-tags>
-      );
+      const functionName = () => {
+          return (
+            <starting-tag attribute="value"> content </closing-tags>
+          )
+      };
     
 WHAT IS CONDITIONAL RENDERING?
   React allows you to create distinct components that encapsulate the behavior you need, then you can render only some of them depending on the state of your application.
@@ -167,12 +169,13 @@ WHAT IS CONDITIONAL RENDERING?
       }
     </closing-tags>       
   IV. Preventing Component from Rendering:
-    In some cases, it is better to return "null" and hide the component than returning the output and rendering the component.
+    In some cases, it is better to return "null" and hide the component than return the output and render the component.
     Returning "null" from the "render()" method of the component does not affect the firing of the component’s lifecycle methods.
   
 WHAT ARE PROPS?
   React components can accept arbitrary inputs, called props (properties).
-  Props acts as a parameter for an object that will be passed as an argument in a React component.
+  Props acts as a placeholder for an object that will be passed to a React user-defined component.
+  Strictly speaking, props should be read-only, which means you shouldn't attempt to change its data in the component.
   1. Function Component:
     const root = ReactDOM.createRoot(document.getElementById("root"));
     function FunctionName(props) {
