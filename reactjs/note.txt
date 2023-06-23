@@ -7,11 +7,9 @@ HOW TO SET UP A REACT PROJECT AND JSX IN IT?
   1. Method 1:
     On Terminal, run
       npx create-react-app <name of your app>
-      npm start
   2. Method 2:
     On Terminal, run
       npm create vite@latest
-      npm run dev
   3. Method 3: 
     In HTML file, add the following tags at the end of the body tag:
       <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script
@@ -197,9 +195,9 @@ WHAT ARE PROPS?
       }
     }
     root.render(<ClassName atribute="value" />);
-  With props, whenever the component is rendered into the DOM node, only a single instance of the component is executed. Therefore, when the component needs to be re-rendered over time, it needs state and lifecycle.
   
 WHAT ARE STATE AND LIFECYCLE?
+  Whenever a React component is rendered into the DOM node, only a single instance of the component is executed. Therefore, when the component needs to be re-rendered over time, it needs state and lifecycle.
   I. State:
     State is similar to props.
     While props is set up by ReactDOM, state is private/local and encapsulated.
