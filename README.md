@@ -64,7 +64,7 @@
 #### React:
 * https://youtu.be/bMknfKXIFA8
 * https://www.w3schools.com/react/default.asp
-* https://reactjs.org/
+* https://legacy.reactjs.org/docs/getting-started.html
 * MUI: https://mui.com/
 * VSCode: https://code.visualstudio.com/download
 * NodeJs: https://nodejs.org/en
