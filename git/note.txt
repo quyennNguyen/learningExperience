@@ -1,23 +1,23 @@
 WHAT IS VERSION CONTROL SYSTEM?
-    Version Control, or Revision Control / Source Control / Source Code Management, is the management of changes to computer programs, documents, large web sites, and other collections of information. It basically records all the changes of your codes so that you and/or your team members can recall the specific versions of the codes over the time. This helps you track your codes (what you do and when you do it) as well as track down bugs.
-    Git is the most widely used free and open source Version Control System in software development.
+    Version Control, or Revision Control / Source Control / Source Code Management, is the management of changes to computer programs, documents, large websites, and other collections of information. It basically records all the changes in your codes so that you and/or your team members can recall the specific versions of the codes over time. This helps you track your codes (what you do and when you do it) as well as track down bugs.
+    Git is the most widely used free and open-source Version Control System in software development.
 
 TERMINOLOGY:
     GitHub: is the website that hosts your Git repositories online.
     CLI: stands for Command Line Interface, is the text interface for a computer's operating system.
     Code Editor: is the text editor for writing code.
     repository: is your project, or the folder where your project is kept. repo: is short for repository
-    directory: is folder, in general.
+    directory: is a folder, in general.
 
 WHAT IS SSH?
-    SSH, stands for Secure Shell Protocol, provides a secure channel over an unsecured network; in other words, it helps you connect and aunthenticate to remote servers and services.
+    SSH, stands for Secure Shell Protocol, provides a secure channel over an unsecured network; in other words, it helps you connect and authenticate to remote servers and services.
     SSH may be set up once only in a directory on your local machine where you would mainly work with.
-    When setting up SSH, you need to (1) generate a SSH private key to use on your local machine and (2) add a SSH public key to the remote server that hosts your Git repo to enable SSH access for your account. The keys are used to authenticate Git operations over SSH.
+    When setting up SSH, you need to (1) generate an SSH private key to use on your local machine and (2) add an SSH public key to the remote server that hosts your Git repo to enable SSH access for your account. The keys are used to authenticate Git operations over SSH.
         1. Private Key:
             A private key needs a passphrase to further secure the authentication.
-            Whenever you use the key, you need to enter the passphrase. If you don't want to enter the passphrase everytime you use the key, you can add the key to the SSH agent.
+            Whenever you use the key, you need to enter the passphrase. If you don't want to enter the passphrase every time you use the key, you can add the key to the SSH agent.
             The SSH agent manages your SSH private key and remembers your passphrase.
-            To generate a SSH private key:
+            To generate an SSH private key:
                 Check for existing key: ls -la file's-path
                 If there is no existing key, generate a private key with your GitHub account's email address: ssh-keygen -t ed25519 -C "email-address"
                 Add your passphrase (the passphrase will be hidden on the Command Line)
@@ -25,15 +25,15 @@ WHAT IS SSH?
                 Start the SSH agent manually: eval "$(ssh-agent -s)"
                 Add your key to the SSH agent: ssh-add file's-name
         2. Public Key:
-            To add a SSH public key to your account:
+            To add an SSH public key to your account:
             Copy the public key to your clipboard: clip < ~/.ssh/id_ed25519.pub
-            In GitHub/Settings/Access/SSH and GPG keys/New SSH key, add a title for your key pair and paste the public key, then add SSH key
+            In GitHub/Settings/Access/SSH and GPG keys/New SSH key, add a title for your key pair and paste the public key, then add the SSH key
         3. Test SSH Connection: ssh -T git@github.com
 
-GENERAL CLI COMMASNDS:
+GENERAL CLI COMMANDS:
     1. Windows:
         cd: to print the current directory path
-        cd <directory path>: to change directory to the specified directory
+        cd <directory path>: to change the directory to the specified directory
         dir: to list all files and directories in the current directory
         mkdir <folder's name>: to create a new folder in the current directory 
         echo "content goes here" > <file's name>: to create a new file or override an existing file in the current directory
@@ -48,10 +48,10 @@ GENERAL CLI COMMASNDS:
     2. Ubuntu:
         pwd: to print the full path of the working directory
         cd, or cd ~: to get to home directory
-        cd <directory path>: to change directory to the specified directory
+        cd <directory path>: to change the directory to the specified directory
         cd ..: to get to one level above the current directory
         ls: to list all files and folders in the current directory
-        la, or ls -a,: to list all files and folders in the current directory, including hidden ones
+        la, or ls -a: to list all files and folders in the current directory, including hidden ones
         mkdir <folder's name>: to create a new folder in the current directory
         There are multiple ways to create a new file in the current directory:
             1. touch <file's name>
@@ -67,42 +67,55 @@ GENERAL CLI COMMASNDS:
     press Q key: to exit a list
 
 GIT COMMANDS:
-    I. COMMANDS FOR GENERAL GIT WORKFLOW:
-        .git: is the hidden folder that stores all the changes/updates/deletes of your files that are saved in Git commits
-        git --version: to check Git's version
-        git status: to show all the changed/updated/deleted files that are not yet saved in Git commits
-        git log: to show a log of all Git commits in reverse chronological order
-        git add <file's name>: to inform Git to track changes/updates/deletes of the specified files in the current directory
-            you can use <.> for <file's name> to track all (modified/updated/untracked) files in the current directory
-        git commit -m "Message 1 (usually for what you do and when you do it)", -m "Message 2 (usually for further description)": to save changes/updates/deletes of all files in the current directory in Git
-            if you want to omit the "-m" flag and skip the messages, after generating git commit, press ESC -> type :wq -> press ENTER
-        git commit -am "message": to simultaneously add and save changes/updates/deletes of modified files only in the current directory in Git (a short cut for git add and git commit)
-        git push origin <branch's name>: to upload Git commits from the specified branch of the current directory from the local repo to the remote repo
-        git pull origin <branch's name>: to download Git commits from the specified branch of the current directory from the remote repo to the local repo
-        -u, or --set-upstream,: can be added to git push or git pull before origin <branch's name> to set the specified branch of the current directory as a default branch so that everytime you want to push or pull Git commits from current directory, you can use git push or git pull without typing out origin <branch'name>
-        pr, or pull request: you might need to make a pull request when you have an access right or need a code review before merging changes in your codes
-    II. COMMANDS FOR LOCAL GIT WORKFLOW:
+    I. COMMANDS FOR INITIATING GIT WORKFLOW:
         1. If you don't have any local repo to start with and you want to follow up with a remote repo:
             git clone <repo's SSH>: to bring a remote repo where your project is hosted (remotely) into a local repo on your local machine (locally)
         2. If you already have a local repo to start with and you want to connect it with a remote repo:
-            git init: to initialize a new empty Git repo or to convert the curent directory into a Git repo
+            git init: to initialize a new empty Git repo or to convert the current directory into a Git repo
             git remote add origin <repo's SSH>: to add a reference to the remote repo to set up the connection between the current local repo and the remote repo
             git remote -v: to check if there's any remote repo that is connected to the local repo you are working on
-            git pull -rebase origin <branch's name>
-            git push origin <branch's name>
+    II. COMMANDS FOR GENERAL GIT WORKFLOW:
+        .git: is the hidden folder that stores all the changes/updates/deletes of your files that are saved in Git commits
+        git --version: to check Git's version
+        git status: to show all the changed/updated/deleted files that are not yet saved in Git commits
+        git log --oneline --all --graph, or git log: to show a log of all Git commits in reverse chronological order
+        git add <file's name>: to inform Git to track changes/updates/deletes of the specified files in the current directory
+        git add . : to track all (modified/updated/untracked) files in the current directory
+        git commit -m "Message 1 (usually for what you do and when you do it)", -m "Message 2 (usually for further description)": to save changes/updates/deletes of all files in the current directory in Git
+            if you want to omit the "-m" flag and skip the messages, after generating git commit, press ESC -> type :wq -> press ENTER
+        git commit -am "message": to simultaneously add and save changes/updates/deletes of modified files only in the current directory in Git
+        git push origin <branch's name>: to upload Git commits from the specified branch of the current directory from the local repo to the remote repo
+        git pull origin <branch's name>: to download Git commits from the specified branch of the current directory from the remote repo to the local repo
+        git push -u origin <branch's name>, or git push --set-upstream origin <branch's name>
+        git pull -u origin <branch's name>, or git pull --set-upstream origin <branch's name>
+        git pull -rebase origin <branch's name>
+        pr, or pull request: you might need to make a pull request when you have an access right or need a code review before merging changes in your codes
     III. COMMANDS FOR GIT BRANCHING:
-        Your codes can be branched like a tree. The main/base branch is named "master". The sub branch can be named "feature". To fix a bug real quick, you can create a branch named "hot fix". Individual branches are completely independent before merging.
         git branch: to list all branches in the current directory; the asterisk before a branch's name shows your current position in the tree
         git branch -d <branch's name>: to delete the specified branch in the current directory
-            branches which are already used and merged should not be reused and should be deleted
+            branches that are already used and merged should not be reused and should be deleted
         git checkout <branch's name>: to switch from the current branch to the specified branch in the current directory
         git checkout -b <branch's name>: to create a new branch and switch to that branch from the current branch in the current directory
+        git checkout -b <subbranch's name> <branch's name>: to create a sub-branch under an existing branch and switch to that branch from the current branch in the current directory
+        git switch <branch's name>: works the same way as git checkout <branch's name>
         git diff <branch's name>: to show the difference between the current branch and the specified branch in the current directory
         git merge <branch's name>: to merge Git commits from the current branch to the specified branch in the current directory
-            if there're any merge conflicts, you have to fix them then commit the results
-            sometimes if you start a local repo and then connect it to a remote repo, these branches would have different history bases, and when you merge them, there is likely to lead to "refusing to merge unrelated histories" error, then try add –allow-unrelated-histories after the command to allow merging branches with no common history base
-    IV. COMMANDS FOR GIT UNSTAGING:
-        git reset <file's name>: to unstage any uncommited changes/updates/deletes of the specified file in the current directory
-        git reset HEAD, or git reset HEAD~<pointer's index>: to unstage any uncommited and commited changes/updates/deletes of all files in the current directory; the index starts with 0, HEAD = HEAD~0, so after HEAD is HEAD~1,..., HEAD means the pointer to the latest commit, HEAD~1 means the pointer to one commit before the latest commit
-        git reset <commit's hash number>: to unstage any commited changes/updates/deletes of all files in the current directory after the specified commit; the codes will still be there but not saved in Git commits
+            if there're any merge conflicts, you have to fix them manually, then commit the results
+            sometimes if you start a local repo and then connect it to a remote repo, these branches would have different history bases, and when you merge them, there is likely to lead to a "refusing to merge unrelated histories" error, then try to add –allow-unrelated-histories after the command to allow merging branches with no common history base
+    IV. GIT PULL VS GIT FETCH:
+        A local git installation basically consists of a local repo and a working directory.
+            1. The local repo is where the history of all git commits across all branches are maintained.
+            2. The working directory is where you actively edit and update files that Git tracks.
+        Using git pull:
+            This will copy the latest changes from the remote repo and update both your local repo and working directory.
+            If you are actively working on any tracked files in your working directory that conflict with the remote repo, Git will abort the task of updating your working directory and only update your local repo.
+            git pull = git fetch + git merge
+        Using git fetch:
+            This will copy the latest changes from the remote repo and update your local repo but won't make any changes to your working directory.
+            If you are actively working on any tracked files in your working directory, fetch enables you to continue working on your working directory without having to merge your code with updates from the remote repo.
+            You can finish editing files locally, commit your files and then do a git merge to synchronize your updates with the fetched files. This brings you up to date with the updates the fetch pulled down from the remote machine.
+    V. COMMANDS FOR GIT UNSTAGING:
+        git reset <file's name>: to unstage any uncommitted changes/updates/deletes of the specified file in the current directory
+        git reset HEAD, or git reset HEAD~<pointer's index>: to unstage any uncommitted and committed changes/updates/deletes of all files in the current directory; the index starts with 0, HEAD = HEAD~0, so after HEAD is HEAD~1,..., HEAD means the pointer to the latest commit, HEAD~1 means the pointer to one commit before the latest commit
+        git reset <commit's hash number>: to unstage any committed changes/updates/deletes of all files in the current directory after the specified commit; the codes will still be there but not saved in Git commits
         git reset --hard <commit's hash number>: is the same as git reset <commit's hash number> except that the codes will be completely removed
