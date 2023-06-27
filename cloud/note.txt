@@ -1,1 +1,8 @@
+WHAT IS CLOUD COMPUTING?
+  Cloud computing is the availability of computer system resources (computing power and data storage) via the Internet without installing and maintaining them on-premises.
 
+VENDORS OFFERING CLOUD COMPUTING SERVICES:
+  Amazon - Amazon Web Service
+  Oracle - Oracle Cloud Infrastructure
+  Google - Google Cloud
+  Microsoft - MS Azure
