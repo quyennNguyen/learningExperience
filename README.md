@@ -100,6 +100,8 @@
 * MySQL Workbench: https://dev.mysql.com/downloads/windows/installer/8.0.html
 * JDBC Driver: https://dev.mysql.com/downloads/connector/j/
 * mysql note
+#### Docker:
+* Docker: https://docs.docker.com/desktop/install/windows-install/
 #### Version Control:
 * https://youtu.be/RGOj5yH7evk
 * https://www.atlassian.com/git/tutorials/install-git#windows
