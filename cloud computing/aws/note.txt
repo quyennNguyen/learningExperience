@@ -1,0 +1,5 @@
+HOW TO SET UP A WEB CONSOLE FOR YOUR FULLSTACK PROJECT ON THE CLOUD?
+  1. Backend:
+    Amazon EC2 allows you to create virtual machines, or instances, that run on the AWS Cloud.
+  2. Database:
+    Amazon Relational Database Service (RDS) makes it easy to set up, operate, and scale a relational database in the cloud.

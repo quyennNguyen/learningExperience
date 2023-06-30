@@ -1,0 +1,18 @@
+WHAT IS ANGULAR?
+  Angular is used to build single-page applications.
+  Angular uses TypeScript.
+  TypeScript is a superset of JavaScript.
+  Angular is also called HTML/JS framework.
+
+HOW TO SET UP AN ANGULAR PROJECT?
+  On Terminal, run
+    npm install -g @angular/cli
+    Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+    ng new <folder's name>
+    ng serve
+
+HOW ANGULAR COMPONENTS ARE GENERATED?
+  On Terminal, run
+    ng generate component _<folder's name>/<file's name>
+  or
+    ng g c _<folder's name>/<file's name>

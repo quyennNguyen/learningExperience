@@ -1,0 +1,79 @@
+WHAT IS AN API?
+    API, stands for Application Programming Interface, is a set of rules, protocols, and conventions that define how software components interact with each other.
+    It provides a standardized way for different software components or systems to communicate and exchange data, to work together seamlessly.
+
+WHAT IS JDBC?
+    JDBC, stands for Java Database Connectivity, is a Java API that provides the standard mechanism for Java applications to interact with relational databases.
+    It allows you to build database-driven aplications, where you can establish connections to the databases, execute SQL statements, store, retrieve, and manipulate data dynamically, and manage database transactions within Java code.
+    It follows a client-server architecture where Java applications act as clients communicating with the database server to perform database operations.
+    It provides a set of interfaces and classes that defines the necessary methods to interact with the databases.
+    I. Drivers:
+        JDBC drivers are software components that allow Java applications to interact with different databases as to establish connections, execute SQL statements, retrieve and manipulate data, and manage transactions in databases.
+        There are different types of JDBC drivers:
+            1. JDBC-ODBC Bridge Driver
+            2. Native-API Driver
+            3. Network Protocol Driver
+            4. JDBC Driver for Database Middleware
+            5. JDBC Driver for Database Server
+        JDBC drivers are usually provided by the database vendor and need to be included in your project's classpath.
+        To add JDBC Driver to a Java application from IntelliJ:
+            1. File
+            2. Project Structure
+            3. Project Settings
+            4. Modules
+            5. Dependencies
+            6. Add JARS or Directories
+            7. Attach Files and Directories
+            8. Look for mysql-connector-j-8.0.33.jar
+    II. Connection:
+        1. Load the JDBC Driver:
+            import java.sql.SQLException;
+            try {
+                Class.forName("com.mysql.cj.jdbc.Driver");
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+        2. Establish the connection with the database:
+            import java.sql.Connection;
+            import java.sql.DriverManager;
+            String URL = "jdbc:mysql://localhost:xxxx/nameOfYourDatabase_db";
+            String USERNAME = "yourDatabaseUsername";
+            String PASSWORD = "yourDatabasePassword";
+            try {
+                Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        3. Create statements, execute SQL queries, and handle results:
+            import java.sql.Statement;
+            import java.sql.ResultSet;
+            try {
+                Statement statement = connection.createStatement();
+                PreparedStatement statement = connection.prepareStatement("SQL command");
+
+                statement.executeQuery("SQL commands"); // for SELECT queries
+                statement.executeUpdate(); // for INSERT, UPDATE, DELETE queries
+
+                There are 3 types of Statement interfaces in JDBC:
+                    - Statement (grandparent)
+                    - PreapredStatement (parent)
+                    - CallableStatement (child)
+
+                ResultSet result = statement.executeQuery("SQL command"); // the results returned from the executeQuery() methods are objects of type ResultSet.                       
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }       
+        4. Close database resources:
+            result.close();
+            statement.close();
+            connection.close();
+            This is to free up system resources and avoid potential memory leaks.
+    III. Batch Update:
+        This refers to a feature that allows you to execute multiple SQL statements as a batch in a single round-trip to the database, instead of executing them one by one.
+        This can improve performance and reduce the overhead of database communication.
+        to create SQL statements:
+            statement.addBatch("SQL command");
+        to execute the SQL statements:
+            int[] updateCounts = statement.executeBatch(); // this returns an array of update counts, which represent the number of rows affected by each statement.
+        to clear the batch and restart with new SQL statements:
+            clearBatch();

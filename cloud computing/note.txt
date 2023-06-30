@@ -1,0 +1,30 @@
+WHAT IS CLOUD COMPUTING?
+  Cloud computing is the availability of computer system resources (computing power and data storage) via the Internet without installing and maintaining them on-premises.
+
+SOME VENDORS OFFERING CLOUD COMPUTING SERVICES:
+  Amazon - Amazon Web Service
+  Oracle - Oracle Cloud Infrastructure
+  Google - Google Cloud
+  Microsoft - MS Azure
+
+SOME TYPES OF CLOUD COMPUTING SERVICES:
+  1. IaaS - Infrastructure as a Service
+    AWS EC2 - Elastic Cloud Computing
+    AWS S3 - Scalable Simple Storage    
+  2. PaaS - Platform as a Service
+    AWS RDS - Relational Database Service: includes EC2 and DBS
+  3. Saas - Software as a Service
+    Health Checkup/Laboratory Management System
+    Learning Management System
+
+SOME TOOLS TO CREATE/AUTOMATE/CONFIGURE INFRASTRUCTURE SERVICES:
+  Terraform
+  Ansible
+  Puppet
+  Chef
+
+SOME RELATED JOB FIELDS:
+  IT Operation
+  System Engineer
+  DevOps Engineer
+  Site Reliability Engineer

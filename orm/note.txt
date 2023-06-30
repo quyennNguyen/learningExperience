@@ -1,0 +1,4 @@
+WHAT IS ORM?
+  ORM, stands for Object Relational Mapping, is a connection between object-oriented programming language (OOP) and relational database management system (RDBMS).
+  JPA, stands for Java Persistence API, is a standard for creating an ORM.
+  There are 2 common ORM types: JDBC and Hibernate.

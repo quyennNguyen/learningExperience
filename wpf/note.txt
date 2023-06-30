@@ -1,0 +1,631 @@
+INSTALLATIONS:
+    - Visual Studio 2019: https://visualstudio.microsoft.com/vs/older-downloads/
+    - .NET: https://dotnet.microsoft.com/en-us/download
+    - Git Clone: https://learn.microsoft.com/en-us/visualstudio/version-control/git-clone-repository?view=vs-2022
+    - Icon: https://uxwing.com/
+    - App Deploy: https://learn.microsoft.com/en-us/dotnet/desktop/wpf/app-development/deploying-a-wpf-application-wpf?view=netframeworkdesktop-4.8
+
+WHAT IS .NET?
+    .NET is a free cross-platform open-source developer platform for building many different types of applications.
+    .NET can be executed on all platforms which have a .NET implementation, but the most common platform is still Microsoft Windows.
+    You can use multiple languages, editors, and libraries to build web, mobile, desktop, games,...
+    Your code will run natively on any compatible operating system.
+    .NET provides a standard set of base class libraries and APIs common to all .NET applications. Each app model can expose additional APIs specific to the operating system it runs on or the capabilities it provides.
+
+    Full source: https://dotnet.microsoft.com/en-us/learn/dotnet/what-is-dotnet
+
+WHAT IS NUGET?
+    An essential tool for any modern development platform is a mechanism through which developers can create, share, and consume useful code. Often such code is bundled into "packages" that contain compiled code (as DLLs) along with other content needed in the projects that consume these packages.
+    For .NET (including .NET Core), the Microsoft-supported mechanism for sharing code is NuGet, which defines how packages for .NET are created, hosted, and consumed, and provides the tools for each of those roles.
+    NuGet is the package manager for .NET. 
+    A NuGet package contains reusable compiled code (DLLs), other files related to that code, and a descriptive manifest.
+    Developers with code to share create packages and publish them to a public or private host. Package consumers obtain those packages from suitable hosts, add them to their projects, and then call a package's functionality in their project code. NuGet itself then handles all of the intermediate details.
+
+    Full source: https://learn.microsoft.com/en-us/nuget/what-is-nuget
+
+WHAT IS WPF?
+    GUI, stands for Graphical User Interface, framework allows you to create an application with a wide range of GUI elements. Without it, you would have to manually create the elements and handle the user interactions/events.
+    WPF, stands for WIndow Presentation Foundation, is a GUI framework that is used with .NET framework to create applications.
+    The WPF development platform supports a broad set of application development features, including an application model, resources, controls, graphics, layout, data binding, documents, and security.
+    A WPF window is a combination of a XAML (.xaml) file and a CodeBehind (.cs) file in C#/VB.NET/any other .NET language to provide a declarative model for application programming.
+    I. Breaking Down a WPF App:
+        1. MainWindow.xaml file:
+
+            <Window x:Class="AppName.MainWindow"
+                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                xmlns:local="clr-namespace:AppName"
+                mc:Ignorable="d"
+                Title="MainWindow" Height="450" Width="800">
+                <Grid>
+                    <TextBlock>Hello, World!</TextBlock>
+                </Grid>
+            </Window>
+
+            <Window></Window>:
+                This class serves as the root of the Window and provodes you with the standard border, title bar, max/min, and close buttons
+                Relavant Attribute:
+                    x:Class:
+                        This attribute tells the XAML file which class to use, which, in this case, is "MainWindow"
+                    Title:
+                        This attribute defines the title of the window shown in the title bar
+                    Height and Width:
+                        these attributes define the starting height and width of the window
+                    Icon:
+                        This attribute defines the icon of the window
+                    ResizeMode:
+                        CanResize (default) / CanMinimize / NoResize
+                        This attribute controls whether and how the end-user can resize the window
+                    ShowInTaskbar:
+                        true (default) / false
+                        This attribute allows the window to be or not to be represented in the Windows taskbar
+                    SizeToContent:
+                        Manual (default) / Width / Height / WidthAndHeight
+                        This attribute decides if the window should resize itself to automatically fit its content
+                    Topmost:
+                        false (default) / true
+                        This attribute allows the window to or not to stay on top of other windows
+                    WindowStartupLocation:
+                        Manual (default) / CenterOwner / CenterScreen
+                        This attribute controls the initial position of the window
+                    WindowState:
+                        Normal (default) / Maximized / Minimized
+                        This attribute controls the initial window state
+        2. MainWindow.xaml.cs file:
+
+            using System;
+            using System.Windows;
+            using System.Windows.Controls;
+
+            namespace WpfApp
+            {
+                public partial class MainWindow : Window
+                {
+                    public MainWindow()
+                    {
+                        InitializeComponent();
+                    }
+                }
+            }
+
+            public partial class MainWindow : Window:
+                This class is definied as partial because it's being combined with the XAML file in runtime to give you the full window and is required to get a full functioning window up and running. 
+            InitializeComponent():
+                This method is what gives you the full window
+        3. App.xaml file:
+
+            <Application x:Class="WpfApp.App"
+                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:local="clr-namespace:WpfApp"
+                StartupUri="MainWindow.xaml">
+                <Application.Resources></Application.Resources>
+            </Application>
+
+            <Application></Application>:
+                This class is the declarative starting point of the application.
+                Relavant Attribute:
+                    StartupUri="MainWindow.xaml":
+                        This attribute instructs which Window or Page to start up when the application is launched, which, in this case, is "MainWindow.xaml"
+        4. App.xaml.cs file:
+
+            using System;
+            using System.Collections.Generic;
+            using System.Windows;
+
+            namespace WpfApp
+            {
+                public partial class App : Application
+                {}
+            }
+
+            This extends the Application class, which is a central class in a WPF Windows application, and is also the place to subscribe to important application events and allow you to do stuff on the application level.
+    II. Custom Startup Window:
+        1. App .xaml file:
+
+            <Application x:Class="WpfApp.App"
+                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:local="clr-namespace:WpfApp"
+                StartupUri="MainWindow.xaml">
+                <Application.Resources></Application.Resources>
+            </Application>
+
+            Startup="Application_Startup":
+                This attribute allows you to subscribe to the Startup event through XAML where you can manually create the starting window.
+        2. App .xaml.cs file:
+
+            using System;
+            using System.Collections.Generic;
+            using System.Windows;
+
+            namespace WpfApp
+            {
+                public partial class App : Application
+                {
+                    private void Application_Startup(object sender, StartupEventArgs e)
+                    {
+                        MainWindow wnd = new MainWindow();
+                        wnd.Title = "Something else";
+                        wnd.Show();
+                    }
+                }
+            }
+
+            private void Application_Startup(object sender, StartupEventArgs e):
+                Adding this method allows you to manipulate the startup window before showing it.
+    III. Command-line Parameters:
+        Command-line parameters are a technique where you can pass a set of parameters to an application that you wish to start, to influence it.
+        These are passed to your WPF application through the Startup event, which you subscribed to in the App.xaml file.
+    IV. Resources:
+        WPF has the ability to store data as a resource.
+        WPF automatically goes up the the hierarchy/scope:
+            - from the local panel/control
+            - to the local window
+            - to the entire global application
+        to find a given resource.
+        1. MainWindow.xaml file:
+            a) on control level:
+
+                <Window x:Class="WpfApp.MainWindow"
+                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                    mc:Ignorable="d"
+                    Title="MainWindow" Height="450" Width="800">
+                    <StackPanel>
+                        <StackPanel.Resources>
+                            <sys:String x:Key="strPanel">Hello, Panel world!</sys:String>
+                        </StackPanel.Resources>
+                        <TextBlock Text="{StaticResource strPanel}" />
+                    </StackPanel>
+                </Window>
+
+            b) on window level:
+
+                <Window x:Class="WpfApp.MainWindow"
+                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                    mc:Ignorable="d"
+                    Title="MainWindow" Height="450" Width="800">
+                    <Window.Resources>
+                        <sys:String x:Key="strWindow">Hello, Window world!</sys:String>
+                    </Window.Resources>
+                    <StackPanel>
+                        <TextBlock Text="{StaticResource strWindow}" />
+                    </StackPanel>
+                </Window>       
+
+        2. on application level:
+            a) App.xaml file:
+
+                <Application x:Class="WpfApp.App"
+                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                    StartupUri="MainWindow.xaml">
+                    <Application.Resources>
+                        <sys:String x:Key="strApp">Hello, Application world!</sys:String>
+                    </Application.Resources>
+                </Application>
+
+            b) MainWindow.xaml file:
+
+                <Window x:Class="WpfApp.MainWindow"
+                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                    mc:Ignorable="d"
+                    Title="MainWindow" Height="450" Width="800">
+                    <StackPanel>
+                        <TextBlock Text="{StaticResource strApp}" />
+                    </StackPanel>
+                </Window>
+
+        3. MainWindow.xaml.cs file:
+            (check VS note)
+
+        xmlns:sys="clr-namespace:System;assembly=mscorlib":
+            This attribute is needed to use resources.
+        x:Key:
+            This attribute specifies the key which the resources are given with.
+            This allows you to reference the key from other parts of the application.
+        StaticResource and DynamicResource:
+            These markup extensions are used with the key's name to reference the resources.
+            StaticResource:
+                This markup extension is resolved only once which is at the point where the XAML is loaded.
+                If the resource is then changed later on, this change will not be reflected where you have used it.
+            DynamicResource:
+                This markup extension is resolved once it's actually needed, and then again if the resource changes.
+                This also allows you to use resources which are not even there during design time,... if you add it from Code-behind during the startup of the application.
+        FindResource():
+            This method finds the specified named key and returns the resource as an object if found.
+    V. Exception Handling:
+        Whenever you have a piece of code that are likely to throw an exception, then you should wrap it in a try-catch block to handle the exception.
+        Sometimes even the simplest code can throw an exception. Instead of wrapping every single line of code with a try-catch block, WPF lets you handle all unhandled exceptions globally through the "DispatcherUnhandledException" event on the Application class. If subscribed to, WPF will call the subscribing method once an exception is thrown which is not handled in your own code.
+        1. App.xaml file:
+
+            <Application x:Class="WpfApp.App"
+                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:local="clr-namespace:WpfApp"
+                DispatcherUnhandledException="Application_DispatcherUnhandledException"
+                StartupUri="MainWindow.xaml">
+                <Application.Resources></Application.Resources>
+            </Application>
+
+        2. App.xaml.cs file:
+
+            using System;
+            using System.Collections.Generic;
+            using System.Windows;
+
+            namespace WpfApp
+            {
+                public partial class App : Application
+                {
+                    private void Application_DispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)
+                    {
+                        _ = MessageBox.Show("An unhandled exception just occurred: " + e.Exception.Message, "Exception Sample", MessageBoxButton.OK, MessageBoxImage.Error);
+                        e.Handled = true;
+                    }
+                }
+            }
+
+        You should handle exceptions locally when it makes sense and only use the global handling as a fallback mechanism, since local handling allows you to be more specific and deal with the problem in a more specialized way.
+    V. Reusable WPF Controls:
+        User controls, in WPF represented by the UserControl class, is the concept of grouping markup and code into a reusable container, so that the same interface, with the same functionality, can be used in several different places and even across several applications.
+        1. UserControl:
+            a) MainUserControl.xaml file:
+
+                <UserControl x:Class="WpfApp.MainUserControl"
+                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+                    xmlns:local="clr-namespace:WpfApp"
+                    mc:Ignorable="d" 
+                    d:DesignHeight="450" d:DesignWidth="800">
+                    <Grid></Grid>
+                </UserControl>
+
+                A user control acts much like a WPF Window - an area where you can place other controls, and then a Code-behind file where you can interact with these controls.
+            b) MainWindow.xaml file:
+
+                <Window x:Class="WpfApp.MainWindow"
+                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    xmlns:local="clr-namespace:WpfApp"
+                    xmlns:uc="clr-namespace:WpfApp"
+                    mc:Ignorable="d"
+                    Title="MainWindow" Height="450" Width="800">
+                    <Grid>
+                        <uc:MainUserControl />
+                    </Grid>
+                </Window>
+
+                WPF will then allow you to embed this collection of functionality in one or several places in the application, allowing you to easily group and re-use functionality across the application(s).
+        2. Custom Controls:
+    VI. Data Binding:
+        Data binding is a general technique that binds two data/information sources together and maintains synchronization of data.
+        In WPF, this is the preferred way to bring data from your code to the UI layer.
+    VII. WPF Commands and Keyboard Shortcuts:
+        have the same action on a toolbar, a menu and even a context menu, without having to implement the same code in multiple places.
+        make the handling of keyboard shortcuts a whole lot easier.
+        By using commands, you might have a whole bunch of things for free: Keyboard shortcuts, text and InputGestureText on the items and WPF automatically enables/disables the items depending on the active control and its state.
+        provide us with lots of functionality including a Click event handler, a text and a shortcut text
+        Relavant Controls:
+            InputGestureText
+            CommandBindings
+
+    Full source: 
+                https://learn.microsoft.com/en-us/dotnet/desktop/wpf/get-started/create-app-visual-studio?view=netdesktop-7.0
+                https://wpf-tutorial.com/about-wpf/what-is-wpf/
+
+WHAT IS XAML?
+    XAML, stands for Extensible Application Markup Language, is a variant of XML for describing a GUI.
+    File extension: .xaml
+    I. Characteristics:
+        case-sensitive because the control name has to correspond to a type in the .NET framework, ex, the attribute name corresponds to the properties of the control
+        PascalCase
+    II. Controls:
+        1. TextBlock:
+            This control allows you to render texts/strings, especially works well for multiline strings.
+            This doesn't take "Content" but "Text" attribute.
+            Relavant controls:
+                Span
+                Run
+                Border
+                Bold
+                Italic
+                Underline
+                Hyperlink
+        2. Button:
+            This control allows you to add buttons to your Window.
+            This can not only contain simple text, but also host other controls inside of it.
+            This only supports one direct child control.
+        3. Label:
+            This control allows you to render short one-line texts/strings, use templated content through the ContentTemplate property, and use access keys to give focus to related controls.
+            This can not only contain simple text, but also host other controls inside of it.
+            This only supports one direct child control.
+            Relavant controls:    
+                AccessText
+        4. TextBox:
+            This control is the most basic text-input control found in WPF, allowing the end-user to write plain text, either on a single line, for dialog input, or in multiple lines, like an editor.
+            Relavant Attributes:
+                TextWrapping
+                AcceptsReturn
+                Height (required for scrollability)
+                Width (required for scrollability)
+                HorizontalScrollBarVisibility
+                VerticalScrollBarVisibility
+                SpellCheck.IsEnabled
+                Language
+                IsReadOnly
+                SelectionChanged
+                TabIndex
+                IsTabStop
+        5. CheckBox:
+            This control allows the end-user to toggle an option on or off. 
+            This can not only contain simple text, but also host other controls inside of it.
+            This only supports one direct child control.
+            This usually corresponds to a boolean value in the Code-behind, which means that it only has two states: true or false (on or off). However, since a boolean data type might be nullable, effectively allowing for a third option (true, false or null), this will get a third state called "the indeterminate state".
+            Relavant Attributes:
+                IsChecked
+                IsThreeState
+                Checked
+                Unchecked
+        6. RadioButton:
+            This control allows you to give your user a list of possible options, with only one of them selected at the same time.
+            This can not only contain simple text, but also host other controls inside of it.
+            This only supports one direct child control.
+            Relavant Attributes:
+                IsChecked
+                GroupName
+        7. PasswordBox:
+            This control allows you to display something else than the actual characters when typing in a password.
+            Relavant Attributes:
+                PasswordChar
+                MaxLength
+        8. ComboBox:
+        9. ListBox:
+        10. Image:
+            This control allows you to display images inside the applications, whether from a remote source, an embedded resource, or from the local computer. 
+            URI, stands for Uniform Resource Identifier, is a sequence of characters that distinguishes one resource from another.
+            There are two types of URIs:
+                - URN, stands for Uniform Resource Name, is a persistent and location-independent identifier that follows the “urn” scheme.
+                - URL, stands for Uniform Resource Locator, is a specific type of identifier that not only identifies the resource but tells you how to access it or where it’s located.
+            Relavant Attributes:
+                Source
+                Stretch
+        11. Interface Controls:
+            a) Menu:
+                This control allows you to create menus that offers a lot of options while using only very little space.
+                You can add multiple "MenuItem" controls to it, and each "MenuItem" can have a range of sub-items, allowing you to create hierarchical menus.
+                Relavant Controls:
+                    MenuItem
+                    MenuItem.Icon
+                Relavant Attributes:
+                    Header
+                    Command
+                    IsCheckable
+                    IsChecked
+                    Click
+            b) ContextMenu:
+                This control, often referred to as a popup or pop-up menu, is a menu which is shown upon certain user actions, usually a right-click with the mouse on a specific control or window.
+                This works exactly the same way as "Menu" control. However, this control needs to placed within "ContextMenu" attribute of the control that is holding the "ContextMenu" control.
+                Relavant Controls:
+                    ContextMenu
+                Relavant Attributes:
+                    ContextMenu
+            c) ToolBarTray:
+                This control is a row of commands, usually sitting right below the main menu of a standard Windows application. 
+                You can have multiple "ToolBar" controls inside of this.
+                Relavant Controls:
+                    ToolBar
+                Relavant Attributes:
+                    ToolBar.OverflowMode
+            d) StatusBar:
+                This control is used to show various information about the current state of the application.
+                Relavant Controls:
+                    StatusBar.ItemsPanel
+                    ItemsPanelTemplate
+                    StatusBarItem
+            e) Ribbon:
+                This interface combines the original menu and toolbar(s) into one control, with various functions grouped into tabs and groups. 
+                This makes it easier for the user to discover all the functionality, instead of hiding it in long menus. 
+                This allows for prioritization of functionality, with the ability to use different sizes of buttons.
+                You can download and use a Microsoft created Ribbon control, but it's not yet a part of the .NET framework by default.
+        12. WPF Panels:
+            Panels are one of the most important control types of WPF. They act as containers for other controls and control the layout of the windows. Since a window can only contain one child control, a panel is often used to divide up the space into areas, where each area can contain a control or another panel.
+            a) Grid:
+                This is a very versatile panel.
+                In its most basic form, this takes all of the controls you put into it, stretch them to use the maximum available space and place it on top of each other.
+                However, this can contain multiple rows and columns, where you can define a height for each of the rows and a width for each of the columns.
+                Relevant Controls:
+                    Grid.ColumnDefinitions
+                    ColumnDefinition
+                    Grid.RowDefinitions
+                    RowDefinition
+                    GridSplitter
+                Relavant Attributes:
+                    Width
+                    Height
+                        -> if "Width" or "Height" is assigned with "*" value, the controls will share the space equally
+                    Grid.Column
+                    Grid.ColumnSpan
+                    Grid.Row
+                    Grid.RowSpan
+                    HorizontalAlignment
+                    VerticalAlignment
+            b) WrapPanel:
+                This positions each of its child controls next to the other, horizontally (default) or vertically, until there is no more room, where it will wrap to the next line and then continue.
+                Relavant Attributes:
+                    Orientation
+            c) StackPanel:
+                This is similar to "WrapPanel", but instead of wrapping the content, it stretches the content in one direction, allowing you to stack item after item on top of each other, horizontally or vertically (default). 
+                Relavant Attributes:
+                    Orientation
+                    HorizontalAlignment
+                    VerticalAlignment
+            d) DockPanel:
+                This docks the content in all four directions (top, bottom, left, and right). 
+                How the space is divided might differ because this decides which control to favor by looking at their position in the markup (first come first serve).
+                The default behavior is that the last child of this takes up the rest of the space, but this can be disabled using "LastChildFill".
+                Relavant Attributes:
+                    DockPanel.Dock
+                    LastChildFill
+    III. Attributes:
+        Common Attributes:
+            Content="Value" -> the content only allows one child element, in other words, all the content inside a tag has to be under one parent element
+            FontSize
+            FontWeight
+            FontStyle
+            Foreground
+            Background
+            TextTrimming
+            TextWrapping
+            TextDecorations
+            TextOptions.TextFormattingMode
+            TextOptions.TextRenderingMode
+            Tooltip
+            LineBreak
+            Separator
+            Margin
+            Padding
+            HorizontalAlignment
+            VerticalAlignment
+            Orientation
+        To globally apply a property, either across the entire application or just the Window:
+
+            <Window.Resources>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Padding" Value="5,2"/>
+                </Style>
+            </Window.Resources>
+
+        To access other controls in a dialog by holding down the [Alt] key and then pressing a character which corresponds to the control that you wish to access:
+            - define the access key by placing an underscore (_) before the character, it can be before any of the characters in the "Content", the character should not already be used as an access key for another control
+            - use "Target" attribute to connect the "Label" and the designated control, the binding is based on the name of the control, so if you change this name, you will also have to remember to change the binding
+
+            <Label Content="_Name:" Target="{Binding ElementName=txtName}" />
+            <TextBox Name="txtName" />
+
+    IV. Events:
+        Common Events:
+            KeyDown
+            KeyUp
+            MouseDown
+            MouseUp
+            MouseEnter
+            MouseLeave
+    
+    V. Dialogs:
+        1. MessageBox:
+            This dialog shows a message to the user, and then offer one or several ways for the user to respond to the message.
+            This is used by calling the static "Show()" method, which can take a range of different parameters, to be able to look and behave the way you want it to.
+
+            MessageBox.Show("Content", "Title", MessageBoxButton.YesNoCancel, MessageBoxImage.Information, MessageBoxResult.No);
+
+            The parameter 1 specifies the message to be displayed. 
+            The parameter 2 specifies the title of the "MessageBox" dialog. (optional)
+            The parameter 3 specifies the buttons to be displayed by using a value from the "MessageBoxButton" enumeration which can be any or any combinations of: Yes/No/Cancel/OK. (optional)
+            The paramter 4 specifies a pre-defined icon to be displayed by using the "MessageBoxImage" enumeration. You can choose between a range of icons for different situations: Asterisk/Error/Exclamation/Hand/Information/None/Question/Stop/Warning. (optional)
+            The paramter 5 specifies a button as the default choice in case the user presses "Enter" or "Space" button. (optional)
+            
+            The "Show()" method returns a value from the "MessageBoxResult" enumeration that you can use.
+
+            MessageBoxResult result = MessageBox.Show("Content", "Title", MessageBoxButton.YesNoCancel);
+            switch(result)
+            {
+                case MessageBoxResult.Yes:
+                    MessageBox.Show("Content", "Title");
+                    break;
+                case MessageBoxResult.No:
+                    MessageBox.Show("Content", "Title");
+                    break;
+                case MessageBoxResult.Cancel:
+                    MessageBox.Show("Content", "Title");
+                    break;
+            }
+
+            By checking the result value, you can react to the user choice.
+        2. OpenFileDialog:
+            This dialog displays a dialog for opening one or several files.
+
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+
+            // for text files
+            openFileDialog.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+
+            //for image files
+            openFileDialog.Filter = "Image files (*.png;*.jpeg)|*.png;*.jpeg|All files (*.*)|*.*";
+
+            // to the C drive
+            openFileDialog.InitialDirectory = @"c:\temp\";
+
+            // to special folder (Desktop/Documents/Program Files)
+            openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+
+            // for multiselection
+            openFileDialog.Multiselect = true;
+
+            if(openFileDialog.ShowDialog() == true)
+            {
+				txtEditor.Text = File.ReadAllText(openFileDialog.FileName);
+            }
+
+            The "Filter" property indicates to the user which types of file they should be opening in the application, as well as limiting the files shown for a better overview. (optional)
+            The "InitialDirectory" property sets the initial directory to a user specified directory, the application directory, or the directory last used. (optional)
+            The "Multiselect" property supports selecting more than one file at a time. (optional)
+            The "ShowDialog()" method returns a nullable boolean value (false/true/null). 
+            The "FileName" property returns the complete path of the selected file.
+        3. SaveFileDiablog:
+            This dialog allows you select a location and a filename when you wish to save a file.
+
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+
+            saveFileDialog.Filter = "Text file (*.txt)|*.txt|C# file (*.cs)|*.cs";
+
+            saveFileDialog.InitialDirectory = @"c:\temp\";
+
+            saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+
+			if(saveFileDialog.ShowDialog() == true)
+            {
+				File.WriteAllText(saveFileDialog.FileName, txtEditor.Text);
+            }
+
+            The "Filter" property indicates to the user file formats the application supports. You can write filenames without specifying the extension. (optional)
+            The "InitialDirectory" property sets the initial directory to a user specified directory, the application directory, or the directory last used. (optional)
+            The "ShowDialog()" method returns a nullable boolean value (false/true/null).
+            The "FileName" property will contain the selected path as well as the user entered file name.
+
+            Relavent Properties:
+                AddExtension
+                    True (default)
+                    This determines if the dialog should automatically append an extension to the filename, if the user omits it. The extension will be based on the selected filter, unless that's not possible, in which case it will fall back to the DefaultExt property (if specified). If you want your application to be able to save files without file extensions, you may have to disable this option.
+                OverwritePrompt
+                    True (default)
+                    This determines if the dialog should ask for a confirmation if the user enters a file name which will result in an existing file being overwritten.
+                Title
+                    "Save As" (default)
+                    This allows you to custom the title on the dialog.
+                ValidateNames
+                    True (default)
+                    This ensures that the user enters only valid Windows file names before allowing the user to continue.
+
+WHAT IS C#?
+    C#, pronounced as C Sharp, is an object-oriented programming language that is used with .NET framework.
+    File extension: .cs (.xaml.cs)

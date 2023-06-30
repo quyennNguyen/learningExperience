@@ -1,0 +1,237 @@
+WHAT IS SPRING?
+  Spring is an open-source Java framework that provides a comprehensive set of features for building enterprise-grade Java applications and a light-weight alternative to Java Enterprise Edition (JavaEE).
+  There are several advantages of using Spring framework:
+    1. Modular and Extensible:
+      Spring Framework follows a modular and extensible architecture, allowing developers to selectively use the components they need and easily integrate with other frameworks or libraries.
+    2. Inversion of Control (IoC)
+    3. Dependency Injection (DI)
+    4. Aspect-Oriented Programming (AOP)
+    5. Abstraction and Integration:
+      Spring provides abstractions for common technologies used in enterprise applications, such as JDBC, JPA, JMS, and REST, making it easier to integrate with different data sources and services.
+    6. Productivity:
+      Spring Framework provides a wide range of tools, templates, and utilities that enable you to be more productive and focus on building business logic rather than dealing with low-level infrastructure code.
+    7. Community and Ecosystem:
+      Spring has a large and active community of developers and users, with extensive documentation, tutorials, and forums available. It also has a rich ecosystem of plugins, extensions, and integrations with other popular frameworks and libraries.
+    8. Scalability and Performance:
+      Spring Framework is designed to be scalable and performant, with features such as caching, connection pooling, and optimized data access that help improve application performance in enterprise environments.
+    9. Testability:
+      Spring's modular and decoupled architecture makes it highly testable, allowing for easy unit testing and integration testing of individual components or entire applications.
+      
+HOW TO SET UP A SPRING PROJECT?
+  1. Use Spring Initializr to set up the project.
+  2. Recommended Dependencies: Spring Web, Spring Data JPA, Spring Boot Dev Tools, MySQL Driver, Lombok, Spring Security,...
+  3. Configure "application.properties" file with database settings:
+      spring.jpa.hibernate.ddl-auto=create-drop (or update)
+      spring.datasource.url=jdbc:mysql://localhost:3306/yourdatabase
+      spring.datasource.username=root
+      spring.datasource.password=password
+      spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+      spring.jpa.database-platform= org.hibernate.dialect.MySQLDialect
+      spring.jpa.show-sql: true
+  4. In "pom.xml" file, check if you have all the necessary dependencies.
+  5. A typical Spring Boot application should consist of the following directories: entity, repository, service, controller, exception, security, jwt.
+
+WHAT IS IOC?
+  IoC, stands for Inversion of Control,
+  Spring IoC container manages the instantiation and lifecycle of objects, allowing for loose coupling and easier testing.
+
+WHAT IS DI?
+  I. Types of Coupling:
+    Tight coupling is a situation where multiple entities are strongly dependent on each other. Changing in one entity can directly impact other entities. This makes the code more difficult to maintain, extend, or manipulate.
+    Loose coupling is a design principle in software engineering that aims to minimize the dependencies between components in a system. It promotes a more flexible and maintainable codebase by reducing the direct reliance of one component on another, allowing them to evolve independently.
+  II. Dependency Injection:
+    DI, stands for Dependency Injection, is a design pattern that simplifies object dependencies by providing a mechanism for injecting dependencies into objects externally.
+    Components in an application shouldn't directly depend on each other (tight coupling) but should depend on abstraction (loose coupling).
+    Dependency Injection promotes loose coupling between components, which makes you code more modular, testable, and maintainable.
+    Benefits of using Dependency Injection are modularity, testability, maintainability, and reusability.
+    Spring provides various approaches for implementing Dependency Injection:
+      1. Constructor Injection:
+        Dependencies are injected via the constructor of a class.
+        Spring container automatically resolves and provides the appropriate dependencies when creating the object.
+      2. Setter Injection:
+        Dependencies are injected via setter methods of a class.
+        Spring container invokes these setter methods to set the dependencies after creating the object.
+      3. Field Injection:
+        Dependencies are directly injected into class fields using annotations.
+        Spring container automatically sets the values of the annotated fields after creating the object.
+        Related annotation:
+          @Autowired
+
+WHAT IS AOP?
+  AOP, stands for Aspect-Oriented Programming,
+  It allows you to apply cross-cutting concerns, such as logging, caching, and security, to multiple components in a declarative way, improving code modularity and maintainability.
+  
+WHAT IS MVC?
+  MVC, stands for Model View Controller
+
+WHAT IS BEAN?
+  In Spring, a bean is an object created and managed by the Spring IoC container.
+  Beans are the building blocks of a Spring application, which represent components such as data access objects (DAO), services, controllers,...
+  They are stored in the Spring IoC container, which handles their lifecycle, dependencies, and configuration.
+  I. Bean Definition:
+    A bean definition is a configuration metadata that defines how a bean is created, managed, and used in a Spring application.
+    It includes information such as class, scope, lifecycle callbacks, and dependencies.
+    It can be specified using XML configuration, Java-based configuration, or annotations.
+  II. Bean Scope:
+    A bean scope defines the lifecycle and visibility of a bean within the Spring IoC container.
+      1. Singleton:
+        A single instance of the bean is created and shared by all requests for the same bean. 
+        This is the default scope in Spring.
+      2. Prototype:
+        A new instance of the bean is created for each request for the bean.
+      3. Request:
+        A new instance of the bean is created for each HTTP request in a web application.
+      4. Session:
+        A new instance of the bean is created for each HTTP session in a web application.
+      5. Custom Scopes:
+        You can define your own custom bean scopes to suit your specific requirements and coding style.
+  III. Bean Lifecycle:
+    Spring provides hooks for managing the lifecycle of beans such as initializing and destroying beans. 
+      1. Annotations:
+        @PostConstruct
+        @PreDestroy
+      2. Interfaces:
+        InitializingBean
+        DisposableBean interfaces
+    These lifecycle callbacks allow you to perform initialization and cleanup tasks on beans.
+  IV. Bean Dependencies:
+    Beans can have dependencies on other beans.
+    Spring provides mechanisms for managing these dependencies such as constructor injection, setter injection, and field injection.
+  V. Bean Configuration:
+    Beans can be configured using various approaches in Spring such as XML configuration, Java-based configuration, and annotations.
+  VI. Bean Autowiring:
+    Bean autowiring is a feature in Spring that automatically wires dependencies between beans without the need for explicit configuration.
+    Spring provides different autowiring modes such as byType, byName, constructor, and autodetect, which determine how beans are automatically wired together.
+  VII. Bean Scanning:
+    Bean scanning is a feature in Spring that automatically detects and registers beans based on certain conventions or annotations.
+    This eliminates the need for explicit bean definition and allows for more flexible and dynamic configuration.
+  
+WHAT IS REST?
+  REST, stands for Representational State Transfer, is a web architectural style or integration style for application-to-application and server-to-server communication.
+  It provides standards between computer systems on the web, which makes it easier for systems to communicate with each other.
+  It encourages you to use the web with constraints and guiding principles:
+    - Everything is a resource.
+    - Each resource is identified by a unique identifier (URI).
+    - Use the standard HTTP method
+    - Resources can have multiple representations.
+    - Be stateless
+  Spring Boot simplifies the developement of RESTful web services without writing boilerplate code.
+  I. REST Controller:
+    Controllers are special beans in the Spring ecosystem that handle HTTP web requests.
+    Related annotation:
+      @RestController
+  II. Expose REST Endpoint:
+    Spring boot provides mapping annotations for each type of HTTP verbs that are used in requests to interact with resources in a REST system.
+    There are 4 basic HTTP verbs:
+      1. GET:
+        Spring annotation: @GetMapping
+        Description: to retrieve a resource
+      2. POST:
+        Spring annotation: @PostMapping
+        Description: to create a resource
+      3. PUT:
+        Spring annotation: @PutMapping
+        Description: to modify/update a resource
+      4. DELETE:
+        Spring annotation: @DeleteMapping
+        Description: to delete a resource
+    Each annotation contains parameters that deal with the HTTP requests and responses.
+      1. Path:
+        An URL path or resource location.
+          value = "/path"
+      2. Headers:
+        The headers of the mapped request, narrowing the primary mapping. 
+        Header attributes restrict the scope of the controller method. 
+        Request only mapped if each such title is found to have the given value.
+          headers = "content-type=text/html"
+      3. Consumes: 
+        Narrows the primary mapping by media types that the handler can consume.
+          consumes="application/json"
+      4. Produces:
+        Narrows the primary mapping by media types that the mapped handler can produce.
+          produces = "application/json"
+  III. Spring Boot Annotations:
+    @SpringBootApplication: is the main annotation used in a Spring Boot application. It combines the functionalities of @Configuration, @EnableAutoConfiguration, and @ComponentScan. It is used to configure the Spring application context and enable the auto-configuration feature.
+    @Component: marks a class as a Spring-managed bean. The class will be automatically detected and registered as a bean in the application context. Spring will automatically create an instance of it, which can then be injected into other beans or used within the application.
+    @Configuration: defines a configuration class that provides beans to the Spring application context
+    @Bean
+    @Entity
+    @Repository: marks a class as a data access object (DAO). There are 2 common interfaces you can extend from: CrudRepository<T, R> and JpaRepository<T, R>
+    @Service: marks a class as a service
+    @RestController: consists of @Controller and @ResponseBody, which marks a class as a RESTful controller and capable of handling web requests. It eliminates the need for @ResponseBody annotations on every method.
+    @Controller: declares the annotated class as an MVC controller
+    @ResponseBody: binds a method return value to the web response body. It uses HTTP Message converters to convert the return value to the HTTP response body based on the content type in the request HTTP header.
+    @RequestMapping("/path"): applies the mapping the all the handlers. We don't have to repeat the same mapping in all the handler methods.
+    @PathVariable: extracts a value from a URL path variable.
+    @RequestBody: binds the HTTP request body to a Java object.
+    @Autowired: marks the field as a dependency to be injected into a Spring-managed bean by the Spring container
+
+WHAT ARE HTTP PROTOCOLS AND HTTP METHODS?
+  HTTP, stands for Hyper Text Transfer Protocols, is a communication protocol used to transfer hypertext (text with hyperlinks) over the World Wide Web. 
+  It is the foundation of the web, allowing web browsers to retrieve web pages from web servers and display them to users.
+  I. Client-Server Model:
+    In HTTP, the communication occurs between clients (such as web browsers) and servers (such as web servers). Clients send requests to servers for resources, and servers respond with the requested resources.
+  II. Request-Response Cycle:
+    HTTP follows a request-response model, where clients send requests to servers, and servers respond with the requested resources or an error message.
+  III. Stateless Protocol:
+    HTTP is a stateless protocol.
+    Each request from a client to a server is independent and does not carry any information about previous requests. 
+    Servers do not remember past requests from clients, and clients need to include all necessary information in each request.
+  IV. URI:
+    URI, stands for Uniform Resource Identifier, is a sequence of character used in HTTP requests to identify the resources on the web such as web pages, images, files,... that clients want to retrieve from servers. 
+    A URI distinguishes one resource from another.
+    A URI contains scheme, authority, path, query, and a fragment.
+      scheme:[//authority]path[?query][#fragment]
+      1. Scheme:
+        Scheme is a sequence of characters followed by a colon (:).
+        Schemes should be registered with Internet Assigned Numbers Authority (IANA).
+        Some common URI schemes are http, https, file, data, ftp, irc, idp, telnet,...
+      2. Authority:
+        Authority is a sequence of characters preceded by 2 forward slashes (//).
+        It consists of 3 components:
+          a. userinfo: 
+            It may contain a username and an optional password separated by colon (:).
+            It's followed by an @.
+          b. host: 
+            It contains either a registered name or an IP address.
+            The IP address must be enclosed in a pair of brackets [ ].
+          c. port:
+            It is optional.
+        Authority is optional.
+      3. Path:
+        Path consists of a sequence of path segments separated by a slash (/).
+        It may be empty or of 0 length.
+      4. Query:
+        Query contains a query string of non-hierarchical data and is preceded by a question mark (?).
+        It is optional.
+      5. Fragment:
+        Fragment consists of a fragment identifier and is preceded by a hash (#).
+        It is optional.
+    URI consists of URN and URL, to identify the name or location or both of a resource.
+      1. URL:
+        URL, stands for Uniform Resource Locator, is a reference that specifies the location/address of the resource on the web. (to find its location and to access it)
+        Each HTTP URL follows the syntax of its generic URI:
+          scheme:[//authority]path[?query][#fragment]
+          a. Scheme:
+            Scheme represents a protocol that a web browser needs to use to request a resource from a web server.
+          b. Authority:
+            Authority consists of 2 components separated by colon (:):
+              a. domain name: 
+                It can be a registered name of the resource.
+                Some commonly used protocols for websites are HTTP and HTTPS.
+              b. port: 
+                It is the technical gate to access the resource on a web server.
+                Port 80 is used for HTTP, and port 443 is used for HTTPS.
+            Authority is optional.
+          c. Path:
+            Path specifies a complete path to a resource on a web server.
+          d. Query:
+            Query contains the name-value pairs that follows the path to provide additional informaiton.
+          e. Fragment:
+            Fragment provides direction to a secondary resource.
+        Each URL can be a URI, but a URI might not be a URL.
+        URI can specify name and location of a resource, but URL can only specify the location.
+        URI can also find resources in HTML, XML, and other files, but URL can only locate web pages.
+      2. URN:
+        URN, stands for Uniform Resource Number,
+
