@@ -37,6 +37,7 @@ WHAT IS IOC?
 
 WHAT IS DI?
   I. Types of Coupling:
+    Coupling is when one class depends on another class.
     Tight coupling is a situation where multiple entities are strongly dependent on each other. Changing in one entity can directly impact other entities. This makes the code more difficult to maintain, extend, or manipulate.
     Loose coupling is a design principle in software engineering that aims to minimize the dependencies between components in a system. It promotes a more flexible and maintainable codebase by reducing the direct reliance of one component on another, allowing them to evolve independently.
   II. Dependency Injection:
@@ -75,8 +76,8 @@ WHAT IS BEAN?
   II. Bean Scope:
     A bean scope defines the lifecycle and visibility of a bean within the Spring IoC container.
       1. Singleton:
-        A single instance of the bean is created and shared by all requests for the same bean. 
-        This is the default scope in Spring.
+        This is the default scope in Spring and based on the Singleton design pattern.
+        A single instance of the bean is created and shared by all requests for the same bean by using @Bean.
       2. Prototype:
         A new instance of the bean is created for each request for the bean.
       3. Request:

@@ -1,0 +1,37 @@
+WHAT IS DATABASE?
+    Database is an essential data repository for a software application.
+    Database is a collection of data stored in format that can be accessed, managed, and updated.
+    DBMS, stands for Database Management System, serves as an interface between the end-user (back-end) and the database, and allows the user to create, read, update, and delete the data in the database.
+    
+WHAT ARE THE TYPES OF DATABASE?
+    There are 2 types of DBMS used to store, retrieve, and manage data:
+    I. SQL Database, or Relational Database (RDBMS):
+        1. Data Model:
+            This stores data in a relational logical data model with objects such as tables, views, rows, and columns.
+            The database structure is organized into physical files optimized for speed.
+            This is based on a fixed schema to define the tables and their relationaships.
+            Each table is a collection of related data entries made of rows and columns.
+            Each row represents an individual record/entry with unique key/id in the table.
+            Each column represents a particular attribute/specific information of the record/entries in the table.
+        2. Scalability:
+            This is less scalable but offers a flexible programming environment.
+        3. Consistency:
+            This is highly structured and data is always in a consistent state.
+        4. Querying:
+            This uses SQL to query data.
+        5. Application:
+            This is well-suited for applications that require complex queries and support transactions such as financial or e-commerce systems.
+        EX: MySQL, PostgreSQL, Microsoft SQL Server, MariaDB, Oracle,...
+    II. NoSQL Database:
+        1. Data Model:
+            This stores data in a variety of data models including key-value pairs, documents, or graphs.
+            This is not based on a fixed schema (schemaless).
+        2. Scalability:
+            This is highly scalable and can handle a large amount of data and traffics.
+        3. Consistency:
+            This sacrifices consistency in favor of scalability and performance.
+        4. Querying:
+            This often uses its own query language or APIs.
+        5. Application:
+            This is often used for large-scale web applications such as social media platforms, where data is highly distributed and the schema may evolve rapidly.
+        EX: MongoDB, Firebase, Redis, Cassandra,...
