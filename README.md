@@ -8,13 +8,13 @@
 # WHAT TO LEARN?
 
 #### Having a clear study plan is very crucial. Depending on your career choice, the study plan might vary.
-#### As for my study plan will focus on Full Stack Developement.
+#### As for my study plan will focus on Full Stack Development.
 
 ### 1. FRONT END / CLIENT SIDE:
    * HTML
    * CSS
    * CSS Preprocessor: SASS
-   * CSS Framework: Bootstrap / Tailwind
+   * CSS Framework: Bootstrap
    * JavaScript
    * Javascript Framework/Library: React
 ### 2. BACK END / SERVER SIDE:
@@ -35,85 +35,83 @@
 * Harvard's Free CS Course: https://www.edx.org/cs50
 
 #### HTML:
-* https://youtu.be/kUMe1FH4CHE
 * https://www.w3schools.com/html/default.asp
 * https://developer.mozilla.org/en-US/docs/Web/HTML
 * VSCode: https://code.visualstudio.com/download
-* html note
 #### CSS:
-* https://youtu.be/1Rs2ND1ryYc
 * https://www.w3schools.com/css/default.asp
 * https://developer.mozilla.org/en-US/docs/Web/CSS
 * VSCode: https://code.visualstudio.com/download
-* css note
 #### SASS:
-* https://youtu.be/_a5j7KoflTs
 * https://www.w3schools.com/sass/default.php
 * https://sass-lang.com/documentation/
 * Fontawesome: https://fontawesome.com/
 * VSCode: https://code.visualstudio.com/download
-* sass note
+#### Bootstrap:
+* https://www.w3schools.com/bootstrap5/index.php
+* https://getbootstrap.com/docs/5.3/getting-started/introduction/
+* VSCode: https://code.visualstudio.com/download
 #### JavaScript:
-* https://youtu.be/lI1ae4REbFM
 * https://www.w3schools.com/js/default.asp
 * https://javascript.info/
 * https://www.theodinproject.com/paths
 * VSCode: https://code.visualstudio.com/download
 * NodeJs: https://nodejs.org/en
-* javascript note
 #### React:
-* https://youtu.be/bMknfKXIFA8
 * https://www.w3schools.com/react/default.asp
 * https://legacy.reactjs.org/docs/getting-started.html
 * https://react.dev/learn
 * MUI: https://mui.com/
 * VSCode: https://code.visualstudio.com/download
 * NodeJs: https://nodejs.org/en
-* reactjs note
 #### TypeScript:
 * https://www.w3schools.com/typescript/index.php
 * https://www.typescriptlang.org/docs/
+* VSCode: https://code.visualstudio.com/download
+* NodeJs: https://nodejs.org/en
 #### Angular:
 * https://www.w3schools.com/angular/default.asp
 * https://angular.io/docs
 * VSCode: https://code.visualstudio.com/download
 * NodeJs: https://nodejs.org/en
-* angular note
+#### NodeJs:
+* https://www.w3schools.com/nodejs/default.asp
+* NodeJs: https://nodejs.org/en/download
 #### Java:
 * https://www.w3schools.com/java/default.asp
 * https://docs.oracle.com/javase/tutorial/java/javaOO/index.html
 * IntelliJ: https://www.jetbrains.com/idea/download/#section=windows
 * JDK: https://www.oracle.com/java/technologies/downloads/
-* java note
 #### Spring Boot:
 * https://www.tutorialspoint.com/spring_boot/index.htm
-* IntelliJ: https://www.jetbrains.com/idea/download/#section=windows
 * Spring Initializr: https://start.spring.io/
-* Postman API: https://www.postman.com/
 * MVN: https://mvnrepository.com/
-* spring note
+* Postman API: https://www.postman.com/
+* IntelliJ: https://www.jetbrains.com/idea/download/#section=windows
 #### MySQL:
 * https://www.w3schools.com/sql/default.asp
 * https://www.w3schools.com/MySQL/default.asp
-* Ubuntu: https://learn.microsoft.com/en-us/windows/wsl/install
-* MySQL Install: https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-database
-* MySQL Workbench: https://dev.mysql.com/downloads/windows/installer/8.0.html
 * JDBC Driver: https://dev.mysql.com/downloads/connector/j/
-* mysql note
+* MySQL Workbench: https://dev.mysql.com/downloads/windows/installer/8.0.html
+* MySQL: https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-database
+#### MongoDB:
+* https://www.w3schools.com/mongodb/index.php
+* JSON: https://www.w3schools.com/js/js_json_intro.asp
 #### AWS:
-* AWS: https://aws.amazon.com/free/?trk=6a4c3e9d-cdc9-4e25-8dd9-2bd8d15afbca&sc_channel=ps&ef_id=CjwKCAjwkeqkBhAnEiwA5U-uM0kpmW6wHDZzWLdJioMLqtuFcKqN3eGBvqyemfJ5wdbC2mYcCJ5_7BoCgeoQAvD_BwE:G:s&s_kwcid=AL!4422!3!651751059783!e!!g!!aws!19852662197!145019195897&all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc&awsf.Free%20Tier%20Types=*all&awsf.Free%20Tier%20Categories=*all
+* https://aws.amazon.com/free/?trk=6a4c3e9d-cdc9-4e25-8dd9-2bd8d15afbca&sc_channel=ps&ef_id=CjwKCAjwkeqkBhAnEiwA5U-uM0kpmW6wHDZzWLdJioMLqtuFcKqN3eGBvqyemfJ5wdbC2mYcCJ5_7BoCgeoQAvD_BwE:G:s&s_kwcid=AL!4422!3!651751059783!e!!g!!aws!19852662197!145019195897&all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc&awsf.Free%20Tier%20Types=*all&awsf.Free%20Tier%20Categories=*all
 #### Docker:
-* Docker: https://docs.docker.com/desktop/install/windows-install/
-#### Version Control:
-* https://youtu.be/RGOj5yH7evk
+* https://docs.docker.com/desktop/install/windows-install/
+#### Git:
+* https://www.w3schools.com/git/default.asp
 * https://www.atlassian.com/git/tutorials/install-git#windows
 * https://docs.github.com/en/authentication/connecting-to-github-with-ssh/about-ssh
-* git note
+#### Linux:
+* Ubuntu: https://learn.microsoft.com/en-us/windows/wsl/install
 
 ***
 
-#### Full-Stack Java Developement Path:
+#### Full-Stack Java Development Path:
 * MySQL - Spring Boot - React
-#### Full-Stack JavaScript Developement Path:
+#### Full-Stack JavaScript Development Path:
 * MongoDB - ExpressJS - React - NodeJS
 * MongoDB - ExpressJS - Angular - Node JS
