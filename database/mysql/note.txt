@@ -14,39 +14,101 @@ HOW TO SET UP MYSQL?
     On Ubuntu run: 
         mysql -h 127.0.0.1 -p -u root -p
 
+WHAT IS SQL QUERY?
+    SQL query is a statement made of one or more SQL commands to perform a specific data operation in a database.
+
+WHAT ARE THE TYPES OF COMMANDS IN MYSQL?
+    1. Data Definition Language (DDL):
+        This defines and deals with database schemas and descriptions of how data should exist in the database.
+    2. Data Manipulation Language (DML):
+        This deals with data manipulation such as storing, retrieving, updating, and deleting data in the database.
+    3. Data Control Language (DCL):
+    4. Transaction Control Language (TCL):
+    5. Aggregate Functions:
+
 WHAT ARE MYSQL FUNCTIONS?
-    I. SELECT:    
-        SELECT is used to get data from the specified fields of the table.
-        The returned data is stored in a result table called result set.
-        SELECT column1, column2,... FROM table_name;
-        SELECT * FROM table_name;
-        SELECT DISTINCT column_name FROM table_name;
-        SELECT COUNT(DISTINCT column_name) FROM table_name;
-    II. WHERE:
-        WHERE clause is used to filter the records that fulfill a specified condition.
-        Some conditional operators used in WHERE clause are:
-            = > < >= <= != <> 
-            condition1 AND condition2 AND... 
-            condition1 OR condition2 OR...
-            NOT condition
-            BETWEEN value1 AND value2
-            LIKE "pattern"
-            IN (value1, value2,...)
-        SELECT column1, column2,... FROM table_name WHERE condition;
-    III. ORDER BY:
-        ORDER BY is used to sort the result table in ascending order (default) or descending order.
-        The result table can be ordered by multiple fields, each of which can be specified with either ASC/DESC.
-        SELECT column1, column2,... FROM table_name ORDER BY column_name;
-        SELECT column1, column2,... FROM table_name ORDER BY column_name ASC;
-        SELECT column1, column2,... FROM table_name ORDER BY column_name DESC;
-        SELECT column1, column2,... FROM table_name ORDER BY column1 ASC, column2 DESC;
-    II. String, Numeric, and Date/Time Functions:
+    I. To Operate a Database/Schema:
+        SHOW DATABASES;
+        CREATE DATABASE database_name;
+        USE database_name;
+        ALTER DATABASE...
+    II. To Operate a Table:
+        SHOW TABLES;
+        CREATE TABLE table_name(column1 DATATYPE, column2 DATATYPE,...);
+        DESCRIBE table_name;
+        ALTER TABLE table_name RENAME TABLE oldname TO newname;
+        DROP TABLE table_name;
+    III. To Operate Table Fields:
+        ALTER TABLE tbname ADD what datatype;
+        ALTER TABLE tbname MODIFY what newdatatype;
+        ALTER TABLE tbname CHANGE oldname newname datatype;
+        ALTER TABLE tbname RENAME COLUMN oldname TO newname;
+        ALTER TABLE tbname DROP what;
+    IV. To Operate Records:
+        1. To Get Data:
+            a. SELECT:    
+                SELECT is used to select records from the specified fields of the table.
+                    SELECT column1, column2,... FROM table_name;
+                    SELECT * FROM table_name;
+                    SELECT DISTINCT column_name FROM table_name;
+                    SELECT COUNT(DISTINCT column_name) FROM table_name;
+                The returned records will be stored in a result table called result set.
+            b. WHERE:
+                WHERE is used to filter records from the result table that fulfill a specified condition.
+                    SELECT column1, column2,... FROM table_name WHERE condition;
+            c. LIMIT:
+                LIMIT is used to specify the number of records returned.
+                    SELECT column1, column2,... FROM table_name LIMIT number;            
+            d. ORDER BY:
+                ORDER BY is used to sort the result table in ascending order (default) or descending order.
+                The result table can be ordered by multiple fields, each of which can be specified with either ASC/DESC.
+                    SELECT column1, column2,... FROM table_name ORDER BY column_name;
+                    SELECT column1, column2,... FROM table_name ORDER BY column_name ASC;
+                    SELECT column1, column2,... FROM table_name ORDER BY column_name DESC;
+                    SELECT column1, column2,... FROM table_name ORDER BY column1 ASC, column2 DESC;
+            e. MIN MAX:
+                MIN() is used to return the smallest value of the selected field.
+                MAX() is used to return the largest value of the selected field.
+                    SELECT MIN(column_name) FROM table_name;
+                    SELECT MAX(column_name) FROM table_name;
+            f. COUNT:
+                COUNT() is used to return the number of records in the specified field.
+                    SELECT COUNT(column_name) FROM table_name;
+            g. AVG:
+                AVG() is used to return the average value of a numeric field.
+                    SELECT AVG(column_name) FROM table_name;                
+            h. SUM:
+                SUM() is used to return the total value of a numeric field.
+                    SELECT SUM(column_name) FROM table_name;
+        2. To Add Data:
+            INSERT INTO:
+                INSERT INTO is used to insert new records into the table.
+                The order of the values inserted has to match with the order of the targeted columns in the table.
+                    INSERT INTO table_name(column1, column2,...) VALUES (value1, value2,...);
+                    INSERT INTO table_name VALUES (value1, value2,...);
+        3. To Update Data:
+            a. UPDATE:
+                UPDATE is used to modify existing records of the specified fields of the table.
+                    UPDATE table_name SET column1=value1, column2=value2,...;
+            b. WHERE:
+                WHERE is used to specify which records need to be modified.
+                    UPDATE table_name SET column1=value1, column2=value2,... WHERE condition;
+                If WHERE clause is omitted, all records from each specifed field will be updated with the same value.
+        4. To Delete Data:
+            a. DELETE:
+                DELETE is used to delete existing records in the table without affecting the table structure, attributes, and indexes.
+                    DELETE FROM table_name;
+            b. WHERE:
+                WHERE is used to specify which records need to be deleted.
+                    DELETE FROM table_name WHERE condition;
+                If WHERE clause is omitted, all records will be deleted, but the table won't.
+    V. String, Numeric, and Date/Time Functions:
         Reference: https://www.w3schools.com/MySQL/mysql_ref_functions.asp
 
 WHAT ARE MYSQL DATA TYPES?
     When creating a table in a database, each column in the table is required to have a name and a data type.
     The data type of a column defines what type of value the column can hold, which informs SQL what type of data is expected inside the column and how SQL can interact with the stored data.
-    1. String:
+    I. String:
         CHAR(size)
         VARCHAR(size)
         BINARY(size)
@@ -62,7 +124,7 @@ WHAT ARE MYSQL DATA TYPES?
         ENUM(val1, val2, val3, ...)
         SET(val1, val2, val3, ...)
         Reference: https://www.w3schools.com/MySQL/mysql_datatypes.asp
-    2. Numeric:
+    II. Numeric:
         BIT(size)
         TINYINT(size)
         SMALLINT(size)
@@ -79,7 +141,7 @@ WHAT ARE MYSQL DATA TYPES?
             UNSIGNED
             ZEROFILL
         Reference: https://www.w3schools.com/MySQL/mysql_datatypes.asp
-    3. Date/Time:
+    III. Date/Time:
         DATE
         TIME(fsp)
         DATETIME(fsp)
@@ -92,11 +154,61 @@ WHAT ARE MYSQL DATA TYPES?
                 ON UPDATE CURRENT_TIMESTAMP
         YEAR
         Reference: https://www.w3schools.com/MySQL/mysql_datatypes.asp
-    4. Miscellaneous:    
+    IV. Miscellaneous:    
         IMAGE
         CLOB
         XML
         JSON
+    V. NULL:
+        A field with no value is specified as "NULL".
+        If a field is optional, and a new record is inserted or an existing record is updated without adding any value to this field, the field will be specified as "NULL".
+        A "NULL" value doesn't mean a zero or whitespaces, but means the field is left blank during record creation.
+
+WHAT ARE MYSQL CONDITIONAL OPEARTORS?
+    1. Arithmetic Operators:
+        = > < >= <= != <> 
+    2. AND OR NOT:
+        condition1 AND condition2 AND... 
+        condition1 OR condition2 OR...
+        NOT condition
+    3. BETWEEN:
+        BETWEEN is used to specify values within a given range.
+        The given range is inclusive from both ends.
+            SELECT column1, column2,... FROM table_name WHERE column_name BETWEEN value1 AND value2;
+        With NOT:
+            SELECT column1, column2,... FROM table_name WHERE column_name NOT BETWEEN value1 AND value2;
+    4. LIKE:
+        LIKE is used to search for a specified pattern in records of a field.
+            SELECT column1, column2,... FROM table_name WHERE column_name LIKE "pattern";
+        With NOT:
+            SELECT column1, column2,... FROM table_name WHERE column_name NOT LIKE "pattern";
+        Pattern is made of wildcard characters.
+        Wildcard characters are characters used to represent characters in a string.
+            "%" represents zero or more characters.
+            "_" represents 1 character.
+    5. IN:
+        IN is used to specify multiple values that records in a field can match.
+            SELECT column1, column2,... FROM table_name WHERE column_name IN (value1, value2,...);
+        With NOT:
+            SELECT column1, column2,... FROM table_name WHERE column_name NOT IN (value1, value2,...);
+        In is a shorthand for multipl OR conditions.
+    6. NULL:
+        IS NULL is used to specify null values in a field.
+        IS NOT NULL is used to specify non-null values in a field.
+            SELECT column1, column2,... FROM table_name WHERE column_name IS NULL;
+            SELECT column1, column2,... FROM table_name WHERE column_name IS NOT NULL;
+
+WHAT ARE MYSQL ALIASES?
+    Aliases are used to give a table or a field in a table a temporary name.
+    For table:
+        SELECT column1, column2,... FROM table_name AS alias_name WHERE condition;
+        SELECT alias1.column_name, alias2.column_name,... FROM table1 AS alias1, table2 AS alias2 WHERE condition;
+    For column:
+        SELECT column_name AS alias_name FROM table_name WHERE condition;
+        SELECT column1 AS alias1, column2 AS alias2,... FROM table_name WHERE condition;
+    If an alias consists of spaces, it needs single or double quotes.
+    AN alias only exists for the duration of the query.
+    Using aliases makes complex queries shorter and easier to read.
 
 WHAT ARE THE TYPES OF RELATIONSHIPS BETWEEN DIFFERENT DATA FIELDS?
     @OneToOne
@@ -105,58 +217,3 @@ WHAT ARE THE TYPES OF RELATIONSHIPS BETWEEN DIFFERENT DATA FIELDS?
     unique
     required
     optional
-    
-WHAT IS ALIAS?
-    Alias is a shorthand for a table or a column name.
-    Using aliases reduces the amount of typing required to enter a query and makes complex queries easier to read.
-    It is useful with JOINs and aggregate functions.
-    It only exists for the duration of the query.
-
-WHAT ARE THE TYPES OF COMMANDS IN MYSQL?
-    1. Data Definition Language (DDL):
-        This defines and deals with database schemas and descriptions of how data should exist in the database.
-    2. Data Manipulation Language (DML):
-        This deals with data manipulation such as storing, retrieving, updating, and deleting data in the database.
-    3. Data Control Language (DCL):
-    4. Transaction Control Language (TCL):
-    5. Aggregate Functions:
-
-SUM UP COMMON MYSQL QUERIES:
-    1. For Databases:
-        SHOW DATABASES;
-        CREATE DATABASE dbname_db;
-        USE dbname_db;
-        ALTER DATABASE...
-    2. For Tables:
-        SHOW TABLES;
-        CREATE TABLE tbname(name datatype pairs separated by commas); 
-        CREATE TABLE tbname(columnname1 DATATYPE, columnname2 DATATYPE, columnname3 DATATYPE);
-        DESCRIBE tbname;
-        ALTER TABLE tbname RENAME TABLE oldname TO newname;
-        DROP TABLE tbname;
-    3. For Records:
-        SELECT specific columns separated by commas FROM tbname WHERE (multiple conditions separated by AND/OR);
-        SELECT * FROM tbname;
-        SELECT DISTINT what FROM tbname;
-        SELECT what FROM tbname ORDER by what; (ascending order)
-        SELECT what FROM tbname ORDER by what DESC; (descending order)
-        SELECT what FROM tbname WHERE condition;
-        SELECT what FROM tbname WHERE what IN( … );
-        SELECT what FROM tbname WHERE what BETWEEN what AND what;
-        SELECT what FROM tbname WHERE what LIKE ‘pattern’; (EX: ‘%A%’)
-        SELECT what FROM tbname WHERE what LIMIT howmuch;
-        INSERT INTO tbname VALUES(values for each column separated by commas);
-        INSERT INTO tbname(specific columns separated by commas) VALUES(values for each column separated by commas);
-        UPDATE tbname SET what=newvalue WHERE condition;
-        DELETE FROM tbname WHERE condition;
-        GROUP BY
-        HAVING
-    4. For Columns:
-        ALTER TABLE tbname ADD what datatype;
-        ALTER TABLE tbname MODIFY what newdatatype;
-        ALTER TABLE tbname CHANGE oldname newname datatype;
-        ALTER TABLE tbname RENAME COLUMN oldname TO newname;
-        ALTER TABLE tbname DROP what;
-    5. For Search Key:
-        CREATE INDEX...
-        DROP INDEX...

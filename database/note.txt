@@ -11,7 +11,7 @@ WHAT ARE THE TYPES OF DATABASE?
             This is based on a fixed schema to define the tables and their relationaships.
             Each table is a collection of related data entries made of rows and columns.
             Each row represents an individual record/entry with unique key/id in the table.
-            Each column represents a particular attribute/specific information of the record/entries in the table.
+            Each column represents a particular attribute/field of the record/entries in the table.
         2. Scalability:
             This is less scalable but offers a flexible programming environment.
         3. Consistency:
