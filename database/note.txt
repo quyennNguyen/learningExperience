@@ -7,8 +7,7 @@ WHAT ARE THE TYPES OF DATABASE?
     There are 2 types of DBMS used to store, retrieve, and manage data:
     I. SQL Database, or Relational Database (RDBMS):
         1. Data Model:
-            This stores data in a relational logical data model with objects such as tables, views, rows, and columns.
-            The database structure is organized into physical files optimized for speed.
+            This stores data in a relational logical data model with objects such as tables, views, rows, and columns, and uses SQL queries to access the data in the database.
             This is based on a fixed schema to define the tables and their relationaships.
             Each table is a collection of related data entries made of rows and columns.
             Each row represents an individual record/entry with unique key/id in the table.
