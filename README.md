@@ -16,11 +16,12 @@
    * CSS Preprocessor: SASS
    * CSS Framework: Bootstrap
    * JavaScript
-   * Javascript Framework/Library: React
+   * Javascript Library: React
+   * Javascript Framework: Angular
 ### 2. BACK END / SERVER SIDE:
    * Java / Python / JavaScript
    * Framework: Springboot (Java) / Django (Python) / NodeJs (JavaScript)
-### 3. DATABASES:
+### 3. DATABASE:
    * Database: MySQL (SQL) / MongoDB (No SQL)
 ### 4. DATA STRUCTURES & ALGORITHMS
 ### 5. TIME AND SPACE COMPLEXITY
