@@ -25,6 +25,7 @@ WHAT ARE THE TYPES OF COMMANDS IN MYSQL?
     3. Data Control Language (DCL):
     4. Transaction Control Language (TCL):
     5. Aggregate Functions:
+        These are used to perform calculation on multiple data and return a single result.
 
 WHAT ARE MYSQL FUNCTIONS?
     I. To Operate a Database/Schema:
@@ -102,6 +103,23 @@ WHAT ARE MYSQL FUNCTIONS?
                 WHERE is used to specify which records need to be deleted.
                     DELETE FROM table_name WHERE condition;
                 If WHERE clause is omitted, all records will be deleted, but the table won't.
+        5. To Join Data:
+            JOIN is used to combine records from 2 or more tables based on a related field between the tables.
+            a. INNER JOIN:
+                INNER JOIN is used to return records that have matchinng values from both tables.
+                    SELECT column1, column2,... FROM table1 INNER JOIN table2 ON table1.column_name=table2.column_name;
+            b. LEFT JOIN:
+                LEFT JOIN is used to return all records from the left table and records that have matching values from both tables.
+                    SELECT column1, column2,... FROM table1 LEFT JOIN table2 ON table1.column_name=table2.column_name;
+            c. RIGHT JOIN:
+                RIGHT JOIN is used to return all records from the right table and records that have matching values from both tables.
+                    SELECT column1, column2,... FROM table1 RIGHT JOIN table2 ON table1.column_name=table2.column_name;
+            d. CROSS JOIN:
+                CROSS JOIN is used to return all records from both tables.
+                    SELECT column1, column2,... FROM table1 CROSS JOIN table2;
+            e. Self Join:
+                Self join is a regular join where the table joins itself.
+                    SELECT alias1.column_name, alias2.column_name,... FROM table_name AS alias1, table_name AS alias2 WHERE condition;
     V. String, Numeric, and Date/Time Functions:
         Reference: https://www.w3schools.com/MySQL/mysql_ref_functions.asp
 
@@ -194,9 +212,19 @@ WHAT ARE MYSQL CONDITIONAL OPEARTORS?
         In is a shorthand for multipl OR conditions.
     6. NULL:
         IS NULL is used to specify null values in a field.
-        IS NOT NULL is used to specify non-null values in a field.
             SELECT column1, column2,... FROM table_name WHERE column_name IS NULL;
+        IS NOT NULL is used to specify non-null values in a field.
             SELECT column1, column2,... FROM table_name WHERE column_name IS NOT NULL;
+    7. UNION:
+        UNION is used to combine the result set of 2 or more SELECT statements and return only distinct values by default.
+            SELECT column1, column2,... FROM table1 WHERE condition
+            UNION
+            SELECT column1, column2,... FROM table2 WHERE condition;            
+        UNION ALL is used to combine the result set of 2 or more SELECT statements and allow duplicate values.
+            SELECT column1, column2,... FROM table1 WHERE condition
+            UNION ALL
+            SELECT column1, column2,... FROM table2 WHERE condition;  
+        Every SELECT statements must have the same number of columns in the same order with similar data types.
 
 WHAT ARE MYSQL ALIASES?
     Aliases are used to give a table or a field in a table a temporary name.
@@ -207,7 +235,7 @@ WHAT ARE MYSQL ALIASES?
         SELECT column_name AS alias_name FROM table_name WHERE condition;
         SELECT column1 AS alias1, column2 AS alias2,... FROM table_name WHERE condition;
     If an alias consists of spaces, it needs single or double quotes.
-    AN alias only exists for the duration of the query.
+    An alias only exists for the duration of the query.
     Using aliases makes complex queries shorter and easier to read.
 
 WHAT ARE THE TYPES OF RELATIONSHIPS BETWEEN DIFFERENT DATA FIELDS?
