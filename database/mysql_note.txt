@@ -46,7 +46,7 @@ WHAT ARE MYSQL FUNCTIONS?
         ALTER TABLE tbname RENAME COLUMN oldname TO newname;
         ALTER TABLE tbname DROP what;
     IV. To Operate Records:
-        1. To Get Data:
+        1. to get data (R = READ):
             a. SELECT:    
                 SELECT is used to select records from the specified fields of the table.
                     SELECT column1, column2,... FROM table_name;
@@ -56,54 +56,33 @@ WHAT ARE MYSQL FUNCTIONS?
                 The returned records will be stored in a result table called result set.
             b. WHERE:
                 WHERE is used to filter records from the result table that fulfill a specified condition.
-                    SELECT column1, column2,... FROM table_name WHERE condition;
-            c. LIMIT:
-                LIMIT is used to specify the number of records returned.
-                    SELECT column1, column2,... FROM table_name LIMIT number;            
-            d. ORDER BY:
-                ORDER BY is used to sort the result table in ascending order (default) or descending order.
-                The result table can be ordered by multiple fields, each of which can be specified with either ASC/DESC.
-                    SELECT column1, column2,... FROM table_name ORDER BY column_name;
-                    SELECT column1, column2,... FROM table_name ORDER BY column_name ASC;
-                    SELECT column1, column2,... FROM table_name ORDER BY column_name DESC;
-                    SELECT column1, column2,... FROM table_name ORDER BY column1 ASC, column2 DESC;
-            e. MIN MAX:
+                    SELECT column1, column2,... FROM table_name WHERE condition;         
+        2. to sort data:
+            ORDER BY is used to sort the result table in ascending order (default) or descending order.
+            The result table can be ordered by multiple fields, each of which can be specified with either ASC/DESC.
+                SELECT column1, column2,... FROM table_name ORDER BY column_name;
+                SELECT column1, column2,... FROM table_name ORDER BY column_name ASC;
+                SELECT column1, column2,... FROM table_name ORDER BY column_name DESC;
+                SELECT column1, column2,... FROM table_name ORDER BY column1 ASC, column2 DESC;
+        3. to limit data:
+            LIMIT is used to specify the number of records returned.
+                SELECT column1, column2,... FROM table_name LIMIT number;   
+        4. Aggregate Functions:
+            a. MIN MAX:
                 MIN() is used to return the smallest value of the selected field.
                 MAX() is used to return the largest value of the selected field.
                     SELECT MIN(column_name) FROM table_name;
                     SELECT MAX(column_name) FROM table_name;
-            f. COUNT:
+            b. COUNT:
                 COUNT() is used to return the number of records in the specified field.
                     SELECT COUNT(column_name) FROM table_name;
-            g. AVG:
+            c. AVG:
                 AVG() is used to return the average value of a numeric field.
                     SELECT AVG(column_name) FROM table_name;                
-            h. SUM:
+            d. SUM:
                 SUM() is used to return the total value of a numeric field.
                     SELECT SUM(column_name) FROM table_name;
-        2. To Add Data:
-            INSERT INTO:
-                INSERT INTO is used to insert new records into the table.
-                The order of the values inserted has to match with the order of the targeted columns in the table.
-                    INSERT INTO table_name(column1, column2,...) VALUES (value1, value2,...);
-                    INSERT INTO table_name VALUES (value1, value2,...);
-        3. To Update Data:
-            a. UPDATE:
-                UPDATE is used to modify existing records of the specified fields of the table.
-                    UPDATE table_name SET column1=value1, column2=value2,...;
-            b. WHERE:
-                WHERE is used to specify which records need to be modified.
-                    UPDATE table_name SET column1=value1, column2=value2,... WHERE condition;
-                If WHERE clause is omitted, all records from each specifed field will be updated with the same value.
-        4. To Delete Data:
-            a. DELETE:
-                DELETE is used to delete existing records in the table without affecting the table structure, attributes, and indexes.
-                    DELETE FROM table_name;
-            b. WHERE:
-                WHERE is used to specify which records need to be deleted.
-                    DELETE FROM table_name WHERE condition;
-                If WHERE clause is omitted, all records will be deleted, but the table won't.
-        5. To Join Data:
+        5. to join data:
             JOIN is used to combine records from 2 or more tables based on a related field between the tables.
             a. INNER JOIN:
                 INNER JOIN is used to return records that have matchinng values from both tables.
@@ -120,6 +99,36 @@ WHAT ARE MYSQL FUNCTIONS?
             e. Self Join:
                 Self join is a regular join where the table joins itself.
                     SELECT alias1.column_name, alias2.column_name,... FROM table_name AS alias1, table_name AS alias2 WHERE condition;
+        6. to summarize data:
+            These are usually used with aggregate functions to summarize a result set.
+            a. GROUP BY:
+                GROUP BY is used to group records that have the same values into summary records by 1 or more fields.
+                    SELECT column1, column2,... FROM table_name WHERE condition GROUP BY column_name;
+            b. HAVING:
+                HAVING is an alternative for WHERE in case you need to use aggregate functions in the condition.
+                    SELECT column1, column2,... FROM table_name WHERE condition GROUP BY column_name HAVING condition;
+        2. to add data (C = CREATE):
+            INSERT INTO:
+                INSERT INTO is used to insert new records into the table.
+                The order of the values inserted has to match with the order of the targeted columns in the table.
+                    INSERT INTO table_name(column1, column2,...) VALUES (value1, value2,...);
+                    INSERT INTO table_name VALUES (value1, value2,...);
+        3. to update data (U = UPDATE):
+            a. UPDATE:
+                UPDATE is used to modify existing records of the specified fields of the table.
+                    UPDATE table_name SET column1=value1, column2=value2,...;
+            b. WHERE:
+                WHERE is used to specify which records need to be modified.
+                    UPDATE table_name SET column1=value1, column2=value2,... WHERE condition;
+                If WHERE clause is omitted, all records from each specifed field will be updated with the same value.
+        4. to delete data (D = DELETE):
+            a. DELETE:
+                DELETE is used to delete existing records in the table without affecting the table structure, attributes, and indexes.
+                    DELETE FROM table_name;
+            b. WHERE:
+                WHERE is used to specify which records need to be deleted.
+                    DELETE FROM table_name WHERE condition;
+                If WHERE clause is omitted, all records will be deleted, but the table won't.
     V. String, Numeric, and Date/Time Functions:
         Reference: https://www.w3schools.com/MySQL/mysql_ref_functions.asp
 
@@ -225,6 +234,9 @@ WHAT ARE MYSQL CONDITIONAL OPEARTORS?
             UNION ALL
             SELECT column1, column2,... FROM table2 WHERE condition;  
         Every SELECT statements must have the same number of columns in the same order with similar data types.
+    8. EXISTS:
+        EXISTS is used to check for the existence of 1 or more records in a result set.
+            SELECT column1, column2,... FROM table_name WHERE EXISTS (SELECT column1, column2,... FROM table_name WHERE condition);
 
 WHAT ARE MYSQL ALIASES?
     Aliases are used to give a table or a field in a table a temporary name.
