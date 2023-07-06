@@ -27,114 +27,9 @@ WHAT ARE THE TYPES OF COMMANDS IN MYSQL?
     5. Aggregate Functions:
         These are used to perform calculation on multiple data and return a single result.
 
-WHAT ARE MYSQL FUNCTIONS?
-    I. To Operate a Database/Schema:
-        SHOW DATABASES;
-        CREATE DATABASE database_name;
-        USE database_name;
-        ALTER DATABASE...
-    II. To Operate a Table:
-        SHOW TABLES;
-        CREATE TABLE table_name(column1 DATATYPE, column2 DATATYPE,...);
-        DESCRIBE table_name;
-        ALTER TABLE table_name RENAME TABLE oldname TO newname;
-        DROP TABLE table_name;
-    III. To Operate Table Fields:
-        ALTER TABLE tbname ADD what datatype;
-        ALTER TABLE tbname MODIFY what newdatatype;
-        ALTER TABLE tbname CHANGE oldname newname datatype;
-        ALTER TABLE tbname RENAME COLUMN oldname TO newname;
-        ALTER TABLE tbname DROP what;
-    IV. To Operate Records:
-        1. to get data (R = READ):
-            a. SELECT:    
-                SELECT is used to select records from the specified fields of the table.
-                    SELECT column1, column2,... FROM table_name;
-                    SELECT * FROM table_name;
-                    SELECT DISTINCT column_name FROM table_name;
-                    SELECT COUNT(DISTINCT column_name) FROM table_name;
-                The returned records will be stored in a result table called result set.
-            b. WHERE:
-                WHERE is used to filter records from the result table that fulfill a specified condition.
-                    SELECT column1, column2,... FROM table_name WHERE condition;         
-        2. to sort data:
-            ORDER BY is used to sort the result table in ascending order (default) or descending order.
-            The result table can be ordered by multiple fields, each of which can be specified with either ASC/DESC.
-                SELECT column1, column2,... FROM table_name ORDER BY column_name;
-                SELECT column1, column2,... FROM table_name ORDER BY column_name ASC;
-                SELECT column1, column2,... FROM table_name ORDER BY column_name DESC;
-                SELECT column1, column2,... FROM table_name ORDER BY column1 ASC, column2 DESC;
-        3. to limit data:
-            LIMIT is used to specify the number of records returned.
-                SELECT column1, column2,... FROM table_name LIMIT number;   
-        4. Aggregate Functions:
-            a. MIN MAX:
-                MIN() is used to return the smallest value of the selected field.
-                MAX() is used to return the largest value of the selected field.
-                    SELECT MIN(column_name) FROM table_name;
-                    SELECT MAX(column_name) FROM table_name;
-            b. COUNT:
-                COUNT() is used to return the number of records in the specified field.
-                    SELECT COUNT(column_name) FROM table_name;
-            c. AVG:
-                AVG() is used to return the average value of a numeric field.
-                    SELECT AVG(column_name) FROM table_name;                
-            d. SUM:
-                SUM() is used to return the total value of a numeric field.
-                    SELECT SUM(column_name) FROM table_name;
-        5. to join data:
-            JOIN is used to combine records from 2 or more tables based on a related field between the tables.
-            a. INNER JOIN:
-                INNER JOIN is used to return records that have matchinng values from both tables.
-                    SELECT column1, column2,... FROM table1 INNER JOIN table2 ON table1.column_name=table2.column_name;
-            b. LEFT JOIN:
-                LEFT JOIN is used to return all records from the left table and records that have matching values from both tables.
-                    SELECT column1, column2,... FROM table1 LEFT JOIN table2 ON table1.column_name=table2.column_name;
-            c. RIGHT JOIN:
-                RIGHT JOIN is used to return all records from the right table and records that have matching values from both tables.
-                    SELECT column1, column2,... FROM table1 RIGHT JOIN table2 ON table1.column_name=table2.column_name;
-            d. CROSS JOIN:
-                CROSS JOIN is used to return all records from both tables.
-                    SELECT column1, column2,... FROM table1 CROSS JOIN table2;
-            e. Self Join:
-                Self join is a regular join where the table joins itself.
-                    SELECT alias1.column_name, alias2.column_name,... FROM table_name AS alias1, table_name AS alias2 WHERE condition;
-        6. to summarize data:
-            These are usually used with aggregate functions to summarize a result set.
-            a. GROUP BY:
-                GROUP BY is used to group records that have the same values into summary records by 1 or more fields.
-                    SELECT column1, column2,... FROM table_name WHERE condition GROUP BY column_name;
-            b. HAVING:
-                HAVING is an alternative for WHERE in case you need to use aggregate functions in the condition.
-                    SELECT column1, column2,... FROM table_name WHERE condition GROUP BY column_name HAVING condition;
-        2. to add data (C = CREATE):
-            INSERT INTO:
-                INSERT INTO is used to insert new records into the table.
-                The order of the values inserted has to match with the order of the targeted columns in the table.
-                    INSERT INTO table_name(column1, column2,...) VALUES (value1, value2,...);
-                    INSERT INTO table_name VALUES (value1, value2,...);
-        3. to update data (U = UPDATE):
-            a. UPDATE:
-                UPDATE is used to modify existing records of the specified fields of the table.
-                    UPDATE table_name SET column1=value1, column2=value2,...;
-            b. WHERE:
-                WHERE is used to specify which records need to be modified.
-                    UPDATE table_name SET column1=value1, column2=value2,... WHERE condition;
-                If WHERE clause is omitted, all records from each specifed field will be updated with the same value.
-        4. to delete data (D = DELETE):
-            a. DELETE:
-                DELETE is used to delete existing records in the table without affecting the table structure, attributes, and indexes.
-                    DELETE FROM table_name;
-            b. WHERE:
-                WHERE is used to specify which records need to be deleted.
-                    DELETE FROM table_name WHERE condition;
-                If WHERE clause is omitted, all records will be deleted, but the table won't.
-    V. String, Numeric, and Date/Time Functions:
-        Reference: https://www.w3schools.com/MySQL/mysql_ref_functions.asp
-
 WHAT ARE MYSQL DATA TYPES?
-    When creating a table in a database, each column in the table is required to have a name and a data type.
-    The data type of a column defines what type of value the column can hold, which informs SQL what type of data is expected inside the column and how SQL can interact with the stored data.
+    When creating a table in a database, each column in the table is required to have a name and a datatype.
+    The datatype of a column defines what type of value the column can hold, which informs SQL what type of data is expected inside the column and how SQL can interact with the stored data.
     I. String:
         CHAR(size)
         VARCHAR(size)
@@ -169,17 +64,18 @@ WHAT ARE MYSQL DATA TYPES?
             ZEROFILL
         Reference: https://www.w3schools.com/MySQL/mysql_datatypes.asp
     III. Date/Time:
-        DATE
+        DATE (format: YYYY-MM-DD)
         TIME(fsp)
-        DATETIME(fsp)
+        DATETIME(fsp) (format: YYYY-MM-DD HH:MI:SS)
             Extra attributes:
                 DEFAULT
                 ON UPDATE
-        TIMESTAMP(fsp)
+        TIMESTAMP(fsp) (format: YYYY-MM-DD HH:MI:SS)
             Extra attributes:
                 DEFAULT CURRENT_TIMESTAMP
                 ON UPDATE CURRENT_TIMESTAMP
-        YEAR
+        YEAR (format: YYYY or YY)
+        The most difficult part when working with dates is to be sure that the format of the date you are trying to insert matches the format of the date column in the table.
         Reference: https://www.w3schools.com/MySQL/mysql_datatypes.asp
     IV. Miscellaneous:    
         IMAGE
@@ -190,56 +86,243 @@ WHAT ARE MYSQL DATA TYPES?
         A field with no value is specified as "NULL".
         If a field is optional, and a new record is inserted or an existing record is updated without adding any value to this field, the field will be specified as "NULL".
         A "NULL" value doesn't mean a zero or whitespaces, but means the field is left blank during record creation.
+        By default, a column can hold "NULL" unless you specify it not to.
 
-WHAT ARE MYSQL CONDITIONAL OPEARTORS?
+WHAT ARE MYSQL FUNCTIONS?
+    I. For Database/Schema:
+        1. to show a list of existing databases:
+            SHOW DATABASES;
+        2. to create a new database:
+            CREATE DATABASE database_name;
+        3. to read an existing database:
+            USE database_name;
+        4. to update an existing database:
+            
+        5. to delete an existing database:
+            DROP DATABASE database_name;
+    II. For Table:
+        1. to show a list of existing tables in a database:
+            SHOW TABLES;
+        2. to create a new table in a database:
+            a. to create a new table from scratch:
+                CREATE TABLE table_name (column1 DATATYPE, column2 DATATYPE,...);
+            b. to copy a table from an existing table:
+                CREATE TABLE table2 AS SELECT column1, column2,... FROM table1 WHERE condition;
+        3. to read an existing table in a database:
+            DESCRIBE table_name;
+        4. to update an existing table in a database:
+            a. to rename table:
+                RENAME TABLE table1 TO new_name1, table2 TO new_name2,...;
+                ALTER TABLE table_name RENAME new_name;
+            b. to update column in an existing table:
+                b.1. to add a column:
+                    ALTER TABLE table_name ADD column_name DATATYPE;
+                b.2. to modify a column:
+                    ALTER TABLE table_name MODIFY COLUMN column_name DATATYPE;
+                    ALTER TABLE table_name RENAME COLUMN old_name TO new_name;
+                    ALTER TABLE table_name CHANGE old_name new_name DATATYPE;
+                b.3. to detete a column:
+                    ALTER TABLE table_name DROP COLUMN column_name;
+        5. to delete an existing table in a database:
+            a. to delete a table entirely:
+                DROP TABLE table_name;
+            b. to delete all rows in a table except the row with the column names, but leave the table itself:
+                TRUNCATE TABLE table_name;
+            c. to delete all records, but leave the rows in a table:
+                DELETE FROM table_name;
+    III. For Data:
+        1. to get data (R = READ):
+            a. SELECT:    
+                SELECT is used to select records from the specified fields of the table.
+                    SELECT column1, column2,... FROM table_name;
+                    SELECT * FROM table_name;
+                    SELECT DISTINCT column_name FROM table_name;
+                The returned records will be stored in a result table called result set or subquery.
+            b. WHERE:
+                WHERE is used to filter records from the result table that fulfill a specified condition.
+                    SELECT column1, column2,... FROM table_name WHERE condition;         
+        2. to sort data:
+            ORDER BY is used to sort the result table in ascending order (default) or descending order.
+            The result table can be ordered by multiple fields, each of which can be specified with either ASC/DESC.
+                SELECT column1, column2,... FROM table_name ORDER BY column_name;
+                SELECT column1, column2,... FROM table_name ORDER BY column_name ASC;
+                SELECT column1, column2,... FROM table_name ORDER BY column_name DESC;
+                SELECT column1, column2,... FROM table_name ORDER BY column1 ASC, column2 DESC;
+        3. to limit data:
+            LIMIT is used to specify the number of records returned.
+                SELECT column1, column2,... FROM table_name LIMIT number;   
+        4. Aggregate Functions:
+            a. MIN():
+                MIN() is used to return the smallest value of the selected field.
+                    SELECT MIN(column_name) FROM table_name;
+            b. MAX():
+                MAX() is used to return the largest value of the selected field.
+                    SELECT MAX(column_name) FROM table_name;
+            c. COUNT():
+                COUNT() is used to return the number of records in the specified field.
+                    SELECT COUNT(column_name) FROM table_name;
+            d. AVG():
+                AVG() is used to return the average value of a numeric field.
+                    SELECT AVG(column_name) FROM table_name;                
+            e. SUM():
+                SUM() is used to return the total value of a numeric field.
+                    SELECT SUM(column_name) FROM table_name;
+        5. to join data:
+            JOIN is used to combine records from 2 or more tables based on a related field between the tables.
+            a. INNER JOIN:
+                INNER JOIN is used to return records that have matchinng values from both tables.
+                    SELECT column1, column2,... FROM table1 INNER JOIN table2 ON table1.column_name=table2.column_name;
+            b. LEFT JOIN:
+                LEFT JOIN is used to return all records from the left table and records that have matching values from both tables.
+                    SELECT column1, column2,... FROM table1 LEFT JOIN table2 ON table1.column_name=table2.column_name;
+            c. RIGHT JOIN:
+                RIGHT JOIN is used to return all records from the right table and records that have matching values from both tables.
+                    SELECT column1, column2,... FROM table1 RIGHT JOIN table2 ON table1.column_name=table2.column_name;
+            d. CROSS JOIN:
+                CROSS JOIN is used to return all records from both tables.
+                    SELECT column1, column2,... FROM table1 CROSS JOIN table2;
+            e. Self Join:
+                Self join is a regular join where the table joins itself.
+                    SELECT alias1.column_name, alias2.column_name,... FROM table_name AS alias1, table_name AS alias2 WHERE condition;
+        6. to summarize data:
+            These are usually used with aggregate functions to summarize a result set.
+            a. GROUP BY:
+                GROUP BY is used to group records that have the same values into summary records by 1 or more fields.
+                    SELECT column1, column2,... FROM table_name WHERE condition GROUP BY column_name;
+            b. HAVING:
+                HAVING is an alternative for WHERE in case you need to use aggregate functions in the condition.
+                    SELECT column1, column2,... FROM table_name WHERE condition GROUP BY column_name HAVING condition;
+        7. to create data (C = CREATE):
+            a. INSERT INTO:
+                INSERT INTO is used to insert new records into a table.
+                    INSERT INTO table_name (column1, column2,...) VALUES (value1, value2,...);
+                    INSERT INTO table_name VALUES (value1, value2,...);
+                The order of the values inserted has to match with the order of the columns in the table.
+            b. INSERT INTO SELECT:
+                INSERT INTO SELECT is used to copy data from one table to another.
+                    INSERT INTO table2 (column1, column2,...) SELECT column1, column2,... FROM table1 WHERE condition;
+                    INSERT INTO table2 SELECT * FROM table1 WHERE condition;
+                All the fields from the source table and targetted table must have matching data types.
+                The existing records from the targetted table won't be affected.
+        8. to update data (U = UPDATE):
+            a. UPDATE:
+                UPDATE is used to modify existing records of the specified fields of a table.
+                    UPDATE table_name SET column1=value1, column2=value2,...;
+            b. WHERE:
+                WHERE is used to specify which records need to be modified.
+                    UPDATE table_name SET column1=value1, column2=value2,... WHERE condition;
+                If WHERE clause is omitted, all records from each specifed field will be updated with the same value.
+        9. to delete data (D = DELETE):
+            a. DELETE:
+                DELETE is used to delete existing records in a table without affecting the table structure, attributes, and indexes.
+                    DELETE FROM table_name;
+            b. WHERE:
+                WHERE is used to specify which records need to be deleted.
+                    DELETE FROM table_name WHERE condition;
+                If WHERE clause is omitted, all records will be deleted, but the table won't.
+    IV. String, Numeric, and Date/Time Functions:
+        Reference: https://www.w3schools.com/MySQL/mysql_ref_functions.asp
+
+WHAT ARE MYSQL OPEARTORS?
     1. Arithmetic Operators:
+        + - * / % += -= *= /= %=
+    2. Comparison Operators:
         = > < >= <= != <> 
-    2. AND OR NOT:
-        condition1 AND condition2 AND... 
-        condition1 OR condition2 OR...
-        NOT condition
-    3. BETWEEN:
-        BETWEEN is used to specify values within a given range.
-        The given range is inclusive from both ends.
-            SELECT column1, column2,... FROM table_name WHERE column_name BETWEEN value1 AND value2;
-        With NOT:
-            SELECT column1, column2,... FROM table_name WHERE column_name NOT BETWEEN value1 AND value2;
-    4. LIKE:
-        LIKE is used to search for a specified pattern in records of a field.
-            SELECT column1, column2,... FROM table_name WHERE column_name LIKE "pattern";
-        With NOT:
-            SELECT column1, column2,... FROM table_name WHERE column_name NOT LIKE "pattern";
-        Pattern is made of wildcard characters.
-        Wildcard characters are characters used to represent characters in a string.
-            "%" represents zero or more characters.
-            "_" represents 1 character.
-    5. IN:
-        IN is used to specify multiple values that records in a field can match.
-            SELECT column1, column2,... FROM table_name WHERE column_name IN (value1, value2,...);
-        With NOT:
-            SELECT column1, column2,... FROM table_name WHERE column_name NOT IN (value1, value2,...);
-        In is a shorthand for multipl OR conditions.
-    6. NULL:
-        IS NULL is used to specify null values in a field.
-            SELECT column1, column2,... FROM table_name WHERE column_name IS NULL;
-        IS NOT NULL is used to specify non-null values in a field.
-            SELECT column1, column2,... FROM table_name WHERE column_name IS NOT NULL;
-    7. UNION:
-        UNION is used to combine the result set of 2 or more SELECT statements and return only distinct values by default.
-            SELECT column1, column2,... FROM table1 WHERE condition
-            UNION
-            SELECT column1, column2,... FROM table2 WHERE condition;            
-        UNION ALL is used to combine the result set of 2 or more SELECT statements and allow duplicate values.
-            SELECT column1, column2,... FROM table1 WHERE condition
-            UNION ALL
-            SELECT column1, column2,... FROM table2 WHERE condition;  
-        Every SELECT statements must have the same number of columns in the same order with similar data types.
-    8. EXISTS:
-        EXISTS is used to check for the existence of 1 or more records in a result set.
-            SELECT column1, column2,... FROM table_name WHERE EXISTS (SELECT column1, column2,... FROM table_name WHERE condition);
+    3. Bitwise Operators:
+        & | ^ &= |*= ^-=
+    4. Logical Operators:
+        a. AND OR NOT:
+            condition1 AND condition2 AND... 
+            condition1 OR condition2 OR...
+            NOT condition
+        b. NULL:
+            IS NULL is used to specify null values in a column.
+                SELECT column1, column2,... FROM table_name WHERE column_name IS NULL;
+            IS NOT NULL is used to specify non-null values in a column.
+                SELECT column1, column2,... FROM table_name WHERE column_name IS NOT NULL;
+        c. BETWEEN:
+            BETWEEN is used to specify values within an inclusive given range.
+                SELECT column1, column2,... FROM table_name WHERE column_name BETWEEN value1 AND value2;
+            With NOT:
+                SELECT column1, column2,... FROM table_name WHERE column_name NOT BETWEEN value1 AND value2;
+        d. LIKE:
+            LIKE is used to search for a specified pattern in records of a column.
+                SELECT column1, column2,... FROM table_name WHERE column_name LIKE "pattern";
+            With NOT:
+                SELECT column1, column2,... FROM table_name WHERE column_name NOT LIKE "pattern";
+            Pattern is made of wildcard characters.
+            Wildcard characters are characters used to represent characters in a string.
+                "%" represents zero or more characters.
+                "_" represents 1 character.
+        e. IN:
+            IN is used to specify multiple values that records in a column can match.
+                SELECT column1, column2,... FROM table_name WHERE column_name IN (value1, value2,...);
+            With NOT:
+                SELECT column1, column2,... FROM table_name WHERE column_name NOT IN (value1, value2,...);
+            In is a shorthand for multipl OR conditions.
+        f. ANY ALL:
+            ANY and ALL are used to perform a comparison between 1 value and a range of possible values.
+                SELECT column1, column2,... FROM table1 WHERE column_name OPERATOR ANY (SELECT column1, column2,... FROM table2 WHERE condition);
+                SELECT column1, column2,... FROM table1 WHERE column_name OPERATOR ALL (SELECT column1, column2,... FROM table2 WHERE condition);
+            The operator used with ANY or ALL must be a comparison operator.
+            ANY is usually used for equality check, while ALL is usually used for greater or less than check.
+            NOTE:
+                    ANY and SOME are the same.
+        g. UNION:
+            UNION is used to combine the result set of 2 or more SELECT statements and return only distinct values by default.
+                SELECT column1, column2,... FROM table1 WHERE condition
+                UNION
+                SELECT column1, column2,... FROM table2 WHERE condition;            
+            UNION ALL is used to combine the result set of 2 or more SELECT statements and allow duplicate values.
+                SELECT column1, column2,... FROM table1 WHERE condition
+                UNION ALL
+                SELECT column1, column2,... FROM table2 WHERE condition;  
+            Every SELECT statements must have the same number of columns in the same order with similar data types.
+        h. EXISTS:
+            EXISTS is used to check for the existence of 1 or more records in a result set.
+                SELECT column1, column2,... FROM table1 WHERE EXISTS (SELECT column1, column2,... FROM table2 WHERE condition);
+
+WHAT IS MYSQL CONDITIONAL STATEMENT?
+    I. Standard Conditional Statement:
+        CASE statement is used to handle different conditional cases.
+            CASE
+                WHEN condition1 THEN result1
+                WHEN condition2 THEN result2
+                ...
+                ELSE result
+            END;
+        If a condition is true, it will return the according result and stop reading.
+        If no conditions are true, it will return the result in the ELSE clause.
+        If no conditions are true and no ELSE clause is specified, it will return "NULL".
+        To use with SELECT and add an additional column to the result table:
+            SELECT column1, column2,...,
+            CASE
+                WHEN condition1 THEN result1
+                WHEN condition2 THEN result2
+                ...
+                ELSE result
+            END AS alias
+            FROM table
+            WHERE condition; 
+        To use with SELECT and other functions:
+            SELECT column1, column2,...
+            FROM table
+            WHERE condition
+            ORDER BY
+            (
+                CASE
+                    WHEN condition1 THEN result1
+                    WHEN condition2 THEN result2
+                    ...
+                    ELSE result
+                END
+            );
+    II. Conditional Statement For Null Value:
+        IFNULL() is used to return an alternative value if an expression is "NULL".
+            SELECT IFNULL(column_name, alternative) FROM table_name;
 
 WHAT ARE MYSQL ALIASES?
-    Aliases are used to give a table or a field in a table a temporary name.
+    Aliases are used to give a table or a column in a table a temporary name.
     For table:
         SELECT column1, column2,... FROM table_name AS alias_name WHERE condition;
         SELECT alias1.column_name, alias2.column_name,... FROM table1 AS alias1, table2 AS alias2 WHERE condition;
@@ -247,10 +330,151 @@ WHAT ARE MYSQL ALIASES?
         SELECT column_name AS alias_name FROM table_name WHERE condition;
         SELECT column1 AS alias1, column2 AS alias2,... FROM table_name WHERE condition;
     If an alias consists of spaces, it needs single or double quotes.
+    The names of the columns of a result table are whatever you specify in the SELECT clause. Therefore, using aliases can make the results more readable.
     An alias only exists for the duration of the query.
     Using aliases makes complex queries shorter and easier to read.
 
-WHAT ARE THE TYPES OF RELATIONSHIPS BETWEEN DIFFERENT DATA FIELDS?
+WHAT ARE MYSQL CONSTRAINTS?
+    Constraints are used to specify rules for the data in a table or a column in the table, to ensure the accuracy and reliability of the data.
+    If there is any violation between the data action and the constraint, the action will be aborted.
+    Constraints can be specified in CREATE TABLE statement or ALTER TABLE statement.
+    A constraint can be of table level which applies to the whole table or of column level which applies to a column.
+    Some common constraints in MySQL are:
+        1. DEFAULT:
+            DEFAULT is used to set a default value for a column.
+            If a new record is inserted or an existing record is updated without adding any value to this field, the default value will be added.
+            a. With CREATE TABLE:
+                CREATE TABLE table_name (column1 DATATYPE DEFAULT value1, column2 DATATYPE DEFAULT value2,...);
+            b. With ALTER TABLE:
+                ALTER TABLE table_name ALTER column_name SET DEFAULT value;
+            c. to delete the constraint:
+                ALTER TABLE table_name ALTER column_name DROP DEFAULT; 
+                ALTER TABLE table_name MODIFY column_name DATETYPE; (redefine the column attribute)
+        2. NOT NULL:
+            NOT NULL is used to enforce column to not accept "NULL".
+            a. With CREATE TABLE:
+                CREATE TABLE table_name (column1 DATATYPE NOT NULL, column2 DATATYPE NOT NULL,...);
+            b. With ALTER TABLE:
+                ALTER TABLE table_name MODIFY column_name DATATYPE NOT NULL;
+            c. to delete the constraint:
+                ALTER TABLE table_name MODIFY column_name DATETYPE NULL; (NULL is a default attribute for every column)
+                ALTER TABLE table_name MODIFY column_name DATETYPE; (redefine the column attribute)
+            You can't insert a new record or update an existing record without specifying a non-null value for the specified column.
+        3. UNIQUE:
+            UNIQUE is used to ensure all values in column are different.
+            a. With CREATE TABLE:
+                CREATE TABLE table_name (
+                    column1 DATATYPE, 
+                    column2 DATATYPE,
+                    ..., 
+                    CONSTRAINT UC_name UNIQUE (column1, column2,...)
+                );
+                CREATE TABLE table_name (
+                    column1 DATATYPE, 
+                    column2 DATATYPE,
+                    ..., 
+                    UNIQUE (column_name)
+                );
+            b. With ALTER TABLE:
+                ALTER TABLE table_name ADD CONSTRAINT UC_name UNIQUE (column1, column2,...);
+                ALTER TABLE table_name ADD UNIQUE (column_name);
+            c. to delete the constraint:
+                ALTER TABLE table_name DROP INDEX UC_table_name;
+        4. PRIMARY KEY:
+            PRIMARY KEY is used to specify the uniqueness of each record in a table.
+            PRIMARY KEY is a combination of NOT NULL and UNIQUE constraints.
+            a. With CREATE TABLE:
+                CREATE TABLE table_name (
+                    column1 DATATYPE, 
+                    column2 DATATYPE,
+                    ..., 
+                    CONSTRAINT PK_name PRIMARY KEY (column1, column2,...)
+                );
+                CREATE TABLE table_name (
+                    column1 DATATYPE, 
+                    column2 DATATYPE,
+                    ..., 
+                    PRIMARY KEY (column_name)
+                );
+            b. With ALTER TABLE:
+                ALTER TABLE table_name ADD CONSTRAINT PK_name PRIMARY KEY (column1, column2,...);
+                ALTER TABLE table_name ADD PRIMARY KEY (column_name);
+            c. to delete the constraint:
+                ALTER TABLE table_name DROP PRIMARY KEY;
+            When you use ALTER TABLE to add constraint on a column, the column must be initially created as "NOT NULL". 
+            You can have as many UNIQUE constraints but only one PRIMARY KEY constraint in a table.
+        5. FOREIGN KEY:
+            A FOREIGN KEY is a field or collection of fields in a table, that refers to the PRIMARY KEY in another table.
+            The table with the FOREIGN KEY is called the child table, and the table with the PRIMARY KEY is called the referenced or parent table.
+            The FOREIGN KEY is used to prevent invalid data from being inserted into the FOREIGN KEY column (in the child table) because the data has to be one of the values contained in the PRIMARY KEY column (in the parent table); hence, prevent actions that might destroy the link between tables.
+            a. With CREATE TABLE:
+                CREATE TABLE table_name (
+                    column1 DATATYPE, 
+                    column2 DATATYPE,
+                    ..., 
+                    PRIMARY KEY (column_name)
+                    CONSTRAINT FK_name FOREIGN KEY (matching_column_name_of_child_table) REFERENCES parent_table_name (matched_column_name_of_parent_table)
+                );
+                CREATE TABLE child_table_name (
+                    column1 DATATYPE, 
+                    column2 DATATYPE,
+                    ..., 
+                    PRIMARY KEY (column_name),
+                    FOREIGN KEY (matching_column_name_of_child_table) REFERENCES parent_table_name (matched_column_name_of_parent_table)
+                );
+            b. With ALTER TABLE:
+                ALTER TABLE table_name ADD CONSTRAINT FK_name FOREIGN KEY (matching_column_name_of_child_table) REFERENCES parent_table_name (matched_column_name_of_parent_table);
+                ALTER TABLE table_name ADD FOREIGN KEY (matching_column_name_of_child_table) REFERENCES parent_table_name (matched_column_name_of_parent_table);
+            c. to delete the constraint:
+                ALTER TABLE table_name DROP FOREIGN KEY FK_name;
+        6. CHECK:
+            CHECK is used to limit the range of values a column can hold.
+            a. With CREATE TABLE:
+                CREATE TABLE table_name (
+                    column1 DATATYPE, 
+                    column2 DATATYPE,
+                    ..., 
+                    CONSTRAINT CHK_name CHECK (conditions)
+                );
+                CREATE TABLE child_table_name (
+                    column1 DATATYPE, 
+                    column2 DATATYPE,
+                    ..., 
+                    CHECK (condition)
+                );
+            b. With ALTER TABLE:
+                ALTER TABLE table_name ADD CONSTRAINT CHK_name CHECK (conditions);
+                ALTER TABLE table_name ADD CHECK (condition);
+            c. to delete the constraint:
+                ALTER TABLE table_name DROP CHECK CHK_name;
+        7. CREATE INDEX:
+            CREATE INDEX is used to create indexes in a table.
+                CREATE INDEX index_name ON table_name (column_name);
+                CREATE INDEX index_name ON table_name (column1, column2,...);
+                CREATE UNIQUE INDEX index_name ON table_name (column1, column2,...);
+            to delete the index:
+                ALTER TABLE table_name DROP INDEX index_name;
+            Indexes are used to retrieve data from the database more quickly than otherwise. The users cannot see the indexes, they are just used to speed up searches/queries.
+            Updating a table with indexes takes more time than updating a table without because the indexes also need an update. Therefore, only create indexes on columns that will be frequently searched against.
+    CONSTRAINT clause allows naming of a constraint and specifying the constraint on multiple columns. 
+
+WHAT IS AUTO-INCREMENT KEYWORD?
+    AUTO-INCREMENT is used to perform auto-increment feature where a unique number will be generated automatically when a new record is inserted into a table.
+    This is usually used in the PRIMARY KEY field for object IDs that you would like to be created automatically every time a new record is inserted.
+        CREATE TABLE table_name (
+            column1 INT NOT NULL AUTO-INCREMENT, 
+            column2 DATATYPE,
+            ..., 
+            PRIMARY KEY (column1)
+        );
+    By default, AUTO-INCREMENT starts at 1 and will increment by 1 for each new record.
+    To change the starting value of AUTO-INCREMENT:
+        ALTER TABLE table_name AUTO_INCREMENT=value;
+    When you insert a new record into the table, you don't have to specify the AUTO-INCREMENT column.
+        INSERT INTO table_name (column2,...) VALUES (value2,...);
+    The AUTO-INCREMENT field will be assigned with a unique value automatically.
+
+WHAT ARE THE TYPES OF RELATIONSHIPS BETWEEN DIFFERENT DATA?
     @OneToOne
     @OneToMany
     @ManyToOne
