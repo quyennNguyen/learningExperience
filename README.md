@@ -85,6 +85,7 @@
 * JDK: https://www.oracle.com/java/technologies/downloads/
 #### Spring Boot:
 * https://www.tutorialspoint.com/spring_boot/index.htm
+* https://spring.io/guides/gs/serving-web-content/
 * Spring Initializr: https://start.spring.io/
 * MVN: https://mvnrepository.com/
 * Postman API: https://www.postman.com/
