@@ -1,16 +1,9 @@
 WHAT IS REACT?
-  React, or ReactJs, is a JavaScript library for building interactive user interfaces and developing web applications.
-  React embraces the fact that rendering logic is inherently coupled with other UI logic: how events are handled, how the state changes over time, and how the data is prepared for display.
-  React is declarative. Being declarative means I can tell the computer WHAT to do and the computer can handle the details, while being imperative means I have to tell the computer HOW to do WHAT steps by steps.
+  React, or ReactJs, is a JavaScript library for building interactive user interfaces and developing single-page web applications.
+  React emphasizes on the reusability of UI components.
 
-HOW TO SET UP A REACT PROJECT AND JSX IN IT?
-  1. Method 1:
-    On Terminal, run
-      npx create-react-app <name of your app>
-  2. Method 2:
-    On Terminal, run
-      npm create vite@latest
-  3. Method 3: 
+HOW TO SET UP A REACT ENVIRONMENT?
+  I. Manually: 
     In HTML file, add the following tags at the end of the body tag:
       <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script
       <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
@@ -38,6 +31,21 @@ HOW TO SET UP A REACT PROJECT AND JSX IN IT?
           npm install babel-cli@6 babel-preset-react-app@3
           npx babel --watch src --out-dir . --presets react-app/prod
         This method is the setup for a production-ready JSX preprocessor to convert all "script" tags automatically.
+  II. With Create-React-App:
+    create-react-app is an official way to help you start up a React application, which includes built tools such as Webpack, Babel, ESLint.
+    On Terminal, run
+      npx create-react-app <name of your app>
+      cd <name of your app>
+      npm start
+  III. With Create-Vite:
+    On Terminal, run
+      npm create vite@latest
+
+HOW DOES REACT WORK?
+  Normally, JavaScript works directly with the HTML DOM to manipulate the HTML elements.
+  So, instead of manipulating the Web browser's DOM directly, React creates a virtual DOM in the memory, where it does all the manipulating, before making any changes to the actual DOM.
+  React finds out what changes have been made and changes only what needs to be changed.
+  React is rendering means React is calling its components.
 
 WHAT IS REACTDOM?
   Elements are the smallest building blocks of a Web page that describe what you want to see on the page. And, components are made of elements.
@@ -51,11 +59,10 @@ WHAT IS JSX?
   Babel acts as a compiler to convert JSX down to React.createElement() calls. After compilation, JSX expressions become regular JavaScript function calls and return JavaScript objects. These objects are React elements that describe what React should add to the real DOM on the HTML page. React reads these objects, interprets them, and uses them to construct the DOM elements and keep them up to date.
 
 HOW DOES REACTDOM RENDER ELEMENTS?
-    ReactDOM.render(
-      <>React elements</>,
-      document.getElementById("root-element")
-    );
-  React is rendering means React is calling its components.
+  ReactDOM.render(
+    <>React elements</>,
+    document.getElementById("root-element")
+  );
   I. Root Element:
     A root DOM node/container is required to mark the spot where React DOM should display its components on the HTML page. It will be managed by React DOM.
     To declare a root element:
@@ -138,11 +145,12 @@ WHAT ARE SOME SYNTAX IN REACT THAT ARE DIFFERENT FROM JAVASCRIPT?
           // action to be executed
         };
       JSX inside JavaScript should look like this:
-      const functionName = () => {
-          return (
-            <starting-tag attribute="value"> content </closing-tags>
-          )
-      };
+        const functionName = () => {
+            // action to be executed
+            return (
+              <starting-tag attribute="value"> content </closing-tags>
+            )
+        };
     
 WHAT IS CONDITIONAL RENDERING?
   React allows you to create distinct components that encapsulate the behavior you need, then you can render only some of them depending on the state of your application.
@@ -405,6 +413,3 @@ WHAT IS FORM?
       The "select" element can also accept multiple options by adding "multiple={true}" attribute.
     This makes it so that "<input type="text">", "<textarea>", and "<select>" elements work very similarly. They all accept a "value" attribute that can be used to implement a controlled component.
   2. Uncontrolled Components:
-
-WHAT IS LIFTING STATE UP?
-  Often, several components need to reflect the same changing data. We recommend lifting the shared state up to their closest common ancestor.

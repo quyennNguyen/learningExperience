@@ -234,5 +234,4 @@ WHAT ARE HTTP PROTOCOLS AND HTTP METHODS?
         URI can specify name and location of a resource, but URL can only specify the location.
         URI can also find resources in HTML, XML, and other files, but URL can only locate web pages.
       2. URN:
-        URN, stands for Uniform Resource Number,
-
+        URN, stands for Uniform Resource Number

@@ -1276,6 +1276,43 @@ WHAT IS A JAVASCRIPT OBJECT?
                     const arrayName = [item0, item1, item2];
                     const variableName = arrayName.methodName(); 
 
+WHAT ARE JAVASCRIPT KEYWORDS THAT YOU SHOULD KNOW?
+    I. this
+        The "this" keyword refers to an object, and to which object depends on how "this" is invoked, used, or called.
+        1. in a function:
+            In default function binding, "this" refers to the global object.
+            In "strict mode", "this" is defined as "undefined".
+            When the function is called by an object:
+                - if the function is declared with the "function" keyword or "function()" method, "this" refers to the object that calls it.
+                - if the function is declared with the arrow function, "this" refers to the global object.
+        2. in an object method:
+            "this" refers to the object that calls the method.
+            Explicit function binding:
+                a. call()
+                    https://www.w3schools.com/js/js_function_call.asp
+                b. apply()
+                    https://www.w3schools.com/js/js_function_apply.asp
+                c. bind()
+                    https://www.w3schools.com/js/js_function_bind.asp
+        3. in an event handler:
+            "this" refers to the HTML element that receives the event.
+        4. by itself:
+            "this" refers to the global object.
+            In "strict mode", "this" also refers to the global object.
+        SIDE NOTE:
+                    In a browser window, the global object is the Window object [object Window].
+    II. break;
+        The "break" statement is used to jump out of, or break, a conditional statement or a loop.
+        The "break" statement can be used to jump out of, or break, a code block with a label reference.
+            label:
+                statement;
+        or
+            label: {
+                code block;
+            }
+    III. continue;
+        The "continue" statement is used to jump over one iteration and continue with the next iteration of a loop.
+
 WHAT ARE JAVASCRIPT CONDITIONAL STATEMENTS?
     Conditional statements are used to perform different actions based on different conditions.
     I. If Statement:
@@ -1412,43 +1449,6 @@ WHAT ARE JAVASCRIPT LOOPS?
         The code will always be executed at least once even if the condition is false in the first time.
         As long as the condition is true, the execution goes on.
 
-WHAT ARE JAVASCRIPT KEYWORDS THAT YOU SHOULD KNOW?
-    I. this
-        The "this" keyword refers to an object, and to which object depends on how "this" is invoked, used, or called.
-        1. in a function:
-            In default function binding, "this" refers to the global object.
-            In "strict mode", "this" is defined as "undefined".
-            When the function is called by an object:
-                - if the function is declared with the "function" keyword or "function()" method, "this" refers to the object that calls it.
-                - if the function is declared with the arrow function, "this" refers to the global object.
-        2. in an object method:
-            "this" refers to the object that calls the method.
-            Explicit function binding:
-                a. call()
-                    https://www.w3schools.com/js/js_function_call.asp
-                b. apply()
-                    https://www.w3schools.com/js/js_function_apply.asp
-                c. bind()
-                    https://www.w3schools.com/js/js_function_bind.asp
-        3. in an event handler:
-            "this" refers to the HTML element that receives the event.
-        4. by itself:
-            "this" refers to the global object.
-            In "strict mode", "this" also refers to the global object.
-        SIDE NOTE:
-                    In a browser window, the global object is the Window object [object Window].
-    II. break;
-        The "break" statement is used to jump out of, or break, a conditional statement or a loop.
-        The "break" statement can be used to jump out of, or break, a code block with a label reference.
-            label:
-                statement;
-        or
-            label: {
-                code block;
-            }
-    III. continue;
-        The "continue" statement is used to jump over one iteration and continue with the next iteration of a loop.
-
 WHAT IS JAVASCRIPT ERROR HANDLING?
     When executing code, different errors might occur due to different reasons.
     I. Error Object:
@@ -1526,53 +1526,13 @@ WHAT IS DOM?
         3. HTML DOM:
             This is a standard object model and programming interface for HTML documents.
     I. HTML DOM:
-        1. HTML DOM Navigation:
-            When a Web page is loaded, the Web browser creates a Document Object Model of the HTML page, where the HTML DOM is constructed as a tree of Objects and Document is the parent object of all objects.
-            a. HTML DOM Navigation as Object Tree:
-                All the HTML elements are objects.
-                The programming interface is the properties and methods of each object.
-                    - the properties - which are values of the HTML elements that you can get/set/change
-                    - the methods - which are actions that you can perform on the HTML elements
-                With the HTML DOM, JavaScript can access/create/change/add/remove all the HTML elements, access/create/change/add/remove CSS styles, and create/react to HTML events.
-            b. HTML DOM Navigation as Node Tree:
-                Everything in an HTML document is a node.
-                    The "DOCTYPE" is a document type node.
-                    The HTML document itself is a document node.
-                    Every HTML element is an element node.
-                    Every HTML attribute is an attribute node.
-                    All the text inside HTML elements are text nodes. 
-                    All comments are comment nodes.
-                    SIDE NOTE:
-                                Element nodes don't contain text. They contain text nodes with the text value.
-                The nodes in the node tree have a hierarchical relationship (parent-child-sibling).
-                    The top node is the root/root element/root node.
-                    Except the root node, every node has one parent.
-                    One node can have one or more children.
-                    Nodes with the same parent are siblings.
-                With the HTML DOM, all nodes in the node tree can be navigated using node relationships, and JavaScript can access/create/change/add/remove all nodes.
-                b.1 to navigate between nodes:
-                    objectName.parentNode
-                    objectName.childNodes
-                    objectName.childNode[index]
-                    objectName.firstChild
-                    objectName.lastChild
-                    objectName.nextSibling
-                    objectName.previousSibling
-                b.2 to access the name of a node:
-                    objectName.nodeName
-                b.3 to access the value of a node:
-                    objectName.nodeValue
-                b.4 to access the type of a node:
-                        objectName.nodeType
-                    If it is an element node, it returns 1.
-                    If it is an attribute node, it returns 2.
-                    If it is a text node, it returns 3.
-                    If it is a comment node, it returns 8.
-                    If it is a document node, it returns 9.
-                    If it is a document type node, it returns 10.
-        2. HTML DOM Document:
-            The "document" object represents the Web page and is the owner of all other objects in the Web page.
-            To access or manipulate any HTML elements, you have to access the document object first.
+        With HTML DOM, JavaScript can access/create/change/add/remove all the HTML elements, access/create/change/add/remove CSS styles, and create/react to HTML events.
+        1. HTML DOM as Object Tree:
+            When a Web page is loaded, the Web browser creates a Document Object Model of the HTML page, where the HTML DOM is constructed as a tree of Objects and Document represents the Web page and the parent object of all objects.
+            Each HTML element is treated as an object with:
+                properties - which are values of the HTML elements that you can get/set/change
+                methods - which are actions that you can perform on the HTML elements
+            To access or manipulate any HTML element, you have to access the Document object first.
             a. to access HTML element(s):    
                 a.1 to access an HTML element by id:
                     const objectName = document.getElementById("id");
@@ -1592,34 +1552,37 @@ WHAT IS DOM?
                         document.body  
                 SIDE NOTE:
                             If the element is not found, the method will return "null";
-            b. to access/change HTML element(s):
-                b.1 to access/change the inner conntent of the HTML element:
+            b. to access the content of an HTML element:
+                b.1 to access the whole inner conntent of an HTML element:
                     objectName.innerHTML
-                b.2 to access/change the attribute value of the HTML element:
-                    with object property:
-                        objectName.attributeName
-                    with object method:
+                b.2 to access the text conntent of an HTML element:
+                    objectName.innerText
+            c. to access the property of an HTML element:
+                c.1 to access the attribute value of an HTML element:
+                    objectName.attributeName
+                c.2 to change the attribute value of an HTML element:
+                        objectName.attributeName = value;
+                    or
                         objectName.setAttribute("attributeName" , "new value");
-                b.3 to access/change the style of the HTML element:
-                    objectName.style.propertyName
-            c. to create/add/remove HTML element(s):
-                c.1 to create an HTML element:
+                c.3 to change the style of an HTML element:
+                    objectName.style.propertyName = value;
+            d. to create/add/remove HTML element(s):
+                d.1 to create an HTML element:
                     const elementNode = document.createElement("element");
                     const textNode = document.createTextNode("text");
-                c.2 to add an HTML element:
+                d.2 to add an HTML element:
                     as the last child of the parent:
                         parentNode.appendChild(childNode);
                     before a specified sibling:
                         parentNode.insertBefore(childNode, siblingNode);
-                c.3 to remove an HTML element:
-                    the specified child removing itself:
+                d.3 to remove an HTML element:
                         childNode.remove();
-                    parent removing the specified child:
+                    or
                         parentNode.removeChild(childNode);
-                c.4 to replace an HTML element:
+                d.4 to replace an HTML element:
                     parentNode.replaceChild(newChildNode, oldChildNode);
-        3. HTMLCollection Object:
-            The HTMLCollection object is an array-like list/collection of HTML document elements.
+        2. HTMLCollection Object:
+            The HTMLCollection object is an array-like (but not array) list/collection of HTML Document elements.
                 const collectionName = document.getElementsByClassName("class-name");
                 const collectionName = document.getElementsByTagName("tag-name");
             Properties:
@@ -1629,8 +1592,7 @@ WHAT IS DOM?
                 to return the number of elements in the collection:
                     collectionName.length
             Methods:
-                The collection might look like an array but is not an array; therefore, it can't use any array methods.
-                to access multiple HTML elements by HTMLCollection Object:
+                to access multiple HTML elements based on element type:
                     const collectionName = document.anchors;
                     const collectionName = document.body;
                     const collectionName = document.documentElement;
@@ -1642,8 +1604,43 @@ WHAT IS DOM?
                     const collectionName = document.scripts;
                     const collectionName = document.title;
             The HTMLCollection object is a live collection.
+        3. HTML DOM as Node Tree:
+            Every elements in an HTML Document is a node.
+                The "DOCTYPE" is a document type node.
+                The HTML document itself is a document node.
+                Every HTML element is an element node.
+                Every HTML attribute is an attribute node.
+                All the text inside HTML elements are text nodes. 
+                All comments are comment nodes.
+                SIDE NOTE:
+                            Element nodes don't contain text. They contain text nodes with the text value.
+            The nodes in the node tree have a hierarchical relationship (parent-child-sibling).
+                The top node is the root/root element/root node.
+                Except the root node, every node has one parent.
+                One node can have one or more children.
+                Nodes with the same parent are siblings.
+            a. to navigate between nodes:
+                objectName.parentNode
+                objectName.childNodes
+                objectName.childNode[index]
+                objectName.firstChild
+                objectName.lastChild
+                objectName.nextSibling
+                objectName.previousSibling
+            b. to access the name of a node:
+                objectName.nodeName
+            c. to access the value of a node:
+                objectName.nodeValue
+            d. to access the type of a node:
+                    objectName.nodeType
+                If it is an element node, it returns 1.
+                If it is an attribute node, it returns 2.
+                If it is a text node, it returns 3.
+                If it is a comment node, it returns 8.
+                If it is a document node, it returns 9.
+                If it is a document type node, it returns 10.
         4. HTML NodeList Object:
-            The NodeList object is an array-like list/collection of HTML document nodes.
+            The NodeList object is an array-like (but not array) list/collection of HTML document nodes.
                 const nodeListName = document.querySelectorAll("CSS-selector");
                 const nodeListName = parentNode.childNodes;
             Properties:
@@ -1651,92 +1648,8 @@ WHAT IS DOM?
                     nodeListName[index]
                 to return the number of elements in the node list:
                     nodeListName.length
-            Methods:
-                The collection might look like an array but is not an array; therefore, it can't use any array methods.
             The NodeList object is almost a static collection.
-    III. HTML DOM Form:
-        Data validation is the process of ensuring that the user input is clean, correct, and useful.
-        There are 2 types of data validation:
-            1. Client Side Validation: is performed by the Web browser before the input is sent to the Web server.
-            2. Server Side Validation: is performed by the Web server after the input has been sent to the Web server.
-        HTML Constraint Validation:
-            1. Constraint Validation HTML Input Attributes:
-                disabled
-                max
-                min
-                pattern
-                required
-                type
-                Full reference: https://www.w3schools.com/html/html_form_attributes.asp
-            2. Constraint Validation CSS Pseudo Selectors:
-                :disabled
-                :invalid
-                :optional
-                :required
-                :valid
-                Full reference: https://www.w3schools.com/css/css_pseudo_classes.asp
-            3. Constraint Validation DOM Properties and Methods:
-                Properties:
-                    a. to relate to the validity of an input element:
-                        objectName.validity.customError
-                        objectName.validity.patternMismatch
-                        objectName.validity.rangeOverflow
-                        objectName.validity.rangeUnderflow
-                        objectName.validity.stepMismatch
-                        objectName.validity.tooLong
-                        objectName.validity.typeMismatch
-                        objectName.validity.valueMissing
-                        objectName.validity.valid
-                    b. to display a validation message:
-                        objectName.validationMessage
-                    c. to indicate if an input element will be validated:
-                        objectName.willValidate
-                Methods:
-                    a. to check if an input element contains valid data:
-                        objectName.checkValidity()
-                    b. to set a custom validation message of an input element:
-                        objectName.setCustomValidity()
-                Full reference: https://www.w3schools.com/js/js_validation_api.asp
-        Form Validation:
-            HTML:
-                <form name="formName" action="/xyz.php" onsubmit="return functionName()" method="post">
-                    <label>XYZ</label>
-                    <input name="inputName" type="text" value="xyz">
-                    <button type="submit">Submit</button>
-                </form>
-            Js:
-                const functionName = () => {
-                    let variableName = document.form["formName"]["inputName"].value;
-                    // action to be executed
-                }
-    IV. HTML DOM Animation:
-        Animations are done by programming gradual changes in an element' style. The changes are called by a timer. When the timer interval is small, the animation looks continuous.
-        Animation Code:
-            HTML:
-                <div id="container">
-                    <div id="item"></div>
-                </div>
-            CSS:
-                #container {
-                    display: block/inline-block/flex/grid;
-                    position: relative;
-                }
-                #item {
-                    position: absolute;
-                }
-            Js:
-                const variableName = document.getElementById("item");
-                let id = null;
-                clearInerval(id);
-                id = setInterval(animate, 5);
-                function animate() {
-                    if (condition to stop animation) {
-                        clearInteravl(id);
-                    } else {
-                        // action to be executed
-                    }
-                }
-    V. HTML DOM Event Handling:
+    II. HTML DOM Event Handling:
         Events are things that happen to the elements of the Web page.
         EX:
             An HTML Web page has finished loading.
@@ -1787,142 +1700,6 @@ WHAT IS DOM?
                     objectName.addEventListener("event", action to be executed);
                     objectName.removeEventListener("event", action to be executed);
         Full reference of event handlers: https://www.w3schools.com/jsref/dom_obj_event.asp
-    VI. Data Display:            
-        1. to display content in the console:
-            console.log(content);
-        2. to display content in an alert box of the Web browser:
-            window.alert(content);
-        3. to print the content of the current Web page:
-            window.print();
-        4. to prompt the user input fron an alert box of the Web browser:
-            prompt(question);
-        5 to write into the HTML output stream:
-                document.write(content);
-            This should be used for testing only. 
-            If it is used after the HTML document is loaded, it will overwrite all existing HTML content.   
-        SIDE NOTE:
-                    The window object is a DOM object with a globel scope. All variables, properties, and methods belong to the window object by default. Therefore, specifying the "window" keyword is optional.
-
-WHAT IS WEB API?
-    API, stands for Application Programming Interface, is a way to help program communicate with servers to fetch data.
-    I. Web API:
-        A Web API is an API for the Web.
-        1. Web History API:
-            URL, stands for Uniform Resource Locator, is a reference to a Web resource that specifies its location on the computer network and the mechanism for retrieving it. URL, or Web site, is the address of a Web page.
-            The Web history API allows access to the browsing history of the current window.
-            The window.history object contains the URLs visited by the user.
-            Properties:
-                to return the number of URLs in the history list of the current browser window:
-                    window.history.length
-            Methods:
-                a. to load the previous URL in the history list:
-                    window.history.back();
-                b. to load the next URL in the history list:
-                    window.history.forward();
-                c. to load a specific URL from the history list:
-                        window.history.go(number);
-                    If the "number" parameter is negative, the page loads back. If the "number" parameter is 0, it reloads the current page. If the "number" parameter is positive, the page loads forward.
-        2. Web Storage API:
-            The Web storage API allows to store and retrieve data in the Web browser.
-            There are 2 types of Web storage object:
-                a. window.localStorage:
-                    The localStorage object provides access to a local storage for a particular Web site and allows to store/read/modify/add/remove data items in a Web browser.
-                    The data is stored without expiratin date and won't be removed when the browser is closed.
-                b. window.sessionStorage:
-                    The sessionStorage object provides access to a local storage for a particular Web site and allows to store/read/modify/add/remove data items in a Web browser but only for one session.
-                    The data will be removed when the browser is closed.
-            Properties:
-                to return the number of data items stored in the storage:
-                    .length
-            Methods:
-                a. to store a data item in a storage:
-                    .setItem("name", "value")
-                b. to retrieve a data item from the storage:
-                    .getItem("name")
-                c. to remove a data item from the storage:
-                    .removeItem("name")
-                d. to return the name of a specific key in the storage:
-                    .key(index)
-                e. to empty all keys out of the storage:
-                    .clear()
-        3. Web Worker API:
-            The Web worker API is an independent script running in the background without affecting the performance of the Web page.
-            a. to check if Web worker is supported:
-                if (typeof(Worker) !== "underfined") {
-                    // action to be executed
-                }
-            b. to create a Web worker:
-                b.1 in an external file:
-                    - create a worker file: "fileName.js"
-                    - the "postMessage(data)" method is used to post a message back to the main file.
-                b.2 in the main file:
-                    - check if the worker already exists:
-                        let objectName;
-                        if (typeof(objectName) == "underfined") {
-                            objectName = new Worker("fileName.js");
-                        }
-                    - the "onmessage" event listener provides a mean to send/receive messages from the worker.
-                    - when the worker posts a message, JavaScript reacts on the event and executes the function.
-                    - the data received from the worker will be stored in "event.data" and can be used further.
-                        objectName.onmessage = (event) => {
-                            // action to be executed
-                        };
-            c. to terminate the Web worker:
-                objectName.terminate();
-            d. to reuse the Web worker:
-                objectName.terminate();
-                objectName = underfined;
-            When a Web worker is created, it will continue to listen for messages, even after the external script is finished, until it is terminated to free the Web browser/computer resources.
-            Because the Web worker is in an external file, it doesn't have access to the window, document, and parent objects.
-        4. Web Geolocation API:
-            The Geolocation API allows to get the geographical position of the user.
-            a. to check if Web geolocation is supported:
-                if (navigator.geolocation) {
-                    // action to be executed
-                }
-            b. to get the user's position:
-                b.1 getCurrentPosition():
-                    navigator.geolocation.getCurrentPosition(showPosition, showError);
-                b.2 watchPosition():
-                    navigator.geolocation.watchPosition(showPosition, showError);
-                b.3 showPosition():
-                    const showPosition = (position) => {
-                        x.innerHTML = "Latitude: " + position.coords.latitude +
-                                    "<br>Longitude: " + position.coords.longitude;
-                    };
-                b.4 to display the position on a map:
-                    const showPosition = (position) => {
-                        let latlon = position.coords.latitude + "," + position.coords.longitude;
-                        let img_url = "https://maps.googleapis.com/maps/api/staticmap?center=
-                        "+latlon+"&zoom=14&size=400x300&sensor=false&key=YOUR_KEY";
-                        x.innerHTML = `<img src="${img_url}">`;
-                    };
-                b.5 showError():
-                    const showError = (err) => {
-                        switch(error.code) {
-                            case error.PERMISSION_DENIED:
-                            x.innerHTML = "User denied the request for Geolocation."
-                            break;
-                            case error.POSITION_UNAVAILABLE:
-                            x.innerHTML = "Location information is unavailable."
-                            break;
-                            case error.TIMEOUT:
-                            x.innerHTML = "The request to get user location timed out."
-                            break;
-                            case error.UNKNOWN_ERROR:
-                            x.innerHTML = "An unknown error occurred."
-                            break;
-                        }
-                    };
-        5. Web Fetch API:
-            The Fetch API allows Web browsers to make HTTP requests to Web servers.
-            Methods:
-                fetch("source").then(action to be executed);
-    II. Browser API:
-        A browser API can extend the functionality of a Web browser. 
-        All browsers have a set of built-in Web APIs to support complex operations and to help accessing data.
-    III. Server API:
-        A server API can extend the functionality of a Web server.
 
 WHAT IS ASYNCHRONOUS PROGRAMMING?
     I. Function Sequence:
@@ -2061,13 +1838,18 @@ WHAT IS ASYNCHRONOUS PROGRAMMING?
                         If a "Promise{}" is returned, the function is likely to be an "async" function. 
                         In other to extract the data from it, you have to use either "then()" method or "await" keyword.
 
-WHAT IS JSON?
-    JSON, stands for JavaScript Object Notation, is a lightweight data interchange format for storing and transporting data, which is often used when data is sent from a Web server to a Web page. 
-    JSON is language independent, which means the code for reading and generating JSON can be written in any programming language, and self-describing, which means JSON format is text only.
-    JSON format is syntactically identical to the code for creating JavaScript objects because JSON format is deprived from JavaScript object notation syntax. Therefore, a JavaScript program easily converts JSON data to native JavaScript objects.
-    Syntax:
-        1. JSON data is written in name:value pairs.
-            { "fieldName":"value" }
-        2. JSON data is separated by commas.
-        3. JSON objects are written in curly braces {}.
-        4. JSON arrays are written in square brackets [].
+WHAT ARE COMMON COMMANDS THAT YOU SHOULD KNOW?            
+    I. to display content in the console:
+        console.log(content);
+    II. to display content in an alert box of the Web browser:
+        window.alert(content);
+    III. to print the content of the current Web page:
+        window.print();
+    IV. to prompt the user input fron an alert box of the Web browser:
+        prompt(question);
+    V to write into the HTML output stream:
+            document.write(content);
+        This should be used for testing only. 
+        If it is used after the HTML document is loaded, it will overwrite all existing HTML content.   
+    SIDE NOTE:
+                The window object is a DOM object with a globel scope. All variables, properties, and methods belong to the window object by default. Therefore, specifying the "window" keyword is optional.

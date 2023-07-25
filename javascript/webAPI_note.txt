@@ -1,0 +1,119 @@
+WHAT IS WEB API?
+    I. Web API:
+        A Web API is an API for the Web.
+        1. Web History API:
+            URL, stands for Uniform Resource Locator, is a reference to a Web resource that specifies its location on the computer network and the mechanism for retrieving it. URL, or Web site, is the address of a Web page.
+            The Web history API allows access to the browsing history of the current window.
+            The window.history object contains the URLs visited by the user.
+            Properties:
+                to return the number of URLs in the history list of the current browser window:
+                    window.history.length
+            Methods:
+                a. to load the previous URL in the history list:
+                    window.history.back();
+                b. to load the next URL in the history list:
+                    window.history.forward();
+                c. to load a specific URL from the history list:
+                        window.history.go(number);
+                    If the "number" parameter is negative, the page loads back. If the "number" parameter is 0, it reloads the current page. If the "number" parameter is positive, the page loads forward.
+        2. Web Storage API:
+            The Web storage API allows to store and retrieve data in the Web browser.
+            There are 2 types of Web storage object:
+                a. window.localStorage:
+                    The localStorage object provides access to a local storage for a particular Web site and allows to store/read/modify/add/remove data items in a Web browser.
+                    The data is stored without expiratin date and won't be removed when the browser is closed.
+                b. window.sessionStorage:
+                    The sessionStorage object provides access to a local storage for a particular Web site and allows to store/read/modify/add/remove data items in a Web browser but only for one session.
+                    The data will be removed when the browser is closed.
+            Properties:
+                to return the number of data items stored in the storage:
+                    .length
+            Methods:
+                a. to store a data item in a storage:
+                    .setItem("name", "value")
+                b. to retrieve a data item from the storage:
+                    .getItem("name")
+                c. to remove a data item from the storage:
+                    .removeItem("name")
+                d. to return the name of a specific key in the storage:
+                    .key(index)
+                e. to empty all keys out of the storage:
+                    .clear()
+        3. Web Worker API:
+            The Web worker API is an independent script running in the background without affecting the performance of the Web page.
+            a. to check if Web worker is supported:
+                if (typeof(Worker) !== "underfined") {
+                    // action to be executed
+                }
+            b. to create a Web worker:
+                b.1 in an external file:
+                    - create a worker file: "fileName.js"
+                    - the "postMessage(data)" method is used to post a message back to the main file.
+                b.2 in the main file:
+                    - check if the worker already exists:
+                        let objectName;
+                        if (typeof(objectName) == "underfined") {
+                            objectName = new Worker("fileName.js");
+                        }
+                    - the "onmessage" event listener provides a mean to send/receive messages from the worker.
+                    - when the worker posts a message, JavaScript reacts on the event and executes the function.
+                    - the data received from the worker will be stored in "event.data" and can be used further.
+                        objectName.onmessage = (event) => {
+                            // action to be executed
+                        };
+            c. to terminate the Web worker:
+                objectName.terminate();
+            d. to reuse the Web worker:
+                objectName.terminate();
+                objectName = underfined;
+            When a Web worker is created, it will continue to listen for messages, even after the external script is finished, until it is terminated to free the Web browser/computer resources.
+            Because the Web worker is in an external file, it doesn't have access to the window, document, and parent objects.
+        4. Web Geolocation API:
+            The Geolocation API allows to get the geographical position of the user.
+            a. to check if Web geolocation is supported:
+                if (navigator.geolocation) {
+                    // action to be executed
+                }
+            b. to get the user's position:
+                b.1 getCurrentPosition():
+                    navigator.geolocation.getCurrentPosition(showPosition, showError);
+                b.2 watchPosition():
+                    navigator.geolocation.watchPosition(showPosition, showError);
+                b.3 showPosition():
+                    const showPosition = (position) => {
+                        x.innerHTML = "Latitude: " + position.coords.latitude +
+                                    "<br>Longitude: " + position.coords.longitude;
+                    };
+                b.4 to display the position on a map:
+                    const showPosition = (position) => {
+                        let latlon = position.coords.latitude + "," + position.coords.longitude;
+                        let img_url = "https://maps.googleapis.com/maps/api/staticmap?center=
+                        "+latlon+"&zoom=14&size=400x300&sensor=false&key=YOUR_KEY";
+                        x.innerHTML = `<img src="${img_url}">`;
+                    };
+                b.5 showError():
+                    const showError = (err) => {
+                        switch(error.code) {
+                            case error.PERMISSION_DENIED:
+                            x.innerHTML = "User denied the request for Geolocation."
+                            break;
+                            case error.POSITION_UNAVAILABLE:
+                            x.innerHTML = "Location information is unavailable."
+                            break;
+                            case error.TIMEOUT:
+                            x.innerHTML = "The request to get user location timed out."
+                            break;
+                            case error.UNKNOWN_ERROR:
+                            x.innerHTML = "An unknown error occurred."
+                            break;
+                        }
+                    };
+        5. Web Fetch API:
+            The Fetch API allows Web browsers to make HTTP requests to Web servers.
+            Methods:
+                fetch("source").then(action to be executed);
+    II. Browser API:
+        A browser API can extend the functionality of a Web browser. 
+        All browsers have a set of built-in Web APIs to support complex operations and to help accessing data.
+    III. Server API:
+        A server API can extend the functionality of a Web server.

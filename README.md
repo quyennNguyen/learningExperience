@@ -38,6 +38,7 @@
 #### HTML:
 * https://www.w3schools.com/html/default.asp
 * https://developer.mozilla.org/en-US/docs/Web/HTML
+* Fontawesome: https://fontawesome.com/
 * VSCode: https://code.visualstudio.com/download
 #### CSS:
 * https://www.w3schools.com/css/default.asp
@@ -46,7 +47,6 @@
 #### SASS:
 * https://www.w3schools.com/sass/default.php
 * https://sass-lang.com/documentation/
-* Fontawesome: https://fontawesome.com/
 * VSCode: https://code.visualstudio.com/download
 #### Bootstrap:
 * https://www.w3schools.com/bootstrap5/index.php
@@ -82,7 +82,8 @@
 * https://www.w3schools.com/java/default.asp
 * https://docs.oracle.com/javase/tutorial/java/javaOO/index.html
 * IntelliJ: https://www.jetbrains.com/idea/download/#section=windows
-* JDK: https://www.oracle.com/java/technologies/downloads/
+* JDK: https://www.oracle.com/java/technologies/downloads/#jdk20-windows
+* Java Uninstall: https://www.java.com/en/download/uninstalltool.jsp
 #### Spring Boot:
 * https://www.tutorialspoint.com/spring_boot/index.htm
 * https://spring.io/guides/gs/serving-web-content/
@@ -93,9 +94,9 @@
 #### MySQL:
 * https://www.w3schools.com/sql/default.asp
 * https://www.w3schools.com/MySQL/default.asp
-* JDBC Driver: https://dev.mysql.com/downloads/connector/j/
 * MySQL Workbench: https://dev.mysql.com/downloads/windows/installer/8.0.html
 * MySQL: https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-database
+* JDBC Driver: https://dev.mysql.com/downloads/connector/j/
 #### MongoDB:
 * https://www.w3schools.com/mongodb/index.php
 * JSON: https://www.w3schools.com/js/js_json_intro.asp
@@ -111,9 +112,3 @@
 * Ubuntu: https://learn.microsoft.com/en-us/windows/wsl/install
 
 ***
-
-#### Full-Stack Java Development Path:
-* MySQL - Spring Boot - React
-#### Full-Stack JavaScript Development Path:
-* MongoDB - ExpressJS - React - NodeJS
-* MongoDB - ExpressJS - Angular - Node JS

@@ -1,0 +1,71 @@
+WHAT IS ORM?
+  ORM, stands for Object Relational Mapping, is a technique that enables you to map objects from your OOP program to an RDBMS to manipulate data from a database. It simplifies the data creation, manipulation, and access.
+    - Object: specifies the objects from your program written in the OOP language of your choice.
+    - Relational: specifies the RDBMS that uses tables to manage the data.
+    - Mapping: specifies the bridge between the object-oriented program and the relational database, which connects the objects and the tables.
+  In general, ORM serves as an abstraction layer between an OOP application and a relational database that helps to simplify the interaction between them and helps you build database-backed applications and perform CRUD operations without using SQL or going through boilerplate code.
+
+WHAT ARE THE ADVANTAGES AND DISADVANTAGES OF USING ORM?
+  I. Advantages:
+    ORM does all the abstraction work for you. You don't have to mind the underlying code details.
+    ORM helps increase productivity and speed up development time; hence, it saves time for developers.
+    ORM requires less code than embedded SQL and handwritten stored procedures; hence, it's more cost-effective.
+    ORM can help "sanitize" and secure the code in case the application may be at risk of SQL injection attacks.
+  II. Disadvantages:
+    SQL queries are more flexible and detailed than ORM abstractions. If the queries gets too complex, ORM won't be able to handle.
+    SQL allows you to better control the data interface.
+    ORM works slower than SQL.
+
+WHAT IS JPA?
+  JPA, stands for Java Persistence API, is a Java specification that provides certain functionality and standard an ORM tool. In other words, it is a set of rules and guidelines to set interfaces for implementing ORM.
+  It is considered as a standard technique for ORM.
+  Since it is just a specification, JPA doesn't conduct any functioning by itself; hence, it needs an implementation.
+  It needs a few classes and interfaces. JPA classes and interfaces are stored in the javax.persistence package.
+  It is used to examine, control, and persist data between Java objects from an OOP program and a relational database.
+
+WHAT IS HIBERNATE?
+  Hibernate is a Java ORM tool that implements JPA to simplify the developement of Java applications to interact with the database.
+
+WHAT IS HQL?
+  HQL, stands for Hibernate Query Language, is the object-oriented version of SQL. It generates database independent queries. You don't need to write database specific queries.
+  HQL is case-insensitive.
+
+HOW HIBERNATE IS MORE ADVANTAGEOUS THAN JDBC?
+  I. JDBC:
+    JDBC is database dependent. You have to specify the SQL queries used. If the database is changed, your specified queries won't work and you need to change the queries, which leads to the maintenance problem. Maintaining database can be very costly.
+    There are lots of boilerplate code and mandatory exception handling, which increases code length and reduces readability.
+    There is no support for object-level relationships.
+    JDBC code isn't portable across the multiple database software.
+  II. Hibernate:
+    Hibernate provides the abstraction layer for you, which means you don't have to worry about the internal implementations such as establishing the connection with database, writing queries to perform CRUD operations,...
+    It is open-source (means everyone can access it with no cost), light-weight (the installation package is not large in size), and has fast performance (cache is internally used). 
+    Hibernate uses HQL, which makes it database independent.
+    Hibernate supports auto DDL operations, auto Primary Key generation, and optional exception handling.
+    It also supports query cache and provides statistics about query and database status.
+
+WHAT IS HIBERNATE ARCHITECTURE?
+  Hibernate architecture consists of 4 layers:
+  I. Java Application
+  II. Hibernate Framework:
+    Core objects used in Hibernate include:
+      SessionFactory
+      Session
+      TransactionFactory
+      Transaction
+      ConnectionProvider
+    Persistent objects are instances of POJO classes from your program that have a representation in the database. Each class is associated with a table in the database. Each property of the class is associated with a column of the table. Each instance of the class holds a record in the table. Hibernate maps those objects to the data in the database and monitors them. 
+  III. Backend API:
+    Internal Java API used by Hibernate includes:
+      JNDI (Java Naming Directory Interface)
+      JDBC (Java Database Connectivity)
+      JTA (Java Transaction API)
+  IV. Database
+
+WHAT IS CACHE IN HIBERNATE?
+  There are 2 types of cache in Hibernate: first level cache (enabled by default) and second level cache.
+
+WHAT IS HIBERNATE OBJECT?
+  3 states of a Hibernate object are transient, persistent, detached.
+    1. Transient state: An object is in transient state if it just has been instantiated using the new operator and there is no reference of it in the database i.e it does not represent any row in the database.
+    2. Persistent state: An object is in the persistent state if it has some reference in the database i.e it represent some row in the database and identifier value is assigned to it. If any changes are made to the object then hibernate will detect those changes and effects will be there in the database that is why the name Persistent. These changes are made when session is closed. A persistent object is in the session scope.
+    3. Detached state: An object that has been persistent and is no longer in the session scope. The hibernate will not detect any changes made to this object. It can be connected to the session again to make it persistent again.

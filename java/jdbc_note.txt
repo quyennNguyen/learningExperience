@@ -1,12 +1,10 @@
-WHAT IS AN API?
-    API, stands for Application Programming Interface, is a set of rules, protocols, and conventions that define how software components interact with each other.
-    It provides a standardized way for different software components or systems to communicate and exchange data, to work together seamlessly.
-
 WHAT IS JDBC?
-    JDBC, stands for Java Database Connectivity, is a Java API that provides the standard mechanism for Java applications to interact with relational databases.
+    JDBC, stands for Java Database Connectivity, is a Java API that provides the standard mechanism for a Java application to interact with a relational databases.
     It allows you to build database-driven aplications, where you can establish connections to the databases, execute SQL statements, store, retrieve, and manipulate data dynamically, and manage database transactions within Java code.
     It follows a client-server architecture where Java applications act as clients communicating with the database server to perform database operations.
-    It provides a set of interfaces and classes that defines the necessary methods to interact with the databases.
+    It provides a set of interfaces and classes that defines the necessary methods to interact with the databases. However, the implementations of those classes and interfaces are provided by a RDBMS.
+
+HOW TO USE JDBC?
     I. Drivers:
         JDBC drivers are software components that allow Java applications to interact with different databases as to establish connections, execute SQL statements, retrieve and manipulate data, and manage transactions in databases.
         There are different types of JDBC drivers:
