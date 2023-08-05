@@ -110,7 +110,7 @@ GIT COMMANDS:
             This will copy the latest changes from the remote repo and update both your local repo and working directory.
             If you are actively working on any tracked files in your working directory that conflict with the remote repo, Git will abort the task of updating your working directory and only update your local repo.
             git pull = git fetch + git merge
-        Using git fetch:
+        Using git fetch:mkdir
             This will copy the latest changes from the remote repo and update your local repo but won't make any changes to your working directory.
             If you are actively working on any tracked files in your working directory, fetch enables you to continue working on your working directory without having to merge your code with updates from the remote repo.
             You can finish editing files locally, commit your files and then do a git merge to synchronize your updates with the fetched files. This brings you up to date with the updates the fetch pulled down from the remote machine.

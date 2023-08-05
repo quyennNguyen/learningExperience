@@ -77,6 +77,7 @@
 * NodeJs: https://nodejs.org/en
 #### NodeJs:
 * https://www.w3schools.com/nodejs/default.asp
+* npm: https://docs.npmjs.com/about-npm
 * NodeJs: https://nodejs.org/en/download
 #### Java:
 * https://www.w3schools.com/java/default.asp
@@ -99,7 +100,6 @@
 * JDBC Driver: https://dev.mysql.com/downloads/connector/j/
 #### MongoDB:
 * https://www.w3schools.com/mongodb/index.php
-* JSON: https://www.w3schools.com/js/js_json_intro.asp
 #### AWS:
 * https://aws.amazon.com/free/?trk=6a4c3e9d-cdc9-4e25-8dd9-2bd8d15afbca&sc_channel=ps&ef_id=CjwKCAjwkeqkBhAnEiwA5U-uM0kpmW6wHDZzWLdJioMLqtuFcKqN3eGBvqyemfJ5wdbC2mYcCJ5_7BoCgeoQAvD_BwE:G:s&s_kwcid=AL!4422!3!651751059783!e!!g!!aws!19852662197!145019195897&all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc&awsf.Free%20Tier%20Types=*all&awsf.Free%20Tier%20Categories=*all
 #### Docker:

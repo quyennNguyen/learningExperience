@@ -1,0 +1,38 @@
+WHAT IS NPM?
+    npm, stands for Node Package Manager, is the world's largest software library/registry.
+    Generally, a package is the container of all the files you need for a module. A module is a library of dependencies that you can include in your project to support your application development. And, npm is essentially a software package manager and installer for NodeJs.
+    Open-source developers use npm to share and borrow packages.
+    Organizations use npm to manage private development.
+
+HOW TO GET NPM?
+    npm is installed with NodeJs. So, in order to get npm, you have to install NodeJs on your computer.
+        https://nodejs.org/en/download
+
+WHAT IS NPM DEFINITION FILE?
+    Every npm package is defined in a package.json file.
+    A package.json file must be written in JSON with at least 2 fields: name and version.
+    The package.json file can also define the dependencies of a project that npm manages.
+
+WHAT ARE NPM COMPONENTS?
+    npm consists of 3 distinct components:
+    I. Website:
+        The website is used to discover packages, set up profiles, and manage other aspects of your npm experience.
+    II. Command Line Interface (CLI):
+        The CLI runs from a terminal and is how you interact with npm.
+    III. Registry:
+        The registry is a large public database of JavaScript software and the meta-information surrounding it.
+
+WHAT IS THE DIFFERENCE BETWEEN NPM AND NPX?
+    npm, stands for Node Package Manager, is a CLI tool to install and manage packages and dependencies both globally and locally. (package installer)
+    Normally, it takes a lot of steps to run a package using npm. Therefore, after npm 5.2.0, npx is pre-bundled with npm to help with the execution.
+    npx, stands for Node Package Execute, is a CLI tool to execute packages. (package runner)
+
+HOW TO GET NPX?
+    On Terminal, run:
+        npm install -g npx
+    To check if npx is already installed, on Terminal, run:
+        which npx
+
+NPM COMMANDS:
+    npm install <package-name>
+    npm uninstall -g <package-name>

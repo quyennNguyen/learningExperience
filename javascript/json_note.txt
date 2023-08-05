@@ -8,3 +8,5 @@ WHAT IS JSON?
         2. JSON data is separated by commas.
         3. JSON objects are written in curly braces {}.
         4. JSON arrays are written in square brackets [].
+
+https://www.w3schools.com/js/js_json_intro.asp

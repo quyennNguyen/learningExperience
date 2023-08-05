@@ -202,6 +202,7 @@ GENERAL SYNTAX:
     VII. Hoisting:
         Hoisting is JavaScript's default behavior of moving all declarations to the top of the scope.
         JavaScript hoists only declarations not initializations.
+        But class declarations are not hoisted.
 
 WHAT IS A JAVASCRIPT FUNCTION?
     A function is a code block designed to perform a particular task and is executed to compute a return value when called/invoked/run.
@@ -269,7 +270,7 @@ WHAT IS A JAVASCRIPT FUNCTION?
         One function definition can only have one rest parameter.
     IV. Spread Syntax:
         The spread syntax looks exactly like the rest syntax but they are completely opposite.
-        While the rest syntax condenses multiple elements into one array, the spread syntax expands an array into its elements.
+        While the rest syntax condenses multiple elements into one array, the spread syntax unpack all elements from an array.
             const arrayName = [element0, element1, element2];
             const functionName = (parameter1, parameter2, parameter3) => {
                 // action to be executed
@@ -608,15 +609,6 @@ WHAT IS A JAVASCRIPT ARRAY?
         6. to display an array of object:
             const arrayName = [element0, element1, element2];
             console.log(JSON.stringify(arrayName));
-        7. to reference array elements:
-            instead of:
-                const arrayName = [element0, element1, element2];
-                let variable1 = arrayName[0];
-                let variable2 = arrayName[1];
-                let variable3 = arrayName[2];
-            a shortcut is:
-                const arrayName = [element0, element1, element2];
-                let [variable1, variable2, variable3] = arrayName;
     III. Methods:
         //methods return a number
         1. to find the index of an array element:
@@ -881,7 +873,7 @@ WHAT IS A JAVASCRIPT ARRAY?
             }
     Full list of array reference: https://www.w3schools.com/jsref/jsref_obj_array.asp
     IV. Array Literals with Spread Operator:
-        The spread operator is used to make a copy of an existing iterable and allow it to expand in another iterable.
+        The spread operator is used to make a copy of an existing array and unpack its values into another array.
         1. concat:
             instead of:
                 const arrayName1 = [element0, element1, element2]; 
@@ -900,17 +892,42 @@ WHAT IS A JAVASCRIPT ARRAY?
                 const arrayName1 = [element0, element1, element2]; 
                 const arrayName2 = [...arrayName1];
             In this situation, case 2 is more suitable than case 1. Because case 1 involves deep copy while case 2 involves shallow copy. In case 1, both references point at 1 array object, so whatever happens to one of them happens to both. In case 2, the first array expands into the second array, so the second array is technically its own object.
+    V. Destructuring:
+        Destructuring assigment is an expression allows you to unpack values from an array into distinct variables.
+        ES5:
+            const arrayName = [element0, element1, element2];
+            let variable1 = arrayName[0];
+            let variable2 = arrayName[1];
+            let variable3 = arrayName[2];
+        ES6:
+            const arrayName = [element0, element1, element2];
+            let [variable1, variable2, variable3] = arrayName;
+        You can extract certain values from a sourced array without having to manipulate all the values that it contains.
+        1. with rest operator:
+            Rest operator allows you to condense an arbitrary number of values from an array to a subarray.
+                const arrayName = [element0, element1, element2, element3];
+                const [variable1, variable2, ...variable3] = arrayName;
+            this means:
+                variable1 = element0;
+                variable2 = element1;
+                variable3 = [element2, element3];                
+            The rest assignment only works with the last values of the array.
+        2. with comma operator:
+            Comma operator allows you to skip one array element.
+                const arrayName = [element0, element1, element2, element3];
+                const [variable1, , variable2, variable3] = arrayName;
+            this means:
+                variable1 = element0;
+                variable2 = element2;
+                variable3 = element3;
     SIDE NOTE:
                 While arrays use numbers, or numbered indexes, to access their elements, objects use names, or named indexes, to access their memebers. Therefore, although typeof array is object, it is still best described as array.
                 Try to avoid using "String", "Number", "Boolean", or "Array" object to declare a variable, as it will complicate the code and slow down the execution speed.
 
 WHAT IS A JAVASCRIPT OBJECT?
     Object is a non-primitive data type.
-    An object may have:
-        - a unique id/name
-        - properties that represent the characteristic of the object
-        - methods that represent the behavior of the object
     An object is made of key-value pairs that represent the properties or methods of the object.
+    Object keys are unique.
     to declare an object:
         const objectName = {key1:value, key2:value, key3:value};
     I. Properties:
@@ -942,20 +959,7 @@ WHAT IS A JAVASCRIPT OBJECT?
                 delete objectName["property name"]
             c. Case 3:
                 delete objectName[propertyName]
-        5. to reference object elements:
-            instead of:
-                const objectName = {key1:value, key2:value, key3:value};
-                let key1 = objectName.key1;
-                let key2 = objectName.key2;
-                let key3 = objectName.key3;
-            a shortcut is:
-                const objectName = {key1:value, key2:value, key3:value};
-                let {key1, key2, key3} = objectName;
-            In the first case, the references might or might not be named differently from the names of the object elements.
-            In the second case, the references must be named the same as the names of the object elements. To name differently:
-                const objectName = {key1:value, key2:value, key3:value};
-                let {key1:newKey1, key2:newKey2, key3:newKey3} = objectName;
-        6. In JavaScript, a global object always exists. Every object created in a JavaScript program inherits some properties and methods from the global object. One of the inherited properties is the Prototype object which consists of its own properties and methods.
+        5. In JavaScript, a global object always exists. Every object created in a JavaScript program inherits some properties and methods from the global object. One of the inherited properties is the Prototype object which consists of its own properties and methods.
     II. Methods:
         1. to define an object method:
                 methodName: function() {
@@ -972,7 +976,7 @@ WHAT IS A JAVASCRIPT OBJECT?
         2. to call an object method:
             objectName.methodName()
     III. Object Literals and Spread Operator:
-        The spread operator is used to make a copy of an existing iterable and allow it to enumerate in another iterable.
+        The spread operator is used to make a copy of an existing object and unpack its properties into another object.
         1. concat:
             const objectName1 = {key1:value, key2:value, key3:value};
             const objectName2 = {key1:value, key2:value, key3:value};
@@ -980,6 +984,47 @@ WHAT IS A JAVASCRIPT OBJECT?
         2. copy & expand:
             const objectName1 = {key1:value, key2:value, key3:value};
             const objectName2 = {...objectName1};
+        If any property is duplicate, the object will keep the last value that was passed.
+    IV. Destructuring:
+        Destructuring assigment is an expression allows you to unpack properties from an object into distinct variables.
+        ES5:
+            const objectName = {key1:value, key2:value, key3:value};
+            let variable1 = objectName.key1;
+            let variable2 = objectName.key2;
+            let variable3 = objectName.key3;
+        ES6:
+            const objectName = {key1:value, key2:value, key3:value};
+            let {variable1, variable2, variable3} = objectName;
+        You can extract certain fields from a sourced object without having to manipulate all the fields that it contains.
+        1. to extract some properties:
+            const objectName = {key1:value, key2:value, key3:value};
+            a. if you want to name the variables the same as the key names:
+                let {key1} = objectName;
+            b. if you want to name the variables differently from the key names:
+                let {key1: variableName} = objectName;
+        2. with nested objects:
+            const objectName = {
+                key1:value, 
+                key2:value, 
+                key3: {
+                    key4:value, 
+                    key5:value, 
+                    key6:value
+                }
+            };
+            a. if you want to name the variables the same as the key names:
+                let {key3: {key4}} = objectName;
+            b. if you want to name the variables differently from the key names:
+                let {key3: {key4:variableName}} = objectName;
+        3. with rest operator:
+            Rest operator allows you to condense an arbitrary number of properties from an object to a sub-object.
+                const objectName = {key1:value1, key2:value2, key3:value3, key4:value4};
+                const {variable1, variable2, ...variable3} = objectName;
+            this means:
+                variable1 = value1;
+                variable2 = value2;
+                variable3 = {key3:value3, key4:value4};                
+            The rest assignment only works with the last values of the array.
     IV. Date Object:
         The Date object lets you work with date and time.
             const variableName = new Date();
@@ -1168,9 +1213,122 @@ WHAT IS A JAVASCRIPT OBJECT?
             g. to return an iterable object containing all the elements in a map:
                     const objectName = mapName.entries();
                 You can use for/of loop to display the object.
-    VIII. Class:
-        Classes are basically templates/blueprints/constructors for creating objects.
-        to create a class:
+
+WHAT IS A JAVASCRIPT CLASS?
+    A class is a template/blueprint for creating objects.
+    I. Class Declaration:
+        class ClassName {
+            constructor(parameter1, parameter2) {
+                this.property1 = parameter1;
+                this.property2 = parameter2;
+            }
+            method1() {
+                // action to be executed
+            }
+            method2() {
+                // action to be executed
+            }
+        }
+        const objectName = new ClassName(argument1, argument2);
+        1. Constructor:
+            A constructor is a special method used to instantiate an object and initialize all object properties.
+            It is executed automatically when an object is created.
+            By default, JavaScript provides a default constructor if you don't define one.
+                constructor() { }
+        2. Properties:
+            to access an object property:
+                let variableName = objectName.propertyName;
+        3. Methods:
+            to access an object method:
+                let variableName = objectName.methodName(argument1, argument2);
+    II. Inheritance:
+        A child class that extends a parent class inherits all the methods from the parent class.
+            class Class1 {
+                constructor(parameter1, parameter2) {
+                    this.property1 = parameter1;
+                    this.property2 = parameter2;
+                }
+                method1() {
+                    // action to be executed
+                }
+                method2() {
+                    // action to be executed
+                }
+            }
+            class Class2 extends Class1 {
+                constructor(parameter1, parameter2, parameter3) {
+                    super(parameter1, parameter2);
+                    this.property3 = parameter3;
+                }
+                method3() {
+                    // action to be executed
+                }
+                method4() {
+                    // action to be executed
+                }
+            }
+            const objectName = new Class2(argument1, argument2, argument3);
+            objectName.method1();
+    III. Keywords:
+        1. super:
+            The "super" keyword refers to an object of a parent class of a class.
+            By calling the "super()" method in the constructor of the child class, you're calling the constructor of the parent class and getting access to its properties and methods.
+        2. this:
+            The "this" keyword refers to an object of the current class.
+            a. to access a class property:
+                this.propertyName
+            b. to access a class method (including those inherited from a parent class):
+                this.methodName()
+            c. Method Declaration:
+                If the class method is declared as a regular function, the "this" keyword refers to the initial object that invokes the function. 
+                    methodName() {
+                        // action to be executed
+                    }
+                or
+                    methodName = function() {
+                        // action to be executed
+                    }
+                "this" is binded to its caller.
+                If the class method is declared as an arrow function, the "this" keyword refers to the object that defines the function. 
+                    methodName = () => {
+                        // action to be executed
+                    }
+                There is no binding of "this".
+            d. Explicit Function Binding:
+                a. call()
+                    https://www.w3schools.com/js/js_function_call.asp
+                b. apply()
+                    https://www.w3schools.com/js/js_function_apply.asp
+                c. bind()
+                    https://www.w3schools.com/js/js_function_bind.asp
+    IV. Getters and Setters:
+        to add a getter or a setter with "get" and "set" keywords:
+            class className {
+                constructor(parameter1, parameter2) {
+                    this.propertyName1 = parameter1;
+                    this.propertyName2 = parameter2;
+                }
+                get property1() {
+                    return this.propertyName1;
+                }
+                set property1(value) {
+                    this.propertyName1 = value;
+                }
+                methodName1(parameter1, parameter2) {
+                    // action to be executed
+                }
+                methodName2(parameter1, parameter2) {
+                    // action to be executed
+                }
+            }
+        to get a property:
+            let variableName = objectName.property1;
+        to set a new value for a property:
+            objectName.property1 = newValue;
+        When naming the getter/setter, name differently from the property name.
+        When calling the getter/setter, don't use parentheses ().
+    V. Static Methods:
+        Static class methods are defined and called on the class itself not on the object.
             class className {
                 constructor(parameter1, parameter2) {
                     this.propertyName1 = parameter1;
@@ -1182,136 +1340,27 @@ WHAT IS A JAVASCRIPT OBJECT?
                 methodName2(parameter1, parameter2) {
                     // action to be executed
                 }
+                static methodName3(parameter1, parameter2) {
+                    // action to be executed
+                }
             }
-        All the parameters and arguments are optional.
-        1. Class Declaration:
-            to create an object from a class:
-                const objectName = new className(argument1, argument2);
-            Class declarations are not hoisted.
-        2. Properties:
-            to access the object properties:
-                let variableName1 = objectName.propertyName1;
-                let variableName2 = objectName.propertyName2;
-        3. Methods:
-            to access the object methods:
-                let variableName1 = objectName.methodName1(argument1, argument2);
-                let variableName2 = objectName.methodName2(argument1, argument2);
-        4. Constructor:
-            - is a special method.
-            - is used to initialize object properties.
-            - is executed automatically when an object is created.
-            - if not defined, JavaScript will autoamatically add an empty one.
-                constructor() { }
-        5. Inheritance:
-            A class created with a class inheritance inherits all the methods from the parent class.
-            to create a class inheritance with "extends" keyword:
-                class className2 extends className1 {
-                    constructor(parameter1, parameter2, parameter3) {
-                        super(parameter1, parameter2);
-                        this.propertyName3 = parameter3;
-                    }
-                    methodName3(parameter1, parameter2) {
-                        // action to be executed
-                    }
+        to call the static method:
+            className.methodName3(argument1, argument2);
+    VI. Prototype:
+        "prototype" is a property available with all JavaScript objects, which allows new properties and methods to be added to the objects.
+            a. Property:
+                ObjectName.prototype.propertyName = value;
+            b. Method:
+                ObjectName.prototype.methodName = function(parameter1, parameter2) {
+                    // action to be executed
                 }
-            The "super()" method prefers to the parent constructor amd gives access to the parent properties and methods.
-        6. Getters and Setters:
-            to add a getter or a setter with "get" and "set" keywords:
-                class className {
-                    constructor(parameter1, parameter2) {
-                        this.propertyName1 = parameter1;
-                        this.propertyName2 = parameter2;
-                    }
-                    get property1() {
-                        return this.propertyName1;
-                    }
-                    set property1(value) {
-                        this.propertyName1 = value;
-                    }
-                    methodName1(parameter1, parameter2) {
-                        // action to be executed
-                    }
-                    methodName2(parameter1, parameter2) {
-                        // action to be executed
-                    }
+        EX:
+            to add a new method to the Array Object:
+                Array.prototype.methodName = function() {
+                    // action to be executed
                 }
-            to get a property:
-                let variableName = objectName.property1;
-            to set a new value for a property:
-                objectName.property1 = newValue;
-            When naming the getter/setter, name differently from the property name.
-            When calling the getter/setter, don't use parentheses ().
-        7. Static Methods:
-            Static class methods are defined and called on the class itself not on the object.
-                class className {
-                    constructor(parameter1, parameter2) {
-                        this.propertyName1 = parameter1;
-                        this.propertyName2 = parameter2;
-                    }
-                    methodName1(parameter1, parameter2) {
-                        // action to be executed
-                    }
-                    methodName2(parameter1, parameter2) {
-                        // action to be executed
-                    }
-                    static methodName3(parameter1, parameter2) {
-                        // action to be executed
-                    }
-                }
-            to call the static method:
-                className.methodName3(argument1, argument2);
-        8. Prototype:
-            "prototype" is a property available with all JavaScript objects, which allows new properties and methods to be added to the objects.
-                a. Property:
-                    ObjectName.prototype.propertyName = value;
-                b. Method:
-                    ObjectName.prototype.methodName = function(parameter1, parameter2) {
-                        // action to be executed
-                    }
-            EX:
-                to add a new method to the Array Object:
-                    Array.prototype.methodName = function() {
-                        // action to be executed
-                    }
-                    const arrayName = [item0, item1, item2];
-                    const variableName = arrayName.methodName(); 
-
-WHAT ARE JAVASCRIPT KEYWORDS THAT YOU SHOULD KNOW?
-    I. this
-        The "this" keyword refers to an object, and to which object depends on how "this" is invoked, used, or called.
-        1. in a function:
-            In default function binding, "this" refers to the global object.
-            In "strict mode", "this" is defined as "undefined".
-            When the function is called by an object:
-                - if the function is declared with the "function" keyword or "function()" method, "this" refers to the object that calls it.
-                - if the function is declared with the arrow function, "this" refers to the global object.
-        2. in an object method:
-            "this" refers to the object that calls the method.
-            Explicit function binding:
-                a. call()
-                    https://www.w3schools.com/js/js_function_call.asp
-                b. apply()
-                    https://www.w3schools.com/js/js_function_apply.asp
-                c. bind()
-                    https://www.w3schools.com/js/js_function_bind.asp
-        3. in an event handler:
-            "this" refers to the HTML element that receives the event.
-        4. by itself:
-            "this" refers to the global object.
-            In "strict mode", "this" also refers to the global object.
-        SIDE NOTE:
-                    In a browser window, the global object is the Window object [object Window].
-    II. break;
-        The "break" statement is used to jump out of, or break, a conditional statement or a loop.
-        The "break" statement can be used to jump out of, or break, a code block with a label reference.
-            label:
-                statement;
-        or
-            label: {
-                code block;
-            }
-    III. continue;
-        The "continue" statement is used to jump over one iteration and continue with the next iteration of a loop.
+                const arrayName = [item0, item1, item2];
+                const variableName = arrayName.methodName();  
 
 WHAT ARE JAVASCRIPT CONDITIONAL STATEMENTS?
     Conditional statements are used to perform different actions based on different conditions.
@@ -1363,7 +1412,7 @@ WHAT ARE JAVASCRIPT CONDITIONAL STATEMENTS?
             } else {
                 action to be executed if condition is false;
             }
-        Conditional/Ternary statement acts as a shorthand:
+        Ternary statement is a simplified if-else statement:
             let variableName = (condition) ? value1 : value2;
 
 WHAT ARE JAVASCRIPT LOOPS?
@@ -1448,6 +1497,11 @@ WHAT ARE JAVASCRIPT LOOPS?
         This executes the code before checking the condition (in the first time only).
         The code will always be executed at least once even if the condition is false in the first time.
         As long as the condition is true, the execution goes on.
+    VI. Keywords:
+        1. break;
+            The "break" statement is used to jump out of a conditional statement or a loop.
+        2. continue;
+            The "continue" statement is used to jump over one iteration and continue with the next iteration of a loop.
 
 WHAT IS JAVASCRIPT ERROR HANDLING?
     When executing code, different errors might occur due to different reasons.
@@ -1491,18 +1545,18 @@ WHAT IS JAVASCRIPT ERROR HANDLING?
             }
 
 WHAT ARE JAVASCRIPT MODULES?
-    A module is a logical grouping of files.
+    Modules allows you to break up your code into separate files.
     Modules are used to organize code and dependencies to improve performance, maintenaince, and security.
-    You can import or export modules among files.
+    You can import or export modules.
     To import a module from a file requires permission of the module. The module needs to export its components first before you can import it.
-    I. Import Statement:
-        You can import modules from one file to another.
+    I. Import:
+        You can import modules from another file.
         1. From Named Export:
             import {variableName1, variableName2} from "fileName.js";
         2. From Default Export:
             import variableName from "fileName.js";
-    II. Export Statement:
-        You can export a variable or function from one file to another.
+    II. Export:
+        You can export a variable or function from a file.
         1. Named Export:
             a. in-line individually:
                 export const variableName1 = value1;
@@ -1517,7 +1571,8 @@ WHAT ARE JAVASCRIPT MODULES?
                 export default variableName;
 
 WHAT IS DOM?
-    DOM, stands for Document Object Model, is a W3C, World Wide Web Consortium, standard platform and language-neutral interface that allows programs and scripts to dynamically access and update the content, structure, and style of a document.
+    BOM, stands for Broswer Object Model, represents a window, or a tab of a Web browser, which contains DOM.
+    DOM, stands for Document Object Model, is a W3C (World Wide Web Consortium) standard platform and language-neutral interface that allows programs and scripts to dynamically access and update the content, structure, and style of a document.
     There are 3 parts of the W3C DOM:
         1. Core DOM:
             This is a standard object model for all document types.
@@ -1525,6 +1580,8 @@ WHAT IS DOM?
             This is a standard object model for XML documents.
         3. HTML DOM:
             This is a standard object model and programming interface for HTML documents.
+    The Window object is a global object of a BOM.
+    The Document object is a property of the Window object, which refers to the DOM document loaded in the window.
     I. HTML DOM:
         With HTML DOM, JavaScript can access/create/change/add/remove all the HTML elements, access/create/change/add/remove CSS styles, and create/react to HTML events.
         1. HTML DOM as Object Tree:
