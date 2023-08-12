@@ -32,6 +32,17 @@ HOW TO SET UP A REACT ENVIRONMENT?
       npm i react@latest react-dom@latest
     To install SASS:
       npm i sass
+    To deploy react app with GitHub Pages:
+      use HTTPS instead of SSH to connect the remote repo and local repo
+      npm install gh-pages --save-dev
+      in "package.json" file, add:
+        "homepage": "https://gitname.github.io/react-gh-pages"
+        "scripts": {
+          "predeploy": "npm run build",
+          "deploy": "gh-pages -d build"
+        }
+      npm run deploy
+      choose "gh-pages" as deploy branch
   III. With Create-Vite:
     On Terminal, run:
       npm create vite@latest
@@ -245,51 +256,6 @@ WHAT IS REACT EVENT HANDLING?
       event.target -> returns the element that owns the event, which can access to all the element attributes defined in it
     2. Methods:
       event.preventDefault()
-
-HOW TO USE KEYS IN HTML LIST?
-  A key is a special string attribute given to each element in a list to give them a stable unique identity.
-  Keys are used to keep track of the elements. If an element is updated or removed, only that element will be re-rendered instead of the entire list.  
-    <starting-tag key={id}> content </closing-tags>
-  Keys should be unique for each element. Keys can be duplicate globally among different components. But keys has to be unique among siblings in the same component.
-  There are different ways to set up keys:
-    1. use element values:
-      If it is a list of different numeric elements, you can use their own values as unique keys.
-        const arrayName = [number0, number1, number2];
-        const listName = arrayName.map(element => {
-          <starting-tag key={element.toString()}>
-            {element}
-          </closing-tags> 
-        });
-    2. use element data:
-      If it is a list of object elements, you can use IDs from your data as unique keys.
-        const arrayName = [
-          {id:value, name:value},
-          {id:value, name:value},
-          {id:value, name:value}
-        ];
-        const listName = arrayName.map(element => {
-          <starting-tag key={element.id}>
-            {element.name}
-          </closing-tags> 
-        });
-    3. use indexes:
-      When you don’t have stable IDs for rendered elements, you may use the element indexes as keys as a last resort.
-        const arrayName = [element0, element1, element2];
-        const listName = arrayName.map((element, index) => {
-          <starting-tag key={index}>
-            {element.text}
-          </closing-tags> 
-        });
-    Using indexes for keys is not highly recommended if the order of elements may change. This can negatively impact performance and may cause issues with the component state.
-    A good rule of thumb is that list elements inside the main array method call need keys. If you need to pass the keys to the children components, pass it explicitly as a props.
-
-HOW TO USE STATE IN HTML FORM?
-  In HTML DOM, form data is handled by the DOM. When a form is changed or submitted, the whole Web page usually refreshes. This default behavior should be prevented.
-  In React, form data is handled by the component. Instead of refreshing the whole page, React only re-renders and updates the form.
-  Form elements work a bit differently from other elements because all the data is stored in the component state, and form elements naturally keep internal state, maintain their own state, and update it based on user input.
-  You can make the React state as the “single source of truth”, and control the data based on user input by combining state with the "value" element attribute and event handlers.
-
-WHAT IS REACT ROUTER?
   
 WHAT ARE PROPS?
   React components can accept an arbitrary argument called props (properties).
@@ -621,3 +587,48 @@ WHAT ARE HOOKS?
     6. useCallback:
     7. useMemo:
   IV. Custom Hooks:
+
+HOW TO USE KEYS IN HTML LIST?
+  A key is a special string attribute given to each element in a list to give them a stable unique identity.
+  Keys are used to keep track of the elements. If an element is updated or removed, only that element will be re-rendered instead of the entire list.  
+    <starting-tag key={id}> content </closing-tags>
+  Keys should be unique for each element. Keys can be duplicate globally among different components. But keys has to be unique among siblings in the same component.
+  There are different ways to set up keys:
+    1. use element values:
+      If it is a list of different numeric elements, you can use their own values as unique keys.
+        const arrayName = [number0, number1, number2];
+        const listName = arrayName.map(element => {
+          <starting-tag key={element.toString()}>
+            {element}
+          </closing-tags> 
+        });
+    2. use element data:
+      If it is a list of object elements, you can use IDs from your data as unique keys.
+        const arrayName = [
+          {id:value, name:value},
+          {id:value, name:value},
+          {id:value, name:value}
+        ];
+        const listName = arrayName.map(element => {
+          <starting-tag key={element.id}>
+            {element.name}
+          </closing-tags> 
+        });
+    3. use indexes:
+      When you don’t have stable IDs for rendered elements, you may use the element indexes as keys as a last resort.
+        const arrayName = [element0, element1, element2];
+        const listName = arrayName.map((element, index) => {
+          <starting-tag key={index}>
+            {element.text}
+          </closing-tags> 
+        });
+    Using indexes for keys is not highly recommended if the order of elements may change. This can negatively impact performance and may cause issues with the component state.
+    A good rule of thumb is that list elements inside the main array method call need keys. If you need to pass the keys to the children components, pass it explicitly as a props.
+
+HOW TO USE STATE IN HTML FORM?
+  In HTML DOM, form data is handled by the DOM. When a form is changed or submitted, the whole Web page usually refreshes. This default behavior should be prevented.
+  In React, form data is handled by the component. Instead of refreshing the whole page, React only re-renders and updates the form.
+  Form elements work a bit differently from other elements because all the data is stored in the component state, and form elements naturally keep internal state, maintain their own state, and update it based on user input.
+  You can make the React state as the “single source of truth”, and control the data based on user input by combining state with the "value" element attribute and event handlers.
+
+WHAT IS REACT ROUTER?
