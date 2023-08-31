@@ -1,0 +1,329 @@
+WHAT IS IN A MULTI-TIER ARCHITECTURE OF AN ENTERPRISE APPLICATION MODEL?
+    I. Client-Side Presentation:
+        Web Browser:
+            HTML
+            Java Applet
+    II. Server-Side Presentation:
+        Servlet Container:
+            1. Java Servlet
+            2. JSP
+            3. Web Service
+            4. J2EE Platform
+    III. Server-Side Business Logic:
+        EJB Container:
+            1. EJB
+            2. Web Service
+            3. J2EE Platform
+    IV. Data Persistence:
+        Persistence Engine:
+            JPA
+    IV. Relational Database
+
+WHAT IS J2EE?
+    J2EE/Java EE, stands for Java 2 Platform Enterprise Edition/Java Platform Enterprise Edition, extends the Java 2 Platform Standard Edition (J2SE), that has a component-based architecture to provide a multi-tiered platform to develop highly scalable dynamic web-based enterprise applications.
+    It consists of a set of APIs and services that provide the functionality for developing multi-tier web applications.
+    I. Advantages and Disadvantages:
+        1. Advantages:
+            Based on the Java programming language, this model enables all J2EE applications to achieve all the benefits of Java technology: scalability, platform independence, portability, security, and programming ease.
+            Faster development time, better quality, maintainability and portability.
+            Web services interoperability across a range of enterprise platforms.
+            Increased programmer productivity, better strategic use of computing resources, and greater return on an organization's technology investments.
+        2. Disadvantages:
+            This model doesn’t provide database access services. You can use Enterprise Java Bean (EJB) to send queries to a SQL database, but you need Java Database Connectivity (JDBC) driver, to send the actual queries.
+            This model only provides APIs to build web applications that run on web servers. You can't build desktop applications.
+            Application servers often require separate licenses and must be purchased separately.
+    II. Components:
+        The model encapsulates the layers of functionality in specific types of components.
+        1. Client Tier:
+            User interface and client interaction are supported through HTML webpages, through webpages powered by Java Applets, Java Servlets, or Java Server Pages (JSP), or through stand-alone Java applications.
+        2. Server Tier:
+            Business logic is encapsulated in Enterprise Java Beans (EJB) components.
+            EJB server provides functions such as threading, concurrency, security, and memory management.
+        3. Database Tier:
+            Java Database Connectivity (JDBC) is the standard interface for Java databases.
+        4. Communication:
+            Components communicate transparently using various standards: HTML, XML, HTTP, SSL, RMI, IIOP,...
+    III. Components, Containers, and Connectors:
+        The model divides enterprise applications into 3 fundamental parts: 
+        1. Components:
+            Components are the key focus of application developers, while system vendors implement containers and connectors to conceal complexity and promote portability.
+        2. Containers:
+            Containers intercede between clients and components, providing services transparently to both, including transaction support and resource pooling. 
+            Container mediation allows many component behaviors to be specified at deployment time, rather than in program code.
+        3. Connectors:
+            Connectors sit beneath the platform, defining a portable service API that communicates with existing enterprise vendor offerings. 
+            Connectors promote flexibility by enabling a variety of implementations of specific services. In particular, connectors implementing pluggable messaging contracts enable bidirectional communication between J2EE components and enterprise systems.
+
+WHAT IS A JAVA APPLET?
+    Java Applet is one of the component APIs of J2EE, used for creating dynamic webpages.
+    It is a Java program that runs on a Java-enabled web browser.
+    It is a client-side component, so it inherits the security provided by the web browser.
+    It can be embedded into an HTML page using the "applet" or "object" tags.
+    You can define an Applet class by extends the "java.applet.Applet" class.
+    Reference: https://www.geeksforgeeks.org/java-applet-basics/
+
+WHAT IS JAVA SERVLET?
+    Java Servlet is one of the component APIs of J2EE, used for creating dynamic web applications in Java.
+    It is a server-side component, so it inherits the security provided by the web server.
+    It defines endpoints for HTTP requests obtained from the web server, routes them to the business logic for handling, and returns a corresponding result to the web server.
+    I. Execution BTS: 
+        The client send a request to the web server.
+        The web server receives the request.
+        The web server passes the request to the corresponding Servlet.
+        The Servlet processes the request and generates a response.
+        The Servlet sends the response back to the web server.
+        The web server sends the response back to the client and the client's web browser displays it on the screen.
+    II. Servlet Container:
+        Servlet container, or Servlet engine, implements the Java Servlet specifications to provide a run-time environment for Servlet components and manage their lifecycle. 
+        1. Services:
+            a. Network Services: 
+                Loads a Servlet class. 
+                The loading may be from a local file system, a remote file system, or other network services. 
+                The Servlet container provides the network services over which the request and response are sent.
+            b. Decode and Encode MIME-based Messages: 
+                Provides the service of decoding and encoding MIME-based messages.
+            c. Manage Servlet Container: 
+                Manages the lifecycle of a Servlet.
+            d. Resource Management:
+                Manages the static and dynamic resources, such as HTML files, Servlets, and JSP pages.
+            e. Security Service: 
+                Handles authorization and authentication of resource access.
+            f. Session Management: 
+                Maintains a session by appending a session ID to the URL path.
+        2. Methods:
+            a. init():
+                If a Servlet instance does not exist, the web container will load a Servlet class, instantiate it, and initialize it by calling the "init()" method.
+                This method is designed to be called only once. 
+                The Servlet container cannot place the Servlet component into service if this method either throws a "ServletException" or doesn't return within a time period defined by the web server.
+            b. service():
+                This method is called after the "init()" method has completed successfully.
+                The Servlet container calls this method to handle client requests, interpret the HTTP request type (GET, POST, PUT, DELETE,...), and call an appropriate method (doGet, doPost, doPut, doDelete,...).
+            c. destroy():
+                This method is only called once all threads within the Servlet service method have exited or after a timeout period has passed.
+                The Servlet container calls this method to take the Servlet component out of service.
+    III. Servlet Components: 
+        A Servlet is a small Java program within a Java-enabled web server that receives HTTP requests from clients and generates HTTP responses.   
+        1. Dependency:
+            The "javax.servlet-api" dependency is needed to add Servlet support to a web application.
+                <dependency>
+                    <groupId>javax.servlet</groupId>
+                    <artifactId>javax.servlet-api</artifactId>
+                    <version>3.1.0</version>
+                </dependency>
+            The "javax.servlet" and "javax.servlet.http" packages provide interfaces and classes for writing Servlets.
+        2. Servlet:
+            Servlet is a Java interface that provides the specifications to build a request-response programming model.
+            Methods:
+                a. void init(ServletConfig config)
+                b. void service(ServletRequest request, ServletResponse response)
+                c. void destroy()
+                d. ServletConfig getServletConfig()
+                e. String getServletInfo()        
+            All Servlets must implement the Servlet interface.
+        3. GenericServlet:
+            GenericServlet is an abstract class from the "javax.servlet.GenericServlet" package that implements Serializable, Servlet, and ServletConfig interfaces.
+            It defines a generic protocol-independent Servlet.
+            Methods:
+                a. void init()
+                b. void init(ServletConfig config)
+                c. abstract void service(ServletRequest request, ServletResponse response)
+                d. void destroy()
+                e. Strinkg getInitParameter(String name)
+                f. Enumeration<String> getInitParameterNames()
+                g. ServletConfig getServletConfig()
+                h. ServletContext getServletContext()
+                i. String getServletInfo()
+                j. String getServletName()
+                k. void log(String message)
+                l. void log(String message, Throwable t)
+        4. HttpServlet:
+            HttpServlet is an abstract class from the "javax.servlet.http.HttpServlet" package that implements Serializable, Servlet, and ServletConfig interfaces and extends GenericServlet.
+            It defines an HTTP-specific Servlet suitable for a website.
+            Methods:
+                a. void service(ServletRequest request, ServletResponse response)
+                b. protected void service(HttpServletRequest request, HttpServletResponse response)
+                c. protected void doGet(HttpServletRequest request, HttpServletResponse response)
+                d. protected void doPost(HttpServletRequest request, HttpServletResponse response)
+                e. protected void doPut(HttpServletRequest request, HttpServletResponse response)
+                f. protected void doDelete(HttpServletRequest request, HttpServletResponse response)
+                g. protected void doHead(HttpServletRequest request, HttpServletResponse response)
+                h. protected void doOptions(HttpServletRequest request, HttpServletResponse response)
+                i. protected void doTrace(HttpServletRequest request, HttpServletResponse response)
+                j. protected long getLastModified(HttpServletRequest request)
+    Reference: https://www.geeksforgeeks.org/introduction-java-servlets/?ref=lbp
+
+WHAT IS JSP?
+    JSP, stands for Java Server Pages, is one of the component APIs of J2EE and an extended version of Java Servlet, used for creating dynamic web applications in Java.
+    It is a server-side component, so it inherits the security provided by the web server.
+    It allows you to embed JSP code into an HTML page to define the HTML interface using data from the web server and information from the client request and response.
+    I. Execution BTS:
+        An HTML file can be changed into an JSP file by changing its file extension from ".html" to ".jsp".
+        When the client send a requests to the web server, JSP will be compiled into a a Servlet by the JSP container at run-time. 
+        This compilation only happens once. But every time the JSP file is changed, it will be re-compiled.
+        After all the JSP elements are executed and loaded, the web server will respond with the resulting file back to the web browser.
+    II. JSP Container:
+        Similar to Servlet container, JSP container, or JSP engine, implements the JSP specifications to provide a run-time environment for its components and manages their lifecycle.
+    III. JSP Elements:
+        1. Scriplets:
+            It is used to insert an amount of Java code (variables, expressions,...), which will be placed into the "_jspService()" method by the JSP container.
+                <% //Java code %>
+            Variables available to the JSP scriptlets are: Request, Response, Session, Out.
+        2. Declarations:
+            It is used to define the variables and functions to be used in the page.
+                <% ! //Java codes %>
+            Variables and functions defined in the declaratives are class-level and can be used anywhere on the page. 
+        3. Expression:
+            It is used to evaluate and convert the data to string to print them on the output stream.
+                <% =”string value” %>
+        4. Directives:
+            It is used to import packages and define error-handling pages or the session information of the page.
+                <% @directive attribute="value" %>
+            Some directives are "@page", "@include", "@taglib".
+        5. Comments:
+            It is used to comment out text or statements added for information, which will be be ignored by the JSP container.
+                <%-- comment --%>
+    Reference: https://www.geeksforgeeks.org/introduction-to-jsp/?ref=lbp
+
+WHAT IS EJB?
+    EJB, stands for Enterprise Java Bean, is one of the component APIs of J2EE, used for creating dynamic web applications in Java.
+    It is a server-side component that implements the business logic of the application.
+    It conceals most of the system level services like transaction handling, logging, load balancing, persistence mechanism, exception handling,... It enables you to focus on the business logic of the application.
+    I. EJB Container:
+        It is an application server that implements the EJB specifications to perform lifecycle management, transaction management, object pooling, security,... 
+        EX: Jboss, Glassfish, Weblogic, Websphere,...
+    II. EJB Components:
+        1. Session Bean: 
+            It stores data of a particular user for a single session.
+            It gets destroyed as soon as user session terminates.
+            It can be invoked by local, remote, or web service client.
+            There are 2 types of session beans: 
+                a. Stateful Session Bean: 
+                    It performs business tasks with the help of a state. 
+                    It can be used to access various method calls by storing the information in an instance variable.
+                b. Stateless Session Bean: 
+                    It implements business logic without having a persistent storage mechanism such as a state or database, and can used shared data. 
+                    It can be used in situations where information is not required to use across call methods. 
+            It is less resource intensive compared to entity bean. 
+        2. Message Driven Bean:
+            It is used in context of Java Messaging Service (JMS). 
+            It can consumes JMS messages from external entities and act accordingly.
+            It allows the application to process messages asynchronously.
+            Unlike session bean, it is invoked by passing message.
+        3. Entity Bean: 
+            It represents persistent data storage where user data can be saved to the database and later on can be retrieved from the database.
+            It is persistent, surviving as long as the data it's associated with remains viable.
+            There are 2 types of entity bean: 
+                a. Bean Managed Persistence: 
+                    It persists across multiple sessions and multiple clients.                    
+                    You have to write the code for database calls.  
+                b. Container Managed Persistence:
+                    It persists across database.
+                    The container takes care of database calls.
+            Entity Bean is deprecated and is replaced with Java Persistent API (JPA). 
+    Reference: https://www.geeksforgeeks.org/enterprise-java-beans-ejb/
+
+WHAT IS JDBC?
+    JDBC, stands for Java Database Connectivity, is a Java API that provides a standard protocol for a Java application to connect with a relational database to store application-specific information.
+    It provides a set of interfaces and classes that defines the necessary methods that allows you to establish connections to the databases and execute queries to store, retrieve, and manipulate data dynamically.
+    I. JDBC Architecture:
+        1. Application:
+            It can be a Java applet or a Servlet that communicates with a data source.
+        2. JDBC API:
+            It provides 2 packages that contain the Java SE and Java EE platforms to exhibit WORA (Write Once Run Anywhere) capabilities.
+                java.sql.*;
+            It provides interfaces and methods that allow the application to connect with the database, execute SQL statements, and retrieve results. 
+            Some interfaces that JDBC API provides are:
+                Driver
+                Connection
+                Statement
+                PreparedStatement
+                CallableStatement
+                ResultSet
+                ResultSetMetaData
+                DatabaseMetaData
+                RowSet
+            Some classes that JDBC API provides are:
+                DriverManager
+                Blob
+                Clob
+                Types
+        3. JDBC Driver Manager:
+            It loads a database-specific driver in the application to establish a connection with the database. Database-specific drivers are usually provided by the database vendor.
+            It makes database-specific calls to the database to process the client requests.
+        4. JDBC Drivers:
+            It is a client-side adapter that converts the client requests from the application to a protocol that the DBMS can understand and allows the application to intelligently communicate with the database.
+            There are 4 types of JDBC drivers:
+                a. JDBC-ODBC Bridge Driver:
+                    ODBC, stands for Open Database Connectivity, driver is used with JDBC to interact or communicate with various kinds of databases such as Oracle, MS Access, MySQL, and SQL server database.
+                    This bridge translates the JDBC method call to the ODBC function call. 
+                    It makes use of the "sun.jdbc.odbc" package which includes a native library to access ODBC characteristics.
+                b. Native-API Driver
+                c. Network Protocol Driver
+                d. Thin Driver
+        5. JDBC Test Suite:
+            It is used to test operations such as insertion, deletion, updation,... performed by the JDBC Driver.
+    II. JDBC Processing Model:
+        1. Two-Tier Model:
+            A Java application communicates directly to a data source. 
+            The JDBC driver enables the communication between the application and the data source. 
+            When a user sends a query to the data source, the answers for those queries are sent back to the user in the form of results. 
+            The data source can be located on a different machine on a network to which a user is connected. 
+            This is known as a client-server configuration, where the user’s machine acts as a client, and the machine that has the data source running acts as the server.
+        2. Three-Tier Model:
+            The user’s queries are sent to a middle-tier service, from which the commands are again sent to the data source. 
+            The results are sent back to the middle-tier, and from there to the user.
+    III. Demo:
+        1. To add JDBC Driver to a Java application from IntelliJ:
+            1. File
+            2. Project Structure
+            3. Project Settings
+            4. Modules
+            5. Dependencies
+            6. Add JARS or Directories
+            7. Attach Files and Directories
+            8. Look for mysql-connector-j-8.0.33.jar
+        2. Demo:
+            import java.sql.*;
+            
+            String driverName = "com.mysql.cj.jdbc.Driver";
+            String URL = "jdbc:mysql://localhost:xxxx/nameOfYourDatabase_db";
+            String USERNAME = "yourDatabaseUsername";
+            String PASSWORD = "yourDatabasePassword";
+
+            try {
+                // load the driver class
+                Class.forName(driverName);
+
+                // establish the connection
+                Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+
+                // create and execute queries
+                Statement statement = connection.createStatement();
+                ResultSet result = statement.executeQuery("SQL commands"); // usually for SELECT queries
+                or
+                PreparedStatement statement = connection.prepareStatement("SQL command");
+                statement.executeUpdate(); // for usually INSERT, UPDATE, DELETE queries
+
+                // close resources // to free up system resources and avoid potential memory leaks
+                result.close();
+                statement.close();
+                connection.close();
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        3. Batch Update:
+            This refers to a feature that allows you to execute multiple SQL statements as a batch in a single round-trip to the database, instead of executing them one by one, to improve performance and reduce the overhead of database communication.
+            to create SQL statements:
+                statement.addBatch("SQL command");
+            to execute the SQL statements:
+                int[] updateCounts = statement.executeBatch(); // this returns an array of update counts, which represent the number of rows affected by each statement.
+            to clear the batch and restart with new SQL statements:
+                clearBatch();
+    Reference: https://www.geeksforgeeks.org/introduction-to-jdbc/?ref=lbp
+
+WHAT IS TOMCAT?
+    Tomcat is essentially a Servlet and JSP container that implements core J2EE specifications including the Java Servlet, JSP,...
+    It hosts Servlet and JSP components.
+    While Java Servlets and JSP pages define rules for the client requests and responses, Tomcat handles the routing.

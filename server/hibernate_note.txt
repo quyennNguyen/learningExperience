@@ -17,7 +17,7 @@ WHAT ARE THE ADVANTAGES AND DISADVANTAGES OF USING ORM?
     ORM works slower than SQL.
 
 WHAT IS JPA?
-  JPA, stands for Java Persistence API, is a Java specification that provides certain functionality and standard an ORM tool. In other words, it is a set of rules and guidelines to set interfaces for implementing ORM.
+  JPA, stands for Java Persistence API, is a Java specification that provides certain functionality and standard for an ORM tool. In other words, it is a set of rules and guidelines to set interfaces for implementing ORM.
   It is considered as a standard technique for ORM.
   Since it is just a specification, JPA doesn't conduct any functioning by itself; hence, it needs an implementation.
   It needs a few classes and interfaces. JPA classes and interfaces are stored in the javax.persistence package.

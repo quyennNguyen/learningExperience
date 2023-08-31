@@ -62,6 +62,7 @@
 * https://www.w3schools.com/react/default.asp
 * https://legacy.reactjs.org/docs/getting-started.html
 * https://react.dev/learn
+* Fontawesome: https://fontawesome.com/v5/docs/web/use-with/react
 * MUI: https://mui.com/
 * VSCode: https://code.visualstudio.com/download
 * NodeJs: https://nodejs.org/en

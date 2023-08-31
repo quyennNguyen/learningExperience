@@ -32,7 +32,7 @@ HOW TO SET UP A REACT ENVIRONMENT?
       npm i react@latest react-dom@latest
     To install SASS:
       npm i sass
-    To deploy react app with GitHub Pages:
+    To deploy React app with GitHub Pages:
       use HTTPS instead of SSH to connect the remote repo and local repo
       npm install gh-pages --save-dev
       in "package.json" file, add:

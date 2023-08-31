@@ -1,7 +1,7 @@
 WHAT IS JAVASCRIPT?
-    JavaScript is the default scripting language in HTML and of the key programming languages of the Web.
+    JavaScript is a scripting language that allows you to build dynamic Web pages.
     JavaScript is a weakly typed programming language.
-    While HTML defines the content of the Web page and CSS specifies the layout of the Web page, JavaScript programs the behavior of the Web page.
+    While HTML defines the content of the Web page and CSS specifies the styling of the Web page, JavaScript specifies its functionality and interactions.
     Another language related to JavaScript is Typescript. Typescript is essentially not a language but a syntax sugar for JavaScript.
     File extension: .js
 

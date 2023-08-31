@@ -1,100 +1,185 @@
+HOW IS THE FRONT-END OF A WEBSITE DEVELOPED?
+  A front-end of a website is developed using HTML, CSS, and JavaScript. HTML structures content, CSS styles it, and JavaScript adds interactivity, collectively creating the visual aspects and user experiences.
+
+HOW IS THE BACK-END OF A WEBSITE DEVELOPED?
+  The back-end of a website is where data processing occurs. Using languages like PHP or Python and databases like MySQL, it handles data storage, user authentication, and server-side logic.
+
+WHAT IS A SERVER?
+  Server is a computer program (virtual machine) or a device (physical machine) that provide services to another computer program running on either the same or a different system.
+  A physical server is a physical machine that a server software runs on. A virtual server is a virtual representation of a physical server.
+  A server esssentially consists of 2 software components: an operating system and an application. The server operating system acts as a platform for running the server application. The server operating system provides the server application with the access to the underlying hardware resources and the dependency services that the server application needs. The server operating system also provides the means for clients to communicate with the server application. The server application enables the server to do its job.
+  In the client-server programming model, the server awaits and fulfills requests from the client.
+  An application can be a client sending requests to a server or a server returning responses to a client.
+
 WHAT IS THE DIFFERENCE BETWEEN A WEBSITE, A WEBPAGE, A WEB BROSWER, AND A WEB SERVER?
   A website is a collection of related/interlinked web pages. It is associted with a specific address/URL and a unique domain name on the internet. It delivers information, entertainment, or services to users through a web browser. It is published on at least 1 web server.
   A webpage is a single text document written in HTML and made of multiple elements such as text, images, videos,... It covers a part of the content on a website. It is associted with a specific address/URL on the internet under the domain of a website. It is rendered by a web browser.
-  A web broswer is an application for accessing websites. It handles requests from a webpage of a particular website, retrieves requested data from a web server, and displays the content on the user's screen.
-  A web server is a website hosting service provider that hosts website component files on an online space (internet) and controls how users access hosted files. Web server and web browser work hand-in-hand to deliver information to the user.
+  A web broswer is an application for connecting websites and web servers. It takes requests from a webpage of a particular website, retrieves requested data from a web server, and displays the content on the user's screen.
+  A website is made of multiple component files, which need either a physical or a virtual space to live. Therefore, a web server is a website hosting server that hosts the component files of a website on an online space (internet) and handles client requests.
+  Web servers and web browsers work hand-in-hand to deliver information to the clients.
+
+HOW DO A WEBSITE, A WEB BROWSER, AND A WEB SERVER WORK TOGETHER?
+  When a user types a URL in the web browser’s address bar, their computer sends a request to connect to the web server that hosts the website's files that are linked with the URL. 
+  The URL contains the domain name of the website the user is searching for, which corresponds to the IP address of the web server that hosts it.
+  Before being able to reach the correct web server, the client request passes through the DNS, which looks up for the corresponding IP address. The DNS ensures that the web browser connects to the correct web server.
+  When the web server receives the client request, it checks whether the requested URL matches any existing file. If matching, it will process the client request and return the corresponding response. If not, it will return an error message.
+  The web browser reads the responses and displays them on the user’s screen.
+
+WHAT IS THE DIFFERENCE BETWEEN AN APPLICATION SERVER, A WEB SERVER, AND A WEB CONTAINER?
+  A web container is a component of a web server or an application that connects with Servlets. It can handle HTTP requests and reponses and manage the lifecycle of Servlet components.
+  A web server is ususally used to deliever static web content. It can include Servlets and JSP.
+  On the other hand, an application server is used to deliver dynamic data-driven web content. It can hold a big enterprise application with big business logic. It handles the operations between server-side applications and database management system. It may include Servlets, JSP, and EJB. It is frequently viewed as a part of a 3-tier application with: presentation tier, logic tier, data tier.
+
+WHAT IS A WEB SERVER EXTENSION?
+  A web server extension, or server-side extension, is an application for processing client requests, generating responses, and creating dynamic web applications.
+  EX: Common Gateway Interface (CGI), Hypertext Preprocessor (PHP), Java Servlet,...
 
 WHAT IS IP ADDRESS?
-  Computers, servers, and other devices connected over the same internet protocol are each assigned with a unique string of numbers called the internet protocol (IP) address.
-  Every time you access a website, your computer communicates to its web server through your computer's IP address. 
+  IP, stands for Internet Protocol, address is a unique string of numbers assigned to every computer programs or devices connected together on the internet to distinguish one from another.
+  It consists of a set of rules governing the format of data sent over the internet. 
+  It is composed of octets. The range of each octet varies from 0 to 255 (from 0000 0000 to 1111 1111). So, the range of an IP Address can vary from 0.0.0.0 to 255.255.255.255.
+
+WHAT IS A PORT NUMBER?
+  A port number is a method to recognize a particular process connecting internet or other network information when it reaches a server. 
+  It is used to identify different applications uniquely. 
+  It behaves as a communication endpoint among applications. 
+  It is correlated with the IP address for transmission and communication among two applications.
 
 WHAT IS DNS?
-  Because the IP address consists of multiple numbers, users would struggle to memorize which string of numbers belongs to the website. 
-  As a result, the domain name system (DNS) was born.
-  The DNS translates human-readable domain names into IP addresses. 
-  You can think of the DNS as a large web address book where computers can look up domain names and match them to their corresponding IP addresses.
-  By matching the domain name to the corresponding IP address, DNS guides the web browser to the correct web server hosting the website.
+  Every time you access a website, your computer communicates to its web server through your computer's IP address.
+  Because the IP address consists of multiple numbers, users would struggle to memorize which string of numbers belongs to which website. 
+  As a result, DNS, stands for Domain Name System, is needed.
+  DNS translates human-readable domain names of websites into IP addresses.
+  You can think of the DNS as a large web address book where computers can look up domain names and match them to corresponding IP addresses.
+  By matching the domain name to the corresponding IP address, DNS guides the web browser to the correct web server that hosts the website.
+  When a user types in an URL, the web browser divides the URL into 3 parts, each has a different responsibility in interacting with the web server.
+    1. Hypertext Transfer Protocol (http):
+        HTTP, stands for Hypertext Transfer Protocol, is the communication protocol/language web browsers and web servers use to communicate. 
+        The web browser delivers an HTTP request from the client to a web server, and the web server processes the client request and returns a hypertext containning the response.
+    2. Domain Name (www.thewebsite.com):
+        This part specifies the domain name of the website the user is searching for. 
+        The DNS will translate it to the corresponding IP address of the web server that hosts the website and connects the web browser to the correct web server.
+    3. File Path (web-server.htm):
+        The part specifies the specific file related to a webpage of the website the user is looking for.
+
+WHAT IS A PROTOCOL?
+  A network protocol is an organized set of commands that define how data is transmitted between different computer devices in the same network.
+  EX: TCP, FTP, POP, HTTP,...
 
 WHAT IS HTTP?
-  HTTP, stands for Hyper Text Transfer Protocols, is a communication protocol used to transfer hypertext (text with hyperlinks) over the World Wide Web. 
-  It is the foundation of the web, allowing web browsers to retrieve web pages from web servers and display them to users.
-  I. Client-Server Model:
-    In HTTP, the communication occurs between clients (such as web browsers) and servers (such as web servers). Clients send requests to servers for resources, and servers respond with the requested resources.
-  II. Request-Response Cycle:
-    HTTP follows a request-response model, where clients send requests to servers, and servers respond with the requested resources or an error message.
-  III. Stateless Protocol:
-    HTTP is a stateless protocol.
-    Each request from a client to a server is independent and does not carry any information about previous requests. 
-    Servers do not remember past requests from clients, and clients need to include all necessary information in each request.
-  IV. URI:
-    URI, stands for Uniform Resource Identifier, is a sequence of character used in HTTP requests to identify the resources on the web such as web pages, images, files,... that clients want to retrieve from servers. 
-    A URI distinguishes one resource from another.
-    A URI contains scheme, authority, path, query, and a fragment.
+  HTTP, stands for Hyper Text Transfer Protocols, is a communication protocol between web browsers and web servers, which is used to transfer hypertext (text with hyperlinks) over the World Wide Web.
+  In a client-server, or request-response, programming model, The HTTP communication occurs when a web browser sends clients requests for resources to a web server, and the web server processes the client requests and responds with the requested resources or error messages.
+  HTTP is a stateless protocol. Each request or response is independent and does not carry any information about previous processes. Servers do not remember past requests from clients, and clients need to include all necessary information in each request.
+  HTTPS encrypts data between the web browser and the web server. By using a secure certificate, it ensures the data exchange remains private and integrity is maintained and prevents unauthorized access.
+
+WHAT IS AN URI?
+  URI, stands for Uniform Resource Identifier, is a unique sequence of characters that identifies the resources on the internet either by names or by locations or both. 
+  A URI syntax contains:
+    scheme:[//authority]path[?query][#fragment]
+    1. Scheme:
+      Scheme is a sequence of characters followed by a colon (:).
+      Schemes should be registered with Internet Assigned Numbers Authority (IANA).
+      Some common URI schemes are http, https, file, data, ftp, irc, idp, telnet,...
+    2. Authority:
+      Authority is a sequence of characters preceded by 2 forward slashes (//).
+      It consists of 3 components:
+        a. userinfo: 
+          It may contain a username and an optional password separated by colon (:).
+          It's followed by an @.
+        b. host: 
+          It contains either a registered name or an IP address.
+          The IP address must be enclosed in a pair of brackets [ ].
+        c. port:
+          It is optional.
+      Authority is optional.
+    3. Path:
+      Path consists of a sequence of path segments separated by a slash (/).
+      It may be empty or of 0 length.
+    4. Query:
+      Query contains a query string of non-hierarchical data and is preceded by a question mark (?).
+      It is optional.
+    5. Fragment:
+      Fragment consists of a fragment identifier and is preceded by a hash (#).
+      It is optional.
+  URI consists of URN and URL, to identify the name or location or both of a resource.
+  I. URL:
+    URL, stands for Uniform Resource Locator, is a reference that specifies the location/address of a resource on the internet.
+    Each HTTP URL follows the syntax of its generic URI:
       scheme:[//authority]path[?query][#fragment]
       1. Scheme:
-        Scheme is a sequence of characters followed by a colon (:).
-        Schemes should be registered with Internet Assigned Numbers Authority (IANA).
-        Some common URI schemes are http, https, file, data, ftp, irc, idp, telnet,...
+        Scheme represents a protocol that a web browser needs to use to request a resource from a web server.
       2. Authority:
-        Authority is a sequence of characters preceded by 2 forward slashes (//).
-        It consists of 3 components:
-          a. userinfo: 
-            It may contain a username and an optional password separated by colon (:).
-            It's followed by an @.
-          b. host: 
-            It contains either a registered name or an IP address.
-            The IP address must be enclosed in a pair of brackets [ ].
-          c. port:
-            It is optional.
+        Authority consists of 2 components separated by colon (:):
+          a. domain name: 
+            It can be a registered name of the resource.
+            Some commonly used protocols for websites are HTTP and HTTPS.
+          b. port: 
+            It is the technical gate to access the resource on a web server.
+            Port 80 is used for HTTP, and port 443 is used for HTTPS.
         Authority is optional.
       3. Path:
-        Path consists of a sequence of path segments separated by a slash (/).
-        It may be empty or of 0 length.
+        Path specifies a complete path to a resource on a web server.
       4. Query:
-        Query contains a query string of non-hierarchical data and is preceded by a question mark (?).
-        It is optional.
+        Query contains the name-value pairs that follows the path to provide additional informaiton.
       5. Fragment:
-        Fragment consists of a fragment identifier and is preceded by a hash (#).
-        It is optional.
-    URI consists of URN and URL, to identify the name or location or both of a resource.
-      1. URL:
-        URL, stands for Uniform Resource Locator, is a reference that specifies the location/address of the resource on the web. (to find its location and to access it)
-        Each HTTP URL follows the syntax of its generic URI:
-          scheme:[//authority]path[?query][#fragment]
-          a. Scheme:
-            Scheme represents a protocol that a web browser needs to use to request a resource from a web server.
-          b. Authority:
-            Authority consists of 2 components separated by colon (:):
-              a. domain name: 
-                It can be a registered name of the resource.
-                Some commonly used protocols for websites are HTTP and HTTPS.
-              b. port: 
-                It is the technical gate to access the resource on a web server.
-                Port 80 is used for HTTP, and port 443 is used for HTTPS.
-            Authority is optional.
-          c. Path:
-            Path specifies a complete path to a resource on a web server.
-          d. Query:
-            Query contains the name-value pairs that follows the path to provide additional informaiton.
-          e. Fragment:
-            Fragment provides direction to a secondary resource.
-        Each URL can be a URI, but a URI might not be a URL.
-        URI can specify name and location of a resource, but URL can only specify the location.
-        URI can also find resources in HTML, XML, and other files, but URL can only locate web pages.
-      2. URN:
-        URN, stands for Uniform Resource Number
-  V. Security:
-    HTTPS encrypts data between a user’s browser and the server, preventing unauthorized access. 
-    By using a secure certificate, it ensures that the data exchanged remains private and integrity is maintained.
+        Fragment provides direction to a secondary resource.
+    URL always begins with the protocol such as "http" or "ftp".
+    URLs are most commonly used to reference webpages but can also be used for file transfer, email, database access, and other applications.
+  II. URN:
+    URN, stands for Uniform Resource Number, is a unique, persistent, permanent, and location-independent namespace for a resource on the internet assigned by a namespace authority.
+    Unlike a URL which becomes invalid when the resource is moved to a different location, a URN remains constant even when the resource is moved or ceases to exist.
+    A URN is rendered in a URI syntax:
+      urn:<nid>:<nss></nss></nid>
+      1. Leading Scheme:
+        The "urn:" leading scheme is case-sensitive.
+      2. Namespace Identifier (NID):
+        The NID can include letters, digits and dashes.
+        To ensure the global uniqueness of URN namespaces, their persistent identifiers are required to be registered with the Internet Assigned Numbers Authority.
+      3. Namespace-Specific String (NSS):
+        The NID is followed by the NSS, whose representation depends on the specified namespace and may contain American Standard Code for Information Interchange letters and digits, certain punctuation and special characters.
+    URN always begins with the prefix "urn:".
+    URNs are typically used in media formats such as libraries and journals, where they're used to clearly identify book numbers, serial numbers and other content. URNs can identify ideas and concepts and aren't restricted to identifying documents. However, when it does identify a document, it can be translated into a URL by a hostname resolver, and the document can be downloaded from the URL.
 
-WHAT ARE WEBSITE COOKIES?
-  Cookies are small text files stored on a user’s browser by websites. They track user behavior, preferences, and login information, enabling personalized experiences and easier navigation on the site.
+WHAT IS JSON?
+  JSON, stands for JavaScript Object Notation, is a data interchange format for storing and transporting data.
+  It is often used when data is sent from a web server to a webpage. 
+  It is language-independent, which means the code for reading and generating JSON can be written in any programming language.
+  It is self-describing, which means JSON format is text only.
+  JSON format is syntactically identical to the code for creating JavaScript objects because JSON format is deprived from JavaScript object notation syntax. Therefore, a JavaScript program can easily convert JSON data to native JavaScript objects.
 
-HOW IS THE FRONTEND OF A WEBSITE DEVELOPED?
-  A front-end of a website is developed using HTML, CSS, and JavaScript. HTML structures content, CSS styles it, and JavaScript adds interactivity, collectively creating the visual aspects and user experience.
+WHAT IS XML?
+  XML, stands for Extensible Markup Language, is a markup language for storing and transporing data.
+  While HTML is used for displaying data, XML is used for carrying data.
+  Many computer systems contain data in incompatible formats. Exchanging data between incompatible systems can be a big issue.
+  XML stores data in plain text format, which simplies the work of storing, transporting, and sharing data.
+  XML also makes it easier to expand or upgrade to new operating systems, new applications, or new browsers, without losing data.
+  XML is software/hardware-independent, so data can be available to all kinds of reading devices.
 
-HOW IS THE BACKEND OF A WEBSITE DEVELOPED?
-  The back-end of a website is where data processing occurs. Using languages like PHP or Python and databases like MySQL, it handles data storage, user authentication, and server-side logic.
+WHAT IS MAVEN?
+  Maven is a project management tool based on Project Object Model (POM).
+  It is used for Java-based project build, dependency, plugins, documentation, testing, packaging, deployment,...
+
+WHAT IS NETWORKING?
+  Networking is a way for different computer devices to connect with each other and share resources using a network.
+  Networking programming refers to writing programs that can run on multiple computer devices where they can achieve that purpose.
+  With networks, one program can obtain information stored in other computer devices.
+
+WHAT IS JUNIT?
 
 WHAT IS CMS?
-  Content Management Systems (CMS) provide user-friendly interfaces for website management. Users can create, edit, and manage content without coding knowledge, making website maintenance more accessible.
+  CMS, stands for Content Management System, provides user-friendly interfaces for managing websites. 
+  Users can create, edit, and manage content without coding knowledge, making website maintenance more accessible.
+
+WHAT IS AN API?
+  API, stands for Application Programming Interface, is a set of rules, protocols, and conventions that define how software components interact with each other.
+  It provides a standardized way for different software components or systems to communicate and exchange data, to work together seamlessly.
+    
+WHAT IS THE DIFFERENCE BETWEEN A LIBRARY AND A FRAMEWORK?
+  Both libraries and framworks are reusable code written by someone else that are used to support your programs to develope complex applications.
+  Libraries and framworks are usually declarative. Being declarative means I can tell the computer WHAT to do and the computer can handle the details, while being imperative means I have to tell the computer HOW to do WHAT steps by steps.
+  Their difference lies in the concept of IoC (Inversion of Control).
+  When you use a library, you are in charge of the flow of the application. You control when and where to call the library.
+  When you use a framework, the framework is in charge of the flow of the application. It provides places for you to plug in your code, and it calls your code as needed.
+
+WHAT IS THE DIFFERENCE BETWEEN BOM AND DOM?
+

@@ -705,6 +705,8 @@ CSS POSITION:
             The "top", "bottom", "left", or "right" properties is used to position the element away from its normal position.
             After positioned away from its normal position, the element won't take up the space of its normal position.
             Other elements will be adjusted to fit in any gap left by the element.
+            SIDE NOTE:
+                        Whenever you use "fixed", change the "z-index" of the element.
         4. absolute:
             The element is positioned relative to the position of its nearest parent element.
             If the absolute element has no nearest parent element, it will be positioned relative to the "body" element.
