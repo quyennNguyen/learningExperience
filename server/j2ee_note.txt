@@ -190,7 +190,6 @@ WHAT IS EJB?
     It conceals most of the system level services like transaction handling, logging, load balancing, persistence mechanism, exception handling,... It enables you to focus on the business logic of the application.
     I. EJB Container:
         It is an application server that implements the EJB specifications to perform lifecycle management, transaction management, object pooling, security,... 
-        EX: Jboss, Glassfish, Weblogic, Websphere,...
     II. EJB Components:
         1. Session Bean: 
             It stores data of a particular user for a single session.

@@ -682,7 +682,7 @@ WHAT IS A JAVASCRIPT ARRAY?
                         arrayName.reverse();
                     or
                         arrayName.sort().reverse();
-                    This sorts the array reverrse-alphabetically.
+                    This sorts the array reverse-alphabetically.
             7.2 numeric sort:
                 a. alphabetically:
                     arrayName.sort();
@@ -1447,7 +1447,7 @@ WHAT ARE JAVASCRIPT LOOPS?
                 // specify counter
             }
     II. For/In Loop:
-        This loops through properties of an iterable object.
+        This loops through keys of an iterable object.
         1. to iterate over an array:
                 const arrayName = [item0, item1, item2];
                 for (let x in arrayName) {

@@ -1,0 +1,259 @@
+WHAT IS SPRING?
+  Spring is a Java framework that provides a comprehensive set of features and a configuration model for building robust, scalable, maintainable enterprise applications.
+  It is a light-weight alternative to J2EE platform that makes the development of web applications much easier as compared to classic Java frameworks and APIs such as Servlets, JSP, EJBs, JDBC,...
+
+WHAT ARE THE CORE PRINCIPLES IN SPRING?
+  Spring architecture is based on the principles of modularity, separation of concerns, and flexibility. 
+  The modular architecture allows you to select only the necessary modules for your specific needs, reducing unnecessary overhead and complexity in the application.
+  
+  Separation of Concerns is practiced not only in Spring but also in other places of software development. It is important to separate the modules or functionalities having different responsibilities. This not only reduces the complexity of code but also makes modules independent so that even if one module fails to perform its task, other modules are not affected, and thus, we know where to look for the possibility of the failure otherwise, if separation of concerns is not practiced, it becomes tough to manage the code and mistakes.
+
+  The flexible configuration model allows you to configure the application using various approaches such as XML-based configuration, Java-based configuration, and annotation-based configuration.
+
+  
+  I. IoC:
+    IoC, stands for Inversion of Control, is the core container that uses IoC or DI pattern to implicitly provide object references to application classes during runtime, handles the configuration of application objects, and manages their lifecycle.
+    Spring provides 2 packages for the functionality of the IoC container:
+      org.springframework.beans
+      org.springframework.context
+  II. DI:
+    1. Coupling:
+      Coupling is when one class depends on another class.
+      Tight coupling is a situation where multiple entities are strongly dependent on each other. Changing in one entity can directly impact other entities. This makes the code more difficult to maintain, extend, or manipulate.
+      Loose coupling is a design principle in software engineering that aims to minimize the dependencies between components in a system. It promotes a more flexible and maintainable codebase by reducing the direct reliance of one component on another, allowing them to evolve independently.
+    2. Dependency Injection:
+      DI, stands for Dependency Injection, is a design pattern that simplifies object dependencies by providing a mechanism for injecting dependencies into objects externally.
+      Components in an application shouldn't directly depend on each other (tight coupling) but should depend on abstraction (loose coupling).
+      Dependency Injection promotes loose coupling between components, which makes you code more modular, testable, and maintainable.
+      Benefits of using Dependency Injection are modularity, testability, maintainability, and reusability.
+      Spring provides various approaches for implementing Dependency Injection:
+        a. Constructor Injection:
+          Dependencies are injected via the constructor of a class.
+          Spring container automatically resolves and provides the appropriate dependencies when creating the object.
+        b. Setter Injection:
+          Dependencies are injected via setter methods of a class.
+          Spring container invokes these setter methods to set the dependencies after creating the object.
+        c. Field Injection:
+          Dependencies are directly injected into class fields using annotations.
+          Spring container automatically sets the values of the annotated fields after creating the object.
+          Related annotation:
+            @Autowired 
+      Dependency Injection (DI) is a design pattern that helps to reduce the coupling between the components of an application. By using DI, the Spring framework enables loose coupling between components, making the application more modular and easier to maintain. The Spring framework provides an Inversion of Control (IoC) container, which is responsible for creating and managing instances of JavaBeans, and the ApplicationContext, which provides a unified view of the entire application configuration.
+      Dependency Injection in Spring helps in reducing the dependency and loosening the coupling among classes and making testing easier at the same time but sometimes, we fail to take advantage of it and instead end up making tightly coupled classes which makes code non-reusable and inflexible. We can inject dependency in two ways: Through the setter method and the constructor.
+  III. AOP:
+    AOP, stands for Aspect-Oriented Programming,
+    It allows you to apply cross-cutting concerns, such as logging, caching, and security, to multiple components in a declarative way, improving code modularity and maintainability.
+    Aspect-Oriented Programming (AOP) allows developers to modularize cross-cutting concerns, such as logging, security, and transaction management, and apply them to multiple components of an application. This results in a more modular and reusable codebase. The Spring framework provides an AOP framework, which is responsible for managing cross-cutting concerns in the application, such as logging, security, and transaction management.
+    Aspect-Oriented Programming allows us to think differently about the structure of the program by enabling the modularization of concerns. It helps in breaking down the logic into parts known as concerns and the concerns help in dividing the business logic of an application and in increasing the modularity. Compared to OOP, AOP has no comparison as AOP emerged out of the OOP paradigm. Just like class is the key to the modularity of OOP, aspect is the key to the modularity of AOP.
+    Spring with annotations, controllers, and support for APIs makes many tasks easier for us as we don’t have to code everyone from a low level. It allows working with high-level tasks and the use of libraries and their implementation instead of writing everything from scratch. If we focus on low-level code and writing everything from scratch, we’ll miss focusing on other aspects such as business logic and the objective of making the respective application. This further saves our time as we can use already available libraries for which otherwise we would have written code from scratch.
+  IV. POJO:
+    POJO, stands for Plain Old Java Object,
+    Spring allows developers to use POJOs to create enterprise-class apps. The advantage of using simply POJOs is that you don’t require an EJB container product like an application server; instead, you may use a powerful servlet container like Tomcat or a commercial product.
+  V. Data Access:
+    Spring allows you to use Persistence APIs such as JDBC and Hibernate for interacting with a database, storing and accessing persistence data in the database. 
+    It also helps in how to deal with exceptions and how to implement transaction management.
+    Databases are an important part of an application as without smooth and easy communication with the database, our application can become plain. Spring ensures easy and effective communication with databases as it has DAO (Data Access Object) functionality which is meant to read and write data to a database. With the support of DAO in Spring, data access related technologies such as Hibernate, JDBC, and JPA make it easier to communicate with databases. For example, Hibernate with Spring makes it easier to perform CRUD operations by eliminating the lines of code and using just simple functions to create, read, update or delete data from the database.
+  VI. Transaction Management:
+    Spring provides Java Transaction API (JTA) to model a wide range of transactions such as global transactions managed by an application server, and local transactions managed by using the JDBC Hibernate, Java Data Objects (JDO), or other data access APIs.
+  VII. Web Service: 
+    Generates Web service endpoints and definitions based on Java classes, but it is difficult to manage them in an application. To solve this problem, Spring Web Service provides layered-based approaches that are separately managed by Extensible Markup Language (XML) parsing (the technique of reading and manipulating XML). Spring provides effective mapping for transmitting incoming XML message request to an object and the developer to easily distribute XML message (object) between two machines.
+  VIII. JDBC Abstraction Layer: 
+    Helps the users in handling errors in an easy and efficient manner. The JDBC programming code can be reduced when this abstraction layer is implemented in a Web application. This layer handles exceptions such as DriverNotFound. All SQLExceptions are translated into the DataAccessException class. Spring’s data access exception is not JDBC specific and hence Data Access Objects (DAO) are not bound to JDBC only.
+  IX. TestContext: 
+    Provides facilities of unit and integration testing for the Spring applications. Moreover, the Spring TestContext framework provides specific integration testing functionalities such as context management and caching DI of test fixtures, and transactional test management with default rollback semantics.
+
+WHAT ARE THE MAIN AREAS IN SPRING?
+  The Spring framework is modular and consists of several modules that provide different functionalities to help build enterprise applications. 
+  The modular architecture of the Spring framework allows developers to select only the necessary modules for their specific needs, reducing unnecessary overhead and complexity in the application.
+  The modules can be broadly categorized into four main areas:
+  I. Core Container:
+    provides the fundamental functionality of the Spring framework, including the IoC container and ApplicationContext.
+    The Core Container provides the fundamental functionality of the Spring framework, including the Inversion of Control (IoC) container and the ApplicationContext. It includes the following modules:
+      Spring Core: This module provides the fundamental functionality of the Spring framework, including IoC and DI. The IoC container is the heart of the Spring Framework, responsible for creating and managing instances of JavaBeans. It uses dependency injection to wire the beans together.
+      Spring Beans: This module provides the BeanFactory, which is the basic building block of the IoC container, and the BeanWrapper, which is responsible for managing the lifecycle of a bean. The Bean Factory is the core interface for accessing the IoC container. It provides methods for retrieving beans.
+      Spring Context: This module provides the ApplicationContext, which is an advanced version of the BeanFactory and provides additional features, such as internationalization and resource loading, and the ability to publish and consume events.
+      Spring Expression Language (SpEL): This module provides a powerful expression language for querying and manipulating objects during runtime. SpEL supports a wide range of features, including property access, method invocation, conditionals, loops, and type conversion. It also provides support for accessing variables and functions defined in the application context, as well as support for defining custom functions and variables.
+  II. Data Access/Integration:
+    provides support for integrating with databases and other data sources.
+    The Data Access/Integration area provides support for integrating with databases and other data sources. It includes the following modules:
+      Spring JDBC: This module provides a simple JDBC abstraction layer that reduces the amount of boilerplate code required to work with JDBC. Spring JDBC provides support for transaction management, allowing developers to manage database transactions declaratively using Spring’s transaction management.
+      Spring ORM: This module provides integration with Object-Relational Mapping (ORM) frameworks, such as Hibernate and JPA. Spring ORM provides a higher-level abstraction layer on top of ORM frameworks, allowing developers to write less boilerplate code and more easily integrate ORM technologies with other Spring features, such as transaction management and caching.
+      Spring Data: This module provides a consistent and easy-to-use programming model for working with data access technologies, including databases, NoSQL, and cloud-based data services. Spring Data provides a wide range of features, including automatic CRUD (Create, Read, Update, Delete) operations, query generation from method names, support for pagination and sorting, integration with Spring’s transaction management, and more. Additionally, Spring Data provides support for common data access patterns, such as repositories and data access objects (DAOs).
+      Spring Transaction: This module provides support for declarative transaction management in Spring applications. Spring Transaction provides support for various transaction propagation and isolation levels, allowing developers to manage transactions at different levels of granularity. Additionally, Spring Transaction provides support for different transaction management strategies, such as using a JTA transaction manager or a simple JDBC transaction manager.
+  III. Web:
+    provides support for building web applications, including the Spring MVC and Spring WebFlux modules.
+    The Web area provides support for building web applications. It includes the following modules:
+      Spring MVC: This module provides a Model-View-Controller (MVC) framework for building web applications. Spring MVC provides a range of features, including support for handling HTTP requests and responses, form handling, data binding, validation, and more. It also provides support for different view technologies, such as JSP (JavaServer Pages), Thymeleaf, and Velocity, allowing developers to choose the view technology that best suits their needs.
+      Spring WebFlux: This module provides a reactive programming model for building web applications that require high concurrency and scalability. Spring WebFlux provides support for building reactive web applications using a range of technologies, such as Netty, Undertow, and Servlet 3.1+ containers. It also provides a range of features, including support for reactive data access, reactive stream processing, and reactive HTTP clients.
+      Spring Web Services: This module provides support for building SOAP-based and RESTful web services. Spring Web Services provides support for generating WSDL (Web Services Description Language) from Java classes, and for generating Java classes from WSDL. This allows developers to define the contract (i.e., the interface) of their web service using WSDL, and to generate the Java classes that implement the web service from the WSDL.
+  IV. Miscellaneous:
+    includes other modules that provide additional functionality, such as the Spring Security module for authentication and authorization features.
+    The Miscellaneous area includes other modules that provide additional functionality, such as:
+      Spring Security: This module provides authentication and authorization features for Spring applications. Spring Security provides a range of authorization mechanisms, such as role-based access control and expression-based access control. It also provides support for securing different parts of the application using different security configurations, allowing developers to apply fine-grained security policies.
+      Spring Integration: This module provides support for building message-driven and event-driven architectures. Spring Integration provides a range of integration patterns, such as messaging, routing, and transformation. It provides support for a range of messaging systems, such as JMS, AMQP, and Apache Kafka. It also provides support for integrating with different protocols, such as FTP, HTTP, and TCP.
+      Spring Batch: This module provides support for batch processing and integration with enterprise systems. Spring Batch provides a range of tools and utilities for building and managing batch processing applications, such as support for testing and debugging batch jobs, logging and monitoring, and integration with other Spring modules, such as Spring Data and Spring Integration.
+      Spring Cloud: This module provides support for building cloud-native applications using Spring technologies. Spring Cloud provides a range of features for building cloud-native applications, such as service discovery, configuration management, and load balancing. It provides support for integrating with different cloud platforms, such as AWS and GCP, and for using different cloud-native technologies, such as containers and serverless computing.
+
+WHAT ARE THE MAIN MODULES IN SPRING?
+  Spring framework is a collection of sub-frameworks/layers/modules, each of which provides a different platform to develop different enterprise applications.
+  You can use any of these modules separately or together to provide functionalities in an application.
+  I. Spring Core:
+    The Spring Core module, which is the core component of the Spring framework, provides the IoC container There are two types of implementations of the Spring container, namely, bean factory and application context. Bean factory is defined using the org.springframework.beans.factory.BeanFactory interface and acts as a container for beans. The Bean factory container allows you to decouple the configuration and specification of dependencies from program logic. In the Spring framework, the Bean factory acts as a central IoC container that is responsible for instantiating application objects. It also configures and assembles the dependencies between these objects. There are numerous implementations of the BeanFactory interface. The XmlBeanFactory class is the most common implementation of the BeanFactory interface. This allows you to express the object to compose your application and remove interdependencies between application objects.
+  II. Spring AOP:
+    Similar to Object-Oriented Programming (OOP), which breaks down the applications into hierarchy of objects, AOP breaks down the programs into aspects or concerns. Spring AOP module allows you to implement concerns or aspects in a Spring application in Spring AOP, the aspects are the regular Spring beans or regular classes annotated with @Aspect annotation. These aspects help in transaction management and logging and failure monitoring of an application. For example, transaction management is required in bank operations such as transferring an amount from one account to another Spring AOP module provides a transaction management abstraction layer that can be applied to transaction APIs.
+  III. Spring ORM:
+    The Spring ORM module is used for accessing data from databases in an application. It provides APIs for manipulating databases with JDO, Hibernate, and iBatis. Spring ORM supports DAO, which provides a convenient way to build the following DAOs-based ORM solutions:
+      Simple declarative transaction management
+      Transparent exception handling
+      Thread-safe, lightweight template classes
+      DAO support classes
+      Resource management
+  IV. Spring DAO:
+    The DAO package in the Spring framework provides DAO support by using data access technologies such as JDBC, Hibernate, or JDO. This module introduces a JDBC abstraction layer by eliminating the need for providing tedious JDBC coding. It also provides programmatic as well as declarative transaction management classes. Spring DAO package supports heterogeneous Java Database Connectivity and O/R mapping, which helps Spring work with several data access technologies. For easy and quick access to database resources, the Spring framework provides abstract DAO base classes. Multiple implementations are available for each data access technology supported by the Spring framework. For example, in JDBC, the JdbcDaoSupport class and its methods are used to access the DataSource instance and a preconfigured JdbcTemplate instance. You need to simply extend the JdbcDaoSupport class and provide a mapping to the actual DataSource instance in an application context configuration to access a DAO-based application.
+  V. Spring Web Flow:
+    The Spring Web Flow module is an extension of the Spring Web MVC module. Spring Web MVC framework provides form controllers, such as class SimpleFormController and AbstractWizardFormController class, to implement predefined workflow. The Spring Web Flow helps in defining XML file or Java Class that manages the workflow between different pages of a Web application. The Spring Web Flow is distributed separately and can be downloaded through http://www.springframework.org website.
+    The following are the advantages of Spring Web Flow:
+      The flow between different UIs of the application is clearly provided by defining Web flow in XML file.
+      Web flow definitions help you to virtually split an application in different modules and reuse these modules in multiple situations.
+  VI. Spring Application Context:
+    The Spring Application context module is based on the Core module. Application context org.springframework.context.ApplicationContext is an interface of BeanFactory. This module derives its feature from the org.springframework.beans package and also supports functionalities such as internationalization (I18N), validation, event propagation, and resource loading. The Application context implements MessageSource interface and provides the messaging functionality to an application.
+  VII. Spring Web MVC:
+    Allows you to build Web applications based on MVC architecture. All the requests made by a user first go through the controller and are then dispatched to different views, that is, to different JSP pages or Servlets. The form handling and form validating features of the Spring MVC framework can be easily integrated with all popular view technologies such as ISP, Jasper Report, FreeMarker, and Velocity.
+    The Web MVC module of Spring implements the MVC architecture for creating Web applications. It separates the code of model and view components of a Web application. In Spring MVC, when a request is generated from the browser, it first goes to the DispatcherServlet class (Front Controller), which dispatches the request to a controller (SimpleFormController class or AbstractWizardformController class) using a set of handler mappings. The controller extracts and processes the information embedded in a request and sends the result to the DispatcherServlet class in the form of the model object. Finally, the DispatcherServlet class uses ViewResolver classes to send the results to a view, which displays these results to the users.
+  VIII. Spring Data:
+  IX. Spring JDBC:
+  X. Spring Hibernate:
+  XI. Spring Security:
+
+WHAT IS SPRING INITIALIZR?
+  Spring Initilizr is a web-based tool for generating an initial Spring-based project struture where you can select necessary configurations for your project.
+  It can be generated from a web UI, an IDE, or the Command-line
+  It includes:
+    1. Build tool
+    2. Language and its version
+    3. Spring Boot version
+    4. Dependencies such as Spring Web, Spring Data JPA, Spring Boot Dev Tools, MySQL Driver, Lombok, Spring Security,...
+    5. Project metadata such as group, artifact, name, description, package name, Java version
+  To set up a Spring-based project:
+    1. Generate a project using Spring Initilizr.
+    2. In "application.properties" file, add these database settings:
+      spring.jpa.hibernate.ddl-auto=create-drop (or update)
+      spring.datasource.url=jdbc:mysql://localhost:3306/yourdatabase
+      spring.datasource.username=root
+      spring.datasource.password=password
+      spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+      spring.jpa.database-platform= org.hibernate.dialect.MySQLDialect
+      spring.jpa.show-sql: true
+    3. In "pom.xml" file, check if you have all the necessary dependencies.
+    4. A typical Spring Boot application should consist of directories such as entity, repository, service, controller,...
+
+WHAT IS SPRING BOOT?
+  Spring Boot is a microservice-based framework built on the top of Spring framework and contains all the features of Spring.
+  It is popular for its rapid production-ready environment which enables the developers to directly focus on the logic instead of struggling with the configuration and setup.
+  It allows avoiding heavy configuration of XML which is present in Spring.
+  It provides easy maintenance and creation of REST endpoints.
+  It includes embedded Tomcat server.
+  Deployment is very easy, war and jar files can be easily deployed in the Tomcat server.
+
+WHAT IS BEAN?
+  In Spring, a bean is an object created and managed by the Spring IoC container.
+  Beans are the building blocks of a Spring application, which represent components such as data access objects (DAO), services, controllers,...
+  They are stored in the Spring IoC container, which handles their lifecycle, dependencies, and configuration.
+  I. Bean Definition:
+    A bean definition is a configuration metadata that defines how a bean is created, managed, and used in a Spring application.
+    It includes information such as class, scope, lifecycle callbacks, and dependencies.
+    It can be specified using XML configuration, Java-based configuration, or annotations.
+  II. Bean Scope:
+    A bean scope defines the lifecycle and visibility of a bean within the Spring IoC container.
+      1. Singleton:
+        This is the default scope in Spring and based on the Singleton design pattern.
+        A single instance of the bean is created and shared by all requests for the same bean by using @Bean.
+      2. Prototype:
+        A new instance of the bean is created for each request for the bean.
+      3. Request:
+        A new instance of the bean is created for each HTTP request in a web application.
+      4. Session:
+        A new instance of the bean is created for each HTTP session in a web application.
+      5. Custom Scopes:
+        You can define your own custom bean scopes to suit your specific requirements and coding style.
+  III. Bean Lifecycle:
+    Spring provides hooks for managing the lifecycle of beans such as initializing and destroying beans. 
+      1. Annotations:
+        @PostConstruct
+        @PreDestroy
+      2. Interfaces:
+        InitializingBean
+        DisposableBean interfaces
+    These lifecycle callbacks allow you to perform initialization and cleanup tasks on beans.
+  IV. Bean Dependencies:
+    Beans can have dependencies on other beans.
+    Spring provides mechanisms for managing these dependencies such as constructor injection, setter injection, and field injection.
+  V. Bean Configuration:
+    Beans can be configured using various approaches in Spring such as XML configuration, Java-based configuration, and annotations.
+  VI. Bean Autowiring:
+    Bean autowiring is a feature in Spring that automatically wires dependencies between beans without the need for explicit configuration.
+    Spring provides different autowiring modes such as byType, byName, constructor, and autodetect, which determine how beans are automatically wired together.
+    We use auto-wiring to auto-wire beams into one another and to attain dependency injection. Autowiring might not work sometimes if it is not used correctly like if the creation of a new instance is done manually instead of using Spring or the class for which we are using Autowiring, seems to be not picked by ComponentScan where the reason can be that the package is not in the scanning area of ComponentScan and we need to get the package of class in the search area of ComponentScan.
+  VII. Bean Scanning:
+    Bean scanning is a feature in Spring that automatically detects and registers beans based on certain conventions or annotations.
+    This eliminates the need for explicit bean definition and allows for more flexible and dynamic configuration.
+  
+WHAT IS REST?
+  REST, stands for Representational State Transfer, is a web architectural style or integration style for application-to-application and server-to-server communication.
+  It provides standards between computer systems on the web, which makes it easier for systems to communicate with each other.
+  It encourages you to use the web with constraints and guiding principles:
+    - Everything is a resource.
+    - Each resource is identified by a unique identifier (URI).
+    - Use the standard HTTP method
+    - Resources can have multiple representations.
+    - Be stateless
+  Spring Boot simplifies the developement of RESTful web services without writing boilerplate code.
+  I. REST Controller:
+    Controllers are special beans in the Spring ecosystem that handle HTTP web requests.
+    Related annotation:
+      @RestController
+  II. Expose REST Endpoint:
+    Spring boot provides mapping annotations for each type of HTTP verbs that are used in requests to interact with resources in a REST system.
+    There are 4 basic HTTP verbs:
+      1. GET:
+        Spring annotation: @GetMapping
+        Description: to retrieve a resource
+      2. POST:
+        Spring annotation: @PostMapping
+        Description: to create a resource
+      3. PUT:
+        Spring annotation: @PutMapping
+        Description: to modify/update a resource
+      4. DELETE:
+        Spring annotation: @DeleteMapping
+        Description: to delete a resource
+    Each annotation contains parameters that deal with the HTTP requests and responses.
+      1. Path:
+        An URL path or resource location.
+          value = "/path"
+      2. Headers:
+        The headers of the mapped request, narrowing the primary mapping. 
+        Header attributes restrict the scope of the controller method. 
+        Request only mapped if each such title is found to have the given value.
+          headers = "content-type=text/html"
+      3. Consumes: 
+        Narrows the primary mapping by media types that the handler can consume.
+          consumes="application/json"
+      4. Produces:
+        Narrows the primary mapping by media types that the mapped handler can produce.
+          produces = "application/json"
+  III. Spring Boot Annotations:
+    @SpringBootApplication: is the main annotation used in a Spring Boot application. It combines the functionalities of @Configuration, @EnableAutoConfiguration, and @ComponentScan. It is used to configure the Spring application context and enable the auto-configuration feature.
+    @Component: marks a class as a Spring-managed bean. The class will be automatically detected and registered as a bean in the application context. Spring will automatically create an instance of it, which can then be injected into other beans or used within the application.
+    @Configuration: defines a configuration class that provides beans to the Spring application context
+    @Bean
+    @Entity
+    @Repository: marks a class as a data access object (DAO). There are 2 common interfaces you can extend from: CrudRepository<T, R> and JpaRepository<T, R>
+    @Service: marks a class as a service
+    @RestController: consists of @Controller and @ResponseBody, which marks a class as a RESTful controller and capable of handling web requests. It eliminates the need for @ResponseBody annotations on every method.
+    @Controller: declares the annotated class as an MVC controller
+    @ResponseBody: binds a method return value to the web response body. It uses HTTP Message converters to convert the return value to the HTTP response body based on the content type in the request HTTP header.
+    @RequestMapping("/path"): applies the mapping the all the handlers. We don't have to repeat the same mapping in all the handler methods.
+    @PathVariable: extracts a value from a URL path variable.
+    @RequestBody: binds the HTTP request body to a Java object.
+    @Autowired: marks the field as a dependency to be injected into a Spring-managed bean by the Spring container

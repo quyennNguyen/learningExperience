@@ -87,14 +87,13 @@
 * JDK: https://www.oracle.com/java/technologies/downloads/#jdk20-windows
 * Java Uninstall: https://www.java.com/en/download/uninstalltool.jsp
 #### Spring Boot:
-* https://www.tutorialspoint.com/spring_boot/index.htm
-* https://spring.io/guides/gs/serving-web-content/
+* https://www.geeksforgeeks.org/spring/?ref=lbp
+* https://spring.io/guides
 * Spring Initializr: https://start.spring.io/
 * MVN: https://mvnrepository.com/
 * Postman API: https://www.postman.com/
 * IntelliJ: https://www.jetbrains.com/idea/download/#section=windows
 #### MySQL:
-* https://www.w3schools.com/sql/default.asp
 * https://www.w3schools.com/MySQL/default.asp
 * MySQL Workbench: https://dev.mysql.com/downloads/windows/installer/8.0.html
 * MySQL: https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-database
@@ -104,8 +103,6 @@
 #### AWS:
 * https://www.w3schools.com/aws/index.php
 * https://aws.amazon.com/free/?trk=6a4c3e9d-cdc9-4e25-8dd9-2bd8d15afbca&sc_channel=ps&ef_id=CjwKCAjwkeqkBhAnEiwA5U-uM0kpmW6wHDZzWLdJioMLqtuFcKqN3eGBvqyemfJ5wdbC2mYcCJ5_7BoCgeoQAvD_BwE:G:s&s_kwcid=AL!4422!3!651751059783!e!!g!!aws!19852662197!145019195897&all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc&awsf.Free%20Tier%20Types=*all&awsf.Free%20Tier%20Categories=*all
-#### Docker:
-* https://docs.docker.com/desktop/install/windows-install/
 #### Git:
 * https://www.w3schools.com/git/default.asp
 * https://www.atlassian.com/git/tutorials/install-git#windows
